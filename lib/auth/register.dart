@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../components.dart';
 
@@ -29,37 +30,46 @@ class _registerState extends State<register> {
             key: formKey,
             child: Stack(children: [
               Image.asset(
-                "images/2.png",
+                "images/background1.jpeg",
                 fit: BoxFit.cover,
                 height: 720,
               ),
-              // Image.network(
-              //   "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2253/survey-form-cat-phone-453697.jpg?v=1614190994000",
-              //   fit: BoxFit.cover,
-              //   height: 750,
-              // ),
 
-              Padding(
-                padding: const EdgeInsets.all(25.0),
-                child: Text("Register_Now",
-                    style: (Theme.of(context)
-                        .textTheme
-                        .headline4!
-                        .copyWith(color: Colors.blue))),
-              ),
+
 
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 60,
+                    Center(
+                      child: SvgPicture.asset(
+                        "images/4.svg",
+                        width: 95,
+                        height: 95,
+                      ),
                     ),
-                    Text(
-                      "login now to browse your hot offers",
-                      style: TextStyle(color: Colors.black, fontSize: 20),
+                    SizedBox(height: 20,),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("PET",
+                            style: (Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(color: Colors.blueAccent, fontSize: 45))),
+
+                        Text("LIFE",
+                            style: (Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(color: Colors.blue[500], fontSize: 45))),
+                      ],
                     ),
+                    Center(child: Text("Register",style: TextStyle(fontSize: 35,color: Colors.white,fontWeight: FontWeight.bold),)),
+
+
                     SizedBox(
                       height: 20,
                     ),
@@ -67,13 +77,23 @@ class _registerState extends State<register> {
                         Controller: nameController,
                         validator: (value) {
                           if (value.isEmpty) {
-                            return 'please sure your email';
+                            return 'please enter first name';
                           }
                         },
-                        labelText: "please enter your name",
-                        prefixIcon: Icons.person,
-                        hintText: "please enter your name ",
-                        circular: 10,
+                        labelText: "first Name",
+
+                        circular: 0,
+                        hintColor1: Colors.blue,
+                        lableColor2: Colors.black,
+                        iconsColor3: Colors.blue),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    defultForm(
+                        Controller: nameController,
+                        labelText: "Last Name",
+
+                        circular: 0,
                         hintColor1: Colors.blue,
                         lableColor2: Colors.black,
                         iconsColor3: Colors.blue),
@@ -84,13 +104,13 @@ class _registerState extends State<register> {
                         Controller: emailController,
                         validator: (value) {
                           if (value.isEmpty) {
-                            return 'please sure your email';
+                            return 'please enter new email';
                           }
                         },
-                        labelText: "please enter New account",
-                        prefixIcon: Icons.email_outlined,
-                        hintText: "please enter  New account",
-                        circular: 10,
+                        labelText: "username",
+                        prefixIcon: Icons.person,
+
+                        circular: 0,
                         hintColor1: Colors.blue,
                         lableColor2: Colors.black,
                         iconsColor3: Colors.blue),
@@ -103,12 +123,11 @@ class _registerState extends State<register> {
                         Controller: passwordController,
                         validator: (value) {
                           if (value.isEmpty) {
-                            return 'please sure your password';
+                            return 'please enter new password';
                           }
                         },
-                        labelText: " enter new password",
+                        labelText: " Enter password",
                         prefixIcon: Icons.lock_open_outlined,
-                        hintText: " enter new password",
                         circular: 10,
                         hintColor1: Colors.blue,
                         lableColor2: Colors.black,
@@ -116,22 +135,22 @@ class _registerState extends State<register> {
                     SizedBox(
                       height: 15,
                     ),
-                    defultForm(
-                        Controller: phoneController,
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return 'please sure your email';
-                          }
-                        },
-                        labelText: "please enter phone number",
-                        prefixIcon: Icons.phone,
-                        hintText: "please enter phone number",
-                        circular: 10,
-                        hintColor1: Colors.blue,
-                        lableColor2: Colors.black,
-                        iconsColor3: Colors.blue),
+                    // defultForm(
+                    //     Controller: phoneController,
+                    //     validator: (value) {
+                    //       if (value.isEmpty) {
+                    //         return 'please sure your email';
+                    //       }
+                    //     },
+                    //     labelText: "please enter phone number",
+                    //     prefixIcon: Icons.phone,
+                    //     hintText: "please enter phone number",
+                    //     circular: 10,
+                    //     hintColor1: Colors.blue,
+                    //     lableColor2: Colors.black,
+                    //     iconsColor3: Colors.blue),
                     SizedBox(
-                      height: 20,
+                      height: 0,
                     ),
                     Center(
                       child: DropdownButton<String>(
@@ -166,17 +185,7 @@ class _registerState extends State<register> {
                                   color: Colors.white,
                                   backgroundColor: Colors.blue))),
                     )),
-                    SizedBox(height: 20,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "faster online shop",
-                          style: TextStyle(color: Colors.grey, fontSize: 20),
-                        ),
 
-                      ],
-                    )
                   ],
                 ),
               ),

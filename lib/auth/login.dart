@@ -128,7 +128,7 @@ class logIn extends StatelessWidget {
                                   child: Text(
                                     "Register".toUpperCase(),
                                     style: TextStyle(
-                                        fontSize: 25, color: (Colors.yellow)),
+                                        fontSize: 25, color: (Colors.yellowAccent)),
                                   ))
                             ],)
                           ],
