@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'mmmm.dart';
+import '../components.dart';
 
 class register extends StatefulWidget {
   const register({Key? key}) : super(key: key);

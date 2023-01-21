@@ -26,7 +26,7 @@ Widget defultForm ({
   onTap: ontap,
   obscureText: lock,
   decoration: InputDecoration(
-    fillColor: Colors.white,filled: true,
+    fillColor: Colors.grey[350],filled: true,
 
       floatingLabelAlignment: FloatingLabelAlignment.center,
       labelText: labelText,
