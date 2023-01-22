@@ -1,4 +1,5 @@
 import 'package:fff/auth/register.dart';
+import 'package:fff/pages/home_management.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -103,7 +104,14 @@ class logIn extends StatelessWidget {
                             ),
                             ElevatedButton(
                               onPressed: () {
-                            if (formKey.currentState!.validate()) {}
+                            if (formKey.currentState!.validate())
+                            {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => home_management(),
+                                  ));
+                            }
                               },
                               child: Container(
                                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(40),),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../components.dart';
+import '../pages/home_management.dart';
 
 class register extends StatefulWidget {
   const register({Key? key}) : super(key: key);
@@ -18,8 +19,8 @@ class _registerState extends State<register> {
     TextEditingController passwordController = TextEditingController();
     TextEditingController nameController = TextEditingController();
     TextEditingController phoneController = TextEditingController();
-    String selectedItem = "doctors";
-    List<String> item =["user", "doctors", "shops"];
+    String selectedItem = "user";
+    List<String> item =["user", "doctor", "shops"];
 
     var formKey = GlobalKey<FormState>();
 
@@ -29,10 +30,13 @@ class _registerState extends State<register> {
           child: Form(
             key: formKey,
             child: Stack(children: [
-              Image.asset(
-                "images/background1.jpeg",
-                fit: BoxFit.cover,
-                height: 720,
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Image.asset(
+                  "images/background1.jpeg",
+                  fit: BoxFit.cover,
+                  height: 720,
+                ),
               ),
 
 
@@ -80,7 +84,7 @@ class _registerState extends State<register> {
                             return 'please enter first name';
                           }
                         },
-                        labelText: "first Name",
+                        labelText: "First Name",
 
                         circular: 0,
                         hintColor1: Colors.blue,
@@ -172,19 +176,15 @@ class _registerState extends State<register> {
                     SizedBox(
                       height: 20,
                     ),
-                    Center(
-                        child: TextButton(
-                      onPressed: () {
-                        if (formKey.currentState!.validate()) {}
-                      },
-                      child: Text("Register".toUpperCase(),
-                          style: (Theme.of(context)
-                              .textTheme
-                              .headline4!
-                              .copyWith(
-                                  color: Colors.white,
-                                  backgroundColor: Colors.blue))),
-                    )),
+                    ElevatedButton(onPressed: (){
+                      if (formKey.currentState!.validate()) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => home_management(),
+                            ));
+                      }
+                    }, child:Center(child: Text("Login",style:TextStyle(fontSize: 25,color: Colors.white,))),)
 
                   ],
                 ),
