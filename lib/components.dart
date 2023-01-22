@@ -1,43 +1,160 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-Widget defultForm ({
-  required  Controller,
-  validator,
-  labelText,
-  ontap,
-  hintText,
-  prefixIcon,
-  double circular=0,
-  bool lock = false,
-  suffixIcon,
-  hintColor1=Colors.black87,
-  lableColor2=Colors.black87,
-  iconsColor3= Colors.green
+Widget temple({image, name}) => Card(
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      elevation: 7,
+      margin: EdgeInsets.all(10),
+      child: Column(
+        children: [
+          Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                ),
+                child: Image.asset(
+                  "$image",
+                  height: 120,
+                  width: 180,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              Text("$name",
+                  style: TextStyle(
+                    fontSize: 27,
+                    color: Colors.black,
+                  )),
+            ],
+          )
+        ],
+      ),
+    );
 
-})
 
-=>TextFormField(
+Widget shop_temple({image, name,price}) => Container(
+  width: 200,height: 275,
+  child:   Card(
 
-  keyboardType: TextInputType.emailAddress,
-  controller: Controller ,
-  validator: validator,
-  onTap: ontap,
-  obscureText: lock,
-  decoration: InputDecoration(
-    fillColor: Colors.grey[350],filled: true,
+    color: Colors.white,
 
-      floatingLabelAlignment: FloatingLabelAlignment.center,
-      labelText: labelText,
+    shape: RoundedRectangleBorder(
 
-      hintText: hintText,
-      hintStyle: TextStyle(fontSize: 25,color:(hintColor1)),
-      labelStyle:TextStyle(fontSize: 25,color:(lableColor2)) ,
-      prefixIcon: Icon(prefixIcon,color:iconsColor3,size: 35,),
-      suffixIcon: Icon(suffixIcon),
-      //enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: (Colors.redAccent))),
-      border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(circular),
-          borderSide: BorderSide(color: Colors.white))),
+      borderRadius: BorderRadius.circular(15),
+
+    ),
+
+    elevation: 7,
+
+    margin: EdgeInsets.all(10),
+
+    child: Column(
+
+      children: [
+
+        Stack(
+
+          children: [
+
+            ClipRRect(
+
+              borderRadius: BorderRadius.only(
+
+                topLeft: Radius.circular(15),
+
+                topRight: Radius.circular(15),
+
+              ),
+
+              child: Image.asset(
+
+                "$image",
+
+                height: 200,
+
+                width: 180,
+
+                fit: BoxFit.cover,
+
+              ),
+
+            ),
+
+            Container(
+              alignment: Alignment.bottomLeft,
+
+
+              padding: EdgeInsets.symmetric(
+
+                vertical: 10,
+
+                horizontal: 20,
+
+              ),
+
+
+
+              child: Text(
+
+                "$price LE",
+
+                style: TextStyle(
+
+                    fontSize: 20,
+
+                    backgroundColor: Colors.white12,
+
+                    fontWeight: FontWeight.bold),
+
+                overflow: TextOverflow.fade,
+
+              ),
+
+            ),
+
+          ],
+
+
+
+        ),
+
+        Column(
+
+          children: [
+
+            Row(
+
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+              children: [Text("$name",
+
+                style: TextStyle(
+
+                  fontSize: 20,
+
+                  color: Colors.black,
+
+                )),
+
+              IconButton(onPressed:(){}, icon:Icon(Icons.shopping_cart))
+
+            ],)
+
+          ],
+
+        )
+
+      ],
+
+    ),
+
+  ),
 );

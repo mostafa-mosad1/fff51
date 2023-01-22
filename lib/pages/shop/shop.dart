@@ -1,6 +1,14 @@
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:fff/components.dart';
+import 'package:fff/pages/shop/accessories.dart';
+import 'package:fff/pages/shop/drugs.dart';
+import 'package:fff/pages/shop/food.dart';
+import 'package:fff/pages/shop/pet.dart';
+import 'package:fff/pages/shop/shop_management.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../auth/signup.dart';
 
 class shop extends StatefulWidget {
   const shop({Key? key}) : super(key: key);
@@ -13,35 +21,48 @@ class _shopState extends State<shop> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-    body: GridView.count(
-      primary: false,
-    shrinkWrap: true,
-    padding: EdgeInsets.all(20),
-    crossAxisSpacing: 1,
-    mainAxisSpacing: 50,
-    crossAxisCount: 2,
-    children:
-    [
+    body: SingleChildScrollView(
+      child: Container(color: Colors.grey,
+        child: Column(children: [
+          Container(
+            height: 230,
+            width: double.infinity,
+            child: Carousel(
+              images: [
+                AssetImage("images/7.png"),
+                AssetImage("images/8.jpg"),
+                AssetImage("images/5.jpg"),
+                AssetImage("images/9.jpg"),
+
+              ],
+              dotSize: 4,
+              dotIncreaseSize: 2,
+              dotBgColor: Colors.white12,
+            ),
+          ),
+          SizedBox(height: 20,),
+          Container(child: GridView.count(
+            primary: false,
+            shrinkWrap: true,
+            padding: EdgeInsets.all(10),
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            crossAxisCount: 2,
+            children:
+            [
 
 
-    Column(children: [
-      Image(image: AssetImage("images/cat.jpg"),),
-      Text("Pet",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
-    ],),
-      Column(children: [
-        Image(image: AssetImage("images/acces.jpg"),),
-        Text("Accessories",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
-      ],),
-      Column(children: [
-        Image(image: AssetImage("images/food.jpg"),),
-        Text("Food",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
-      ],),
-      Column(children: [
-        Image(image: AssetImage("images/drugs.jpg"),),
-        Text("Drugs",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
-      ],),
 
-    ],),
+              InkWell(onTap: () =>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>shop_management())),child: temple(name: "pet",image: "images/cat.jpg")),
+              InkWell(onTap: () =>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>shop_management())),child: temple(name: "accessories",image: "images/acces.jpg")),
+              InkWell(onTap: () =>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>shop_management())),child: temple(name: "food",image: "images/food.jpg")),
+              InkWell(onTap: () =>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>shop_management())),child: temple(name: "drugs",image: "images/drugs.jpg")),
+
+
+            ],),)
+        ],),
+      ),
+    )
     ));
   }
 }

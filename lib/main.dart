@@ -1,6 +1,8 @@
 
 import 'package:fff/auth/signin.dart';
 import 'package:fff/auth/splashscreen.dart';
+import 'package:fff/pages/shop/pet.dart';
+
 import 'package:flutter/material.dart';
 
 
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  SplashScreen(),
+      home: SplashScreen(),
     );
   }
 }
