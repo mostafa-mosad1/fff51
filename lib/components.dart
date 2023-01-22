@@ -134,17 +134,25 @@ Widget shop_temple({image, name,price}) => Container(
 
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-              children: [Text("$name",
+              children: [
+                Container(width: 122,
+                  child: Column(children: [
+                    Text("$name",maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
 
-                style: TextStyle(
+                        style: TextStyle(
 
-                  fontSize: 20,
+                          fontSize: 20,
 
-                  color: Colors.black,
+                          color: Colors.black,
 
-                )),
+                        )),
+                  ],),
+                ),
 
-              IconButton(onPressed:(){}, icon:Icon(Icons.shopping_cart))
+              Column(children: [
+                IconButton(onPressed:(){}, icon:Icon(Icons.shopping_cart))
+              ],)
 
             ],)
 
