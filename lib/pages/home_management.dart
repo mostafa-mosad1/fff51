@@ -3,6 +3,7 @@ import 'package:fff/pages/profile.dart';
 import 'package:fff/pages/shop/shop.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'category.dart';
 import 'doctors.dart';
@@ -30,13 +31,14 @@ class _home_managementState extends State<home_management> {
   List<Widget> pages =[shop(),category(),home(),doctors(),profile()];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(appBar: AppBar(
-      title:  Container(color: Colors.yellow,height: 50,
+    return SafeArea(child: Scaffold(appBar: AppBar(backgroundColor: (Colors.orangeAccent),
+      title:  Container(
         child: Center(
-          child: Text(
-            "* pet icon *",
-            style:
-            TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Colors.white),),),
+          child:SvgPicture.asset(
+            "images/4.svg",
+            width: 50,
+            height: 50,
+          ),),
       ),
 
         actions: [
@@ -50,12 +52,13 @@ class _home_managementState extends State<home_management> {
                   SizedBox(
                     height: 1,
                   ),
-                  Container(color: Colors.blue,height: 70,
+                  Container(color: Colors.orangeAccent,height: 70,
                     child: Center(
-                      child: Text(
-                        "* pet icon *",
-                        style:
-                        TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Colors.white),),),
+                      child: SvgPicture.asset(
+                        "images/4.svg",
+                        width: 95,
+                        height: 95,
+                      ),),
                   ),
                   ListTile(leading: Icon(Icons.miscellaneous_services),
                       title: Text("Services"),

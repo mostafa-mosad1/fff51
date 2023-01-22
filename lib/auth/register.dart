@@ -30,13 +30,12 @@ class _registerState extends State<register> {
           child: Form(
             key: formKey,
             child: Stack(children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8),
-                child: Image.asset(
-                  "images/background1.jpeg",
-                  fit: BoxFit.cover,
-                  height: 720,
-                ),
+              Image.asset(
+                "images/background1.jpeg",
+                fit: BoxFit.fill,
+                width: double.infinity,
+
+                height: 720,
               ),
 
 

@@ -58,3 +58,19 @@ class _tastState extends State<tast> {
     );
   }
 }
+// Container(
+//         height: 230,
+//         width: double.infinity,
+//         child: Carousel(
+//           images: [
+//             AssetImage("images/7.png"),
+//             AssetImage("images/8.jpg"),
+//             AssetImage("images/5.jpg"),
+//             AssetImage("images/9.jpg"),
+//
+//           ],
+//           dotSize: 4,
+//           dotIncreaseSize: 2,
+//           dotBgColor: Colors.white12,
+//         ),
+//       ),

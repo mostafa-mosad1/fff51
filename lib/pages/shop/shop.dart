@@ -12,25 +12,36 @@ class shop extends StatefulWidget {
 class _shopState extends State<shop> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(appBar: AppBar(),
-    body: Column(children: [
-      Container(
-        height: 230,
-        width: double.infinity,
-        child: Carousel(
-          images: [
-            AssetImage("images/7.png"),
-            AssetImage("images/8.jpg"),
-            AssetImage("images/5.jpg"),
-            AssetImage("images/9.jpg"),
+    return SafeArea(child: Scaffold(
+    body: GridView.count(
+      primary: false,
+    shrinkWrap: true,
+    padding: EdgeInsets.all(20),
+    crossAxisSpacing: 1,
+    mainAxisSpacing: 50,
+    crossAxisCount: 2,
+    children:
+    [
 
-          ],
-          dotSize: 4,
-          dotIncreaseSize: 2,
-          dotBgColor: Colors.white12,
-        ),
-      ),
 
-    ],),));
+    Column(children: [
+      Image(image: AssetImage("images/cat.jpg"),),
+      Text("Pet",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
+    ],),
+      Column(children: [
+        Image(image: AssetImage("images/acces.jpg"),),
+        Text("Accessories",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
+      ],),
+      Column(children: [
+        Image(image: AssetImage("images/food.jpg"),),
+        Text("Food",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
+      ],),
+      Column(children: [
+        Image(image: AssetImage("images/drugs.jpg"),),
+        Text("Drugs",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
+      ],),
+
+    ],),
+    ));
   }
 }
