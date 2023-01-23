@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fff/pages/doctorpage/doctors.dart';
 import 'package:fff/pages/profile.dart';
+import 'package:fff/pages/search.dart';
 import 'package:fff/pages/shop/shop.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,8 @@ class _home_managementState extends State<home_management> {
   List<Widget> pages =[shop(),category(),home(),doctors(),profile()];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(appBar: AppBar(backgroundColor: (Colors.orangeAccent),
+    return SafeArea(
+        child: Scaffold(appBar: AppBar(backgroundColor: (Colors.orangeAccent),
       title:  Container(
         child: Center(
           child:SvgPicture.asset(
@@ -42,7 +44,9 @@ class _home_managementState extends State<home_management> {
       ),
 
         actions: [
-        IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+        IconButton(onPressed: () {
+         showSearch(context: context, delegate: DataSearch());
+        }, icon: Icon(Icons.search,size: 35,)),
   ]
     ),
         drawer: Container(
