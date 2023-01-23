@@ -15,7 +15,7 @@ class _accessoriesState extends State<accessories> {
     return SafeArea(child: Scaffold(body: Stack(
 
       children: [
-        Image(image: AssetImage("images/bouns.jpeg"), fit: BoxFit.fill,width: double.infinity,height: double.infinity,),
+        Image(image: AssetImage("images/bouns2.jpeg"), fit: BoxFit.fill,width: double.infinity,height: double.infinity,),
         GridView.builder(gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 300,
           childAspectRatio: 2/3,

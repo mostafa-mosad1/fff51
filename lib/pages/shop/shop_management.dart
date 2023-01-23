@@ -46,7 +46,13 @@ class _shop_managementState extends State<shop_management> {
 
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-        ]
+        ],
+        // bottom: TabBar(tabs: [
+        //   Tab(text:"petlife",),
+        //   Tab(icon: Icon(Icons.shopping_basket_outlined),),
+        //   Tab(icon: Icon(Icons.favorite),)
+        //
+        // ],)
     ),
         drawer: Container(
           child: Drawer(
@@ -67,7 +73,7 @@ class _shop_managementState extends State<shop_management> {
                     title: Text("Services"),
                     //onTap: ()=>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>  trips()))
                   ),
-                  
+
                   Container(height: 1,width: 200,color: Colors.cyan,),
                   ListTile(leading: Icon(Icons.add_box_outlined),
                     title: Text("About"),

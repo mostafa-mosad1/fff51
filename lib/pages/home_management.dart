@@ -27,7 +27,7 @@ class _home_managementState extends State<home_management> {
     Icon(Icons.person_pin,size: 40),
   ];
 
-  int index = 2;
+  int index = 0;
   List<Widget> pages =[shop(),category(),home(),doctors(),profile()];
   @override
   Widget build(BuildContext context) {
