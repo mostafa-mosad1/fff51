@@ -16,7 +16,8 @@ class _tastState extends State<tast> {
   Widget build(BuildContext context) {
     return Column(children: [
       temple(name: "acce",image: "images/acces.jpg"),
-      shop_temple(name: "acce",image: "images/acces.jpg")
+      shop_temple(name: "acce",image: "images/acces.jpg"),
+      Row(children: [Container(color: Colors.redAccent,width: 100,height: 100,),Text("mmmmmmmmmmmmmmmmmmmmmmmm")],),
     ],);
 
   }

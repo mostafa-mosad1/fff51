@@ -31,7 +31,7 @@ class _doctorsState extends State<doctors> {
                             bottomRight: Radius.circular(20),
                             bottomLeft: Radius.circular(20))),
                     child: Image.asset(
-                      "images/66.jpg",
+                      "images/55.jpg",
                       fit: BoxFit.fill,
                       height: 280,
                       width: double.infinity,

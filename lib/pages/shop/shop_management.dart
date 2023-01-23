@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../category.dart';
-import '../doctors.dart';
 import '../home.dart';
 import '../profile.dart';
 import 'accessories.dart';

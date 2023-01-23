@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'category.dart';
-import 'doctors.dart';
+import 'doctorpage/doctors.dart';
 import 'home.dart';
 
 class home_management extends StatefulWidget {
