@@ -1,4 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:fff/pages/shop/carts.dart';
 import 'package:fff/pages/shop/pet.dart';
 import 'package:fff/pages/shop/shop.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,7 +31,7 @@ class _shop_managementState extends State<shop_management> {
   ];
 // pet(),accessories(),food(),drugs()
   int index = 2;
-  List<Widget> pages =[pet(),accessories(),food(),drugs()];
+  List<Widget> pages =[pet(),accessories(),food(),drugs(),cart()];
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(appBar: AppBar(backgroundColor: (Colors.orangeAccent),

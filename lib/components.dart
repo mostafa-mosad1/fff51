@@ -1,3 +1,8 @@
+
+
+
+
+import 'package:fff/pages/doctorpage/doctors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -165,4 +170,70 @@ Widget shop_temple({image, name,price}) => Container(
     ),
 
   ),
+);
+
+Widget dr({image,npatient,experience,rating}) =>  Stack(
+  children: [
+    Image.asset(
+      "$image",
+      fit: BoxFit.fill,
+      height: 320,
+      width: double.infinity,
+    ),
+    IconButton(onPressed: (){
+
+    }, icon: Icon(Icons.arrow_back,size: 34,)),
+    Container(
+      margin: EdgeInsetsDirectional.only(top: 270),
+      decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(color: Colors.blue,blurRadius: 20,spreadRadius: 5)
+          ]
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+
+          Column(
+            children: [
+              Text(
+                "Patient",
+                style: TextStyle(
+                    color: Colors.white   ,fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              Text("$npatient",
+                  style: TextStyle(
+                      color: Colors.white ,    fontSize: 20, fontWeight: FontWeight.bold))
+            ],
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Column(
+            children: [
+              Text("Experience",
+                  style: TextStyle(
+                      color: Colors.white ,  fontSize: 20, fontWeight: FontWeight.bold)),
+              Text("$experience",
+                  style: TextStyle(
+                      color: Colors.white ,      fontSize: 20, fontWeight: FontWeight.bold))
+            ],
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Column(
+            children: [
+              Text("Rating",
+                  style: TextStyle(
+                      color: Colors.white ,   fontSize: 20, fontWeight: FontWeight.bold)),
+              Text("$rating",
+                  style: TextStyle(
+                      color: Colors.white ,      fontSize: 20, fontWeight: FontWeight.bold))
+            ],
+          )
+        ],
+      ),
+    )
+  ],
 );

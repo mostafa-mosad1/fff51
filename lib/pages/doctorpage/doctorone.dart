@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../components.dart';
+
 class One extends StatefulWidget {
   const One({Key? key}) : super(key: key);
 
@@ -28,73 +30,10 @@ class _OneState extends State<One> {
           toolbarHeight: 0,
         ),
         body: Container(
+          color: Colors.grey,
             height: double.infinity,
             child: ListView(shrinkWrap: true, children: [
-              Stack(
-                children: [
-                  Image.asset(
-                    "images/55.jpg",
-                    fit: BoxFit.fill,
-                    height: 320,
-                    width: double.infinity,
-                  ),
-                  IconButton(onPressed: (){
-                    Navigator.pop(context);
-                  }, icon: Icon(Icons.arrow_back,size: 34,)),
-                  Container(
-                    margin: EdgeInsetsDirectional.only(top: 270),
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(color: Colors.blue,blurRadius: 20,spreadRadius: 5)
-                      ]
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-
-                        Column(
-                          children: [
-                            Text(
-                              "Patient",
-                              style: TextStyle(
-                               color: Colors.white   ,fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            Text("1K",
-                                style: TextStyle(
-                                    color: Colors.white ,    fontSize: 20, fontWeight: FontWeight.bold))
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Column(
-                          children: [
-                            Text("Experience",
-                                style: TextStyle(
-                                    color: Colors.white ,  fontSize: 20, fontWeight: FontWeight.bold)),
-                            Text("5 Yr",
-                                style: TextStyle(
-                                    color: Colors.white ,      fontSize: 20, fontWeight: FontWeight.bold))
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Column(
-                          children: [
-                            Text("Rating",
-                                style: TextStyle(
-                                    color: Colors.white ,   fontSize: 20, fontWeight: FontWeight.bold)),
-                            Text("4.9",
-                                style: TextStyle(
-                                    color: Colors.white ,      fontSize: 20, fontWeight: FontWeight.bold))
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
+             dr(image: "images/55.jpg",experience: "5year",npatient:"20k",rating: "3.5"),
               SizedBox(
                 height: 20,
               ),
