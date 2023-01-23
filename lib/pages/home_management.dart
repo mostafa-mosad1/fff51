@@ -1,4 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:fff/pages/doctorpage/doctors.dart';
 import 'package:fff/pages/profile.dart';
 import 'package:fff/pages/shop/shop.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'category.dart';
-import 'doctorpage/doctors.dart';
 import 'home.dart';
 
 class home_management extends StatefulWidget {
