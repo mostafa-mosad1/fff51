@@ -12,11 +12,14 @@ class cart extends StatefulWidget {
 
 class _cartState extends State<cart> {
   int x = 1;
-  int y =1;
-  int z=1;
+  int y = 1;
+  int z = 1;
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController cardnumber = TextEditingController();
+    TextEditingController namecard = TextEditingController();
+
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -61,7 +64,71 @@ class _cartState extends State<cart> {
           ),
         ],
       ),
-      body: Column(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return SingleChildScrollView(
+                  child: Container(
+                    height: 240,
+                    child: Column(children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+
+                            border: Border.all(width: 1)),
+                        height: 60,
+                        margin: EdgeInsets.only(
+                            top: 20, bottom: 10, right: 25, left: 25),
+                        child: TextFormField(
+                          keyboardType: TextInputType.number,
+                          controller: cardnumber,
+                          decoration: InputDecoration(
+                            labelText: "card number",
+                            labelStyle: TextStyle(color:Colors.blue,fontSize: 15, fontWeight: FontWeight.bold),
+
+                            filled: true,
+                            fillColor: Colors.grey[1],
+                            suffixText: "VISA",
+                            suffixStyle: TextStyle(color:Colors.blue,fontSize: 20, fontWeight: FontWeight.bold),
+
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            border: Border.all(width: 1)),
+                        height: 60,
+                        margin: EdgeInsets.only(bottom: 20, right: 25, left: 25),
+                        child: TextFormField(
+                          controller: namecard,
+                          decoration: InputDecoration(
+                            labelText: "name on card",
+                            labelStyle: TextStyle(color:Colors.blue,fontSize: 15, fontWeight: FontWeight.bold),
+                            filled: true,
+                            fillColor: Colors.grey[1],
+
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 200,
+                        color: Colors.green,
+                        child: MaterialButton(
+                          onPressed: () {},
+                          child: Center(child: Text("Place Order",style: TextStyle(color:Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)),
+                        ),
+                      )
+                    ]),
+                  ),
+                );
+              });
+        },
+        child: Icon(Icons.landslide_sharp),
+      ),
+      body: ListView(
         children: [
           SizedBox(
             height: 10,
@@ -71,10 +138,11 @@ class _cartState extends State<cart> {
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.white,
                 border: Border.all(color: Colors.black, width: 1)),
-            child:
-              Container(
-                width: double.infinity,
-                height: 155,
+            child: Container(
+              width: double.infinity,
+              height: 155,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +150,7 @@ class _cartState extends State<cart> {
                     SizedBox(
                       width: 5,
                     ),
-                    Column(children: [
+                    Row(children: [
                       ClipRRect(
                           borderRadius: BorderRadius.circular(25),
                           child: Image(
@@ -172,7 +240,7 @@ class _cartState extends State<cart> {
                   ],
                 ),
               ),
-
+            ),
           ),
           SizedBox(
             height: 10,
@@ -182,9 +250,11 @@ class _cartState extends State<cart> {
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.white,
                 border: Border.all(color: Colors.black, width: 1)),
-            child:  Container(
-                width: double.infinity,
-                height: 155,
+            child: Container(
+              width: double.infinity,
+              height: 155,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -282,7 +352,7 @@ class _cartState extends State<cart> {
                   ],
                 ),
               ),
-
+            ),
           ),
           SizedBox(
             height: 10,
@@ -292,9 +362,11 @@ class _cartState extends State<cart> {
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.white,
                 border: Border.all(color: Colors.black, width: 1)),
-            child:  Container(
-                width: double.infinity,
-                height: 155,
+            child: Container(
+              width: double.infinity,
+              height: 155,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -393,7 +465,7 @@ class _cartState extends State<cart> {
                 ),
               ),
             ),
-
+          ),
         ],
       ),
     ));
