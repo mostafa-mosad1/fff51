@@ -1,4 +1,9 @@
+import 'package:fff/pages/category.dart';
+import 'package:fff/pages/doctorpage/doctors.dart';
+import 'package:fff/pages/home.dart';
+import 'package:fff/pages/shop/favorite.dart';
 import 'package:fff/pages/shop/pet.dart';
+import 'package:fff/pages/shop/shop.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,39 +17,145 @@ class tast extends StatefulWidget {
 }
 
 class _tastState extends State<tast> {
-  bool icon = false;
+  bool icon = true;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(appBar: AppBar(),
-    body: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        width: 380,height: 100,decoration: BoxDecoration(color: Colors.grey,border: Border.all(color: Colors.black,width: 2)),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(children: [
-                  Column(children: [Text("Total",style: TextStyle(fontSize: 30,color: Colors.red,fontWeight: FontWeight.bold),)],),],),
-                Container(height: 55,width: 2,color: Colors.white,),
-                Container( width: 200,
-                  child: Column(children: [
-                    Row(children: [
-                      Text("itemCount : ",style: TextStyle(fontSize: 25,color: Colors.red,fontWeight: FontWeight.bold),),
-                      Text("10000",style: TextStyle(fontSize: 22,color: Colors.red),),
-                      ],),
-                    Row(children: [
-                      MaterialButton(onPressed: (){setState(() {
-                        icon = !icon;
-                      });}, child: Icon((icon==false)?Icons.add:Icons.ac_unit_outlined) )
-                     ],),
-                  ],),
-                )
-                ]),
-        ),
-      ),
-    ),));
+    bool fav =false;
+    return Scaffold(appBar: AppBar(),
+    body: Column(
+        children:[
+          Container(
+            width: 200,height: 350,
+            child:   Card(
+
+              color: Colors.white,
+
+              shape: RoundedRectangleBorder(
+
+                borderRadius: BorderRadius.circular(15),
+
+              ),
+
+              elevation: 7,
+
+              margin: EdgeInsets.all(10),
+
+              child: Column(
+
+                children: [
+
+                  Stack(
+
+                    children: [
+
+                      ClipRRect(
+
+                        borderRadius: BorderRadius.only(
+
+                          topLeft: Radius.circular(15),
+
+                          topRight: Radius.circular(15),
+
+                        ),
+
+                        child: Image.asset(
+
+                          "images/cat.jpg",
+
+                          height: 200,
+
+                          width: 180,
+
+                          fit: BoxFit.cover,
+
+                        ),
+
+                      ),
+
+                      Container(
+                        alignment: Alignment.topRight,
+
+
+                        // padding: EdgeInsets.symmetric(
+                        //
+                        //   vertical: 10,
+                        //
+                        //   horizontal: 20,
+                        //
+                        // ),
+
+
+
+                        child: MaterialButton(onPressed: (){
+                          setState(() {
+                            icon = !icon;
+                          });
+                        },child:    icon == false ?
+                        Icon(Icons.favorite,color: Colors.red,size: 40,) :
+                        Icon(Icons.favorite_border,color: Colors.red,size: 40,),)
+
+                      ),
+
+                    ],
+
+
+
+                  ),
+
+                  Column(
+
+                    children: [
+                      Center(
+                        child: Text("Cat",maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight:FontWeight.bold
+                            )),
+                      ),
+                      Text(" writing description of product nnnnnnnnnnn",maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                          )),
+
+
+                      Row(
+
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                        children: [
+                          Container(width: 122,
+                            child: Column(children: [
+                              Text("250 EL",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                      fontWeight:FontWeight.bold
+                                  )),
+                            ],),
+                          ),
+
+                          Column(children: [
+                            IconButton(onPressed:(){}, icon:Icon(Icons.shopping_cart,size: 30,))
+                          ],)
+
+                        ],)
+
+                    ],
+
+                  )
+
+                ],
+
+              ),
+
+            ),
+          ),
+        ]
+    ),);
 
   }
 }

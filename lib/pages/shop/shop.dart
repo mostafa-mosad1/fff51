@@ -55,10 +55,10 @@ class _shopState extends State<shop> {
 
               InkWell(onTap: () =>  Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (c) => shop_management())),child: temple(name: "pet",image: "images/cat.jpg")),
-              InkWell(onTap: () =>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>shop_management())),child: temple(name: "accessories",image: "images/acces.jpg")),
-              InkWell(onTap: () =>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>shop_management())),child: temple(name: "food",image: "images/food.jpg")),
-              InkWell(onTap: () =>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>shop_management())),child: temple(name: "drugs",image: "images/drugs.jpg")),
+                      builder: (c) => pet())),child: temple(name: "pet",image: "images/cat.jpg")),
+              InkWell(onTap: () =>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>accessories())),child: temple(name: "accessories",image: "images/acces.jpg")),
+              InkWell(onTap: () =>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>food())),child: temple(name: "food",image: "images/food.jpg")),
+              InkWell(onTap: () =>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>drugs())),child: temple(name: "drugs",image: "images/drugs.jpg")),
 
 
             ],),)
