@@ -172,7 +172,8 @@ Widget shop_temple({image, name,price}) => Container(
   ),
 );
 
-Widget dr({image,npatient,experience,rating}) =>  Stack(
+Widget dr({image,npatient,experience,rating}) =>
+    Stack(
   children: [
     Image.asset(
       "$image",
@@ -236,4 +237,60 @@ Widget dr({image,npatient,experience,rating}) =>  Stack(
       ),
     )
   ],
+);
+
+Widget defultForm ({
+  required  Controller,
+  validator,
+  labelText,
+  ontap,
+  hintText,
+  prefixIcon,
+  double circular=10,
+
+})
+
+=>TextFormField(
+
+  keyboardType: TextInputType.emailAddress,
+  controller: Controller ,
+  validator: validator,
+  onTap: ontap,
+  decoration: InputDecoration(
+      labelText: labelText,
+      hintText: hintText,
+      prefixIcon: Icon(prefixIcon),
+      border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(circular),
+          borderSide: BorderSide(color: Colors.redAccent))),
+);
+
+Widget show_price({count,price}) => Padding(
+  padding: const EdgeInsets.all(8.0),
+  child:   Container(
+    width: 380,height: 100,decoration: BoxDecoration(color: Colors.grey,border: Border.all(color: Colors.black,width: 2)),
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(children: [
+              Column(children: [Text("Total",style: TextStyle(fontSize: 30,color: Colors.red,fontWeight: FontWeight.bold),)],),],),
+            Container(height: 55,width: 2,color: Colors.white,),
+            Container( width: 200,
+              child: Column(children: [
+                Row(children: [
+                  Text("itemCount : ",style: TextStyle(fontSize: 25,color: Colors.red,fontWeight: FontWeight.bold),),
+                  Text("$count",style: TextStyle(fontSize: 22,color: Colors.red),),
+                ],),
+                Row(children: [
+                  Text("Price : ",style: TextStyle(fontSize: 25,color: Colors.red,fontWeight: FontWeight.bold),),
+                  Text("$price",style: TextStyle(fontSize: 22,color: Colors.red),),
+                  Text(" LE",style: TextStyle(fontSize: 25,color: Colors.red,fontWeight: FontWeight.bold),)
+                ],),
+              ],),
+            )
+          ]),
+    ),
+  ),
 );
