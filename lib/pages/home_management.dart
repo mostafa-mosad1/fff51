@@ -2,6 +2,8 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fff/pages/doctorpage/doctors.dart';
 import 'package:fff/pages/profile.dart';
 import 'package:fff/pages/search.dart';
+import 'package:fff/pages/shop/favorite.dart';
+import 'package:fff/pages/shop/pet.dart';
 import 'package:fff/pages/shop/shop.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -77,20 +79,52 @@ class _home_managementState extends State<home_management> {
                 ],
               )),
         ),
-    body: pages[index],
-        bottomNavigationBar: Theme(
+         body:
+         CupertinoTabScaffold(tabBar: CupertinoTabBar(
+             height: 60,
+           backgroundColor: Colors.black,
+           inactiveColor: Colors.white,
+           activeColor: Colors.orangeAccent,
+             items: [
+          BottomNavigationBarItem(icon: Icon(Icons.shop_2_outlined,size: 40,),activeIcon: Text("Shop",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),) ),
+          BottomNavigationBarItem(icon: Icon(Icons.dashboard_customize_outlined),activeIcon: Text("Category",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),)),
+          BottomNavigationBarItem(icon: Icon(Icons.home),activeIcon: Text("Home",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),
+          BottomNavigationBarItem(icon: Icon(Icons.pets),activeIcon: Text("Doctors",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
+          BottomNavigationBarItem(icon: Icon(Icons.person_pin),activeIcon: Text("Perfile",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),
 
-          data:Theme.of(context).copyWith(iconTheme: IconThemeData(color: Colors.white)),
-          child: CurvedNavigationBar (items: items,
-            index:index,
-            height: 60,
-            onTap:(index)=> setState(() => this.index=index ) ,
-            backgroundColor: Colors.black,
-            color: Colors.black,
-            buttonBackgroundColor: Colors.orangeAccent,
+             ],
+        ),
 
-
-          ),))
+          tabBuilder: (BuildContext context, int index)
+          {
+            switch(index){
+              case 0:
+                return CupertinoTabView(builder: (context){
+                  return CupertinoPageScaffold(child: shop());
+                },);
+              case 1:
+                return CupertinoTabView(builder: (context){
+                  return CupertinoPageScaffold(child: category());
+                },);
+              case 2:
+                return CupertinoTabView(builder: (context){
+                  return CupertinoPageScaffold(child: home());
+                },);
+              case 3:
+                return CupertinoTabView(builder: (context){
+                  return CupertinoPageScaffold(child: doctors());
+                },);
+              case 4:
+                return CupertinoTabView(builder: (context){
+                  return CupertinoPageScaffold(child: profile());
+                },);
+              default:
+                return CupertinoTabView(builder: (context){
+                  return CupertinoPageScaffold(child: favorite());
+                },);
+            }
+          },)
+        )
     );
   }
 }

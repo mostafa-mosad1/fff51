@@ -34,69 +34,23 @@ class _shop_managementState extends State<shop_management> {
   List<Widget> pages =[pet(),accessories(),food(),drugs(),cart()];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(appBar: AppBar(backgroundColor: (Colors.orangeAccent),
-        title:  Container(
-          child: Center(
-            child:SvgPicture.asset(
-              "images/4.svg",
-              width: 50,
-              height: 50,
-            ),),
-        ),
+    return SafeArea(child: Scaffold(
 
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-        ],
-        // bottom: TabBar(tabs: [
-        //   Tab(text:"petlife",),
-        //   Tab(icon: Icon(Icons.shopping_basket_outlined),),
-        //   Tab(icon: Icon(Icons.favorite),)
-        //
-        // ],)
-    ),
-        drawer: Container(
-          child: Drawer(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 1,
-                  ),
-                  Container(color: Colors.orangeAccent,height: 70,
-                    child: Center(
-                      child: SvgPicture.asset(
-                        "images/4.svg",
-                        width: 95,
-                        height: 95,
-                      ),),
-                  ),
-                  ListTile(leading: Icon(Icons.miscellaneous_services),
-                    title: Text("Services"),
-                    //onTap: ()=>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>  trips()))
-                  ),
-
-                  Container(height: 1,width: 200,color: Colors.cyan,),
-                  ListTile(leading: Icon(Icons.add_box_outlined),
-                    title: Text("About"),
-                    //onTap: ()=>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>  trips()))
-                  ),
-
-                ],
-              )),
-        ),
         body: pages[index],
-        bottomNavigationBar: Theme(
-
-          data:Theme.of(context).copyWith(iconTheme: IconThemeData(color: Colors.white)),
-          child: CurvedNavigationBar (items: items,
-            index:index,
-            height: 60,
-            onTap:(index)=> setState(() => this.index=index ) ,
-            backgroundColor: Colors.black,
-            color: Colors.black,
-            buttonBackgroundColor: Colors.orangeAccent,
-
-
-          ),))
+        //  bottomNavigationBar: Theme(
+        //
+        //   data:Theme.of(context).copyWith(iconTheme: IconThemeData(color: Colors.white)),
+        //   child: CurvedNavigationBar (items: items,
+        //     index:index,
+        //     height: 60,
+        //     onTap:(index)=> setState(() => this.index=index ) ,
+        //     backgroundColor: Colors.black,
+        //     color: Colors.black,
+        //     buttonBackgroundColor: Colors.orangeAccent,
+        //
+        //
+        //   ),)
+    )
     );
   }
 }
