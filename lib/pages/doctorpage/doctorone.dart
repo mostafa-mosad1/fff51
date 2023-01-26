@@ -28,7 +28,7 @@ class _OneState extends State<One> {
         body: Form(
           key: formstate,
           child: Container(
-              color: Colors.grey,
+              color: Colors.grey[400],
                 height: double.infinity,
                 child: ListView(shrinkWrap: true, children: [
                   Stack(

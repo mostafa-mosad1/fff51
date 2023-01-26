@@ -20,23 +20,25 @@ class _doctorsState extends State<doctors> {
     return Scaffold(
       body: Container(
           height: double.infinity,
+          color: Colors.grey[400],
           child: ListView(
             shrinkWrap: true,
             children: [
               Stack(
                 children: [
                   Container(
+                    height: MediaQuery
+                        .of(context)
+                        .size
+                        .height * 0.4,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
-                            bottomRight: Radius.circular(20),
-                            bottomLeft: Radius.circular(20))
-                    ),
-                    child: Image.asset(
-                      "images/66.jpg",
-                      fit: BoxFit.fill,
-                      height: 300,
-                      width: double.infinity,
-                    ),
+                            bottomLeft: Radius.circular(50),
+                            bottomRight: Radius.circular(50)),
+                        image: DecorationImage(
+                          image: AssetImage("images/66.jpg"),
+                          fit: BoxFit.cover,
+                        )),
                   ),
                   IconButton(
                       onPressed: () {
@@ -54,8 +56,12 @@ class _doctorsState extends State<doctors> {
                 height: 20,
               ),
               Text(
-                "   Choose the doctor who you like",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                " Choose the doctor ",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                " who you like",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 25,

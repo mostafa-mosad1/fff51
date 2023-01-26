@@ -1,6 +1,7 @@
 import 'package:fff/pages/category.dart';
 import 'package:fff/pages/doctorpage/doctors.dart';
 import 'package:fff/pages/home.dart';
+import 'package:fff/pages/shop/accessories.dart';
 import 'package:fff/pages/shop/favorite.dart';
 import 'package:fff/pages/shop/pet.dart';
 import 'package:fff/pages/shop/shop.dart';
@@ -24,117 +25,49 @@ class _tastState extends State<tast> {
     bool fav = false;
     return Scaffold(
       appBar: AppBar(),
-      body: Column(children: [
-        Container(
-          width: 200,
-          height: 350,
-          child: Card(
-            color: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            elevation: 7,
-            margin: EdgeInsets.all(10),
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15),
-                      ),
-                      child: Image.asset(
-                        "images/cat.jpg",
-                        height: 200,
-                        width: 180,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Container(
-                        alignment: Alignment.topRight,
-
-                        // padding: EdgeInsets.symmetric(
-                        //
-                        //   vertical: 10,
-                        //
-                        //   horizontal: 20,
-                        //
-                        // ),
-
-                        child: MaterialButton(
-                          onPressed: () {
-                            setState(() {
-                              icon = !icon;
-                            });
-                          },
-                          child: icon == false
-                              ? Icon(
-                                  Icons.favorite,
-                                  color: Colors.red,
-                                  size: 40,
-                                )
-                              : Icon(
-                                  Icons.favorite_border,
-                                  color: Colors.red,
-                                  size: 40,
-                                ),
-                        )),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Center(
-                      child: Text("Cat",
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold)),
-                    ),
-                    Text(" writing description of product nnnnnnnnnnn",
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                        )),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 122,
-                          child: Column(
-                            children: [
-                              Text("250 EL",
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold)),
-                            ],
-                          ),
-                        ),
-                        Column(
-                          children: [
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.shopping_cart,
-                                  size: 30,
-                                ))
-                          ],
-                        )
-                      ],
-                    )
-                  ],
-                )
-              ],
-            ),
-          ),
-        ),
-      ]),
+      body: Column(children:
+      [
+        MaterialButton(onPressed: ()=>view(context),child: Text("mmm"),)
+      ],)
     );
+  }
+  view(BuildContext context){
+    showModalBottomSheet(context: context,
+        builder: (context)=> Wrap(
+          children: [
+            InkWell( onTap: () => Navigator.of(context).push(MaterialPageRoute(builder:(c)=> accessories())),
+              child: ListTile(
+                leading: Icon(Icons.pets_outlined),
+                title: Text("Cat"),
+              ),
+            ),
+            InkWell(
+              child: ListTile(
+                leading: Icon(Icons.pets_outlined),
+                title: Text("Dog"),
+              ),
+            ),
+            InkWell(
+              child: ListTile(
+                leading: Icon(Icons.pets_outlined),
+                title: Text("Fish"),
+              ),
+            ),
+            InkWell(
+              child: ListTile(
+                leading: Icon(Icons.pets_outlined),
+                title: Text("Bird"),
+              ),
+            ),
+            InkWell(
+              child: ListTile(
+                leading: Icon(Icons.pets_outlined),
+                title: Text("Hamster"),
+              ),
+            ),
+
+          ],
+        ));
   }
 }
 // Container(

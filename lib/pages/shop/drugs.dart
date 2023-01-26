@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../components.dart';
+import 'accessories.dart';
 import 'carts.dart';
 import 'favorite.dart';
 
@@ -25,7 +26,7 @@ class _drugsState extends State<drugs> {
 
           IconButton(onPressed: (){
             Navigator.of(context).push(MaterialPageRoute(builder:(c)=>favorite()));
-          }, icon: Icon(Icons.favorite_border,color: Colors.redAccent,),),
+          }, icon: Icon(Icons.favorite,color: Colors.redAccent,),),
           SizedBox(width: 4,),
           IconButton(onPressed: (){
             Navigator.of(context).push(MaterialPageRoute(builder:(c)=>cart()));
@@ -37,45 +38,7 @@ class _drugsState extends State<drugs> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {});
-          showModalBottomSheet(
-              context: context,
-              builder: (context) {
-                return Container(
-                  width: 200,
-                  margin: EdgeInsets.only(top: 10,bottom: 10,right: 25,left: 25),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(0)),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton(
-                      iconSize: 40,
-                      hint: Text(
-                        "what you want",
-                        style: TextStyle(
-                            fontSize: 23, fontWeight: FontWeight.bold,color: Colors.orangeAccent),
-                      ),
-                      items: ["cats", "dogs", "birds","fish","hamsters"]
-                          .map((e) => DropdownMenuItem(
-                        child: Text(
-                          "   $e",
-                          style: TextStyle(
-                              fontSize: 23,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        value: e,
-                      ))
-                          .toList(),
-                      onChanged: (val) {
-                        setState(() {
-                          name = val;
-                        });
-                      },
-                      value: name,
-                    ),
-                  ),
-                );
-              });
+          view(context);
         },
         child: Icon(Icons.dashboard,size: 35,),
       ),
@@ -195,5 +158,43 @@ class _drugsState extends State<drugs> {
           itemCount: 25,),
       ],
     ),));
+  }
+  view(BuildContext context){
+    showModalBottomSheet(context: context,
+        builder: (context)=> Wrap(
+          children: [
+            InkWell( onTap: () => Navigator.of(context).push(MaterialPageRoute(builder:(c)=> accessories())),
+              child: ListTile(
+                leading: Icon(Icons.pets_outlined),
+                title: Text("Cat"),
+              ),
+            ),
+            InkWell(
+              child: ListTile(
+                leading: Icon(Icons.pets_outlined),
+                title: Text("Dog"),
+              ),
+            ),
+            InkWell(
+              child: ListTile(
+                leading: Icon(Icons.pets_outlined),
+                title: Text("Fish"),
+              ),
+            ),
+            InkWell(
+              child: ListTile(
+                leading: Icon(Icons.pets_outlined),
+                title: Text("Bird"),
+              ),
+            ),
+            InkWell(
+              child: ListTile(
+                leading: Icon(Icons.pets_outlined),
+                title: Text("Hamster"),
+              ),
+            ),
+
+          ],
+        ));
   }
 }
