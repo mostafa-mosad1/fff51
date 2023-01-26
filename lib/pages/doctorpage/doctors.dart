@@ -29,11 +29,12 @@ class _doctorsState extends State<doctors> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
                             bottomRight: Radius.circular(20),
-                            bottomLeft: Radius.circular(20))),
+                            bottomLeft: Radius.circular(20))
+                    ),
                     child: Image.asset(
-                      "images/55.jpg",
+                      "images/66.jpg",
                       fit: BoxFit.fill,
-                      height: 280,
+                      height: 300,
                       width: double.infinity,
                     ),
                   ),

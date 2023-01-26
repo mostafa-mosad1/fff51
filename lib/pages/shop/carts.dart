@@ -25,6 +25,9 @@ class _cartState extends State<cart> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
+        leading: IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, icon:Icon(Icons.arrow_back,color: Colors.black,)),
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(

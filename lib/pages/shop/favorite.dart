@@ -18,6 +18,9 @@ class _favoriteState extends State<favorite> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(appBar: AppBar(
+      leading: IconButton(onPressed: (){
+        Navigator.pop(context);
+      }, icon:Icon(Icons.arrow_back,color: Colors.black,)),
       backgroundColor: Colors.white,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
