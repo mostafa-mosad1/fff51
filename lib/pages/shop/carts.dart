@@ -1,3 +1,4 @@
+import 'package:fff/components.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class _cartState extends State<cart> {
   int x = 1;
   int y = 1;
   int z = 1;
+  bool pay = false;
 
   @override
   Widget build(BuildContext context) {
@@ -64,8 +66,11 @@ class _cartState extends State<cart> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
+         floatingActionButton: FloatingActionButton(
         onPressed: () {
+          setState(() {
+            pay =!pay;
+          });
           showModalBottomSheet(
               context: context,
               builder: (context) {
@@ -126,7 +131,7 @@ class _cartState extends State<cart> {
                 );
               });
         },
-        child: Icon(Icons.landslide_sharp),
+        child: Icon( pay ==false? Icons.landslide_sharp:Icons.done_outline_outlined),
       ),
       body: ListView(
         children: [
@@ -466,8 +471,11 @@ class _cartState extends State<cart> {
               ),
             ),
           ),
+
+          show_price(price: 1000,count: 3)
         ],
       ),
+
     ));
   }
 }

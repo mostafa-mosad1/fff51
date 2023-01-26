@@ -268,7 +268,7 @@ Widget defultForm ({
 Widget show_price({count,price}) => Padding(
   padding: const EdgeInsets.all(8.0),
   child:   Container(
-    width: 380,height: 100,decoration: BoxDecoration(color: Colors.grey,border: Border.all(color: Colors.black,width: 2)),
+    width: 380,height: 100,decoration: BoxDecoration(color: Colors.grey,border: Border.all(color: Colors.black,width: 4)),
     child: Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -293,4 +293,21 @@ Widget show_price({count,price}) => Padding(
           ]),
     ),
   ),
+);
+
+Widget recommend ()=>Container(
+  color: Colors.orangeAccent,
+  height: 60,width: 380,
+  child: Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      SizedBox(width: 10,),
+      Image(image: AssetImage("images/cat.jpg"),width: 80,height: 58,),
+
+      Text("cat",style: TextStyle(fontWeight: FontWeight.bold,fontSize:30 ),),
+
+      Text("250 EL",style: TextStyle(fontWeight: FontWeight.bold,fontSize:28 ),),
+
+      IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart,size: 50,))
+
+    ],),
 );

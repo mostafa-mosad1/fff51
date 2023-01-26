@@ -18,63 +18,41 @@ class tast extends StatefulWidget {
 
 class _tastState extends State<tast> {
   bool icon = true;
+
   @override
   Widget build(BuildContext context) {
-    bool fav =false;
-    return Scaffold(appBar: AppBar(),
-    body: Column(
-        children:[
-          Container(
-            width: 200,height: 350,
-            child:   Card(
-
-              color: Colors.white,
-
-              shape: RoundedRectangleBorder(
-
-                borderRadius: BorderRadius.circular(15),
-
-              ),
-
-              elevation: 7,
-
-              margin: EdgeInsets.all(10),
-
-              child: Column(
-
-                children: [
-
-                  Stack(
-
-                    children: [
-
-                      ClipRRect(
-
-                        borderRadius: BorderRadius.only(
-
-                          topLeft: Radius.circular(15),
-
-                          topRight: Radius.circular(15),
-
-                        ),
-
-                        child: Image.asset(
-
-                          "images/cat.jpg",
-
-                          height: 200,
-
-                          width: 180,
-
-                          fit: BoxFit.cover,
-
-                        ),
-
+    bool fav = false;
+    return Scaffold(
+      appBar: AppBar(),
+      body: Column(children: [
+        Container(
+          width: 200,
+          height: 350,
+          child: Card(
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            elevation: 7,
+            margin: EdgeInsets.all(10),
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
                       ),
-
-                      Container(
+                      child: Image.asset(
+                        "images/cat.jpg",
+                        height: 200,
+                        width: 180,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Container(
                         alignment: Alignment.topRight,
-
 
                         // padding: EdgeInsets.symmetric(
                         //
@@ -84,79 +62,79 @@ class _tastState extends State<tast> {
                         //
                         // ),
 
-
-
-                        child: MaterialButton(onPressed: (){
-                          setState(() {
-                            icon = !icon;
-                          });
-                        },child:    icon == false ?
-                        Icon(Icons.favorite,color: Colors.red,size: 40,) :
-                        Icon(Icons.favorite_border,color: Colors.red,size: 40,),)
-
-                      ),
-
-                    ],
-
-
-
-                  ),
-
-                  Column(
-
-                    children: [
-                      Center(
-                        child: Text("Cat",maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.black,
-                              fontWeight:FontWeight.bold
-                            )),
-                      ),
-                      Text(" writing description of product nnnnnnnnnnn",maxLines: 2,
+                        child: MaterialButton(
+                          onPressed: () {
+                            setState(() {
+                              icon = !icon;
+                            });
+                          },
+                          child: icon == false
+                              ? Icon(
+                                  Icons.favorite,
+                                  color: Colors.red,
+                                  size: 40,
+                                )
+                              : Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.red,
+                                  size: 40,
+                                ),
+                        )),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Center(
+                      child: Text("Cat",
+                          maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                          )),
-
-
-                      Row(
-
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                        children: [
-                          Container(width: 122,
-                            child: Column(children: [
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
+                    ),
+                    Text(" writing description of product nnnnnnnnnnn",
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                        )),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: 122,
+                          child: Column(
+                            children: [
                               Text("250 EL",
                                   style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                      fontWeight:FontWeight.bold
-                                  )),
-                            ],),
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold)),
+                            ],
                           ),
-
-                          Column(children: [
-                            IconButton(onPressed:(){}, icon:Icon(Icons.shopping_cart,size: 30,))
-                          ],)
-
-                        ],)
-
-                    ],
-
-                  )
-
-                ],
-
-              ),
-
+                        ),
+                        Column(
+                          children: [
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.shopping_cart,
+                                  size: 30,
+                                ))
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                )
+              ],
             ),
           ),
-        ]
-    ),);
-
+        ),
+      ]),
+    );
   }
 }
 // Container(
@@ -175,8 +153,6 @@ class _tastState extends State<tast> {
 //           dotBgColor: Colors.white12,
 //         ),
 //       ),
-
-
 
 //GridView.count(
 //       primary: false,

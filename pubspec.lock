@@ -177,6 +177,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
+  stateful_builder_controller:
+    dependency: "direct main"
+    description:
+      name: stateful_builder_controller
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0"
   stream_channel:
     dependency: transitive
     description:

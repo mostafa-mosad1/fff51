@@ -13,6 +13,8 @@ class food extends StatefulWidget {
 }
 
 class _foodState extends State<food> {
+  bool icon = true;
+  var name;
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
@@ -33,18 +35,162 @@ class _foodState extends State<food> {
 
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {});
+          showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return Container(
+                  width: 200,
+                  margin: EdgeInsets.only(top: 10,bottom: 10,right: 25,left: 25),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(0)),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton(
+                      iconSize: 40,
+                      hint: Text(
+                        "what you want",
+                        style: TextStyle(
+                            fontSize: 23, fontWeight: FontWeight.bold,color: Colors.orangeAccent),
+                      ),
+                      items: ["cats", "dogs", "birds","fish","hamsters"]
+                          .map((e) => DropdownMenuItem(
+                        child: Text(
+                          "   $e",
+                          style: TextStyle(
+                              fontSize: 23,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        value: e,
+                      ))
+                          .toList(),
+                      onChanged: (val) {
+                        setState(() {
+                          name = val;
+                        });
+                      },
+                      value: name,
+                    ),
+                  ),
+                );
+              });
+        },
+        child: Icon(Icons.dashboard,size: 35,),
+      ),
       body: Stack(
 
       children: [
-        Image(image: AssetImage("images/bouns2.jpeg"), fit: BoxFit.fill,width: double.infinity,height: double.infinity,),
+        Image(image: AssetImage("images/bouns.jpeg"), fit: BoxFit.fill,width: double.infinity,height: double.infinity,),
         GridView.builder(gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 300,
-            childAspectRatio: 2/3,
+            childAspectRatio: 2.76/5,
             crossAxisSpacing: 5,
-            mainAxisSpacing: 5
         ),
-          itemBuilder: (context, index) => shop_temple(name: "food nnnnnnnnnnnnnnnnnnnnnnnn",
-              image: "images/food.jpg",price: 250),
+          itemBuilder: (context, index) => Column(children: [
+            Container(
+              width: 200,
+              height: 350,
+              child: Card(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                elevation: 7,
+                margin: EdgeInsets.all(10),
+                child: Column(
+                  children: [
+                    Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15),
+                            topRight: Radius.circular(15),
+                          ),
+                          child: Image.asset(
+                            "images/food.jpg",
+                            height: 200,
+                            width: 180,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Container(
+                            alignment: Alignment.topRight,
+
+
+                            child: MaterialButton(
+                              onPressed: () {
+                                setState(() {
+                                  icon = !icon;
+                                });
+                              },
+                              child: icon == false
+                                  ? Icon(
+                                Icons.favorite,
+                                color: Colors.red,
+                                size: 40,
+                              )
+                                  : Icon(
+                                Icons.favorite_border,
+                                color: Colors.red,
+                                size: 40,
+                              ),
+                            )),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Center(
+                          child: Text("Cat",
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 25,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                        Text(" writing description of product nnnnnnnnnnn",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                            )),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 122,
+                              child: Column(
+                                children: [
+                                  Text("250 EL",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold)),
+                                ],
+                              ),
+                            ),
+                            Column(
+                              children: [
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      Icons.shopping_cart,
+                                      size: 30,
+                                    ))
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ]),
           itemCount: 25,),
       ],
     ),));
