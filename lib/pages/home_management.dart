@@ -1,6 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fff/pages/doctorpage/doctors.dart';
-import 'package:fff/pages/profile.dart';
+import 'package:fff/profile/profile.dart';
 import 'package:fff/pages/search.dart';
 import 'package:fff/pages/shop/favorite.dart';
 import 'package:fff/pages/shop/pet.dart';
@@ -35,7 +35,7 @@ class _home_managementState extends State<home_management> {
   ];
 
   int index = 0;
-  List<Widget> pages = [shop(), category(), home(), doctors(), profile()];
+  List<Widget> pages = [shop(), category(), home(), doctors(), profile(name: '',address: " ",phone: " ",)];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -184,7 +184,7 @@ class _home_managementState extends State<home_management> {
                   case 4:
                     return CupertinoTabView(
                       builder: (context) {
-                        return CupertinoPageScaffold(child: profile());
+                        return CupertinoPageScaffold(child: profile(phone: "123456789 ",name: "Mohamed Ahamed",address: "  30 homs st,Mansoura",));
                       },
                     );
                   default:

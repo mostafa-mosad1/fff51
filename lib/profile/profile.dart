@@ -1,14 +1,16 @@
+import 'package:fff/profile/edit_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class profile extends StatefulWidget {
-  const profile({Key? key}) : super(key: key);
+class profile extends StatelessWidget {
+   profile({Key? key, required this.name, required this.phone, required this.address}) : super(key: key);
 
-  @override
-  State<profile> createState() => _profileState();
-}
+   final String name;
+   final String phone;
+   final String address;
 
-class _profileState extends State<profile> {
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,10 +33,12 @@ class _profileState extends State<profile> {
                 Container(
                     alignment: Alignment.topRight,
                     child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder:(c)=>edit_profile()));
+                        },
                         icon: Icon(
                           Icons.settings,
-                          size: 30,
+                          size: 40,
                         ))),
                 SizedBox(
                   height: 30,
@@ -52,7 +56,7 @@ class _profileState extends State<profile> {
                         height: 190)),
                 Center(
                   child: Text(
-                    "Mohamed Ahmed",
+                    "$name",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                   ),
                 ),
@@ -78,7 +82,7 @@ class _profileState extends State<profile> {
                     Container(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        "   +201023457723",
+                        "$phone",
                         style: TextStyle(
                             color: Colors.black45,
                             fontWeight: FontWeight.bold,
@@ -99,7 +103,8 @@ class _profileState extends State<profile> {
                     Container(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        "    30 homs st,Mansoura",
+                        //30 homs st,Mansoura
+                        " $address",
                         style: TextStyle(
                             color: Colors.black45,
                             fontWeight: FontWeight.bold,

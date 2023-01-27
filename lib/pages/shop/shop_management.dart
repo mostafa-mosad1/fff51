@@ -8,7 +8,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../category.dart';
 import '../home.dart';
-import '../profile.dart';
+import '../../profile/profile.dart';
 import 'accessories.dart';
 import 'drugs.dart';
 import 'food.dart';
