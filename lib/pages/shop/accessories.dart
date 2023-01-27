@@ -19,7 +19,11 @@ class _accessoriesState extends State<accessories> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-      appBar: AppBar(backgroundColor: Colors.white,shape: RoundedRectangleBorder(borderRadius: BorderRadius.only
+      appBar: AppBar(
+        leading: IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, icon:Icon(Icons.arrow_back,color: Colors.black,)),
+        backgroundColor: Colors.white,shape: RoundedRectangleBorder(borderRadius: BorderRadius.only
         (bottomLeft: Radius.circular(30),bottomRight: Radius.circular(30))),
         title: Text("pet life",style:TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.blueAccent),),
         actions: [

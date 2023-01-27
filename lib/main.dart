@@ -1,11 +1,7 @@
-
 import 'package:fff/auth/signin.dart';
 import 'package:fff/auth/splashscreen.dart';
 import 'package:fff/pages/shop/pet.dart';
-import 'package:fff/tast.dart';
-
 import 'package:flutter/material.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -14,13 +10,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:
-      SplashScreen(),
+      home: SplashScreen(),
     );
   }
 }

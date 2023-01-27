@@ -27,10 +27,7 @@ class _doctorsState extends State<doctors> {
               Stack(
                 children: [
                   Container(
-                    height: MediaQuery
-                        .of(context)
-                        .size
-                        .height * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.3,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(50),
@@ -53,7 +50,7 @@ class _doctorsState extends State<doctors> {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 40,
               ),
               Text(
                 " Choose the doctor ",
@@ -75,8 +72,8 @@ class _doctorsState extends State<doctors> {
                     Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(width: 1.5),
-                          borderRadius: BorderRadius.all(Radius.circular(7))),
+                          border: Border.all(width: 1.8),
+                          borderRadius: BorderRadius.all(Radius.circular(25))),
                       margin: EdgeInsets.all(10),
                       width: 200,
                       child: MaterialButton(
@@ -89,17 +86,27 @@ class _doctorsState extends State<doctors> {
                           children: [
                             Stack(
                               children: [
-                                Image.asset(
-                                  'images/56.jpg',
-                                  fit: BoxFit.fill,
-                                  height: 200,
-                                  width: double.infinity,
-                                ),
                                 Container(
+                                  height: 190,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                       border: Border.all(width: 0.5),
+
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(24),
+                                          topRight: Radius.circular(24)),
+                                      image: DecorationImage(
+                                          image: AssetImage("images/56.jpg"),
+                                          fit: BoxFit.fill)),
+                                ),
+
+                                Container(
+                                  padding: EdgeInsets.only(top: 7),
                                   decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.only(
-                                          bottomRight: Radius.circular(24))),
+                                        topLeft: Radius.circular(24),
+                                          bottomRight: Radius.circular(20))),
                                   height: 35,
                                   width: 65,
                                 ),
@@ -108,7 +115,7 @@ class _doctorsState extends State<doctors> {
                                     Icon(
                                       Icons.star,
                                       color: Colors.yellow,
-                                      size: 30,
+                                      size: 29,
                                     ),
                                     Text(
                                       "4.9",
@@ -120,6 +127,7 @@ class _doctorsState extends State<doctors> {
                                 )
                               ],
                             ),
+                            SizedBox(height: 5,),
                             Text(
                               "Dr.vet",
                               style: TextStyle(
@@ -132,8 +140,8 @@ class _doctorsState extends State<doctors> {
                     Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(width: 1.5),
-                          borderRadius: BorderRadius.all(Radius.circular(7))),
+                          border: Border.all(width: 1.8),
+                          borderRadius: BorderRadius.all(Radius.circular(25))),
                       margin: EdgeInsets.all(10),
                       width: 200,
                       child: MaterialButton(
@@ -146,17 +154,27 @@ class _doctorsState extends State<doctors> {
                           children: [
                             Stack(
                               children: [
-                                Image.asset(
-                                  'images/56.jpg',
-                                  fit: BoxFit.fill,
-                                  height: 200,
-                                  width: double.infinity,
-                                ),
                                 Container(
+                                  height: 190,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(width: 0.5),
+
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(24),
+                                          topRight: Radius.circular(24)),
+                                      image: DecorationImage(
+                                          image: AssetImage("images/56.jpg"),
+                                          fit: BoxFit.fill)),
+                                ),
+
+                                Container(
+                                  padding: EdgeInsets.only(top: 7),
                                   decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.only(
-                                          bottomRight: Radius.circular(24))),
+                                          topLeft: Radius.circular(24),
+                                          bottomRight: Radius.circular(20))),
                                   height: 35,
                                   width: 65,
                                 ),
@@ -189,8 +207,8 @@ class _doctorsState extends State<doctors> {
                     Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(width: 1.5),
-                          borderRadius: BorderRadius.all(Radius.circular(7))),
+                          border: Border.all(width: 1.8),
+                          borderRadius: BorderRadius.all(Radius.circular(25))),
                       margin: EdgeInsets.all(10),
                       width: 200,
                       child: MaterialButton(
@@ -203,17 +221,27 @@ class _doctorsState extends State<doctors> {
                           children: [
                             Stack(
                               children: [
-                                Image.asset(
-                                  'images/56.jpg',
-                                  fit: BoxFit.fill,
-                                  height: 200,
-                                  width: double.infinity,
-                                ),
                                 Container(
+                                  height: 190,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(width: 0.5),
+
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(24),
+                                          topRight: Radius.circular(24)),
+                                      image: DecorationImage(
+                                          image: AssetImage("images/56.jpg"),
+                                          fit: BoxFit.fill)),
+                                ),
+
+                                Container(
+                                  padding: EdgeInsets.only(top: 7),
                                   decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.only(
-                                          bottomRight: Radius.circular(24))),
+                                          topLeft: Radius.circular(24),
+                                          bottomRight: Radius.circular(20))),
                                   height: 35,
                                   width: 65,
                                 ),
@@ -246,8 +274,8 @@ class _doctorsState extends State<doctors> {
                     Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(width: 1.5),
-                          borderRadius: BorderRadius.all(Radius.circular(7))),
+                          border: Border.all(width: 1.8),
+                          borderRadius: BorderRadius.all(Radius.circular(25))),
                       margin: EdgeInsets.all(10),
                       width: 200,
                       child: MaterialButton(
@@ -260,17 +288,27 @@ class _doctorsState extends State<doctors> {
                           children: [
                             Stack(
                               children: [
-                                Image.asset(
-                                  'images/56.jpg',
-                                  fit: BoxFit.fill,
-                                  height: 200,
-                                  width: double.infinity,
-                                ),
                                 Container(
+                                  height: 190,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(width: 0.5),
+
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(24),
+                                          topRight: Radius.circular(24)),
+                                      image: DecorationImage(
+                                          image: AssetImage("images/56.jpg"),
+                                          fit: BoxFit.fill)),
+                                ),
+
+                                Container(
+                                  padding: EdgeInsets.only(top: 7),
                                   decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.only(
-                                          bottomRight: Radius.circular(24))),
+                                          topLeft: Radius.circular(24),
+                                          bottomRight: Radius.circular(20))),
                                   height: 35,
                                   width: 65,
                                 ),
@@ -303,8 +341,8 @@ class _doctorsState extends State<doctors> {
                     Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(width: 1.5),
-                          borderRadius: BorderRadius.all(Radius.circular(7))),
+                          border: Border.all(width: 1.8),
+                          borderRadius: BorderRadius.all(Radius.circular(25))),
                       margin: EdgeInsets.all(10),
                       width: 200,
                       child: MaterialButton(
@@ -317,17 +355,27 @@ class _doctorsState extends State<doctors> {
                           children: [
                             Stack(
                               children: [
-                                Image.asset(
-                                  'images/56.jpg',
-                                  fit: BoxFit.fill,
-                                  height: 200,
-                                  width: double.infinity,
-                                ),
                                 Container(
+                                  height: 190,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(width: 0.5),
+
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(24),
+                                          topRight: Radius.circular(24)),
+                                      image: DecorationImage(
+                                          image: AssetImage("images/56.jpg"),
+                                          fit: BoxFit.fill)),
+                                ),
+
+                                Container(
+                                  padding: EdgeInsets.only(top: 7),
                                   decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.only(
-                                          bottomRight: Radius.circular(24))),
+                                          topLeft: Radius.circular(24),
+                                          bottomRight: Radius.circular(20))),
                                   height: 35,
                                   width: 65,
                                 ),
