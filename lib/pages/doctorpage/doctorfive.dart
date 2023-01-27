@@ -196,6 +196,7 @@ class _FiveState extends State<Five> {
                               border: Border.all(width: 1)),
                           height: 45,
                           width: 220,
+
                           margin: EdgeInsets.only(
                               top: 10, bottom: 10, right: 25, left: 15),
                           child: Center(

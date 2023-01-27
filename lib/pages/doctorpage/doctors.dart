@@ -369,6 +369,7 @@ class _doctorsState extends State<doctors> {
                                           fit: BoxFit.fill)),
                                 ),
 
+
                                 Container(
                                   padding: EdgeInsets.only(top: 7),
                                   decoration: BoxDecoration(

@@ -139,6 +139,7 @@ class _ThreeState extends State<Three> {
                                 color: Colors.white,
                                 border: Border.all(width: 1)),
                             height: 45,
+
                             width: 160,
                             margin: EdgeInsets.only(
                                 top: 10, bottom: 10, right: 25, left: 15),

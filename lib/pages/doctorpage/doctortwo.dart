@@ -125,6 +125,7 @@ class _TwoState extends State<Two> {
                   " address",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
+
                 SizedBox(
                   height: 5,
                 ),
