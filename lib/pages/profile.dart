@@ -46,7 +46,8 @@ class _profileState extends State<profile> {
                                 image: AssetImage("images/pro1.jpg"),
                                 fit: BoxFit.cover),
                             border: Border.all(color: Colors.black, width: 2),
-                            borderRadius: BorderRadius.all(Radius.circular(140))),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(140))),
                         width: 190,
                         height: 190)),
                 Center(
@@ -60,7 +61,8 @@ class _profileState extends State<profile> {
                     "@moh_ahmed",
                     style: TextStyle(
                         color: Colors.black45,
-                        fontWeight: FontWeight.bold, fontSize: 15),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15),
                   ),
                 ),
                 Column(
@@ -69,18 +71,18 @@ class _profileState extends State<profile> {
                       alignment: Alignment.topLeft,
                       child: Text(
                         " Phone",
-                        style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 25),
                       ),
                     ),
                     Container(
                       alignment: Alignment.topLeft,
                       child: Text(
                         "   +201023457723",
-                        style:
-                            TextStyle(                      color: Colors.black45,
-
-                                fontWeight: FontWeight.bold, fontSize: 15),
+                        style: TextStyle(
+                            color: Colors.black45,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
                       ),
                     ),
                     SizedBox(
@@ -90,19 +92,18 @@ class _profileState extends State<profile> {
                       alignment: Alignment.topLeft,
                       child: Text(
                         " Address",
-                        style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 25),
                       ),
                     ),
                     Container(
                       alignment: Alignment.topLeft,
                       child: Text(
                         "    30 homs st,Mansoura",
-                        style:
-                            TextStyle(
-                                color: Colors.black45,
-
-                                fontWeight: FontWeight.bold, fontSize: 15),
+                        style: TextStyle(
+                            color: Colors.black45,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
                       ),
                     ),
                     SizedBox(
@@ -144,14 +145,14 @@ class _profileState extends State<profile> {
                                     height: 145,
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
-                                            image: AssetImage("images/pro2.jpg"),
+                                            image:
+                                                AssetImage("images/pro2.jpg"),
                                             fit: BoxFit.cover),
                                         border: Border.all(
                                             width: 2, color: Colors.black),
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(15))),
                                   ),
-
                                   Positioned(
                                     bottom: 11,
                                     right: 1,
@@ -160,20 +161,23 @@ class _profileState extends State<profile> {
                                       child: Container(
                                         height: 35,
                                         decoration: BoxDecoration(
-                                            boxShadow: [BoxShadow(
-                                              color: Colors.black26,
-                                            )],
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.black26,
+                                              )
+                                            ],
                                             borderRadius: BorderRadius.only(
-                                                bottomRight: Radius.circular(15),
-                                                bottomLeft: Radius.circular(15)
-                                            )
-                                        ),
+                                                bottomRight:
+                                                    Radius.circular(15),
+                                                bottomLeft:
+                                                    Radius.circular(15))),
                                         width: 160,
                                         child: Center(
                                           child: Text(
                                             "Rex",
                                             style: TextStyle(
-                                                decoration: TextDecoration.underline,
+                                                decoration:
+                                                    TextDecoration.underline,
                                                 decorationColor: Colors.green,
                                                 decorationThickness: 2,
                                                 fontWeight: FontWeight.bold,
@@ -194,12 +198,13 @@ class _profileState extends State<profile> {
                                     height: 145,
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
-                                            image: AssetImage("images/pro3.jpg"),
+                                            image:
+                                                AssetImage("images/peo3.jpg"),
                                             fit: BoxFit.cover),
-                                        border:
-                                        Border.all(width: 2, color: Colors.black),
-                                        borderRadius:
-                                        BorderRadius.all(Radius.circular(15))),
+                                        border: Border.all(
+                                            width: 2, color: Colors.black),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(15))),
                                   ),
                                   Positioned(
                                     bottom: 11,
@@ -209,20 +214,23 @@ class _profileState extends State<profile> {
                                       child: Container(
                                         height: 35,
                                         decoration: BoxDecoration(
-                                            boxShadow: [BoxShadow(
-                                              color: Colors.black26,
-                                            )],
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.black26,
+                                              )
+                                            ],
                                             borderRadius: BorderRadius.only(
-                                                bottomRight: Radius.circular(15),
-                                                bottomLeft: Radius.circular(15)
-                                            )
-                                        ),
+                                                bottomRight:
+                                                    Radius.circular(15),
+                                                bottomLeft:
+                                                    Radius.circular(15))),
                                         width: 160,
                                         child: Center(
                                           child: Text(
                                             "Mavi",
                                             style: TextStyle(
-                                                decoration: TextDecoration.underline,
+                                                decoration:
+                                                    TextDecoration.underline,
                                                 decorationColor: Colors.green,
                                                 decorationThickness: 2,
                                                 fontWeight: FontWeight.bold,
