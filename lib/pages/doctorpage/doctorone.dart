@@ -146,22 +146,21 @@ class _OneState extends State<One> {
                                   top: 10, bottom: 10, right: 25, left: 15),
                               child: Center(
                                 child: TextFormField(
-                                    controller: name,
-                                    validator: (val){
-                                      if(val!.isEmpty){
-                                        return ("you must enter data");
-                                      }
-                                      return null;
-                                    },
-                                    decoration: InputDecoration(
-                                      filled: true,
-                                      fillColor: Colors.white,
-                                      hintText: "Name",
-                                      hintStyle: TextStyle(
-                                          fontSize: 20, fontWeight: FontWeight.bold),
-                                    ),
+                                  controller: name,
+                                  validator: (val){
+                                    if(val!.isEmpty){
+                                      return ("you must enter data");
+                                    }
+                                    return null;
+                                  },
+                                  decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    hintText: "Name",
+                                    hintStyle: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
                                   ),
-
+                                ),
                               ),
                             ),
                             Container(
