@@ -137,7 +137,6 @@ class _home_managementState extends State<home_management> {
                   BottomNavigationBarItem(
                       icon: Icon(Icons.medical_information),
                       label: "Doctor"
-
                     // activeIcon: Text(
                       //   "Doctors",
                       //   style: TextStyle(
