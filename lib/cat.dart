@@ -1,35 +1,22 @@
-import 'package:fff/cat.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:fff/pages/shop/carts.dart';
+import 'package:fff/pages/shop/favorite.dart';
 import 'package:flutter/material.dart';
 
-import '../../components.dart';
-import 'accessories.dart';
-import 'carts.dart';
-import 'favorite.dart';
-
-class food extends StatefulWidget {
-  const food({Key? key}) : super(key: key);
+class Cat extends StatefulWidget {
+  const Cat({Key? key}) : super(key: key);
 
   @override
-  State<food> createState() => _foodState();
+  State<Cat> createState() => _CatState();
 }
 
-class _foodState extends State<food> {
+class _CatState extends State<Cat> {
   bool icon = true;
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-              size: 25,
-            )),
+        leadingWidth: 0,
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -71,15 +58,6 @@ class _foodState extends State<food> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          viewthree(context);
-        },
-        child: Icon(
-          Icons.dashboard,
-          size: 35,
-        ),
-      ),
       body: Stack(
         children: [
           Image(
@@ -89,6 +67,7 @@ class _foodState extends State<food> {
             height: double.infinity,
           ),
           GridView.builder(
+            shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 300,
                 childAspectRatio: 2.76 / 5,
@@ -130,15 +109,15 @@ class _foodState extends State<food> {
                               },
                               child: icon == false
                                   ? Icon(
-                                      Icons.favorite,
-                                      color: Colors.red,
-                                      size: 40,
-                                    )
+                                Icons.favorite,
+                                color: Colors.red,
+                                size: 40,
+                              )
                                   : Icon(
-                                      Icons.favorite_border,
-                                      color: Colors.red,
-                                      size: 40,
-                                    ),
+                                Icons.favorite_border,
+                                color: Colors.red,
+                                size: 40,
+                              ),
                             )),
                       ],
                     ),
@@ -197,47 +176,8 @@ class _foodState extends State<food> {
           ),
         ],
       ),
-    ));
-  }
 
-  viewthree(BuildContext context) {
-    showModalBottomSheet(
-        context: context,
-        builder: (context) => Wrap(
-              children: [
-                InkWell(
-                  onTap: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (c) => Cat())),
-                  child: ListTile(
-                    leading: Icon(Icons.pets_outlined),
-                    title: Text("Cat"),
-                  ),
-                ),
-                InkWell(
-                  child: ListTile(
-                    leading: Icon(Icons.pets_outlined),
-                    title: Text("Dog"),
-                  ),
-                ),
-                InkWell(
-                  child: ListTile(
-                    leading: Icon(Icons.pets_outlined),
-                    title: Text("Fish"),
-                  ),
-                ),
-                InkWell(
-                  child: ListTile(
-                    leading: Icon(Icons.pets_outlined),
-                    title: Text("Bird"),
-                  ),
-                ),
-                InkWell(
-                  child: ListTile(
-                    leading: Icon(Icons.pets_outlined),
-                    title: Text("Hamster"),
-                  ),
-                ),
-              ],
-            ));
+
+  );
   }
 }
