@@ -1,4 +1,4 @@
-import 'package:fff/profile/edit_profile.dart';
+import 'package:fff/pages/profile/edit_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -82,7 +82,7 @@ class profile extends StatelessWidget {
                     Container(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        "$phone",
+                        "  $phone",
                         style: TextStyle(
                             color: Colors.black45,
                             fontWeight: FontWeight.bold,

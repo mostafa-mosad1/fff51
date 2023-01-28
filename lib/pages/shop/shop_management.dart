@@ -8,7 +8,6 @@ import 'package:flutter_svg/svg.dart';
 
 import '../category.dart';
 import '../home.dart';
-import '../../profile/profile.dart';
 import 'accessories.dart';
 import 'drugs.dart';
 import 'food.dart';
@@ -31,57 +30,25 @@ class _shop_managementState extends State<shop_management> {
   ];
 // pet(),accessories(),food(),drugs()
   int index = 2;
-  var name;
   List<Widget> pages =[pet(),accessories(),food(),drugs(),cart()];
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
 
         body: pages[index],
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {});
-          showModalBottomSheet(
-              context: context,
-              builder: (context) {
-                return Container(
-                  width: 200,
-                  margin: EdgeInsets.only(top: 10,bottom: 10,right: 25,left: 25),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(0)),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton(
-                      iconSize: 40,
-                      hint: Text(
-                        "what you want",
-                        style: TextStyle(
-                            fontSize: 23, fontWeight: FontWeight.bold,color: Colors.orangeAccent),
-                      ),
-                      items: ["cats", "dogs", "birds","fish","hamsters"]
-                          .map((e) => DropdownMenuItem(
-                        child: Text(
-                          "   $e",
-                          style: TextStyle(
-                              fontSize: 23,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        value: e,
-                      ))
-                          .toList(),
-                      onChanged: (val) {
-                        setState(() {
-                          name = val;
-                        });
-                      },
-                      value: name,
-                    ),
-                  ),
-                );
-              });
-        },
-        child: Icon(Icons.dashboard,size: 35,),
-      ),
+        //  bottomNavigationBar: Theme(
+        //
+        //   data:Theme.of(context).copyWith(iconTheme: IconThemeData(color: Colors.white)),
+        //   child: CurvedNavigationBar (items: items,
+        //     index:index,
+        //     height: 60,
+        //     onTap:(index)=> setState(() => this.index=index ) ,
+        //     backgroundColor: Colors.black,
+        //     color: Colors.black,
+        //     buttonBackgroundColor: Colors.orangeAccent,
+        //
+        //
+        //   ),)
     )
     );
   }

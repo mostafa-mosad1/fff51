@@ -1,6 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fff/pages/doctorpage/doctors.dart';
-import 'package:fff/profile/profile.dart';
+import 'package:fff/pages/profile/profile.dart';
 import 'package:fff/pages/search.dart';
 import 'package:fff/pages/shop/favorite.dart';
 import 'package:fff/pages/shop/pet.dart';

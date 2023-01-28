@@ -1,5 +1,5 @@
 import 'package:fff/components.dart';
-import 'package:fff/profile/profile.dart';
+import 'package:fff/pages/profile/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
