@@ -1,3 +1,4 @@
+import 'package:fff/components.dart';
 import 'package:fff/pages/profile/edit_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -112,12 +113,12 @@ class profile extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 12,
                     ),
                     Center(
                         child: Container(
                       width: 370,
-                      height: 225,
+                      height: 275,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(width: 2, color: Colors.black),
@@ -127,131 +128,34 @@ class profile extends StatelessWidget {
                           SizedBox(
                             height: 5,
                           ),
-                          Center(
-                              child: Text("My animals",
-                                  style: TextStyle(
-                                      wordSpacing: 2,
-                                      decoration: TextDecoration.underline,
-                                      decorationColor: Colors.green,
-                                      decorationThickness: 3,
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold))),
+                         SizedBox(width: 75,),
+                         Center(
+                             child: Text("My animals",
+                                 style: TextStyle(
+                                     wordSpacing: 2,
+                                     decorationThickness: 3,
+                                     fontSize: 25,
+                                     fontWeight: FontWeight.bold))),
+                          Container(width: 70,height: 5,color: Colors.green,),
                           SizedBox(
                             height: 15,
                           ),
-                          Row(
-                            children: [
-                              Stack(
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(
-                                        left: 13, top: 10, bottom: 10),
-                                    width: 160,
-                                    height: 145,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image:
-                                                AssetImage("images/pro2.jpg"),
-                                            fit: BoxFit.cover),
-                                        border: Border.all(
-                                            width: 2, color: Colors.black),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(15))),
-                                  ),
-                                  Positioned(
-                                    bottom: 11,
-                                    right: 1,
-                                    left: 15,
-                                    child: Center(
-                                      child: Container(
-                                        height: 35,
-                                        decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.black26,
-                                              )
-                                            ],
-                                            borderRadius: BorderRadius.only(
-                                                bottomRight:
-                                                    Radius.circular(15),
-                                                bottomLeft:
-                                                    Radius.circular(15))),
-                                        width: 160,
-                                        child: Center(
-                                          child: Text(
-                                            "Rex",
-                                            style: TextStyle(
-                                                decoration:
-                                                    TextDecoration.underline,
-                                                decorationColor: Colors.green,
-                                                decorationThickness: 2,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 20),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              Stack(
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(
-                                        left: 22, top: 10, bottom: 10),
-                                    width: 160,
-                                    height: 145,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image:
-                                                AssetImage("images/peo3.jpg"),
-                                            fit: BoxFit.cover),
-                                        border: Border.all(
-                                            width: 2, color: Colors.black),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(15))),
-                                  ),
-                                  Positioned(
-                                    bottom: 11,
-                                    right: 3,
-                                    left: 22,
-                                    child: Center(
-                                      child: Container(
-                                        height: 35,
-                                        decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.black26,
-                                              )
-                                            ],
-                                            borderRadius: BorderRadius.only(
-                                                bottomRight:
-                                                    Radius.circular(15),
-                                                bottomLeft:
-                                                    Radius.circular(15))),
-                                        width: 160,
-                                        child: Center(
-                                          child: Text(
-                                            "Mavi",
-                                            style: TextStyle(
-                                                decoration:
-                                                    TextDecoration.underline,
-                                                decorationColor: Colors.green,
-                                                decorationThickness: 2,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 20),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              )
-                            ],
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                animal(nameAnimal: "REX",image: "images/pro2.jpg"),
+                                animal(nameAnimal: "REX",image: "images/pro3.jpg"),
+                                animal(nameAnimal: "REX",image: "images/pro2.jpg"),
+                                animal(nameAnimal: "REX",image: "images/pro3.jpg"),
+                                SizedBox(width: 12,),
+                              ],
+                            ),
                           )
                         ],
                       ),
-                    ))
+                    )),
+                    SizedBox(height: 20,)
                   ],
                 ),
               ],

@@ -247,15 +247,13 @@ Widget defultForm ({
   hintText,
   prefixIcon,
   double circular=10,
+  background
 
 })
 
 =>Container(
   width: 260,height: 50,
   child:   TextFormField(
-
-
-
     keyboardType: TextInputType.emailAddress,
 
     controller: Controller ,
@@ -265,7 +263,6 @@ Widget defultForm ({
     onTap: ontap,
 
     decoration: InputDecoration(
-
         labelText: labelText,
 
         hintText: hintText,
@@ -327,29 +324,56 @@ Widget recommend ()=>Container(
 
     ],),
 );
-
-//
-// Widget defultForm ({
-//   required  Controller,
-//   required validator,
-//   labelText,
-//   hintText,
-//   prefixIcon,
-//   double circular=10,
-//
-// })
-//
-// =>TextFormField(
-//
-//   keyboardType: TextInputType.emailAddress,
-//   controller: Controller ,
-//   validator: validator,
-//   decoration: InputDecoration(
-//       labelText: labelText,
-//       hintText: hintText,
-//       prefixIcon: Icon(prefixIcon),
-//       border: OutlineInputBorder(
-//           borderRadius: BorderRadius.circular(circular),
-//           borderSide: BorderSide(color: Colors.redAccent))),
-// );
-
+ Widget animal({image,nameAnimal}) =>Stack(
+   children: [
+     Container(
+       margin: EdgeInsets.only(
+           left: 13, top: 10, bottom: 10),
+       width: 160,
+       height: 175,
+       decoration: BoxDecoration(
+           image: DecorationImage(
+               image:
+               AssetImage(image),
+               fit: BoxFit.cover),
+           border: Border.all(
+               width: 2, color: Colors.black),
+           borderRadius: BorderRadius.all(
+               Radius.circular(15))),
+     ),
+     Positioned(
+       bottom: 11,
+       right: 1,
+       left: 15,
+       child: Center(
+         child: Container(
+           height: 35,
+           decoration: BoxDecoration(
+               boxShadow: [
+                 BoxShadow(
+                   color: Colors.black26,
+                 )
+               ],
+               borderRadius: BorderRadius.only(
+                   bottomRight:
+                   Radius.circular(15),
+                   bottomLeft:
+                   Radius.circular(15))),
+           width: 160,
+           child: Center(
+             child: Text(
+               nameAnimal,
+               style: TextStyle(
+                   decoration:
+                   TextDecoration.underline,
+                   decorationColor: Colors.green,
+                   decorationThickness: 2,
+                   fontWeight: FontWeight.bold,
+                   fontSize: 20),
+             ),
+           ),
+         ),
+       ),
+     )
+   ],
+ );
