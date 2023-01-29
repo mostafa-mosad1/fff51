@@ -3,15 +3,25 @@ import 'package:fff/pages/profile/edit_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class profile extends StatelessWidget {
-   profile({Key? key, required this.name, required this.phone, required this.address}) : super(key: key);
+class Profile extends StatefulWidget {
+  Profile(
+      {Key? key,
+      this.images,
+      this.name,
+      this.phone,
+      this.address})
+      : super(key: key);
 
-   final String name;
-   final String phone;
-   final String address;
+  var name;
+  var phone;
+  var address;
+  var images;
 
+  @override
+  State<Profile> createState() => _ProfileState();
+}
 
-
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +45,8 @@ class profile extends StatelessWidget {
                     alignment: Alignment.topRight,
                     child: IconButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder:(c)=>edit_profile()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (c) => edit_profile()));
                         },
                         icon: Icon(
                           Icons.settings,
@@ -45,19 +56,25 @@ class profile extends StatelessWidget {
                   height: 30,
                 ),
                 Center(
-                    child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage("images/pro1.jpg"),
-                                fit: BoxFit.cover),
-                            border: Border.all(color: Colors.black, width: 2),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(140))),
-                        width: 190,
-                        height: 190)),
+                    child: widget.images != null
+                        ? CircleAvatar(
+                            backgroundImage: FileImage(widget.images),
+                            radius: 95,
+                          )
+                        : Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage("images/pro1.jpg"),
+                                    fit: BoxFit.cover),
+                                border:
+                                    Border.all(color: Colors.black, width: 2),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(140))),
+                            width: 190,
+                            height: 190)),
                 Center(
                   child: Text(
-                    "$name",
+                    "${widget.name}",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                   ),
                 ),
@@ -83,7 +100,7 @@ class profile extends StatelessWidget {
                     Container(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        "  $phone",
+                        "  ${widget.phone}",
                         style: TextStyle(
                             color: Colors.black45,
                             fontWeight: FontWeight.bold,
@@ -105,7 +122,7 @@ class profile extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       child: Text(
                         //30 homs st,Mansoura
-                        " $address",
+                        "  ${widget.address}",
                         style: TextStyle(
                             color: Colors.black45,
                             fontWeight: FontWeight.bold,

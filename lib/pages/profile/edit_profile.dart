@@ -42,7 +42,7 @@ class _edit_profileState extends State<edit_profile> {
                          dynamic y =phoneController.text;
                          dynamic z =addressController.text;
                           print(nameController.text);
-                          Navigator.of(context).push(MaterialPageRoute(builder:(c)=> profile(name: '$x',address: "$z",phone:"$y")));
+                          Navigator.of(context).push(MaterialPageRoute(builder:(c)=> Profile(name: '$x',address: "$z",phone:"$y")));
                         },
                         icon: Icon(
                           Icons.task_alt_outlined,
