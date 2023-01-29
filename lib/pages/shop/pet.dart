@@ -75,7 +75,7 @@ class _petState extends State<pet> {
                           topRight: Radius.circular(15),
                         ),
                         child: Image.asset(
-                          "images/drugs.jpg",
+                          "images/cat.jpg",
                           height: 200,
                           width: 180,
                           fit: BoxFit.cover,

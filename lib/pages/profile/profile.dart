@@ -3,6 +3,8 @@ import 'package:fff/pages/profile/edit_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'add_animal.dart';
+
 class Profile extends StatefulWidget {
   Profile(
       {Key? key,
@@ -135,44 +137,87 @@ class _ProfileState extends State<Profile> {
                     ),
                     Center(
                         child: Container(
-                      width: 370,
-                      height: 275,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 2, color: Colors.black),
-                          borderRadius: BorderRadius.all(Radius.circular(15))),
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 5,
+                          width: 370,
+                          height: 275,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(width: 2, color: Colors.black),
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(15))),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  SizedBox(
+                                    width: 75,
+                                  ),
+                                  Center(
+                                      child: Text("My animals",
+                                          style: TextStyle(
+                                              wordSpacing: 2,
+                                              decorationThickness: 3,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.bold))),
+                                  Row(
+                                    children: [
+                                      IconButton(
+                                          onPressed: () {
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (c) =>
+                                                        add_animal()));
+                                          },
+                                          icon: Icon(
+                                            Icons.add_circle_outline,
+                                            size: 30,
+                                          )),
+                                      Text(
+                                        "add",
+                                        style: TextStyle(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Container(
+                                width: 70,
+                                height: 5,
+                                color: Colors.green,
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  children: [
+                                    animal(
+                                        nameAnimal: "REX",
+                                        image: "images/pro2.jpg"),
+                                    animal(
+                                        nameAnimal: "REX",
+                                        image: "images/pro3.jpg"),
+                                    animal(
+                                        nameAnimal: "REX",
+                                        image: "images/pro2.jpg"),
+                                    animal(
+                                        nameAnimal: "REX",
+                                        image: "images/pro3.jpg"),
+                                    SizedBox(
+                                      width: 12,
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
-                         SizedBox(width: 75,),
-                         Center(
-                             child: Text("My animals",
-                                 style: TextStyle(
-                                     wordSpacing: 2,
-                                     decorationThickness: 3,
-                                     fontSize: 25,
-                                     fontWeight: FontWeight.bold))),
-                          Container(width: 70,height: 5,color: Colors.green,),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: [
-                                animal(nameAnimal: "REX",image: "images/pro2.jpg"),
-                                animal(nameAnimal: "Mavi",image: "images/pro3.jpg"),
-                                animal(nameAnimal: "REX",image: "images/pro2.jpg"),
-                                animal(nameAnimal: "Mavi",image: "images/pro3.jpg"),
-                                SizedBox(width: 12,),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    )),
+                        )),
                     SizedBox(height: 20,)
                   ],
                 ),

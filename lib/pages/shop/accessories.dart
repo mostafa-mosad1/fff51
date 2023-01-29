@@ -141,7 +141,7 @@ class _accessoriesState extends State<accessories> {
                       Column(
                         children: [
                           Center(
-                            child: Text("Cat",
+                            child: Text("access",
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(

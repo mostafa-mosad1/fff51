@@ -71,7 +71,7 @@ class _foodState extends State<food> {
                           topRight: Radius.circular(15),
                         ),
                         child: Image.asset(
-                          "images/drugs.jpg",
+                          "images/food.jpg",
                           height: 200,
                           width: 180,
                           fit: BoxFit.cover,
@@ -104,7 +104,7 @@ class _foodState extends State<food> {
                   Column(
                     children: [
                       Center(
-                        child: Text("Cat",
+                        child: Text("Food",
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(

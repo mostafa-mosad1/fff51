@@ -141,7 +141,7 @@ class _drugsState extends State<drugs> {
                       Column(
                         children: [
                           Center(
-                            child: Text("Cat",
+                            child: Text("drugs",
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
