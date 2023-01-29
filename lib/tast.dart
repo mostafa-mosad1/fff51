@@ -7,6 +7,8 @@ import 'package:fff/pages/shop/pet.dart';
 import 'package:fff/pages/shop/shop.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 import 'components.dart';
 
@@ -19,16 +21,22 @@ class tast extends StatefulWidget {
 
 class _tastState extends State<tast> {
   bool icon = true;
-
+  DateRangePickerController date =DateRangePickerController();
+  TextEditingController date1 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     bool fav = false;
     return Scaffold(
       appBar: AppBar(),
-      body: Column(children:
-      [
-        MaterialButton(onPressed: ()=>view(context),child: Text("mmm"),)
-      ],)
+      body: defultForm(hintText: "enter date", Controller: date1,ontap:() async{
+        DateTime? pickeddate =await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2000), lastDate: DateTime(2101)).then((value) {date1.text = DateFormat().add_yMMMEd().format(value!);});
+        // if(pickeddate != null){
+        //   setState(() {
+        //     date1.text =
+        //   });
+       // }
+      }
+      )
     );
   }
   view(BuildContext context){
@@ -70,49 +78,21 @@ class _tastState extends State<tast> {
         ));
   }
 }
-// Container(
-//         height: 230,
-//         width: double.infinity,
-//         child: Carousel(
-//           images: [
-//             AssetImage("images/7.png"),
-//             AssetImage("images/8.jpg"),
-//             AssetImage("images/5.jpg"),
-//             AssetImage("images/9.jpg"),
+//SfDateRangePicker(
+//         view: DateRangePickerView.month,
+//         monthViewSettings: DateRangePickerMonthViewSettings(),
+//         selectionMode: DateRangePickerSelectionMode.multiRange,
+//         showActionButtons: true,
+//         controller: date,
 //
-//           ],
-//           dotSize: 4,
-//           dotIncreaseSize: 2,
-//           dotBgColor: Colors.white12,
-//         ),
-//       ),
+//         startRangeSelectionColor:Colors.blueAccent ,
+//         endRangeSelectionColor: Colors.redAccent,
+//         onSubmit: (val){
+//           print(val);
+//           // print(date);
+//         },
+//         onCancel: (){
+//           date.selectedRange = null;
+//         },
+//       )
 
-//GridView.count(
-//       primary: false,
-//     shrinkWrap: true,
-//     padding: EdgeInsets.all(20),
-//     crossAxisSpacing: 1,
-//     mainAxisSpacing: 50,
-//     crossAxisCount: 2,
-//     children:
-//     [
-//
-//
-//     Column(children: [
-//       Image(image: AssetImage("images/cat.jpg"),),
-//       Text("Pet",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
-//     ],),
-//       Column(children: [
-//         Image(image: AssetImage("images/acces.jpg"),),
-//         Text("Accessories",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
-//       ],),
-//       Column(children: [
-//         Image(image: AssetImage("images/food.jpg"),),
-//         Text("Food",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
-//       ],),
-//       Column(children: [
-//         Image(image: AssetImage("images/drugs.jpg"),),
-//         Text("Drugs",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,backgroundColor: Colors.white),)
-//       ],),
-//
-//     ],),
