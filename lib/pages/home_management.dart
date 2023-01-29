@@ -35,7 +35,7 @@ class _home_managementState extends State<home_management> {
   ];
 
   int index = 0;
-  List<Widget> pages = [shop(), category(), home(), doctors(), profile(name: '',address: " ",phone: " ",)];
+  List<Widget> pages = [shop(), category(), home(), doctors(), Profile(name: '',address: " ",phone: " ",)];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -184,7 +184,7 @@ class _home_managementState extends State<home_management> {
                   case 4:
                     return CupertinoTabView(
                       builder: (context) {
-                        return CupertinoPageScaffold(child: profile(phone: "123456789 ",name: "Mohamed Ahamed",address: "  30 homs st,Mansoura",));
+                        return CupertinoPageScaffold(child: Profile(phone: "123456789 ",name: "Mohamed Ahamed",address: "  30 homs st,Mansoura",));
                       },
                     );
                   default:

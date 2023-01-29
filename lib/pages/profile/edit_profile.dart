@@ -67,7 +67,7 @@ class _edit_profileState extends State<edit_profile> {
                   child:  Container(
                     height: 60,
                     margin: EdgeInsets.only(top: 10,bottom: 10,right: 25,left: 25),
-                    child: defultForm(labelText: "Name",hintText: "Mohamed Ahamed",Controller: nameController,color: Colors.white)
+                    child: defultForm(labelText: "Name",hintText: "Mohamed Ahamed",Controller: nameController)
                   ),
                 ),
                 Center(
@@ -94,7 +94,7 @@ class _edit_profileState extends State<edit_profile> {
                       SizedBox(height: 10,),
                       Container(
                         alignment: Alignment.topLeft,
-                        child: defultForm(labelText: "phone",hintText: "123456789",Controller: phoneController,color: Colors.white)
+                        child: defultForm(labelText: "phone",hintText: "123456789",Controller: phoneController)
                       ),
                       SizedBox(
                         height: 8,
@@ -110,7 +110,7 @@ class _edit_profileState extends State<edit_profile> {
                       SizedBox(height: 12,),
                       Container(
                         alignment: Alignment.topLeft,
-                        child: defultForm(hintText: "30 homs st,mansoura",labelText: "Address",Controller: addressController,color: Colors.white)
+                        child: defultForm(hintText: "30 homs st,mansoura",labelText: "Address",Controller: addressController)
                       ),
                       SizedBox(
                         height: 12,

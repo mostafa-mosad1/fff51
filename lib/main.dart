@@ -1,5 +1,7 @@
 import 'package:fff/auth/signin.dart';
 import 'package:fff/auth/splashscreen.dart';
+import 'package:fff/pages/profile/edit_profile.dart';
+import 'package:fff/pages/profile/profile.dart';
 import 'package:fff/pages/shop/pet.dart';
 import 'package:flutter/material.dart';
 
