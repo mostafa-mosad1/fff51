@@ -162,9 +162,9 @@ class _ProfileState extends State<Profile> {
                             child: Row(
                               children: [
                                 animal(nameAnimal: "REX",image: "images/pro2.jpg"),
-                                animal(nameAnimal: "REX",image: "images/pro3.jpg"),
+                                animal(nameAnimal: "Mavi",image: "images/pro3.jpg"),
                                 animal(nameAnimal: "REX",image: "images/pro2.jpg"),
-                                animal(nameAnimal: "REX",image: "images/pro3.jpg"),
+                                animal(nameAnimal: "Mavi",image: "images/pro3.jpg"),
                                 SizedBox(width: 12,),
                               ],
                             ),
