@@ -247,13 +247,15 @@ Widget defultForm ({
   hintText,
   prefixIcon,
   double circular=10,
-  background
+  background,
+  color
 
 })
 
 =>Container(
   width: 260,height: 50,
   child:   TextFormField(
+
     keyboardType: TextInputType.emailAddress,
 
     controller: Controller ,
@@ -263,6 +265,8 @@ Widget defultForm ({
     onTap: ontap,
 
     decoration: InputDecoration(
+      filled: true,
+      fillColor: color,
         labelText: labelText,
 
         hintText: hintText,
