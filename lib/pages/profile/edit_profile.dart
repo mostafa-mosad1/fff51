@@ -18,6 +18,7 @@ class _edit_profileState extends State<edit_profile> {
   TextEditingController nameController = TextEditingController();
   TextEditingController addressController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
+
   var image;
   @override
   Widget build(BuildContext context) {
