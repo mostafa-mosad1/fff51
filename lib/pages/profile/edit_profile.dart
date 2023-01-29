@@ -111,7 +111,10 @@ class _edit_profileState extends State<edit_profile> {
                                                       source:
                                                           ImageSource.camera);
                                               if (pickedImage != null) {
-                                                image = File(pickedImage.path);
+                                                setState(() {
+                                                  image = File(pickedImage.path);
+
+                                                });
                                                 Navigator.pop(context);
                                               }
                                             },
@@ -140,7 +143,10 @@ class _edit_profileState extends State<edit_profile> {
                                                       source:
                                                           ImageSource.gallery);
                                               if (pickedImage != null) {
-                                                image = File(pickedImage.path);
+                                                setState(() {
+                                                  image = File(pickedImage.path);
+
+                                                });
 
                                                 Navigator.pop(context);
                                               }
