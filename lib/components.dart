@@ -253,7 +253,7 @@ Widget defultForm ({
 })
 
 =>Container(
-  width: 260,height: 50,
+  width: 280,height: 50,
   child:   TextFormField(
 
     keyboardType: TextInputType.emailAddress,
@@ -339,7 +339,7 @@ Widget recommend ()=>Container(
        decoration: BoxDecoration(
            image: DecorationImage(
                image:
-               AssetImage(image),
+               AssetImage("$image"),
                fit: BoxFit.cover),
            border: Border.all(
                width: 2, color: Colors.black),
