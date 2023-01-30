@@ -10,7 +10,8 @@ class Profile extends StatefulWidget {
       this.name,
       this.phone,
       this.address,
-      this.imagestwo})
+      this.imagestwo,
+        this.petName})
       : super(key: key);
 
 
@@ -19,6 +20,7 @@ class Profile extends StatefulWidget {
   var address;
   var images;
   var imagestwo;
+  var petName;
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -370,7 +372,7 @@ class _ProfileState extends State<Profile> {
                                           width: 160,
                                           child: Center(
                                             child: Text(
-                                              "Kolo",
+                                              "${widget.petName}",
                                               style: TextStyle(
                                                   decoration:
                                                       TextDecoration.underline,

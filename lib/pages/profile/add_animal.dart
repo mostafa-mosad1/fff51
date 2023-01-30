@@ -17,6 +17,7 @@ class add_animal extends StatefulWidget {
 class _add_animalState extends State<add_animal> {
   var dateController = TextEditingController();
   TextEditingController date1 = TextEditingController();
+  TextEditingController petName1 = TextEditingController();
   var imagetwo;
 
   @override
@@ -76,6 +77,7 @@ class _add_animalState extends State<add_animal> {
                 height: 17,
               ),
               defultForm(
+                Controller: petName1 ,
                   hintText: "Pet Name",
                   background: Colors.redAccent,
                   color: Colors.white),
@@ -115,7 +117,7 @@ class _add_animalState extends State<add_animal> {
                 .all(Radius.circular(30))),
                 child: MaterialButton(onPressed: (){
                  Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                 edit_profile(petimage: imagetwo,)
+                 edit_profile(petimage: imagetwo,petName: petName1.text,)
                  ));
                 },child: Text("Add",
                 style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Colors.white),
