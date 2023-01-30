@@ -473,6 +473,7 @@ class _edit_profileState extends State<edit_profile> {
                                     ],
                                   ),
                                   Stack(
+
                                     children: [
                                       widget.petimage != null
                                           ? Container(

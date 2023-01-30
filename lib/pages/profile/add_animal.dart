@@ -22,6 +22,7 @@ class _add_animalState extends State<add_animal> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+
         Image(
           image: AssetImage("images/pro2.jpg"),
           width: double.infinity,

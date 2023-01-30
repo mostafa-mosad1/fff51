@@ -13,6 +13,7 @@ class Profile extends StatefulWidget {
       this.imagestwo})
       : super(key: key);
 
+
   var name;
   var phone;
   var address;
