@@ -248,7 +248,7 @@ Widget defultForm ({
   prefixIcon,
   double circular=10,
   background,
-  color
+  color,
 
 })
 
@@ -270,6 +270,7 @@ Widget defultForm ({
         labelText: labelText,
 
         hintText: hintText,
+        hintStyle: TextStyle(fontSize:20,fontWeight:FontWeight.bold ),
 
         prefixIcon: Icon(prefixIcon),
 
