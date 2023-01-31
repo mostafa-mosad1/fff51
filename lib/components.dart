@@ -382,3 +382,60 @@ Widget recommend ()=>Container(
      )
    ],
  );
+
+
+
+
+Widget categ({image, name}) => Card(
+  color: Colors.white,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(15),
+  ),
+  elevation: 8,
+ // margin: EdgeInsets.all(10),
+  child: Column(
+    children: [
+      Stack(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15),
+              topRight: Radius.circular(15),
+            ),
+            child: Image.asset(
+              "$image",
+              height: 120,
+              width: 180,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ],
+      ),
+      Column(
+        children: [
+          Text("$name",
+              style: TextStyle(
+                fontSize: 27,
+                color: Colors.black,
+                fontWeight: FontWeight.bold
+              )),
+        ],
+      )
+    ],
+  ),
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
