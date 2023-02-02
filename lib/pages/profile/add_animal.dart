@@ -84,7 +84,7 @@ class _add_animalState extends State<add_animal> {
               SizedBox(
                 height: 12,
               ),
-              Text("Last time of vaccation",
+              Text("Recommend time of vaccation",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 27,
@@ -93,31 +93,34 @@ class _add_animalState extends State<add_animal> {
                 height: 12,
               ),
               defultForm(
-                  hintText: "enter date",
-                  Controller: date1,
-                  color: Colors.white,
-                  ontap: () async {
-                    DateTime? pickeddate = await showDatePicker(
-                            context: context,
-                            initialDate: DateTime.now(),
-                            firstDate: DateTime(2000),
-                            lastDate: DateTime(2101))
-                        .then((value) {
-                      date1.text = DateFormat().add_yMMMEd().format(value!);
-                    });
-                    // if(pickeddate != null){
-                    //   setState(() {
-                    //     date1.text =
-                    //   });
-                    // }
-                  }),SizedBox(height: 70,),
+                keyboard:  TextInputType.number,
+                  Controller: date1 ,
+                  hintText: "Recommend of vaccation ",
+                  background: Colors.redAccent,
+                  color: Colors.white),
+              SizedBox(height: 20,),
+              // defultForm(
+              //     hintText: "enter date",
+              //     Controller: date1,
+              //     color: Colors.white,
+              //     ontap: () async {
+              //       DateTime? pickeddate = await showDatePicker(
+              //               context: context,
+              //               initialDate: DateTime.now(),
+              //               firstDate: DateTime(2000),
+              //               lastDate: DateTime(2101))
+              //           .then((value) {
+              //         date1.text = DateFormat().add_d().format(value!);
+              //       });
+              //     }),SizedBox(height: 70,),
               Container(
                 width: 170,
                 decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius
                 .all(Radius.circular(30))),
                 child: MaterialButton(onPressed: (){
+                  print(date1.text);
                  Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                 edit_profile(petimage: imagetwo,petName: petName1.text,)
+                 edit_profile(petimage: imagetwo,petName: petName1.text,time: date1.text,)
                  ));
                 },child: Text("Add",
                 style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Colors.white),

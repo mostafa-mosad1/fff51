@@ -9,9 +9,10 @@ import 'package:image_picker/image_picker.dart';
 
 class edit_profile extends StatefulWidget {
 
-  edit_profile({Key? key, this.petimage,this.petName}) : super(key: key);
+  edit_profile({Key? key, this.petimage,this.petName,this.time}) : super(key: key);
   var petimage;
   var petName;
+  var time;
 
   @override
   State<edit_profile> createState() => _edit_profileState();
@@ -52,8 +53,8 @@ class _edit_profileState extends State<edit_profile> {
                             dynamic y = phoneController.text;
                             dynamic z = addressController.text;
                            setState(() {
-                             if(formKey.currentState!.validate())
-                             {
+                             // if(formKey.currentState!.validate())
+                             // {
                                print(nameController.text);
                                Navigator.of(context).push(MaterialPageRoute(
                                    builder: (c) => Profile(
@@ -62,9 +63,10 @@ class _edit_profileState extends State<edit_profile> {
                                      phone: y,
                                      images: image,
                                      imagestwo: widget.petimage,
-                                     petName: widget.petName
+                                     petName: widget.petName,
+                                     time: widget.time,
                                    )));
-                             }else{print("not vaild");}
+                             // }else{print("not vaild");}
                            });
                             print(nameController.text);
                             // Navigator.of(context).push(MaterialPageRoute(

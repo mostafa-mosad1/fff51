@@ -249,6 +249,7 @@ Widget defultForm ({
   double circular=10,
   background,
   color,
+  keyboard
 
 })
 
@@ -256,30 +257,21 @@ Widget defultForm ({
   width: 280,height: 50,
   child:   TextFormField(
 
-    keyboardType: TextInputType.emailAddress,
-
+    keyboardType:keyboard,
     controller: Controller ,
-
     validator: validator,
-
     onTap: ontap,
-
     decoration: InputDecoration(
       filled: true,
       fillColor: color,
         labelText: labelText,
-
         hintText: hintText,
-        hintStyle: TextStyle(fontSize:20,fontWeight:FontWeight.bold ),
-
+        hintStyle: TextStyle(
+            fontSize: 20, fontWeight: FontWeight.bold),
         prefixIcon: Icon(prefixIcon),
-
         border: OutlineInputBorder(
-
             borderRadius: BorderRadius.circular(circular),
-
             borderSide: BorderSide(color: Colors.redAccent))),
-
   ),
 );
 
@@ -320,13 +312,9 @@ Widget recommend ()=>Container(
     children: [
       SizedBox(width: 10,),
       Image(image: AssetImage("images/cat.jpg"),width: 80,height: 58,),
-
       Text("cat",style: TextStyle(fontWeight: FontWeight.bold,fontSize:30 ),),
-
       Text("250 EL",style: TextStyle(fontWeight: FontWeight.bold,fontSize:28 ),),
-
       IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart,size: 50,))
-
     ],),
 );
  Widget animal({image,nameAnimal}) =>Stack(

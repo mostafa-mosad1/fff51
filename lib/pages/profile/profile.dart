@@ -2,6 +2,7 @@ import 'package:fff/components.dart';
 import 'package:fff/pages/profile/edit_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:slide_countdown/slide_countdown.dart';
 
 class Profile extends StatefulWidget {
   Profile(
@@ -11,7 +12,8 @@ class Profile extends StatefulWidget {
       this.phone,
       this.address,
       this.imagestwo,
-        this.petName})
+        this.petName,
+      this.time})
       : super(key: key);
 
 
@@ -21,6 +23,7 @@ class Profile extends StatefulWidget {
   var images;
   var imagestwo;
   var petName;
+  var time;
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -140,7 +143,7 @@ class _ProfileState extends State<Profile> {
                     Center(
                         child: Container(
                       width: 370,
-                      height: 275,
+                      height: 300,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(width: 2, color: Colors.black),
@@ -177,8 +180,9 @@ class _ProfileState extends State<Profile> {
                                     Container(
                                       margin: EdgeInsets.only(
                                           left: 13, top: 10, bottom: 10),
-                                      width: 160,
-                                      height: 175,
+                                      width: 199,
+                                      height: 210,
+                                      alignment: Alignment.topRight,
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
                                               image:
@@ -188,6 +192,12 @@ class _ProfileState extends State<Profile> {
                                               width: 2, color: Colors.black),
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(15))),
+                                      child:  Padding(
+                                        padding: EdgeInsets.all(1.0),
+                                        child: SlideCountdown(
+                                          duration: Duration(days: 2),
+                                        ),
+                                      ),
                                     ),
                                     Positioned(
                                       bottom: 11,
@@ -230,8 +240,9 @@ class _ProfileState extends State<Profile> {
                                     Container(
                                       margin: EdgeInsets.only(
                                           left: 13, top: 10, bottom: 10),
-                                      width: 160,
-                                      height: 175,
+                                      width: 199,
+                                      height: 210,
+                                      alignment: Alignment.topRight,
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
                                               image:
@@ -241,6 +252,12 @@ class _ProfileState extends State<Profile> {
                                               width: 2, color: Colors.black),
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(15))),
+                                      child:  Padding(
+                                        padding: EdgeInsets.all(1.0),
+                                        child: SlideCountdown(
+                                          duration: Duration(days: 2),
+                                        ),
+                                      ),
                                     ),
                                     Positioned(
                                       bottom: 11,
@@ -337,8 +354,9 @@ class _ProfileState extends State<Profile> {
                                         ? Container(
                                             margin: EdgeInsets.only(
                                                 left: 13, top: 10, bottom: 10),
-                                            width: 160,
-                                            height: 175,
+                                            width: 199,
+                                            height: 210,
+                                            alignment: Alignment.topRight,
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     image: FileImage(
@@ -349,6 +367,12 @@ class _ProfileState extends State<Profile> {
                                                     color: Colors.black),
                                                 borderRadius: BorderRadius.all(
                                                     Radius.circular(15))),
+                                      child:  Padding(
+                                        padding: EdgeInsets.all(1.0),
+                                        child: SlideCountdown(
+                                          duration: Duration(days: widget.time.hashCode),
+                                        ),
+                                      ),
                                           )
                                         : Container(),
                                     Positioned(
@@ -382,20 +406,13 @@ class _ProfileState extends State<Profile> {
                                                   fontSize: 20),
                                             ),
                                           ),
+
                                         ),
                                       ),
                                     )
                                   ],
                                 ),
-                                // animal(nameAnimal: "REX",image: "images/pro2.jpg"),
-                                // animal(nameAnimal: "Mavi",image: "images/pro3.jpg"),
-                                // animal(nameAnimal: "REX",image: "images/pro2.jpg"),
-                                // animal(nameAnimal: "Mavi",image: "images/pro3.jpg"),
-                                // widget.imagestwo!=null?
-                                // animal(
-                                //     nameAnimal: "kolo",
-                                //     image: FileImage(widget.imagestwo)
-                                // ):Container(),
+
                                 SizedBox(
                                   width: 12,
                                 ),
