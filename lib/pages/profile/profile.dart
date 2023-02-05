@@ -177,7 +177,9 @@ class _ProfileState extends State<Profile> {
                               children: [
                                 Dismissible(
                                   key:UniqueKey(),
-                                  direction: DismissDirection.vertical,                                  child: Stack(
+                                  background: Container(color: Colors.red,child: Icon(Icons.delete,size: 60,),),
+                                  direction: DismissDirection.vertical,
+                                  child: Stack(
                                     children: [
                                       Container(
                                         margin: EdgeInsets.only(
@@ -240,7 +242,9 @@ class _ProfileState extends State<Profile> {
                                 ),
                                 Dismissible(
                                   key:UniqueKey(),
-                                  direction: DismissDirection.vertical,                                  child: Stack(
+                                  background: Container(color: Colors.red,child: Icon(Icons.delete,size: 60,),),
+                                  direction: DismissDirection.vertical,
+                                  child: Stack(
                                     children: [
                                       Container(
                                         margin: EdgeInsets.only(
@@ -304,13 +308,14 @@ class _ProfileState extends State<Profile> {
                                 Dismissible(
                                   key:UniqueKey(),
                                   direction: DismissDirection.vertical,
+                                  background: Container(color: Colors.red,child: Icon(Icons.delete,size: 60,),),
                                   child: Stack(
                                     children: [
                                       Container(
                                         margin: EdgeInsets.only(
                                             left: 13, top: 10, bottom: 10),
-                                        width: 160,
-                                        height: 175,
+                                        width: 199,
+                                        height: 210,
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
                                                 image:
@@ -358,69 +363,74 @@ class _ProfileState extends State<Profile> {
                                     ],
                                   ),
                                 ),
-                                Stack(
-                                  children: [
-                                    widget.imagestwo != null
-                                        ? Container(
-                                            margin: EdgeInsets.only(
-                                                left: 13, top: 10, bottom: 10),
-                                            width: 199,
-                                            height: 210,
-                                            alignment: Alignment.topRight,
-                                            decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                    image: FileImage(
-                                                        widget.imagestwo),
-                                                    fit: BoxFit.cover),
-                                                border: Border.all(
-                                                    width: 2,
-                                                    color: Colors.black),
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(15))),
-                                      child:  Padding(
-                                        padding: EdgeInsets.all(1.0),
-                                        child: SlideCountdown(
-                                          duration: Duration(days: widget.time.hashCode),
-                                        ),
-                                      ),
-                                          )
-                                        : Container(),
-                                    Positioned(
-                                      bottom: 11,
-                                      right: 1,
-                                      left: 15,
-                                      child: Center(
-                                        child: Container(
-                                          height: 35,
-                                          decoration: BoxDecoration(
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.black26,
-                                                )
-                                              ],
-                                              borderRadius: BorderRadius.only(
-                                                  bottomRight:
-                                                      Radius.circular(15),
-                                                  bottomLeft:
+                                Dismissible(
+                                  key:UniqueKey(),
+                                  direction: DismissDirection.vertical,
+                                  background: Container(color: Colors.red,child: Icon(Icons.delete,size: 60,),),
+                                  child: Stack(
+                                    children: [
+                                      widget.imagestwo != null
+                                          ? Container(
+                                              margin: EdgeInsets.only(
+                                                  left: 13, top: 10, bottom: 10),
+                                              width: 199,
+                                              height: 210,
+                                              alignment: Alignment.topRight,
+                                              decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: FileImage(
+                                                          widget.imagestwo),
+                                                      fit: BoxFit.cover),
+                                                  border: Border.all(
+                                                      width: 2,
+                                                      color: Colors.black),
+                                                  borderRadius: BorderRadius.all(
                                                       Radius.circular(15))),
-                                          width: 197,
-                                          child: Center(
-                                            child: Text(
-                                              "${widget.petName}",
-                                              style: TextStyle(
-                                                  decoration:
-                                                      TextDecoration.underline,
-                                                  decorationColor: Colors.green,
-                                                  decorationThickness: 2,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 20),
-                                            ),
+                                        child:  Padding(
+                                          padding: EdgeInsets.all(1.0),
+                                          child: SlideCountdown(
+                                            duration: Duration(days: 30),
                                           ),
-
                                         ),
-                                      ),
-                                    )
-                                  ],
+                                            )
+                                          : Container(),
+                                      Positioned(
+                                        bottom: 11,
+                                        right: 1,
+                                        left: 15,
+                                        child: Center(
+                                          child: Container(
+                                            height: 35,
+                                            decoration: BoxDecoration(
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    color: Colors.black26,
+                                                  )
+                                                ],
+                                                borderRadius: BorderRadius.only(
+                                                    bottomRight:
+                                                        Radius.circular(15),
+                                                    bottomLeft:
+                                                        Radius.circular(15))),
+                                            width: 197,
+                                            child: Center(
+                                              child: Text(
+                                                "${widget.petName}",
+                                                style: TextStyle(
+                                                    decoration:
+                                                        TextDecoration.underline,
+                                                    decorationColor: Colors.green,
+                                                    decorationThickness: 2,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 20),
+                                              ),
+                                            ),
+
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
 
                                 SizedBox(
