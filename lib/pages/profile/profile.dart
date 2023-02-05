@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fff/components.dart';
 import 'package:fff/pages/profile/edit_profile.dart';
 import 'package:flutter/cupertino.dart';
@@ -175,65 +177,69 @@ class _ProfileState extends State<Profile> {
                             scrollDirection: Axis.horizontal,
                             child: Row(
                               children: [
-                                Stack(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 13, top: 10, bottom: 10),
-                                      width: 199,
-                                      height: 210,
-                                      alignment: Alignment.topRight,
-                                      decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image:
-                                                  AssetImage("images/pro2.jpg"),
-                                              fit: BoxFit.cover),
-                                          border: Border.all(
-                                              width: 2, color: Colors.black),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(15))),
-                                      child:  Padding(
-                                        padding: EdgeInsets.all(1.0),
-                                        child: SlideCountdown(
-                                          duration: Duration(days: 2),
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 11,
-                                      right: 1,
-                                      left: 15,
-                                      child: Center(
-                                        child: Container(
-                                          height: 35,
-                                          decoration: BoxDecoration(
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.black26,
-                                                )
-                                              ],
-                                              borderRadius: BorderRadius.only(
-                                                  bottomRight:
-                                                      Radius.circular(15),
-                                                  bottomLeft:
-                                                      Radius.circular(15))),
-                                          width: 160,
-                                          child: Center(
-                                            child: Text(
-                                              "Rex",
-                                              style: TextStyle(
-                                                  decoration:
-                                                      TextDecoration.underline,
-                                                  decorationColor: Colors.green,
-                                                  decorationThickness: 2,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 20),
-                                            ),
+                                Dismissible(
+                                  key: Key(mounted.toString()),
+                                  direction: DismissDirection.down,
+                                  child: Stack(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(
+                                            left: 13, top: 10, bottom: 10),
+                                        width: 199,
+                                        height: 210,
+                                        alignment: Alignment.topRight,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                image:
+                                                    AssetImage("images/pro2.jpg"),
+                                                fit: BoxFit.cover),
+                                            border: Border.all(
+                                                width: 2, color: Colors.black),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(15))),
+                                        child:  Padding(
+                                          padding: EdgeInsets.all(1.0),
+                                          child: SlideCountdown(
+                                            duration: Duration(days: 2),
                                           ),
                                         ),
                                       ),
-                                    )
-                                  ],
+                                      Positioned(
+                                        bottom: 11,
+                                        right: 1,
+                                        left: 15,
+                                        child: Center(
+                                          child: Container(
+                                            height: 35,
+                                            decoration: BoxDecoration(
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    color: Colors.black26,
+                                                  )
+                                                ],
+                                                borderRadius: BorderRadius.only(
+                                                    bottomRight:
+                                                        Radius.circular(15),
+                                                    bottomLeft:
+                                                        Radius.circular(15))),
+                                            width: 160,
+                                            child: Center(
+                                              child: Text(
+                                                "Rex",
+                                                style: TextStyle(
+                                                    decoration:
+                                                        TextDecoration.underline,
+                                                    decorationColor: Colors.green,
+                                                    decorationThickness: 2,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 20),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                                 Stack(
                                   children: [
@@ -278,18 +284,19 @@ class _ProfileState extends State<Profile> {
                                                   bottomLeft:
                                                       Radius.circular(15))),
                                           width: 160,
-                                          child: Center(
-                                            child: Text(
+                                          child:Row(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [ Text(
                                               "Mavi",
                                               style: TextStyle(
                                                   decoration:
-                                                      TextDecoration.underline,
+                                                  TextDecoration.underline,
                                                   decorationColor: Colors.green,
                                                   decorationThickness: 2,
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 20),
                                             ),
-                                          ),
+                                          // SizedBox(width: 30,),
+                                          IconButton(onPressed: (){}, icon: Icon(Icons.delete_forever,color: Colors.redAccent,))],)
                                         ),
                                       ),
                                     )
@@ -300,8 +307,8 @@ class _ProfileState extends State<Profile> {
                                     Container(
                                       margin: EdgeInsets.only(
                                           left: 13, top: 10, bottom: 10),
-                                      width: 160,
-                                      height: 175,
+                                      width: 199,
+                                      height:210,
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
                                               image:
@@ -332,16 +339,19 @@ class _ProfileState extends State<Profile> {
                                                       Radius.circular(15))),
                                           width: 160,
                                           child: Center(
-                                            child: Text(
-                                              "Rex",
-                                              style: TextStyle(
-                                                  decoration:
-                                                      TextDecoration.underline,
-                                                  decorationColor: Colors.green,
-                                                  decorationThickness: 2,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 20),
-                                            ),
+                                            child: Row(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [ Text(
+                                                "REX",
+                                                style: TextStyle(
+                                                    decoration:
+                                                    TextDecoration.underline,
+                                                    decorationColor: Colors.green,
+                                                    decorationThickness: 2,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 20),
+                                              ),
+                                                // SizedBox(width: 30,),
+                                                IconButton(onPressed: (){}, icon: Icon(Icons.delete_forever,color: Colors.redAccent,))],),
                                           ),
                                         ),
                                       ),
@@ -370,6 +380,7 @@ class _ProfileState extends State<Profile> {
                                       child:  Padding(
                                         padding: EdgeInsets.all(1.0),
                                         child: SlideCountdown(
+                                          //widget.time.hashCode
                                           duration: Duration(days: widget.time.hashCode),
                                         ),
                                       ),
@@ -395,16 +406,20 @@ class _ProfileState extends State<Profile> {
                                                       Radius.circular(15))),
                                           width: 160,
                                           child: Center(
-                                            child: Text(
-                                              "${widget.petName}",
-                                              style: TextStyle(
-                                                  decoration:
-                                                      TextDecoration.underline,
-                                                  decorationColor: Colors.green,
-                                                  decorationThickness: 2,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 20),
-                                            ),
+                                             child:Row(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.center,
+                                               children: [ Text(
+                                                 "${widget.petName}",
+                                                 style: TextStyle(
+                                                     decoration:
+                                                     TextDecoration.underline,
+                                                     decorationColor: Colors.green,
+                                                     decorationThickness: 2,
+                                                     fontWeight: FontWeight.bold,
+                                                     fontSize: 20),
+                                               ),
+                                                 // SizedBox(width: 30,),
+                                                 IconButton(onPressed: (){}, icon: Icon(Icons.delete_forever,color: Colors.redAccent,))],),
+
                                           ),
 
                                         ),

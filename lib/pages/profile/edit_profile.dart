@@ -544,7 +544,7 @@ class _edit_profileState extends State<edit_profile> {
                                               width: 160,
                                               child: Center(
                                                 child: Text(
-                                                  "Kolo",
+                                                  "${widget.petName}",
                                                   style: TextStyle(
                                                       decoration: TextDecoration
                                                           .underline,
