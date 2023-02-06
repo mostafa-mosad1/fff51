@@ -14,6 +14,7 @@ class _DogDataState extends State<DogData> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+
         Container(
           width: double.infinity,
           height: double.infinity,
@@ -23,29 +24,11 @@ class _DogDataState extends State<DogData> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 35,
-                height: 35,
-                decoration: BoxDecoration(
-                    color: Colors.white12,
-                    border: Border.all(width: 1.5),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                margin: EdgeInsets.all(10),
-                child: IconButton(
-                    padding: EdgeInsets.only(right: 1.5, bottom: 1.5),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(
-                      Icons.arrow_back,
-                      size: 25,
-                    )),
-              ),
               Stack(
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 550,
+                    height: 590,
                     decoration: BoxDecoration(
                         color: Colors.white70,
                         borderRadius: BorderRadius.only(
@@ -54,17 +37,39 @@ class _DogDataState extends State<DogData> {
                   ),
                   Column(
                     children: [
-                      Container(
-                        width: double.infinity,
-                        height: 300,
-                        decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(25),
-                                bottomRight: Radius.circular(25)),
-                            image: DecorationImage(
-                                image: AssetImage(widget.datadog['image']))),
+                      Stack(
+                        children: [
+                          Container(
+                            width: double.infinity,
+                            height: 295,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(25),
+                                    bottomRight: Radius.circular(25)),
+                                image: DecorationImage(
+                                    image: AssetImage(widget.datadog['image']))),
+                          ),
+                          Container(
+                            width: 35,
+                            height: 35,
+                            decoration: BoxDecoration(
+                                color: Colors.white12,
+                                border: Border.all(width: 1.5),
+                                borderRadius: BorderRadius.all(Radius.circular(10))),
+                            margin: EdgeInsets.all(10),
+                            child: IconButton(
+                                padding: EdgeInsets.only(right: 1.5, bottom: 1.5),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                icon: Icon(
+                                  Icons.arrow_back,
+                                  size: 25,
+                                )),
+                          ),
+                        ],
                       ),
+                      SizedBox(height: 10,),
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
