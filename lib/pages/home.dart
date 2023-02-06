@@ -21,7 +21,17 @@ class _homeState extends State<home> {
         body: SingleChildScrollView(
           child: Container(
             color: Colors.grey[400],
-            child: Column(children: [
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Hello Dear",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+              ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Lets shop something!",style: TextStyle(fontSize: 18,color: Colors.white),),
+                ),
               Container(
                 height: 230,
                 width: double.infinity,
