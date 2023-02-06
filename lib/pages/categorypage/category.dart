@@ -31,22 +31,22 @@ class _categoryState extends State<category> {
             InkWell(
                 onTap: () => Navigator.of(context)
                     .push(MaterialPageRoute(builder: (c) => Dog())),
-                child: categ(name: "Hamster", image: "images/cat.jpg")),
+                child: categ(name: "Hamster", image: "images/hamaster.jpg")),
             InkWell(
                 onTap: () => Navigator.of(context)
                     .push(MaterialPageRoute(builder: (c) => Dog())),
-                child: categ(name: "Dog", image: "images/cat.jpg")),
+                child: categ(name: "Dog", image: "images/dog1.jpg")),
             InkWell(
                 onTap: () => Navigator.of(context)
                     .push(MaterialPageRoute(builder: (c) => Dog())),
-                child: categ(name: "Bird", image: "images/cat.jpg")),
+                child: categ(name: "Bird", image: "images/bird.jpg")),
           ]),
       Row(mainAxisAlignment:MainAxisAlignment.center,
         children: [
         InkWell(
             onTap: () => Navigator.of(context)
                 .push(MaterialPageRoute(builder: (c) => Dog())),
-            child: categ(name: "Fish", image: "images/cat.jpg")),
+            child: categ(name: "Fish", image: "images/fish.jpg")),
       ],)
     ]);
   }

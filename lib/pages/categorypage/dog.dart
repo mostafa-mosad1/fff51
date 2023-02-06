@@ -104,8 +104,8 @@ class _DogState extends State<Dog> {
                 itemCount: images.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 1,
+                  mainAxisSpacing: 1,
                   childAspectRatio: 1,
                 ),
                 itemBuilder: (context, i) {
