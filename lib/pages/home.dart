@@ -38,6 +38,7 @@ class _homeState extends State<home> {
                     AssetImage("images/8.jpg"),
                     AssetImage("images/fish.jpg"),
                     AssetImage("images/dog1.jpg"),
+                    AssetImage("images/bird.jpg"),
                   ],
                   dotSize: 2,
                   dotIncreaseSize: 2,

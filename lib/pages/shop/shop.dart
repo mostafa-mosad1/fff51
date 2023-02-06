@@ -34,8 +34,9 @@ class _shopState extends State<shop> {
                 images: [
                   AssetImage("images/7.png"),
                   AssetImage("images/8.jpg"),
-                  AssetImage("images/5.jpg"),
-                  AssetImage("images/9.jpg"),
+                  AssetImage("images/fish.jpg"),
+                  AssetImage("images/dog1.jpg"),
+                  AssetImage("images/bird.jpg"),
                 ],
                 dotSize: 4,
                 dotIncreaseSize: 2,
