@@ -14,7 +14,7 @@ class category extends StatefulWidget {
 class _categoryState extends State<category> {
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
+    return Column(children: [
       Container(color: Colors.grey[400]),
       GridView.count(
         //  primary: false,
@@ -40,11 +40,14 @@ class _categoryState extends State<category> {
                 onTap: () => Navigator.of(context)
                     .push(MaterialPageRoute(builder: (c) => Dog())),
                 child: categ(name: "Bird", image: "images/cat.jpg")),
-            InkWell(
-                onTap: () => Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (c) => Dog())),
-                child: categ(name: "Fish", image: "images/cat.jpg")),
-          ])
+          ]),
+      Row(mainAxisAlignment:MainAxisAlignment.center,
+        children: [
+        InkWell(
+            onTap: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (c) => Dog())),
+            child: categ(name: "Fish", image: "images/cat.jpg")),
+      ],)
     ]);
   }
 }

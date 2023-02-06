@@ -1,6 +1,10 @@
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:fff/pages/categorypage/category.dart';
+import 'package:fff/pages/shop/pet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'doctorpage/doctors.dart';
 
 class home extends StatefulWidget {
   const home({Key? key}) : super(key: key);
@@ -43,6 +47,8 @@ class _homeState extends State<home> {
                 ),
               ),
               InkWell(
+                onTap: () => Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (c) => pet())),
                 child: ListTile(title: Text("SHOP",style: TextStyle(fontWeight: FontWeight.bold,
                   fontSize: 30,
                    decoration:TextDecoration.underline,
@@ -165,6 +171,8 @@ class _homeState extends State<home> {
               ),
              // SizedBox(height: 300,),
               InkWell(
+                onTap: () => Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (c) => doctors())),
                 child: ListTile(title: Text("Doctor",style: TextStyle(fontWeight: FontWeight.bold,
                   fontSize: 30,
                   decoration:TextDecoration.underline,
@@ -246,6 +254,8 @@ class _homeState extends State<home> {
                         itemCount: 7)),
               ),
               InkWell(
+                onTap: () => Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (c) => category())),
                 child: ListTile(title: Text("CATEGORY",style: TextStyle(fontWeight: FontWeight.bold,
                   fontSize: 30,
                   decoration:TextDecoration.underline,
