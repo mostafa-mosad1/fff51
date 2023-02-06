@@ -20,21 +20,7 @@ class home_management extends StatefulWidget {
 }
 
 class _home_managementState extends State<home_management> {
-  final items = <Widget>[
-    Icon(Icons.shopping_cart, size: 40),
-    Icon(Icons.dashboard_customize_outlined, size: 40),
-    Icon(
-      Icons.home,
-      size: 50,
-    ),
-    Icon(
-      Icons.pets,
-      size: 40,
-    ),
-    Icon(Icons.person_pin, size: 40),
-  ];
-
-  int index = 0;
+  int index = 2;
   List<Widget> pages = [shop(), category(), home(), doctors(), Profile(name: '',address: " ",phone: " ",)];
   @override
   Widget build(BuildContext context) {
@@ -106,53 +92,25 @@ class _home_managementState extends State<home_management> {
                 items: [
                   BottomNavigationBarItem(
                       icon: Icon(
-                        Icons.shop_2_outlined,
+                        Icons.shop_2_outlined),
+                    label: "Shop",
                       ),
-                      label: "Shop",
-
-                      // activeIcon: Text(
-                      //   "Shop",
-                      //   style: TextStyle(
-                      //       fontSize: 25, fontWeight: FontWeight.bold),
-                      // )
-                  ),
                   BottomNavigationBarItem(
                       icon: Icon(Icons.dashboard_customize_outlined),
                       label: "Category"
-                      // activeIcon: Text(
-                      //   "Category",
-                      //   style: TextStyle(
-                      //       fontSize: 19, fontWeight: FontWeight.bold),
-                      // )
                      ),
                   BottomNavigationBarItem(
                       icon: Icon(Icons.home),
                       label: "Home"
-                      // activeIcon: Text(
-                      //   "Home",
-                      //   style: TextStyle(
-                      //       fontSize: 25, fontWeight: FontWeight.bold),
-                      // )
                   ),
                   BottomNavigationBarItem(
                       icon: Icon(Icons.medical_information),
                       label: "Doctor"
-                    // activeIcon: Text(
-                      //   "Doctors",
-                      //   style: TextStyle(
-                      //       fontSize: 20, fontWeight: FontWeight.bold),
-                      // )
-                  ),
+                     ),
                   BottomNavigationBarItem(
                       icon: Icon(Icons.person_pin),
-                      label: "Profile",
-
-                    // activeIcon: Text(
-                      //   "Perfile",
-                      //   style: TextStyle(
-                      //       fontSize: 25, fontWeight: FontWeight.bold),
-                      // )
-                  ),
+                    label: "profile"
+                    ),
                 ],
               ),
               tabBuilder: (BuildContext context, int index) {
