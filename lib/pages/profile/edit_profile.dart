@@ -8,22 +8,32 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class edit_profile extends StatefulWidget {
-
-  edit_profile({Key? key, this.petimage,this.petName,this.time}) : super(key: key);
+  edit_profile(
+      {Key? key,
+      this.petimage,
+      this.petName,
+      this.time,
+      this.nameed,
+      this.phoneed,
+      this.addressed})
+      : super(key: key);
   var petimage;
   var petName;
   var time;
+  var nameed;
+  var phoneed;
+  var addressed;
 
   @override
   State<edit_profile> createState() => _edit_profileState();
 }
 
 class _edit_profileState extends State<edit_profile> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController addressController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
   var image;
-  var formKey = GlobalKey<FormState>();
+  var nameController;
+  var addressController;
+  var phoneController;
+  GlobalKey<FormState> formKey = new GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,7 +50,7 @@ class _edit_profileState extends State<edit_profile> {
               fit: BoxFit.fill,
             ),
             Form(
-              key: formKey ,
+              key: formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -49,34 +59,23 @@ class _edit_profileState extends State<edit_profile> {
                       alignment: Alignment.topRight,
                       child: IconButton(
                           onPressed: () {
-                            dynamic x = nameController.text;
-                            dynamic y = phoneController.text;
-                            dynamic z = addressController.text;
-                           setState(() {
-                             // if(formKey.currentState!.validate())
-                             // {
-                               print(nameController.text);
-                               Navigator.of(context).push(MaterialPageRoute(
-                                   builder: (c) => Profile(
-                                     name: x,
-                                     address: z,
-                                     phone: y,
-                                     images: image,
-                                     imagestwo: widget.petimage,
-                                     petName: widget.petName,
-                                     time: widget.time,
-                                   )));
-                             // }else{print("not vaild");}
-                           });
-                            print(nameController.text);
-                            // Navigator.of(context).push(MaterialPageRoute(
-                            //     builder: (c) => Profile(
-                            //           name: x,
-                            //           address: z,
-                            //           phone: y,
-                            //           images: image,
-                            //           imagestwo: widget.petimage,
-                            //         )));
+                            var formdata = formKey.currentState;
+                            if (formdata!.validate()) {
+                              formdata.save();
+                              print("valid");
+                            } else {
+                              print("not valid");
+                            }
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (c) => Profile(
+                                      name: nameController,
+                                      phone: phoneController,
+                                      address: addressController,
+                                      images: image,
+                                      imagestwo: widget.petimage,
+                                      petName: widget.petName,
+                                      time: widget.time,
+                                    )));
                           },
                           icon: Icon(
                             Icons.task_alt_outlined,
@@ -122,7 +121,8 @@ class _edit_profileState extends State<edit_profile> {
                                                 "Choose photo from",
                                                 style: TextStyle(
                                                     fontSize: 30,
-                                                    fontWeight: FontWeight.bold),
+                                                    fontWeight:
+                                                        FontWeight.bold),
                                               ),
                                             ),
                                             SizedBox(
@@ -131,9 +131,10 @@ class _edit_profileState extends State<edit_profile> {
                                             MaterialButton(
                                               onPressed: () async {
                                                 var pickedImage =
-                                                    await ImagePicker().pickImage(
-                                                        source:
-                                                            ImageSource.camera);
+                                                    await ImagePicker()
+                                                        .pickImage(
+                                                            source: ImageSource
+                                                                .camera);
                                                 if (pickedImage != null) {
                                                   setState(() {
                                                     image =
@@ -164,9 +165,10 @@ class _edit_profileState extends State<edit_profile> {
                                             MaterialButton(
                                               onPressed: () async {
                                                 var pickedImage =
-                                                    await ImagePicker().pickImage(
-                                                        source:
-                                                            ImageSource.gallery);
+                                                    await ImagePicker()
+                                                        .pickImage(
+                                                            source: ImageSource
+                                                                .gallery);
                                                 if (pickedImage != null) {
                                                   setState(() {
                                                     image =
@@ -213,11 +215,13 @@ class _edit_profileState extends State<edit_profile> {
                         margin: EdgeInsets.only(
                             top: 10, bottom: 10, right: 25, left: 25),
                         child: defultForm(
-                            labelText: "Name",
-                            hintText: "Mohamed Ahamed",
-                            Controller: nameController,
-                        validator: (value) =>
-                        value!.isEmpty ? "enter a valid Name" : null,)),
+                            initialvalue: widget.nameed,
+                            onsaved: (val) {
+                              nameController = val;
+                            },
+                            labelText: "name",
+                            validator: (value) =>
+                                value!.isEmpty ? "enter a valid Name" : null)),
                   ),
                   Center(
                     child: Text(
@@ -246,10 +250,14 @@ class _edit_profileState extends State<edit_profile> {
                         Container(
                             alignment: Alignment.topLeft,
                             child: defultForm(
-                                hintText: "phone",
-                                Controller: phoneController,
-                            validator:(value) =>
-                            value!.isEmpty ? "enter a valid Phone" : null,)),
+                              initialvalue: widget.phoneed,
+                              onsaved: (val) {
+                                phoneController = val;
+                              },
+                              labelText: "phone",
+                              validator: (value) =>
+                                  value!.isEmpty ? "enter a valid Phone" : null,
+                            )),
                         SizedBox(
                           height: 8,
                         ),
@@ -267,10 +275,14 @@ class _edit_profileState extends State<edit_profile> {
                         Container(
                             alignment: Alignment.topLeft,
                             child: defultForm(
-                                hintText: "Address",
-                                Controller: addressController,
-                            // validator: (value) =>
-                            // value!.isEmpty ? "enter a valid Address" : null,
+                              initialvalue: widget.addressed,
+                              onsaved: (val) {
+                                addressController = val;
+                              },
+                              labelText: "address",
+                              validator: (value) => value!.isEmpty
+                                  ? "enter a valid Address"
+                                  : null,
                             )),
                         SizedBox(
                           height: 12,
@@ -290,7 +302,8 @@ class _edit_profileState extends State<edit_profile> {
                                 height: 5,
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   SizedBox(
                                     width: 75,
@@ -350,7 +363,8 @@ class _edit_profileState extends State<edit_profile> {
                                                       "images/pro2.jpg"),
                                                   fit: BoxFit.cover),
                                               border: Border.all(
-                                                  width: 2, color: Colors.black),
+                                                  width: 2,
+                                                  color: Colors.black),
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(15))),
                                         ),
@@ -367,11 +381,14 @@ class _edit_profileState extends State<edit_profile> {
                                                       color: Colors.black26,
                                                     )
                                                   ],
-                                                  borderRadius: BorderRadius.only(
-                                                      bottomRight:
-                                                          Radius.circular(15),
-                                                      bottomLeft:
-                                                          Radius.circular(15))),
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                          bottomRight:
+                                                              Radius.circular(
+                                                                  15),
+                                                          bottomLeft:
+                                                              Radius.circular(
+                                                                  15))),
                                               width: 160,
                                               child: Center(
                                                 child: Text(
@@ -382,7 +399,8 @@ class _edit_profileState extends State<edit_profile> {
                                                       decorationColor:
                                                           Colors.green,
                                                       decorationThickness: 2,
-                                                      fontWeight: FontWeight.bold,
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                       fontSize: 20),
                                                 ),
                                               ),
@@ -404,7 +422,8 @@ class _edit_profileState extends State<edit_profile> {
                                                       "images/pro3.jpg"),
                                                   fit: BoxFit.cover),
                                               border: Border.all(
-                                                  width: 2, color: Colors.black),
+                                                  width: 2,
+                                                  color: Colors.black),
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(15))),
                                         ),
@@ -421,11 +440,14 @@ class _edit_profileState extends State<edit_profile> {
                                                       color: Colors.black26,
                                                     )
                                                   ],
-                                                  borderRadius: BorderRadius.only(
-                                                      bottomRight:
-                                                          Radius.circular(15),
-                                                      bottomLeft:
-                                                          Radius.circular(15))),
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                          bottomRight:
+                                                              Radius.circular(
+                                                                  15),
+                                                          bottomLeft:
+                                                              Radius.circular(
+                                                                  15))),
                                               width: 160,
                                               child: Center(
                                                 child: Text(
@@ -436,7 +458,8 @@ class _edit_profileState extends State<edit_profile> {
                                                       decorationColor:
                                                           Colors.green,
                                                       decorationThickness: 2,
-                                                      fontWeight: FontWeight.bold,
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                       fontSize: 20),
                                                 ),
                                               ),
@@ -458,7 +481,8 @@ class _edit_profileState extends State<edit_profile> {
                                                       "images/pro2.jpg"),
                                                   fit: BoxFit.cover),
                                               border: Border.all(
-                                                  width: 2, color: Colors.black),
+                                                  width: 2,
+                                                  color: Colors.black),
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(15))),
                                         ),
@@ -475,11 +499,14 @@ class _edit_profileState extends State<edit_profile> {
                                                       color: Colors.black26,
                                                     )
                                                   ],
-                                                  borderRadius: BorderRadius.only(
-                                                      bottomRight:
-                                                          Radius.circular(15),
-                                                      bottomLeft:
-                                                          Radius.circular(15))),
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                          bottomRight:
+                                                              Radius.circular(
+                                                                  15),
+                                                          bottomLeft:
+                                                              Radius.circular(
+                                                                  15))),
                                               width: 160,
                                               child: Center(
                                                 child: Text(
@@ -490,7 +517,8 @@ class _edit_profileState extends State<edit_profile> {
                                                       decorationColor:
                                                           Colors.green,
                                                       decorationThickness: 2,
-                                                      fontWeight: FontWeight.bold,
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                       fontSize: 20),
                                                 ),
                                               ),
@@ -500,7 +528,6 @@ class _edit_profileState extends State<edit_profile> {
                                       ],
                                     ),
                                     Stack(
-
                                       children: [
                                         widget.petimage != null
                                             ? Container(
@@ -520,7 +547,8 @@ class _edit_profileState extends State<edit_profile> {
                                                         color: Colors.black),
                                                     borderRadius:
                                                         BorderRadius.all(
-                                                            Radius.circular(15))),
+                                                            Radius.circular(
+                                                                15))),
                                               )
                                             : Container(),
                                         Positioned(
@@ -536,11 +564,14 @@ class _edit_profileState extends State<edit_profile> {
                                                       color: Colors.black26,
                                                     )
                                                   ],
-                                                  borderRadius: BorderRadius.only(
-                                                      bottomRight:
-                                                          Radius.circular(15),
-                                                      bottomLeft:
-                                                          Radius.circular(15))),
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                          bottomRight:
+                                                              Radius.circular(
+                                                                  15),
+                                                          bottomLeft:
+                                                              Radius.circular(
+                                                                  15))),
                                               width: 160,
                                               child: Center(
                                                 child: Text(
@@ -551,7 +582,8 @@ class _edit_profileState extends State<edit_profile> {
                                                       decorationColor:
                                                           Colors.green,
                                                       decorationThickness: 2,
-                                                      fontWeight: FontWeight.bold,
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                       fontSize: 20),
                                                 ),
                                               ),

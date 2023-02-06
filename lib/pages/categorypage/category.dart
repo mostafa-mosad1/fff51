@@ -1,5 +1,5 @@
 import 'package:fff/components.dart';
-import 'package:fff/dog.dart';
+import 'package:fff/pages/categorypage/dog.dart';
 import 'package:fff/pages/shop/pet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

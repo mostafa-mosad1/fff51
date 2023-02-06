@@ -12,10 +12,9 @@ class Profile extends StatefulWidget {
       this.phone,
       this.address,
       this.imagestwo,
-        this.petName,
+      this.petName,
       this.time})
       : super(key: key);
-
 
   var name;
   var phone;
@@ -30,6 +29,10 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  var na = "Mohamed Ahmed";
+  var ph = "012233445556";
+  var ad = "30 homs st, mansora";
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,7 +57,11 @@ class _ProfileState extends State<Profile> {
                     child: IconButton(
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (c) => edit_profile()));
+                              builder: (c) => edit_profile(
+                                    nameed: na,
+                                    phoneed: ph,
+                                    addressed: ad,
+                                  )));
                         },
                         icon: Icon(
                           Icons.settings,
@@ -81,11 +88,17 @@ class _ProfileState extends State<Profile> {
                             width: 190,
                             height: 190)),
                 Center(
-                  child: Text(
-                    "${widget.name}",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                  ),
-                ),
+                    child: widget.name != null
+                        ? Text(
+                            "${widget.name}",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 25),
+                          )
+                        : Text(
+                            "${na}",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 25),
+                          )),
                 Center(
                   child: Text(
                     "@moh_ahmed",
@@ -106,15 +119,22 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                     Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "  ${widget.phone}",
-                        style: TextStyle(
-                            color: Colors.black45,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                    ),
+                        alignment: Alignment.topLeft,
+                        child: widget.phone != null
+                            ? Text(
+                                "  ${widget.phone}",
+                                style: TextStyle(
+                                    color: Colors.black45,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15),
+                              )
+                            : Text(
+                                  "${ph}",
+                                style: TextStyle(
+                                    color: Colors.black45,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15),
+                              )),
                     SizedBox(
                       height: 8,
                     ),
@@ -127,16 +147,22 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                     Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        //30 homs st,Mansoura
-                        "  ${widget.address}",
-                        style: TextStyle(
-                            color: Colors.black45,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                    ),
+                        alignment: Alignment.topLeft,
+                        child: widget.address != null
+                            ? Text(
+                                "  ${widget.address}",
+                                style: TextStyle(
+                                    color: Colors.black45,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15),
+                              )
+                            : Text(
+                                "${ad}",
+                                style: TextStyle(
+                                    color: Colors.black45,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15),
+                              )),
                     SizedBox(
                       height: 12,
                     ),
@@ -176,8 +202,14 @@ class _ProfileState extends State<Profile> {
                             child: Row(
                               children: [
                                 Dismissible(
-                                  key:UniqueKey(),
-                                  background: Container(color: Colors.red,child: Icon(Icons.delete,size: 60,),),
+                                  key: UniqueKey(),
+                                  background: Container(
+                                    color: Colors.red,
+                                    child: Icon(
+                                      Icons.delete,
+                                      size: 60,
+                                    ),
+                                  ),
                                   direction: DismissDirection.vertical,
                                   child: Stack(
                                     children: [
@@ -189,14 +221,14 @@ class _ProfileState extends State<Profile> {
                                         alignment: Alignment.topRight,
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
-                                                image:
-                                                    AssetImage("images/pro2.jpg"),
+                                                image: AssetImage(
+                                                    "images/pro2.jpg"),
                                                 fit: BoxFit.cover),
                                             border: Border.all(
                                                 width: 2, color: Colors.black),
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(15))),
-                                        child:  Padding(
+                                        child: Padding(
                                           padding: EdgeInsets.all(1.0),
                                           child: SlideCountdown(
                                             duration: Duration(days: 2),
@@ -226,9 +258,10 @@ class _ProfileState extends State<Profile> {
                                               child: Text(
                                                 "Rex",
                                                 style: TextStyle(
-                                                    decoration:
-                                                        TextDecoration.underline,
-                                                    decorationColor: Colors.green,
+                                                    decoration: TextDecoration
+                                                        .underline,
+                                                    decorationColor:
+                                                        Colors.green,
                                                     decorationThickness: 2,
                                                     fontWeight: FontWeight.bold,
                                                     fontSize: 20),
@@ -241,8 +274,14 @@ class _ProfileState extends State<Profile> {
                                   ),
                                 ),
                                 Dismissible(
-                                  key:UniqueKey(),
-                                  background: Container(color: Colors.red,child: Icon(Icons.delete,size: 60,),),
+                                  key: UniqueKey(),
+                                  background: Container(
+                                    color: Colors.red,
+                                    child: Icon(
+                                      Icons.delete,
+                                      size: 60,
+                                    ),
+                                  ),
                                   direction: DismissDirection.vertical,
                                   child: Stack(
                                     children: [
@@ -254,14 +293,14 @@ class _ProfileState extends State<Profile> {
                                         alignment: Alignment.topRight,
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
-                                                image:
-                                                    AssetImage("images/pro3.jpg"),
+                                                image: AssetImage(
+                                                    "images/pro3.jpg"),
                                                 fit: BoxFit.cover),
                                             border: Border.all(
                                                 width: 2, color: Colors.black),
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(15))),
-                                        child:  Padding(
+                                        child: Padding(
                                           padding: EdgeInsets.all(1.0),
                                           child: SlideCountdown(
                                             duration: Duration(days: 2),
@@ -291,9 +330,10 @@ class _ProfileState extends State<Profile> {
                                               child: Text(
                                                 "Mavi",
                                                 style: TextStyle(
-                                                    decoration:
-                                                        TextDecoration.underline,
-                                                    decorationColor: Colors.green,
+                                                    decoration: TextDecoration
+                                                        .underline,
+                                                    decorationColor:
+                                                        Colors.green,
                                                     decorationThickness: 2,
                                                     fontWeight: FontWeight.bold,
                                                     fontSize: 20),
@@ -306,9 +346,15 @@ class _ProfileState extends State<Profile> {
                                   ),
                                 ),
                                 Dismissible(
-                                  key:UniqueKey(),
+                                  key: UniqueKey(),
+                                  background: Container(
+                                    color: Colors.red,
+                                    child: Icon(
+                                      Icons.delete,
+                                      size: 60,
+                                    ),
+                                  ),
                                   direction: DismissDirection.vertical,
-                                  background: Container(color: Colors.red,child: Icon(Icons.delete,size: 60,),),
                                   child: Stack(
                                     children: [
                                       Container(
@@ -316,15 +362,22 @@ class _ProfileState extends State<Profile> {
                                             left: 13, top: 10, bottom: 10),
                                         width: 199,
                                         height: 210,
+                                        alignment: Alignment.topRight,
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
-                                                image:
-                                                    AssetImage("images/pro2.jpg"),
+                                                image: AssetImage(
+                                                    "images/pro2.jpg"),
                                                 fit: BoxFit.cover),
                                             border: Border.all(
                                                 width: 2, color: Colors.black),
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(15))),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(1.0),
+                                          child: SlideCountdown(
+                                            duration: Duration(days: 2),
+                                          ),
+                                        ),
                                       ),
                                       Positioned(
                                         bottom: 11,
@@ -349,9 +402,10 @@ class _ProfileState extends State<Profile> {
                                               child: Text(
                                                 "Rex",
                                                 style: TextStyle(
-                                                    decoration:
-                                                        TextDecoration.underline,
-                                                    decorationColor: Colors.green,
+                                                    decoration: TextDecoration
+                                                        .underline,
+                                                    decorationColor:
+                                                        Colors.green,
                                                     decorationThickness: 2,
                                                     fontWeight: FontWeight.bold,
                                                     fontSize: 20),
@@ -364,15 +418,23 @@ class _ProfileState extends State<Profile> {
                                   ),
                                 ),
                                 Dismissible(
-                                  key:UniqueKey(),
+                                  key: UniqueKey(),
                                   direction: DismissDirection.vertical,
-                                  background: Container(color: Colors.red,child: Icon(Icons.delete,size: 60,),),
+                                  background: Container(
+                                    color: Colors.red,
+                                    child: Icon(
+                                      Icons.delete,
+                                      size: 60,
+                                    ),
+                                  ),
                                   child: Stack(
                                     children: [
                                       widget.imagestwo != null
                                           ? Container(
                                               margin: EdgeInsets.only(
-                                                  left: 13, top: 10, bottom: 10),
+                                                  left: 13,
+                                                  top: 10,
+                                                  bottom: 10),
                                               width: 199,
                                               height: 210,
                                               alignment: Alignment.topRight,
@@ -384,14 +446,15 @@ class _ProfileState extends State<Profile> {
                                                   border: Border.all(
                                                       width: 2,
                                                       color: Colors.black),
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(15))),
-                                        child:  Padding(
-                                          padding: EdgeInsets.all(1.0),
-                                          child: SlideCountdown(
-                                            duration: Duration(days: 30),
-                                          ),
-                                        ),
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(15))),
+                                              child: Padding(
+                                                padding: EdgeInsets.all(1.0),
+                                                child: SlideCountdown(
+                                                  duration: Duration(days: 30),
+                                                ),
+                                              ),
                                             )
                                           : Container(),
                                       Positioned(
@@ -417,22 +480,21 @@ class _ProfileState extends State<Profile> {
                                               child: Text(
                                                 "${widget.petName}",
                                                 style: TextStyle(
-                                                    decoration:
-                                                        TextDecoration.underline,
-                                                    decorationColor: Colors.green,
+                                                    decoration: TextDecoration
+                                                        .underline,
+                                                    decorationColor:
+                                                        Colors.green,
                                                     decorationThickness: 2,
                                                     fontWeight: FontWeight.bold,
                                                     fontSize: 20),
                                               ),
                                             ),
-
                                           ),
                                         ),
                                       )
                                     ],
                                   ),
                                 ),
-
                                 SizedBox(
                                   width: 12,
                                 ),

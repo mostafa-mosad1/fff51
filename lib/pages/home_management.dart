@@ -8,8 +8,7 @@ import 'package:fff/pages/shop/shop.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import 'category.dart';
+import 'categorypage/category.dart';
 import 'home.dart';
 
 class home_management extends StatefulWidget {
@@ -35,7 +34,13 @@ class _home_managementState extends State<home_management> {
   ];
 
   int index = 0;
-  List<Widget> pages = [shop(), category(), home(), doctors(), Profile(name: '',address: " ",phone: " ",)];
+  List<Widget> pages = [
+    shop(),
+    category(),
+    home(),
+    doctors(),
+    Profile()
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -82,7 +87,6 @@ class _home_managementState extends State<home_management> {
                   ListTile(
                     leading: Icon(Icons.miscellaneous_services),
                     title: Text("Services"),
-                    //onTap: ()=>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>  trips()))
                   ),
                   Container(
                     height: 1,
@@ -92,7 +96,6 @@ class _home_managementState extends State<home_management> {
                   ListTile(
                     leading: Icon(Icons.add_box_outlined),
                     title: Text("About"),
-                    //onTap: ()=>  Navigator.of(context).push(MaterialPageRoute(builder:(c)=>  trips()))
                   ),
                 ],
               )),
@@ -105,53 +108,21 @@ class _home_managementState extends State<home_management> {
                 activeColor: Colors.orangeAccent,
                 items: [
                   BottomNavigationBarItem(
-                      icon: Icon(
-                        Icons.shop_2_outlined,
-                      ),
-                      label: "Shop",
-
-                      // activeIcon: Text(
-                      //   "Shop",
-                      //   style: TextStyle(
-                      //       fontSize: 25, fontWeight: FontWeight.bold),
-                      // )
+                    icon: Icon(
+                      Icons.shop_2_outlined,
+                    ),
+                    label: "Shop",
                   ),
                   BottomNavigationBarItem(
                       icon: Icon(Icons.dashboard_customize_outlined),
-                      label: "Category"
-                      // activeIcon: Text(
-                      //   "Category",
-                      //   style: TextStyle(
-                      //       fontSize: 19, fontWeight: FontWeight.bold),
-                      // )
-                     ),
+                      label: "Category"),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.home),
-                      label: "Home"
-                      // activeIcon: Text(
-                      //   "Home",
-                      //   style: TextStyle(
-                      //       fontSize: 25, fontWeight: FontWeight.bold),
-                      // )
-                  ),
+                      icon: Icon(Icons.home), label: "Home"),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.medical_information),
-                      label: "Doctor"
-                    // activeIcon: Text(
-                      //   "Doctors",
-                      //   style: TextStyle(
-                      //       fontSize: 20, fontWeight: FontWeight.bold),
-                      // )
-                  ),
+                      icon: Icon(Icons.medical_information), label: "Doctor"),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.person_pin),
-                      label: "Profile",
-
-                    // activeIcon: Text(
-                      //   "Perfile",
-                      //   style: TextStyle(
-                      //       fontSize: 25, fontWeight: FontWeight.bold),
-                      // )
+                    icon: Icon(Icons.person_pin),
+                    label: "Profile",
                   ),
                 ],
               ),
@@ -184,7 +155,8 @@ class _home_managementState extends State<home_management> {
                   case 4:
                     return CupertinoTabView(
                       builder: (context) {
-                        return CupertinoPageScaffold(child: Profile(phone: "123456789 ",name: "Mohamed Ahamed",address: "  30 homs st,Mansoura",));
+                        return CupertinoPageScaffold(
+                            child: Profile());
                       },
                     );
                   default:
