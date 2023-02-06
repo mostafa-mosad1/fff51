@@ -14,40 +14,45 @@ class category extends StatefulWidget {
 class _categoryState extends State<category> {
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Container(color: Colors.grey[400]),
-      GridView.count(
-        //  primary: false,
-          shrinkWrap: true,
-          padding: EdgeInsets.all(20),
-          crossAxisSpacing: 19,
-          mainAxisSpacing: 20,
-          crossAxisCount: 2,
-          children: [
+    return Stack(
+      children: [
+        Container(color: Colors.grey[400]),
+        Column(children: [
+          SizedBox(height: 25,),
+          GridView.count(
+            //  primary: false,
+              shrinkWrap: true,
+              padding: EdgeInsets.all(20),
+              crossAxisSpacing: 19,
+              mainAxisSpacing: 20,
+              crossAxisCount: 2,
+              children: [
+                InkWell(
+                    onTap: () => Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (c) => Dog())),
+                    child: categ(name: "Cat", image: "images/cat.jpg")),
+                InkWell(
+                    onTap: () => Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (c) => Dog())),
+                    child: categ(name: "Hamster", image: "images/cat.jpg")),
+                InkWell(
+                    onTap: () => Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (c) => Dog())),
+                    child: categ(name: "Dog", image: "images/cat.jpg")),
+                InkWell(
+                    onTap: () => Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (c) => Dog())),
+                    child: categ(name: "Bird", image: "images/cat.jpg")),
+              ]),
+          Row(mainAxisAlignment:MainAxisAlignment.center,
+            children: [
             InkWell(
                 onTap: () => Navigator.of(context)
                     .push(MaterialPageRoute(builder: (c) => Dog())),
-                child: categ(name: "Cat", image: "images/cat.jpg")),
-            InkWell(
-                onTap: () => Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (c) => Dog())),
-                child: categ(name: "Hamster", image: "images/hamaster.jpg")),
-            InkWell(
-                onTap: () => Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (c) => Dog())),
-                child: categ(name: "Dog", image: "images/dog1.jpg")),
-            InkWell(
-                onTap: () => Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (c) => Dog())),
-                child: categ(name: "Bird", image: "images/bird.jpg")),
-          ]),
-      Row(mainAxisAlignment:MainAxisAlignment.center,
-        children: [
-        InkWell(
-            onTap: () => Navigator.of(context)
-                .push(MaterialPageRoute(builder: (c) => Dog())),
-            child: categ(name: "Fish", image: "images/fish.jpg")),
-      ],)
-    ]);
+                child: categ(name: "Fish", image: "images/cat.jpg")),
+          ],)
+        ]),
+      ],
+    );
   }
 }
