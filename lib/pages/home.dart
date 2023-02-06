@@ -1,8 +1,4 @@
-
-
-
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:fff/components.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -28,10 +24,7 @@ class _homeState extends State<home> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text("Hello Dear",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
               ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Lets shop something!",style: TextStyle(fontSize: 18,color: Colors.white),),
-                ),
+                Text(" Lets shop something!",style: TextStyle(fontSize: 18,color: Colors.white),),
               Container(
                 height: 230,
                 width: double.infinity,
