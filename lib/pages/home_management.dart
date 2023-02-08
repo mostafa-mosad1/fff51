@@ -34,139 +34,181 @@ class _home_managementState extends State<home_management> {
   ];
 
   int index = 0;
-  List<Widget> pages = [
-    shop(),
-    category(),
-    home(),
-    doctors(),
-    Profile()
-  ];
+  List<Widget> pages = [shop(), category(), home(), doctors(), Profile()];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            appBar: AppBar(
-                backgroundColor: (Colors.orangeAccent),
-                title: Container(
-                  child: Center(
-                    child: SvgPicture.asset(
-                      "images/4.svg",
-                      width: 50,
-                      height: 50,
-                    ),
-                  ),
+    return WillPopScope(
+      onWillPop: () async {
+        var value = await showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: Text(
+                  "Alert",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                content: Text(
+                  "Do you want to Exit?",
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 actions: [
-                  IconButton(
-                      onPressed: () {
-                        showSearch(context: context, delegate: DataSearch());
-                      },
-                      icon: Icon(
-                        Icons.search,
-                        size: 35,
-                      )),
-                ]),
-            drawer: Container(
-              child: Drawer(
-                  child: Column(
-                children: [
-                  SizedBox(
-                    height: 1,
+                  Container(
+                    width: 70,
+                    child: MaterialButton(
+                        color: Colors.orange,
+                        onPressed: () {
+                          Navigator.of(context).pop(false);
+                        },
+                        child: Text(
+                          "No",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )),
                   ),
                   Container(
-                    color: Colors.orangeAccent,
-                    height: 70,
+                    width: 70,
+                    child: MaterialButton(
+                        color: Colors.orange,
+                        onPressed: () {
+                          Navigator.of(context).pop(true);
+                        },
+                        child: Text(
+                          "Yes",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )),
+                  )
+                ],
+              );
+            });
+        if (value != null) {
+          return Future.value(value);
+        } else {
+          return Future.value(false);
+        }
+      },
+      child: SafeArea(
+          child: Scaffold(
+              appBar: AppBar(
+                  backgroundColor: (Colors.orangeAccent),
+                  title: Container(
                     child: Center(
                       child: SvgPicture.asset(
                         "images/4.svg",
-                        width: 95,
-                        height: 95,
+                        width: 50,
+                        height: 50,
                       ),
                     ),
                   ),
-                  ListTile(
-                    leading: Icon(Icons.miscellaneous_services),
-                    title: Text("Services"),
-                  ),
-                  Container(
-                    height: 1,
-                    width: 200,
-                    color: Colors.cyan,
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.add_box_outlined),
-                    title: Text("About"),
-                  ),
-                ],
-              )),
-            ),
-            body: CupertinoTabScaffold(
-              tabBar: CupertinoTabBar(
-                height: 60,
-                backgroundColor: Colors.black,
-                inactiveColor: Colors.white,
-                activeColor: Colors.orangeAccent,
-                items: [
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.shop_2_outlined,
+                  actions: [
+                    IconButton(
+                        onPressed: () {
+                          showSearch(context: context, delegate: DataSearch());
+                        },
+                        icon: Icon(
+                          Icons.search,
+                          size: 35,
+                        )),
+                  ]),
+              drawer: Container(
+                child: Drawer(
+                    child: Column(
+                  children: [
+                    SizedBox(
+                      height: 1,
                     ),
-                    label: "Shop",
-                  ),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.dashboard_customize_outlined),
-                      label: "Category"),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.home), label: "Home"),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.medical_information), label: "Doctor"),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.person_pin),
-                    label: "Profile",
-                  ),
-                ],
+                    Container(
+                      color: Colors.orangeAccent,
+                      height: 70,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          "images/4.svg",
+                          width: 95,
+                          height: 95,
+                        ),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.miscellaneous_services),
+                      title: Text("Services"),
+                    ),
+                    Container(
+                      height: 1,
+                      width: 200,
+                      color: Colors.cyan,
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.add_box_outlined),
+                      title: Text("About"),
+                    ),
+                  ],
+                )),
               ),
-              tabBuilder: (BuildContext context, int index) {
-                switch (index) {
-                  case 0:
-                    return CupertinoTabView(
-                      builder: (context) {
-                        return CupertinoPageScaffold(child: shop());
-                      },
-                    );
-                  case 1:
-                    return CupertinoTabView(
-                      builder: (context) {
-                        return CupertinoPageScaffold(child: category());
-                      },
-                    );
-                  case 2:
-                    return CupertinoTabView(
-                      builder: (context) {
-                        return CupertinoPageScaffold(child: home());
-                      },
-                    );
-                  case 3:
-                    return CupertinoTabView(
-                      builder: (context) {
-                        return CupertinoPageScaffold(child: doctors());
-                      },
-                    );
-                  case 4:
-                    return CupertinoTabView(
-                      builder: (context) {
-                        return CupertinoPageScaffold(
-                            child: Profile());
-                      },
-                    );
-                  default:
-                    return CupertinoTabView(
-                      builder: (context) {
-                        return CupertinoPageScaffold(child: favorite());
-                      },
-                    );
-                }
-              },
-            )));
+              body: CupertinoTabScaffold(
+                tabBar: CupertinoTabBar(
+                  height: 60,
+                  backgroundColor: Colors.black,
+                  inactiveColor: Colors.white,
+                  activeColor: Colors.orangeAccent,
+                  items: [
+                    BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.shop_2_outlined,
+                      ),
+                      label: "Shop",
+                    ),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.dashboard_customize_outlined),
+                        label: "Category"),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.home), label: "Home"),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.medical_information), label: "Doctor"),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.person_pin),
+                      label: "Profile",
+                    ),
+                  ],
+                ),
+                tabBuilder: (BuildContext context, int index) {
+                  switch (index) {
+                    case 0:
+                      return CupertinoTabView(
+                        builder: (context) {
+                          return CupertinoPageScaffold(child: shop());
+                        },
+                      );
+                    case 1:
+                      return CupertinoTabView(
+                        builder: (context) {
+                          return CupertinoPageScaffold(child: category());
+                        },
+                      );
+                    case 2:
+                      return CupertinoTabView(
+                        builder: (context) {
+                          return CupertinoPageScaffold(child: home());
+                        },
+                      );
+                    case 3:
+                      return CupertinoTabView(
+                        builder: (context) {
+                          return CupertinoPageScaffold(child: doctors());
+                        },
+                      );
+                    case 4:
+                      return CupertinoTabView(
+                        builder: (context) {
+                          return CupertinoPageScaffold(child: Profile());
+                        },
+                      );
+                    default:
+                      return CupertinoTabView(
+                        builder: (context) {
+                          return CupertinoPageScaffold(child: favorite());
+                        },
+                      );
+                  }
+                },
+              ))),
+    );
   }
 }
