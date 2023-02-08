@@ -1,10 +1,9 @@
+import 'package:badges/badges.dart';
 import 'package:fff/cat.dart';
 import 'package:fff/pages/shop/favorite.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../components.dart';
-import 'accessories.dart';
 import 'carts.dart';
 
 class pet extends StatefulWidget {
@@ -15,7 +14,120 @@ class pet extends StatefulWidget {
 }
 
 class _petState extends State<pet> {
-  bool icon = true;
+  int cartItem = 0;
+  int fav = 0;
+  List data = [
+    {
+      "id": true, //icon
+      "image": "images/dog1.jpg",
+      "type": "dog1",
+      "sub": " writing description of product nnnnnnnnnnn",
+      "price": "249 EL",
+      "cart" : false,
+    },
+    {
+      "id": false,
+      "image": "images/dog1.jpg",
+      "type": "dod2",
+      "sub": "kolo ya walleed yessss noooo ",
+      "price": "299 EL",
+      "cart" : false,
+    },
+    {
+      "id": true,
+      "image": "images/55.jpg",
+      "type": "name",
+      "sub": "aaaaaaaaaaaaaaaaa",
+      "price": "199 EL",
+      "cart" : false,
+    },
+    {
+      "id": true,
+      "image": "images/56.jpg",
+      "type": "name",
+      "sub": "ccccccccccccaaaaaaaaacccccccccccc",
+      "price": "250 EL",
+      "cart" : false,
+    },
+    {
+      "id": true,
+      "image": "images/57.jpg",
+      "type": "name",
+      "sub": " aaaaaaaaa cccccccccccccccccccccccc",
+      "price": "199 EL",
+      "cart" : false,
+    },
+    {
+      "id": true,
+      "image": "images/9.jpg",
+      "type": "name",
+      "sub": " 111111111111111mmmmmmmm",
+      "price": "120 EL",
+      "cart" : false,
+    },
+    {
+      "id": true,
+      "image": "images/peo3.jpg",
+      "type": "name",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "210 EL",
+      "cart" : false,
+    },
+    {
+      "id": true,
+      "image": "images/fish.jpg",
+      "type": "fish",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+      "cart" : false,
+    },
+    {
+      "image": "images/catg.jpg",
+      "type": "cat",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+    "cart" : false,
+    },
+    {
+      "image": "images/catg.jpg",
+      "type": "hamster",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+    "cart" : false,
+    },
+    {
+      "image": "images/pro4.jpg",
+      "type": "sea",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+    "cart" : false,
+    },
+  ];
+
+  void cartItemCount() {
+    setState(() {
+      cartItem++;
+    });
+  }
+  void cartdereaseCount() {
+    setState(() {
+      cartItem--;
+    });
+
+  }
+
+  void favIncreaseCount() {
+    setState(() {
+      fav++;
+    });
+  }
+
+  void favDereasCount() {
+    setState(() {
+      fav--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -43,27 +155,50 @@ class _petState extends State<pet> {
               color: Colors.blueAccent),
         ),
         actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (c) => favorite()));
-            },
-            icon: Icon(
-              Icons.favorite,
-              color: Colors.redAccent,
+          Badge(
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => favorite())),
+            position: BadgePosition.topEnd(top: 0, end: 1),
+            badgeAnimation: BadgeAnimation.scale(
+                animationDuration: Duration(milliseconds: 300)),
+            badgeContent: Text("$fav"),
+            badgeStyle: BadgeStyle(
+                badgeColor: Colors.white,
+                borderSide: BorderSide(color: Colors.orangeAccent, width: 2)),
+            child: IconButton(
+              onPressed: () {
+                setState(() {
+                  fav;
+                });
+              },
+              icon: Icon(
+                Icons.favorite,
+                color: Colors.redAccent,
+                size: 30,
+              ),
             ),
           ),
           SizedBox(
             width: 4,
           ),
-          IconButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (c) => cart()));
-            },
-            icon: Icon(
-              Icons.shopping_bag_outlined,
-              color: Colors.green,
+          Badge(
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => cart())),
+            position: BadgePosition.topEnd(top: 0, end: 1),
+            badgeAnimation: BadgeAnimation.scale(
+                animationDuration: Duration(milliseconds: 300)),
+            badgeContent: Text("$cartItem"),
+            child: IconButton(
+              onPressed: () {
+                setState(() {
+                  cartItem;
+                });
+              },
+              icon: Icon(
+                Icons.shopping_cart,
+                color: Colors.black,
+                size: 30,
+              ),
             ),
           ),
           SizedBox(
@@ -115,7 +250,7 @@ class _petState extends State<pet> {
                             topRight: Radius.circular(15),
                           ),
                           child: Image.asset(
-                            "images/cat.jpg",
+                            data[index]['image'],
                             height: 200,
                             width: 180,
                             fit: BoxFit.cover,
@@ -126,10 +261,13 @@ class _petState extends State<pet> {
                             child: MaterialButton(
                               onPressed: () {
                                 setState(() {
-                                  icon = !icon;
+                                  data[index]["id"] = !data[index]["id"];
+                                  data[index]["id"] == false
+                                      ? favIncreaseCount()
+                                      : favDereasCount();
                                 });
                               },
-                              child: icon == false
+                              child: data[index]["id"] == false
                                   ? Icon(
                                       Icons.favorite,
                                       color: Colors.red,
@@ -146,7 +284,7 @@ class _petState extends State<pet> {
                     Column(
                       children: [
                         Center(
-                          child: Text("Cat",
+                          child: Text(data[index]['type'].toUpperCase(),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
@@ -154,7 +292,7 @@ class _petState extends State<pet> {
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold)),
                         ),
-                        Text(" writing description of product nnnnnnnnnnn",
+                        Text(data[index]['sub'],
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
@@ -168,7 +306,7 @@ class _petState extends State<pet> {
                               width: 122,
                               child: Column(
                                 children: [
-                                  Text("250 EL",
+                                  Text(data[index]["price"],
                                       style: TextStyle(
                                           fontSize: 20,
                                           color: Colors.black,
@@ -179,11 +317,25 @@ class _petState extends State<pet> {
                             Column(
                               children: [
                                 IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.shopping_cart,
-                                      size: 30,
-                                    ))
+                                  onPressed: () {
+                                    setState(() {
+                                      data[index]["cart"] = !data[index]["cart"];
+                                      data[index]["cart"] == false
+                                          ? cartdereaseCount()
+                                          :cartItemCount();
+                                    });
+                                  },
+                                  icon: data[index]["cart"] == false
+                                      ? Icon(
+                                          Icons.shopping_cart_outlined,
+                                    size: 35,
+                                        )
+                                      : Icon(
+                                          Icons.add_shopping_cart_outlined,
+                                    color: Colors.green,
+                                    size: 45,
+                                        ),
+                                )
                               ],
                             )
                           ],
@@ -194,7 +346,7 @@ class _petState extends State<pet> {
                 ),
               ),
             ),
-            itemCount: 25,
+            itemCount: data.length,
           ),
         ],
       ),

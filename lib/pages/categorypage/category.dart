@@ -49,7 +49,7 @@ class _categoryState extends State<category> {
             InkWell(
                 onTap: () => Navigator.of(context)
                     .push(MaterialPageRoute(builder: (c) => Dog())),
-                child: categ(name: "Fish", image: "images/cat.jpg")),
+                child: categ(name: "Fish", image: "images/fish.jpg")),
           ],)
         ]),
       ],
