@@ -1,4 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:fff/auth/signin.dart';
 import 'package:fff/pages/doctorpage/doctors.dart';
 import 'package:fff/pages/profile/profile.dart';
 import 'package:fff/pages/search.dart';
@@ -112,12 +113,9 @@ class _home_managementState extends State<home_management> {
                 child: Drawer(
                     child: Column(
                   children: [
-                    SizedBox(
-                      height: 1,
-                    ),
                     Container(
                       color: Colors.orangeAccent,
-                      height: 70,
+                      height: 80,
                       child: Center(
                         child: SvgPicture.asset(
                           "images/4.svg",
@@ -127,17 +125,45 @@ class _home_managementState extends State<home_management> {
                       ),
                     ),
                     ListTile(
-                      leading: Icon(Icons.miscellaneous_services),
-                      title: Text("Services"),
+                      leading: Icon(
+                        Icons.miscellaneous_services,
+                        color: Colors.black,
+                      ),
+                      title: Text(
+                        "Services",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      onTap: () {},
                     ),
                     Container(
-                      height: 1,
+                      height: 1.5,
                       width: 200,
                       color: Colors.cyan,
                     ),
                     ListTile(
-                      leading: Icon(Icons.add_box_outlined),
-                      title: Text("About"),
+                      leading:
+                          Icon(Icons.add_box_outlined, color: Colors.black),
+                      title: Text(
+                        "About",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      onTap: () {},
+                    ),
+                    Container(
+                      height: 1.5,
+                      width: 200,
+                      color: Colors.cyan,
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.exit_to_app, color: Colors.black),
+                      title: Text(
+                        "Log Out",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Signin()));
+                      },
                     ),
                   ],
                 )),
