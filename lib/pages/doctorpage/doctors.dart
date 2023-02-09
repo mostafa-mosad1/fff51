@@ -50,7 +50,106 @@ class _doctorsState extends State<doctors> {
                 ],
               ),
               SizedBox(
-                height: 40,
+                height: 0,
+              ),
+              // Text(
+              //   " Choose the doctor ",
+              //   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              // ),
+              // Text(
+              //   " who you like",
+              //   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              // ),
+              // SizedBox(height: 10,),
+              // Center(child: Container(width:200,height: 3,color: Colors.orangeAccent,)),
+              SizedBox(
+                height: 25,
+              ),
+              Text(
+                " Top Rating of doctors",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.redAccent),
+              ),
+              Container(
+                height: 250,
+                child: ListView.builder(
+                  itemBuilder: (context, index) => Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(width: 1.8),
+                        borderRadius: BorderRadius.all(Radius.circular(25))),
+                    margin: EdgeInsets.all(10),
+                    width: 200,
+                    child: MaterialButton(
+                      padding: EdgeInsets.zero,
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => One()));
+                      },
+                      child: Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Container(
+                                height: 190,
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                    border: Border.all(width: 0.5),
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(24),
+                                        topRight: Radius.circular(24)),
+                                    image: DecorationImage(
+                                        image: AssetImage("images/56.jpg"),
+                                        fit: BoxFit.fill)),
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(top: 7),
+                                decoration: BoxDecoration(
+                                    color: Colors.redAccent,
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(24),
+                                        bottomRight: Radius.circular(20))),
+                                height: 35,
+                                width: 65,
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.yellow,
+                                    size: 29,
+                                  ),
+                                  Text(
+                                    "4.9",
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "Dr.vet",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  itemCount: 6,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                ),
+              ),
+              SizedBox(
+                height: 11,
               ),
               Text(
                 " Choose the doctor ",
@@ -60,354 +159,83 @@ class _doctorsState extends State<doctors> {
                 " who you like",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
-                height: 25,
-              ),
-              Container(
-                height: 250,
-                child: ListView(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 1.8),
-                          borderRadius: BorderRadius.all(Radius.circular(25))),
-                      margin: EdgeInsets.all(10),
-                      width: 200,
-                      child: MaterialButton(
-                        padding: EdgeInsets.zero,
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => One()));
-                        },
-                        child: Column(
+              GridView.builder(
+                physics: BouncingScrollPhysics(),
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 200,
+                    childAspectRatio:1.5/2,
+                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 5),
+                itemBuilder: (context, index) => Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(width: 1.8),
+                      borderRadius: BorderRadius.all(Radius.circular(25))),
+                  margin: EdgeInsets.all(10),
+                  width: 200,
+                  child: MaterialButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => One()));
+                    },
+                    child: Column(
+                      children: [
+                        Stack(
                           children: [
-                            Stack(
+                            Container(
+                              height: 190,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                  border: Border.all(width: 0.5),
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(24),
+                                      topRight: Radius.circular(24)),
+                                  image: DecorationImage(
+                                      image: AssetImage("images/56.jpg"),
+                                      fit: BoxFit.fill)),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(top: 7),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(24),
+                                      bottomRight: Radius.circular(20))),
+                              height: 35,
+                              width: 65,
+                            ),
+                            Row(
                               children: [
-                                Container(
-                                  height: 190,
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                       border: Border.all(width: 0.5),
-
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(24),
-                                          topRight: Radius.circular(24)),
-                                      image: DecorationImage(
-                                          image: AssetImage("images/56.jpg"),
-                                          fit: BoxFit.fill)),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.yellow,
+                                  size: 29,
                                 ),
-
-                                Container(
-                                  padding: EdgeInsets.only(top: 7),
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(24),
-                                          bottomRight: Radius.circular(20))),
-                                  height: 35,
-                                  width: 65,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 29,
-                                    ),
-                                    Text(
-                                      "4.9",
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    )
-                                  ],
+                                Text(
+                                  "2.3",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
                                 )
                               ],
-                            ),
-                            SizedBox(height: 5,),
-                            Text(
-                              "Dr.vet",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 1.8),
-                          borderRadius: BorderRadius.all(Radius.circular(25))),
-                      margin: EdgeInsets.all(10),
-                      width: 200,
-                      child: MaterialButton(
-                        padding: EdgeInsets.zero,
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Two()));
-                        },
-                        child: Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Container(
-                                  height: 190,
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(width: 0.5),
-
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(24),
-                                          topRight: Radius.circular(24)),
-                                      image: DecorationImage(
-                                          image: AssetImage("images/56.jpg"),
-                                          fit: BoxFit.fill)),
-                                ),
-
-                                Container(
-                                  padding: EdgeInsets.only(top: 7),
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(24),
-                                          bottomRight: Radius.circular(20))),
-                                  height: 35,
-                                  width: 65,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 30,
-                                    ),
-                                    Text(
-                                      "4.9",
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                            Text(
-                              "Dr.vet",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            )
-                          ],
+                        SizedBox(
+                          height: 5,
                         ),
-                      ),
+                        Text(
+                          "Dr.vet",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        )
+                      ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 1.8),
-                          borderRadius: BorderRadius.all(Radius.circular(25))),
-                      margin: EdgeInsets.all(10),
-                      width: 200,
-                      child: MaterialButton(
-                        padding: EdgeInsets.zero,
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Three()));
-                        },
-                        child: Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Container(
-                                  height: 190,
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(width: 0.5),
-
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(24),
-                                          topRight: Radius.circular(24)),
-                                      image: DecorationImage(
-                                          image: AssetImage("images/56.jpg"),
-                                          fit: BoxFit.fill)),
-                                ),
-
-                                Container(
-                                  padding: EdgeInsets.only(top: 7),
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(24),
-                                          bottomRight: Radius.circular(20))),
-                                  height: 35,
-                                  width: 65,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 30,
-                                    ),
-                                    Text(
-                                      "4.9",
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                            Text(
-                              "Dr.vet",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 1.8),
-                          borderRadius: BorderRadius.all(Radius.circular(25))),
-                      margin: EdgeInsets.all(10),
-                      width: 200,
-                      child: MaterialButton(
-                        padding: EdgeInsets.zero,
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Four()));
-                        },
-                        child: Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Container(
-                                  height: 190,
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(width: 0.5),
-
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(24),
-                                          topRight: Radius.circular(24)),
-                                      image: DecorationImage(
-                                          image: AssetImage("images/56.jpg"),
-                                          fit: BoxFit.fill)),
-                                ),
-
-                                Container(
-                                  padding: EdgeInsets.only(top: 7),
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(24),
-                                          bottomRight: Radius.circular(20))),
-                                  height: 35,
-                                  width: 65,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 30,
-                                    ),
-                                    Text(
-                                      "4.9",
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                            Text(
-                              "Dr.vet",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 1.8),
-                          borderRadius: BorderRadius.all(Radius.circular(25))),
-                      margin: EdgeInsets.all(10),
-                      width: 200,
-                      child: MaterialButton(
-                        padding: EdgeInsets.zero,
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Five()));
-                        },
-                        child: Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Container(
-                                  height: 190,
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(width: 0.5),
-
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(24),
-                                          topRight: Radius.circular(24)),
-                                      image: DecorationImage(
-                                          image: AssetImage("images/56.jpg"),
-                                          fit: BoxFit.fill)),
-                                ),
-
-
-                                Container(
-                                  padding: EdgeInsets.only(top: 7),
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(24),
-                                          bottomRight: Radius.circular(20))),
-                                  height: 35,
-                                  width: 65,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 30,
-                                    ),
-                                    Text(
-                                      "4.9",
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                            Text(
-                              "Dr.vet",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
+                itemCount: 8,
               )
             ],
           )),

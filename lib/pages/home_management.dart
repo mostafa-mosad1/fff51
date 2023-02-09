@@ -3,8 +3,8 @@ import 'package:fff/auth/signin.dart';
 import 'package:fff/pages/doctorpage/doctors.dart';
 import 'package:fff/pages/profile/profile.dart';
 import 'package:fff/pages/search.dart';
+import 'package:fff/pages/service.dart';
 import 'package:fff/pages/shop/favorite.dart';
-import 'package:fff/pages/shop/pet.dart';
 import 'package:fff/pages/shop/shop.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -147,7 +147,10 @@ class _home_managementState extends State<home_management> {
                         "About",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(PageRouteBuilder(pageBuilder:(context, animation, secondaryAnimation) => service(), ));
+
+                      },
                     ),
                     Container(
                       height: 1.5,
