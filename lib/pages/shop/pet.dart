@@ -1,7 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:fff/cat.dart';
 import 'package:fff/pages/shop/favorite.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'carts.dart';
@@ -23,15 +22,15 @@ class _petState extends State<pet> {
       "type": "dog1",
       "sub": " writing description of product nnnnnnnnnnn",
       "price": "249 EL",
-      "cart" : false,
+      "cart": false,
     },
     {
-      "id": false,
+      "id": true,
       "image": "images/dog1.jpg",
       "type": "dod2",
       "sub": "kolo ya walleed yessss noooo ",
       "price": "299 EL",
-      "cart" : false,
+      "cart": false,
     },
     {
       "id": true,
@@ -39,7 +38,7 @@ class _petState extends State<pet> {
       "type": "name",
       "sub": "aaaaaaaaaaaaaaaaa",
       "price": "199 EL",
-      "cart" : false,
+      "cart": false,
     },
     {
       "id": true,
@@ -47,7 +46,7 @@ class _petState extends State<pet> {
       "type": "name",
       "sub": "ccccccccccccaaaaaaaaacccccccccccc",
       "price": "250 EL",
-      "cart" : false,
+      "cart": false,
     },
     {
       "id": true,
@@ -55,7 +54,7 @@ class _petState extends State<pet> {
       "type": "name",
       "sub": " aaaaaaaaa cccccccccccccccccccccccc",
       "price": "199 EL",
-      "cart" : false,
+      "cart": false,
     },
     {
       "id": true,
@@ -63,7 +62,7 @@ class _petState extends State<pet> {
       "type": "name",
       "sub": " 111111111111111mmmmmmmm",
       "price": "120 EL",
-      "cart" : false,
+      "cart": false,
     },
     {
       "id": true,
@@ -71,7 +70,7 @@ class _petState extends State<pet> {
       "type": "name",
       "sub": "cccccccccccccccccccccccc",
       "price": "210 EL",
-      "cart" : false,
+      "cart": false,
     },
     {
       "id": true,
@@ -79,28 +78,31 @@ class _petState extends State<pet> {
       "type": "fish",
       "sub": "cccccccccccccccccccccccc",
       "price": "250 EL",
-      "cart" : false,
+      "cart": false,
     },
     {
+      "id": true,
       "image": "images/catg.jpg",
       "type": "cat",
       "sub": "cccccccccccccccccccccccc",
       "price": "250 EL",
-    "cart" : false,
+      "cart": false,
     },
     {
+      "id": true,
       "image": "images/catg.jpg",
       "type": "hamster",
       "sub": "cccccccccccccccccccccccc",
       "price": "250 EL",
-    "cart" : false,
+      "cart": false,
     },
     {
+      "id": true,
       "image": "images/pro4.jpg",
       "type": "sea",
       "sub": "cccccccccccccccccccccccc",
       "price": "250 EL",
-    "cart" : false,
+      "cart": false,
     },
   ];
 
@@ -109,11 +111,11 @@ class _petState extends State<pet> {
       cartItem++;
     });
   }
+
   void cartdereaseCount() {
     setState(() {
       cartItem--;
     });
-
   }
 
   void favIncreaseCount() {
@@ -156,8 +158,6 @@ class _petState extends State<pet> {
         ),
         actions: [
           Badge(
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => favorite())),
             position: BadgePosition.topEnd(top: 0, end: 1),
             badgeAnimation: BadgeAnimation.scale(
                 animationDuration: Duration(milliseconds: 300)),
@@ -167,6 +167,8 @@ class _petState extends State<pet> {
                 borderSide: BorderSide(color: Colors.orangeAccent, width: 2)),
             child: IconButton(
               onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => favorite()));
                 setState(() {
                   fav;
                 });
@@ -182,14 +184,14 @@ class _petState extends State<pet> {
             width: 4,
           ),
           Badge(
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => cart())),
             position: BadgePosition.topEnd(top: 0, end: 1),
             badgeAnimation: BadgeAnimation.scale(
                 animationDuration: Duration(milliseconds: 300)),
             badgeContent: Text("$cartItem"),
             child: IconButton(
               onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => cart()));
                 setState(() {
                   cartItem;
                 });
@@ -257,28 +259,30 @@ class _petState extends State<pet> {
                           ),
                         ),
                         Container(
-                            alignment: Alignment.topRight,
-                            child: MaterialButton(
-                              onPressed: () {
-                                setState(() {
-                                  data[index]["id"] = !data[index]["id"];
-                                  data[index]["id"] == false
-                                      ? favIncreaseCount()
-                                      : favDereasCount();
-                                });
-                              },
-                              child: data[index]["id"] == false
-                                  ? Icon(
-                                      Icons.favorite,
-                                      color: Colors.red,
-                                      size: 40,
-                                    )
-                                  : Icon(
-                                      Icons.favorite_border,
-                                      color: Colors.red,
-                                      size: 40,
-                                    ),
-                            )),
+                          child: MaterialButton(
+                            minWidth: 25,
+                            padding: EdgeInsets.zero,
+                            onPressed: () {
+                              setState(() {
+                                data[index]["id"] = !data[index]["id"];
+                                data[index]["id"] == false
+                                    ? favIncreaseCount()
+                                    : favDereasCount();
+                              });
+                            },
+                            child: data[index]["id"] == false
+                                ? Icon(
+                                    Icons.favorite,
+                                    color: Colors.red,
+                                    size: 40,
+                                  )
+                                : Icon(
+                                    Icons.favorite_border,
+                                    color: Colors.red,
+                                    size: 40,
+                                  ),
+                          ),
+                        ),
                       ],
                     ),
                     Column(
@@ -318,22 +322,24 @@ class _petState extends State<pet> {
                               children: [
                                 IconButton(
                                   onPressed: () {
+
                                     setState(() {
-                                      data[index]["cart"] = !data[index]["cart"];
+                                      data[index]["cart"] =
+                                          !data[index]["cart"];
                                       data[index]["cart"] == false
                                           ? cartdereaseCount()
-                                          :cartItemCount();
+                                          : cartItemCount();
                                     });
                                   },
                                   icon: data[index]["cart"] == false
                                       ? Icon(
                                           Icons.shopping_cart_outlined,
-                                    size: 35,
+                                          size: 35,
                                         )
                                       : Icon(
                                           Icons.add_shopping_cart_outlined,
-                                    color: Colors.green,
-                                    size: 45,
+                                          color: Colors.green,
+                                          size: 35,
                                         ),
                                 )
                               ],
