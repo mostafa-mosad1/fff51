@@ -17,9 +17,9 @@ class _SigninState extends State<Signin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight:0 ,
-      ),
+      // appBar: AppBar(
+      //   toolbarHeight:0 ,
+      // ),
       body: Stack(
         children: [
           Container(
@@ -34,8 +34,6 @@ class _SigninState extends State<Signin> {
             alignment: Alignment.center,
             child: SingleChildScrollView(
               child: Column(
-           //     mainAxisAlignment: MainAxisAlignment.center,
-             //   crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SvgPicture.asset(
                     "images/4.svg",
@@ -45,14 +43,11 @@ class _SigninState extends State<Signin> {
                   SizedBox(
                     height: 20,
                   ),
-
                       Text("PET Life",
                           style: TextStyle(
                               color: Colors.blue,
                               fontWeight: FontWeight.bold,
                               fontSize: 45)),
-
-
                   SizedBox(
                     height: 20,
                   ),
