@@ -120,7 +120,7 @@ class _add_animalState extends State<add_animal> {
                 child: MaterialButton(onPressed: (){
                   print(date1.text);
                  Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                 edit_profile(petimage: imagetwo,petName: petName1.text,time: date1.text,)
+                 edit_profile(petimage: imagetwo,petName: petName1.text,time: date1,)
                  ));
                 },child: Text("Add",
                 style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Colors.white),
