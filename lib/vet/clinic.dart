@@ -17,11 +17,11 @@ class _clinicState extends State<clinic> {
       "hour": "8 PM"
     },
     {
-      "nam": "Mohamed Ahmed",
-      "dog": "Mavi",
+      "nam": "Ahmed ali",
+      "dog": "Rex",
       "num": "0123456789",
-      "day": "Mon",
-      "hour": "8 PM"
+      "day": "yes",
+      "hour": "7.5 PM"
     },
     {
       "nam": "Mohamed Ahmed",
@@ -31,11 +31,11 @@ class _clinicState extends State<clinic> {
       "hour": "8 PM"
     },
     {
-      "nam": "Mohamed Ahmed",
-      "dog": "Mavi",
+      "nam": "hossam ali",
+      "dog": "Rex",
       "num": "0123456789",
-      "day": "Mon",
-      "hour": "8 PM"
+      "day": "tus",
+      "hour": "6.5 PM"
     },
     {
       "nam": "Mohamed Ahmed",
