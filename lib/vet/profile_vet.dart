@@ -29,8 +29,6 @@ class _profile_vetState extends State<profile_vet> {
         children: [
           Container(
             color: Colors.grey[400],
-
-
             child: SingleChildScrollView(
               child: Stack(
                 children: [

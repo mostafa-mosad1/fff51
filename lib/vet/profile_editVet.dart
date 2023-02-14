@@ -33,8 +33,6 @@ class _profile_editVetState extends State<profile_editVet> {
         children: [
           Container(
             color: Colors.grey[400],
-            width: double.infinity,
-            height: double.infinity,
             child: SingleChildScrollView(
               child: Stack(
                 children: [
@@ -287,17 +285,6 @@ class _profile_editVetState extends State<profile_editVet> {
                               SizedBox(
                                 height: 12,
                               ),
-                              Center(
-                                  child: Container(
-                                width: 370,
-                                height: 275,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(
-                                        width: 2, color: Colors.black),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15))),
-                              )),
                               SizedBox(
                                 height: 20,
                               )
