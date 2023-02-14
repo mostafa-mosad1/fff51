@@ -171,6 +171,7 @@ class _SignupState extends State<Signup> {
                             onChanged: (val) {
                               setState(() {
                                 name = val;
+                                print(name);
                               });
                             },
                             value: name,
@@ -189,7 +190,7 @@ class _SignupState extends State<Signup> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => home_management(),
+                                  builder: (context) => home_management(type: name),
                                 ));
                           },
                           child: Text(
