@@ -20,9 +20,9 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 0,
-      ),
+      // appBar: AppBar(
+      //   toolbarHeight: 0,
+      // ),
       // resizeToAvoidBottomInset: false,
       body: Stack(children: [
         Container(

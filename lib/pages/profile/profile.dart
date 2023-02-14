@@ -108,406 +108,409 @@ class _ProfileState extends State<Profile> {
                         fontSize: 15),
                   ),
                 ),
-                Column(
-                  children: [
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        " Phone",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 25),
-                      ),
-                    ),
-                    Container(
+                Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Column(
+                    children: [
+                      Container(
                         alignment: Alignment.topLeft,
-                        child: widget.phone != null
-                            ? Text(
-                                "  ${widget.phone}",
-                                style: TextStyle(
-                                    color: Colors.black45,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15),
-                              )
-                            : Text(
-                                  "${ph}",
-                                style: TextStyle(
-                                    color: Colors.black45,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15),
-                              )),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        " Address",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 25),
+                        child: Text(
+                          "Phone",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 25),
+                        ),
                       ),
-                    ),
-                    Container(
-                        alignment: Alignment.topLeft,
-                        child: widget.address != null
-                            ? Text(
-                                "  ${widget.address}",
-                                style: TextStyle(
-                                    color: Colors.black45,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15),
-                              )
-                            : Text(
-                                "${ad}",
-                                style: TextStyle(
-                                    color: Colors.black45,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15),
-                              )),
-                    SizedBox(
-                      height: 12,
-                    ),
-                    Center(
-                        child: Container(
-                      width: 370,
-                      height: 300,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 2, color: Colors.black),
-                          borderRadius: BorderRadius.all(Radius.circular(15))),
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 5,
-                          ),
-                          SizedBox(
-                            width: 75,
-                          ),
-                          Center(
-                              child: Text("My animals",
+                      Container(
+                          alignment: Alignment.topLeft,
+                          child: widget.phone != null
+                              ? Text(
+                                  "${widget.phone}",
                                   style: TextStyle(
-                                      wordSpacing: 2,
-                                      decorationThickness: 3,
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold))),
-                          Container(
-                            width: 70,
-                            height: 5,
-                            color: Colors.green,
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: [
-                                Dismissible(
-                                  key: UniqueKey(),
-                                  background: Container(
-                                    color: Colors.red,
-                                    child: Icon(
-                                      Icons.delete,
-                                      size: 60,
-                                    ),
-                                  ),
-                                  direction: DismissDirection.vertical,
-                                  child: Stack(
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.only(
-                                            left: 13, top: 10, bottom: 10),
-                                        width: 199,
-                                        height: 210,
-                                        alignment: Alignment.topRight,
-                                        decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                                image: AssetImage(
-                                                    "images/pro2.jpg"),
-                                                fit: BoxFit.cover),
-                                            border: Border.all(
-                                                width: 2, color: Colors.black),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(15))),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(1.0),
-                                          child: SlideCountdown(
-                                            duration: Duration(days: 2),
-                                          ),
-                                        ),
+                                      color: Colors.black45,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                )
+                              : Text(
+                                    "${ph}",
+                                  style: TextStyle(
+                                      color: Colors.black45,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                )),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "Address",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 25),
+                        ),
+                      ),
+                      Container(
+                          alignment: Alignment.topLeft,
+                          child: widget.address != null
+                              ? Text(
+                                  "${widget.address}",
+                                  style: TextStyle(
+                                      color: Colors.black45,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                )
+                              : Text(
+                                  "${ad}",
+                                  style: TextStyle(
+                                      color: Colors.black45,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                )),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Center(
+                          child: Container(
+                        width: 370,
+                        height: 300,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(width: 2, color: Colors.black),
+                            borderRadius: BorderRadius.all(Radius.circular(15))),
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 5,
+                            ),
+                            SizedBox(
+                              width: 75,
+                            ),
+                            Center(
+                                child: Text("My animals",
+                                    style: TextStyle(
+                                        wordSpacing: 2,
+                                        decorationThickness: 3,
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold))),
+                            Container(
+                              width: 70,
+                              height: 5,
+                              color: Colors.green,
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                children: [
+                                  Dismissible(
+                                    key: UniqueKey(),
+                                    background: Container(
+                                      color: Colors.red,
+                                      child: Icon(
+                                        Icons.delete,
+                                        size: 60,
                                       ),
-                                      Positioned(
-                                        bottom: 11,
-                                        right: 1,
-                                        left: 15,
-                                        child: Center(
-                                          child: Container(
-                                            height: 35,
-                                            decoration: BoxDecoration(
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Colors.black26,
-                                                  )
-                                                ],
-                                                borderRadius: BorderRadius.only(
-                                                    bottomRight:
-                                                        Radius.circular(15),
-                                                    bottomLeft:
-                                                        Radius.circular(15))),
-                                            width: 197,
-                                            child: Center(
-                                              child: Text(
-                                                "Rex",
-                                                style: TextStyle(
-                                                    decoration: TextDecoration
-                                                        .underline,
-                                                    decorationColor:
-                                                        Colors.green,
-                                                    decorationThickness: 2,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 20),
-                                              ),
+                                    ),
+                                    direction: DismissDirection.vertical,
+                                    child: Stack(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 13, top: 10, bottom: 10),
+                                          width: 199,
+                                          height: 210,
+                                          alignment: Alignment.topRight,
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "images/pro2.jpg"),
+                                                  fit: BoxFit.cover),
+                                              border: Border.all(
+                                                  width: 2, color: Colors.black),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(15))),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(1.0),
+                                            child: SlideCountdown(
+                                              duration: Duration(days: 2),
                                             ),
                                           ),
                                         ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Dismissible(
-                                  key: UniqueKey(),
-                                  background: Container(
-                                    color: Colors.red,
-                                    child: Icon(
-                                      Icons.delete,
-                                      size: 60,
-                                    ),
-                                  ),
-                                  direction: DismissDirection.vertical,
-                                  child: Stack(
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.only(
-                                            left: 13, top: 10, bottom: 10),
-                                        width: 199,
-                                        height: 210,
-                                        alignment: Alignment.topRight,
-                                        decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                                image: AssetImage(
-                                                    "images/pro3.jpg"),
-                                                fit: BoxFit.cover),
-                                            border: Border.all(
-                                                width: 2, color: Colors.black),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(15))),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(1.0),
-                                          child: SlideCountdown(
-                                            duration: Duration(days: 2),
-                                          ),
-                                        ),
-                                      ),
-                                      Positioned(
-                                        bottom: 11,
-                                        right: 1,
-                                        left: 15,
-                                        child: Center(
-                                          child: Container(
-                                            height: 35,
-                                            decoration: BoxDecoration(
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Colors.black26,
-                                                  )
-                                                ],
-                                                borderRadius: BorderRadius.only(
-                                                    bottomRight:
-                                                        Radius.circular(15),
-                                                    bottomLeft:
-                                                        Radius.circular(15))),
-                                            width: 197,
-                                            child: Center(
-                                              child: Text(
-                                                "Mavi",
-                                                style: TextStyle(
-                                                    decoration: TextDecoration
-                                                        .underline,
-                                                    decorationColor:
-                                                        Colors.green,
-                                                    decorationThickness: 2,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 20),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Dismissible(
-                                  key: UniqueKey(),
-                                  background: Container(
-                                    color: Colors.red,
-                                    child: Icon(
-                                      Icons.delete,
-                                      size: 60,
-                                    ),
-                                  ),
-                                  direction: DismissDirection.vertical,
-                                  child: Stack(
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.only(
-                                            left: 13, top: 10, bottom: 10),
-                                        width: 199,
-                                        height: 210,
-                                        alignment: Alignment.topRight,
-                                        decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                                image: AssetImage(
-                                                    "images/pro2.jpg"),
-                                                fit: BoxFit.cover),
-                                            border: Border.all(
-                                                width: 2, color: Colors.black),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(15))),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(1.0),
-                                          child: SlideCountdown(
-                                            duration: Duration(days: 2),
-                                          ),
-                                        ),
-                                      ),
-                                      Positioned(
-                                        bottom: 11,
-                                        right: 1,
-                                        left: 15,
-                                        child: Center(
-                                          child: Container(
-                                            height: 35,
-                                            decoration: BoxDecoration(
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Colors.black26,
-                                                  )
-                                                ],
-                                                borderRadius: BorderRadius.only(
-                                                    bottomRight:
-                                                        Radius.circular(15),
-                                                    bottomLeft:
-                                                        Radius.circular(15))),
-                                            width: 197,
-                                            child: Center(
-                                              child: Text(
-                                                "Rex",
-                                                style: TextStyle(
-                                                    decoration: TextDecoration
-                                                        .underline,
-                                                    decorationColor:
-                                                        Colors.green,
-                                                    decorationThickness: 2,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 20),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Dismissible(
-                                  key: UniqueKey(),
-                                  direction: DismissDirection.vertical,
-                                  background: Container(
-                                    color: Colors.red,
-                                    child: Icon(
-                                      Icons.delete,
-                                      size: 60,
-                                    ),
-                                  ),
-                                  child: Stack(
-                                    children: [
-                                      widget.imagestwo != null
-                                          ? Container(
-                                              margin: EdgeInsets.only(
-                                                  left: 13,
-                                                  top: 10,
-                                                  bottom: 10),
-                                              width: 199,
-                                              height: 210,
-                                              alignment: Alignment.topRight,
+                                        Positioned(
+                                          bottom: 11,
+                                          right: 1,
+                                          left: 15,
+                                          child: Center(
+                                            child: Container(
+                                              height: 35,
                                               decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                      image: FileImage(
-                                                          widget.imagestwo),
-                                                      fit: BoxFit.cover),
-                                                  border: Border.all(
-                                                      width: 2,
-                                                      color: Colors.black),
-                                                  borderRadius:
-                                                      BorderRadius.all(
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Colors.black26,
+                                                    )
+                                                  ],
+                                                  borderRadius: BorderRadius.only(
+                                                      bottomRight:
+                                                          Radius.circular(15),
+                                                      bottomLeft:
                                                           Radius.circular(15))),
-                                              child: Padding(
-                                                padding: EdgeInsets.all(1.0),
-                                                child: SlideCountdown(
-                                                  duration: Duration(days: 30),
+                                              width: 197,
+                                              child: Center(
+                                                child: Text(
+                                                  "Rex",
+                                                  style: TextStyle(
+                                                      decoration: TextDecoration
+                                                          .underline,
+                                                      decorationColor:
+                                                          Colors.green,
+                                                      decorationThickness: 2,
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 20),
                                                 ),
                                               ),
-                                            )
-                                          : Container(),
-                                      Positioned(
-                                        bottom: 11,
-                                        right: 1,
-                                        left: 15,
-                                        child: Center(
-                                          child: Container(
-                                            height: 35,
-                                            decoration: BoxDecoration(
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Colors.black26,
-                                                  )
-                                                ],
-                                                borderRadius: BorderRadius.only(
-                                                    bottomRight:
-                                                        Radius.circular(15),
-                                                    bottomLeft:
-                                                        Radius.circular(15))),
-                                            width: 197,
-                                            child: Center(
-                                              child: Text(
-                                                "${widget.petName}",
-                                                style: TextStyle(
-                                                    decoration: TextDecoration
-                                                        .underline,
-                                                    decorationColor:
-                                                        Colors.green,
-                                                    decorationThickness: 2,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 20),
-                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Dismissible(
+                                    key: UniqueKey(),
+                                    background: Container(
+                                      color: Colors.red,
+                                      child: Icon(
+                                        Icons.delete,
+                                        size: 60,
+                                      ),
+                                    ),
+                                    direction: DismissDirection.vertical,
+                                    child: Stack(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 13, top: 10, bottom: 10),
+                                          width: 199,
+                                          height: 210,
+                                          alignment: Alignment.topRight,
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "images/pro3.jpg"),
+                                                  fit: BoxFit.cover),
+                                              border: Border.all(
+                                                  width: 2, color: Colors.black),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(15))),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(1.0),
+                                            child: SlideCountdown(
+                                              duration: Duration(days: 2),
                                             ),
                                           ),
                                         ),
-                                      )
-                                    ],
+                                        Positioned(
+                                          bottom: 11,
+                                          right: 1,
+                                          left: 15,
+                                          child: Center(
+                                            child: Container(
+                                              height: 35,
+                                              decoration: BoxDecoration(
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Colors.black26,
+                                                    )
+                                                  ],
+                                                  borderRadius: BorderRadius.only(
+                                                      bottomRight:
+                                                          Radius.circular(15),
+                                                      bottomLeft:
+                                                          Radius.circular(15))),
+                                              width: 197,
+                                              child: Center(
+                                                child: Text(
+                                                  "Mavi",
+                                                  style: TextStyle(
+                                                      decoration: TextDecoration
+                                                          .underline,
+                                                      decorationColor:
+                                                          Colors.green,
+                                                      decorationThickness: 2,
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 20),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: 12,
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    )),
-                    SizedBox(
-                      height: 20,
-                    )
-                  ],
+                                  Dismissible(
+                                    key: UniqueKey(),
+                                    background: Container(
+                                      color: Colors.red,
+                                      child: Icon(
+                                        Icons.delete,
+                                        size: 60,
+                                      ),
+                                    ),
+                                    direction: DismissDirection.vertical,
+                                    child: Stack(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 13, top: 10, bottom: 10),
+                                          width: 199,
+                                          height: 210,
+                                          alignment: Alignment.topRight,
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "images/pro2.jpg"),
+                                                  fit: BoxFit.cover),
+                                              border: Border.all(
+                                                  width: 2, color: Colors.black),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(15))),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(1.0),
+                                            child: SlideCountdown(
+                                              duration: Duration(days: 2),
+                                            ),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          bottom: 11,
+                                          right: 1,
+                                          left: 15,
+                                          child: Center(
+                                            child: Container(
+                                              height: 35,
+                                              decoration: BoxDecoration(
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Colors.black26,
+                                                    )
+                                                  ],
+                                                  borderRadius: BorderRadius.only(
+                                                      bottomRight:
+                                                          Radius.circular(15),
+                                                      bottomLeft:
+                                                          Radius.circular(15))),
+                                              width: 197,
+                                              child: Center(
+                                                child: Text(
+                                                  "Rex",
+                                                  style: TextStyle(
+                                                      decoration: TextDecoration
+                                                          .underline,
+                                                      decorationColor:
+                                                          Colors.green,
+                                                      decorationThickness: 2,
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 20),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Dismissible(
+                                    key: UniqueKey(),
+                                    direction: DismissDirection.vertical,
+                                    background: Container(
+                                      color: Colors.red,
+                                      child: Icon(
+                                        Icons.delete,
+                                        size: 60,
+                                      ),
+                                    ),
+                                    child: Stack(
+                                      children: [
+                                        widget.imagestwo != null
+                                            ? Container(
+                                                margin: EdgeInsets.only(
+                                                    left: 13,
+                                                    top: 10,
+                                                    bottom: 10),
+                                                width: 199,
+                                                height: 210,
+                                                alignment: Alignment.topRight,
+                                                decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                        image: FileImage(
+                                                            widget.imagestwo),
+                                                        fit: BoxFit.cover),
+                                                    border: Border.all(
+                                                        width: 2,
+                                                        color: Colors.black),
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                            Radius.circular(15))),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(1.0),
+                                                  child: SlideCountdown(
+                                                    duration: Duration(days: 30),
+                                                  ),
+                                                ),
+                                              )
+                                            : Container(),
+                                        Positioned(
+                                          bottom: 11,
+                                          right: 1,
+                                          left: 15,
+                                          child: Center(
+                                            child: Container(
+                                              height: 35,
+                                              decoration: BoxDecoration(
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Colors.black26,
+                                                    )
+                                                  ],
+                                                  borderRadius: BorderRadius.only(
+                                                      bottomRight:
+                                                          Radius.circular(15),
+                                                      bottomLeft:
+                                                          Radius.circular(15))),
+                                              width: 197,
+                                              child: Center(
+                                                child: Text(
+                                                  "${widget.petName}",
+                                                  style: TextStyle(
+                                                      decoration: TextDecoration
+                                                          .underline,
+                                                      decorationColor:
+                                                          Colors.green,
+                                                      decorationThickness: 2,
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 20),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 12,
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      )),
+                      SizedBox(
+                        height: 20,
+                      )
+                    ],
+                  ),
                 ),
               ],
             )
