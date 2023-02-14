@@ -1,19 +1,28 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fff/auth/signin.dart';
+import 'package:fff/error.dart';
 import 'package:fff/pages/doctorpage/doctors.dart';
 import 'package:fff/pages/profile/profile.dart';
 import 'package:fff/pages/search.dart';
-import 'package:fff/pages/service.dart';
+import 'package:fff/pages/about.dart';
 import 'package:fff/pages/shop/favorite.dart';
+import 'package:fff/pages/shop/pet.dart';
 import 'package:fff/pages/shop/shop.dart';
+import 'package:fff/trader/profile_trader.dart';
+import 'package:fff/trader/shop_trader.dart';
+import 'package:fff/vet/clinic.dart';
+import 'package:fff/vet/profile_vet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../dog.dart';
 import 'categorypage/category.dart';
 import 'home.dart';
 
 class home_management extends StatefulWidget {
-  home_management({Key? key}) : super(key: key);
+
+  home_management({Key? key,this.type}) : super(key: key);
+  var type;
 
   @override
   State<home_management> createState() => _home_managementState();
@@ -25,12 +34,12 @@ class _home_managementState extends State<home_management> {
     Icon(Icons.dashboard_customize_outlined, size: 40),
     Icon(
       Icons.home,
-      size: 50,
-    ),
-    Icon(
-      Icons.pets,
       size: 40,
     ),
+     Icon(
+       Icons.pets,
+        size: 40,
+       ),
     Icon(Icons.person_pin, size: 40),
   ];
 
@@ -202,7 +211,13 @@ class _home_managementState extends State<home_management> {
                     case 0:
                       return CupertinoTabView(
                         builder: (context) {
-                          return CupertinoPageScaffold(child: shop());
+                          // if(widget.type=="Customer"){
+                             return  CupertinoPageScaffold(child: shop());
+                          // }if(widget.type=="Trader")
+                          // { return  CupertinoPageScaffold(child: shop_trader());}
+                          // if(widget.type=="Vet"){
+                          //   return CupertinoPageScaffold(child: shop());
+                          // }else{return CupertinoPageScaffold(child: error());};
                         },
                       );
                     case 1:
@@ -220,13 +235,24 @@ class _home_managementState extends State<home_management> {
                     case 3:
                       return CupertinoTabView(
                         builder: (context) {
-                          return CupertinoPageScaffold(child: doctors());
-                        },
+                        //    if(widget.type=="Customer"){
+                            return  CupertinoPageScaffold(child: doctors());
+                        //    }if(widget.type=="Trader"){ return  CupertinoPageScaffold(child: doctors());}
+                        //    if(widget.type=="Vet"){
+                        //      return CupertinoPageScaffold(child: clinic());
+                        //    }else{return CupertinoPageScaffold(child: error());};
+                         },
                       );
                     case 4:
                       return CupertinoTabView(
                         builder: (context) {
-                          return CupertinoPageScaffold(child: Profile());
+                          // if(widget.type=="Customer"){
+                             return  CupertinoPageScaffold(child: Profile());
+                          // }if(widget.type=="Trader")
+                          // { return  CupertinoPageScaffold(child: profile_trader());}
+                          // if(widget.type=="Vet"){
+                          //   return CupertinoPageScaffold(child: profile_vet());
+                          // }else{return CupertinoPageScaffold(child: error());};
                         },
                       );
                     default:
