@@ -1,4 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:fff/error.dart';
 import 'package:fff/vet/clinic.dart';
 import 'package:fff/vet/home_doctor.dart';
 import 'package:fff/vet/profile_vet.dart';
@@ -20,8 +21,6 @@ class home_mangaementVet extends StatefulWidget {
 
 class _home_mangaementVetState extends State<home_mangaementVet> {
   final items = <Widget>[
-
-
     Icon(Icons.home,size: 50,),
     Icon(Icons.add_business_outlined,size: 40,),
     Icon(Icons.person_pin,size: 40),
@@ -33,17 +32,29 @@ class _home_mangaementVetState extends State<home_mangaementVet> {
     return SafeArea(child: Scaffold(
       appBar: AppBar(
           backgroundColor: (Colors.orangeAccent),
-          title: Container(
-            child: SvgPicture.asset(
-              "images/4.svg",
-              width: 50,
-              height: 50,
-            ),
+          title: Container(margin: EdgeInsets.only(left: 35),
+            child: Row(children: [
+              Text("Pet  ",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.blueAccent),),
+              SvgPicture.asset(
+                "images/4.svg",
+                width: 50,
+                height: 50,
+              ),
+              Text(" Life  ",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.green),),
+
+            ],),
           ),
-        actions: [
-          Text("Pet ",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.blueAccent),),
-          Text("Life  ",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.green),),
-        ],
+        // Container(
+        //     child: SvgPicture.asset(
+        //       "images/4.svg",
+        //       width: 50,
+        //       height: 50,
+        //     ),
+          // ),
+        // actions: [
+        //   Text("Pet ",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.blueAccent),),
+        //   Text("Life  ",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.green),),
+        // ],
           ),
         drawer: Container(
           child: Drawer(
@@ -92,21 +103,47 @@ class _home_mangaementVetState extends State<home_mangaementVet> {
               )),
         ),
 
-       body: page[index],
+       body: CupertinoTabScaffold(
+         tabBar: CupertinoTabBar(
+           height: 60,
+           backgroundColor: Colors.black,
+           inactiveColor: Colors.white,
+           activeColor: Colors.orangeAccent,
+           items: [
 
-       bottomNavigationBar: Theme(
+             BottomNavigationBarItem(
+                 icon: Icon(Icons.medical_information), label: "orders"),
+             BottomNavigationBarItem(
+               icon: Icon(Icons.person_pin),
+               label: "Profile",
+             ),
+           ],
+         ),
+         tabBuilder: (BuildContext context, int index) {
+           switch (index) {
+             case 0:
+               return CupertinoTabView(
+                 builder: (context) {
+                   return CupertinoPageScaffold(child: clinic());
+                 },
+               );
+             case 1:
+               return CupertinoTabView(
+                 builder: (context) {
+                   return  CupertinoPageScaffold(child: profile_vet());
+                 },
+               );
+             default:
+               return CupertinoTabView(
+                 builder: (context) {
+                   return CupertinoPageScaffold(child: error());
+                 },
+               );
+           }
+         },
+       )
 
-        data:Theme.of(context).copyWith(iconTheme: IconThemeData(color: Colors.white)),
-        child: CurvedNavigationBar (items: items,
-          index:index,
-          height: 60,
-          onTap:(index)=> setState(() => this.index=index ) ,
-          backgroundColor: Colors.black,
-          color: Colors.black,
-          buttonBackgroundColor: Colors.orangeAccent,
 
-
-        ),)
     ));
   }
 }

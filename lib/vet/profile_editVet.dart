@@ -29,12 +29,13 @@ class _profile_editVetState extends State<profile_editVet> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Column(
-        children: [
-          Container(
-            color: Colors.grey[400],
-            child: SingleChildScrollView(
-              child: Stack(
+      body: Container(
+        color: Colors.grey[400],
+        height:double.infinity,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
                 children: [
                   Image.asset(
                     "images/pro4.jpg",
@@ -296,9 +297,9 @@ class _profile_editVetState extends State<profile_editVet> {
                   )
                 ],
               ),
-            ),
-          )
-        ],
+            ],
+          ),
+        ),
       ),
     ));
   }

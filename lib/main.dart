@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home:
       //tast()
-      home_mangaementVet()
-      //SplashScreen(),
+      // home_mangaementVet()
+       SplashScreen(),
     );
   }
 }

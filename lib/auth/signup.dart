@@ -2,6 +2,8 @@ import 'package:fff/pages/home_management.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../vet/home_managementVet.dart';
+
 class Signup extends StatefulWidget {
   const Signup({Key? key}) : super(key: key);
 
@@ -187,11 +189,14 @@ class _SignupState extends State<Signup> {
                         width: 200,
                         child: MaterialButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => home_management(type: name),
-                                ));
+
+                             if( name =="Customer"){
+                               Navigator.push(context, MaterialPageRoute(builder: (context) => home_management(type: name),));
+                            }if(name=="Trader") {
+                               Navigator.push(context, MaterialPageRoute(builder: (context) => home_management(type: name),));
+                             }if(name=="Vet"){
+                               Navigator.push(context, MaterialPageRoute(builder: (context) => home_mangaementVet(),));
+                            }
                           },
                           child: Text(
                             "Sign up",

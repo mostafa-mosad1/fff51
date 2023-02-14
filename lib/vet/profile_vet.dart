@@ -25,12 +25,13 @@ class _profile_vetState extends State<profile_vet> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-      body: Column(
-        children: [
-          Container(
-            color: Colors.grey[400],
-            child: SingleChildScrollView(
-              child: Stack(
+      body: Container(
+        color: Colors.grey[400],
+        height:double.infinity,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
                 children: [
                   Image.asset(
                     "images/pro4.jpg",
@@ -158,20 +159,157 @@ class _profile_vetState extends State<profile_vet> {
                             SizedBox(
                               height: 12,
                             ),
-
+                            Dismissible(
+                              key: UniqueKey(),
+                              background: Container(
+                                color: Colors.red,
+                                child: Icon(
+                                  Icons.delete,
+                                  size: 60,
+                                ),
+                              ),
+                              direction: DismissDirection.horizontal,
+                              child: Container(
+                                margin: EdgeInsets.all(12),
+                                height: 210,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(),
+                                    borderRadius: BorderRadius.all(Radius.circular(15))),
+                                child: Row(
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          padding:
+                                          EdgeInsets.only(top: 20, left: 15, bottom: 10),
+                                          child: Text(
+                                            "Ali Ahamed",
+                                            style: TextStyle(
+                                                decoration: TextDecoration.none,
+                                                color: Colors.black,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        Container(
+                                          padding:
+                                          EdgeInsets.only(top: 3, left: 15, bottom: 10),
+                                          child: Text(
+                                            "Rex",
+                                            style: TextStyle(
+                                                decoration: TextDecoration.none,
+                                                color: Colors.black,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        Container(
+                                          padding:
+                                          EdgeInsets.only(top: 3, left: 15, bottom: 10),
+                                          child: Text(
+                                            "0123456789",
+                                            style: TextStyle(
+                                                decoration: TextDecoration.none,
+                                                color: Colors.black,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                              BorderRadius.all(Radius.circular(3)),
+                                              color: Colors.green,
+                                              border: Border.all()),
+                                          width: 155,
+                                          height: 43,
+                                          margin: EdgeInsets.only(top: 20, left: 10),
+                                          child: MaterialButton(
+                                            onPressed: () {},
+                                            child: Text(
+                                              "Accept",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 25,
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Column(
+                                      children: [
+                                        Container(
+                                          padding:
+                                          EdgeInsets.only(top: 35, left: 10, bottom: 10),
+                                          child: Text(
+                                            "Day: mon",
+                                            style: TextStyle(
+                                                decoration: TextDecoration.none,
+                                                color: Colors.blueGrey,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        Container(
+                                          padding:
+                                          EdgeInsets.only(top: 12, left: 12, bottom: 10),
+                                          child: Text(
+                                            "Hour: 6",
+                                            style: TextStyle(
+                                                decoration: TextDecoration.none,
+                                                color: Colors.blueGrey,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            border: Border.all(),
+                                            borderRadius: BorderRadius.all(Radius.circular(3)),
+                                            color: Colors.red,
+                                          ),
+                                          width: 180,
+                                          height: 43,
+                                          margin: EdgeInsets.only(
+                                            top: 32,
+                                          ),
+                                          child: MaterialButton(
+                                            onPressed: () {},
+                                            child: Text(
+                                              "choose another time",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 15,
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
                             SizedBox(
-                              height: 20,
-                            )
+                              height: 12,
+                            ),
                           ],
                         ),
                       ),
                     ],
                   )
                 ],
-              ),
-            ),
-          )
-        ],
+              )
+            ],
+          ),
+        ),
       ),
     ));
   }
