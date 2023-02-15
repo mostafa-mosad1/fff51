@@ -1,4 +1,3 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fff/error.dart';
 import 'package:fff/vet/clinic.dart';
 import 'package:fff/vet/home_doctor.dart';
@@ -6,11 +5,9 @@ import 'package:fff/vet/profile_vet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../auth/signin.dart';
 import '../pages/about.dart';
-import '../pages/home.dart';
-import '../pages/search.dart';
+
 
 class home_mangaementVet extends StatefulWidget {
   const home_mangaementVet({Key? key}) : super(key: key);
@@ -29,7 +26,56 @@ class _home_mangaementVetState extends State<home_mangaementVet> {
   int index = 1;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(
+    return  WillPopScope(
+        onWillPop: () async {
+      var value = await showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text(
+                "Alert",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              content: Text(
+                "Do you want to Exit?",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              actions: [
+                Container(
+                  width: 70,
+                  child: MaterialButton(
+                      color: Colors.orange,
+                      onPressed: () {
+                        Navigator.of(context).pop(false);
+                      },
+                      child: Text(
+                        "No",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
+                ),
+                Container(
+                  width: 70,
+                  child: MaterialButton(
+                      color: Colors.orange,
+                      onPressed: () {
+                        Navigator.of(context).pop(true);
+                      },
+                      child: Text(
+                        "Yes",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
+                )
+              ],
+            );
+          });
+      if (value != null) {
+        return Future.value(value);
+      } else {
+        return Future.value(false);
+      }
+    },
+    child:
+      SafeArea(child: Scaffold(
       appBar: AppBar(
           backgroundColor: (Colors.orangeAccent),
           title: Container(margin: EdgeInsets.only(left: 35),
@@ -144,6 +190,6 @@ class _home_mangaementVetState extends State<home_mangaementVet> {
        )
 
 
-    ));
+    )));
   }
 }
