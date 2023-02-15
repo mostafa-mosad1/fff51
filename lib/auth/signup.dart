@@ -1,4 +1,5 @@
 import 'package:fff/pages/home_management.dart';
+import 'package:fff/trader/home_managementTrader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -193,7 +194,7 @@ class _SignupState extends State<Signup> {
                              if( name =="Customer"){
                                Navigator.push(context, MaterialPageRoute(builder: (context) => home_management(type: name),));
                             }if(name=="Trader") {
-                               Navigator.push(context, MaterialPageRoute(builder: (context) => home_management(type: name),));
+                               Navigator.push(context, MaterialPageRoute(builder: (context) => home_mangaementTrader(),));
                              }if(name=="Vet"){
                                Navigator.push(context, MaterialPageRoute(builder: (context) => home_mangaementVet(),));
                             }
