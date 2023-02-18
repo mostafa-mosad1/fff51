@@ -1,14 +1,18 @@
 import 'package:fff/trader/add_prodect.dart';
-import 'package:fff/trader/edit_profileTrader.dart';
-import 'package:fff/trader/edithome.dart';
 import 'package:fff/trader/edithome1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../components.dart';
-import '../pages/profile/add_animal.dart';
+
+
 
 class shop_trader extends StatefulWidget {
-   shop_trader({Key? key,this.dataone,this.datatwo,this.datathree,this.datafour}) : super(key: key);
+  var Pname;
+  var Pprice;
+  var Pcount;
+  var Pimage;
+
+
+   shop_trader({Key? key,this.dataone,this.datatwo,this.datathree,this.datafour,this.Pname,this.Pprice,this.Pcount,this.Pimage}) : super(key: key);
 
   var dataone;
   var datatwo;
@@ -23,19 +27,19 @@ class _shop_traderState extends State<shop_trader> {
   List trad = [
     {
       "image": "images/cat.jpg",
-      "name": "pet",
+      "name": "fish",
       "price": "250",
       "number of scales": "10"
     },
     {
       "image": "images/cat.jpg",
-      "name": "food",
+      "name": "cat",
       "price": "150",
       "number of scales": "10"
     },
     {
       "image": "images/cat.jpg",
-      "name": "food",
+      "name": "dog",
       "price": "200",
       "number of scales": "10"
     },
@@ -58,12 +62,12 @@ class _shop_traderState extends State<shop_trader> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-                margin: EdgeInsets.only(left: 10, top: 8),
-                child: Text(
-                  "Top selling".toUpperCase(),
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                )),
+            // Container(
+            //     margin: EdgeInsets.only(left: 10, top: 8),
+            //     child: Text(
+            //       "Top selling".toUpperCase(),
+            //       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            //     )),
             SizedBox(
               height: 6,
             ),
@@ -92,7 +96,7 @@ class _shop_traderState extends State<shop_trader> {
                                   image: AssetImage("images/cat.jpg"),
                                   fit: BoxFit.cover,
                                 ),
-                              ))
+                              )),
                         ],
                       ),
                     ),
@@ -101,7 +105,13 @@ class _shop_traderState extends State<shop_trader> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Name :  pet",
+                        "Top selling".toUpperCase(),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+            ),
+                      SizedBox(height: 60,),
+                      Column(children: [
+                        Text(
+                          "Name :  food",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
@@ -109,7 +119,7 @@ class _shop_traderState extends State<shop_trader> {
                           height: 20,
                         ),
                         Text(
-                          "price :  food",
+                          "price :  200",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
@@ -121,6 +131,10 @@ class _shop_traderState extends State<shop_trader> {
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold),
                         ),
+                        SizedBox(height: 50,)
+                      ],)
+
+
                       ],
                     )
                   ],
@@ -130,6 +144,8 @@ class _shop_traderState extends State<shop_trader> {
             SizedBox(
               height: 10,
             ),
+
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -151,38 +167,6 @@ class _shop_traderState extends State<shop_trader> {
                     )
                   ],
                 ),
-                MaterialButton(
-                  onPressed: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => HomeEdit(
-                    //               edit: trad,
-                    //             )));
-                  },
-                  child: Row(
-                    children: [
-                      IconButton(
-                          onPressed: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => HomeEdit(
-                            //               edit: trad,
-                            //             )));
-                          },
-                          icon: Icon(
-                            Icons.settings,
-                            size: 30,
-                          )),
-                      Text(
-                        "Edit",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                )
               ],
             ),
             Container(
@@ -269,7 +253,7 @@ class _shop_traderState extends State<shop_trader> {
                                                   fontWeight: FontWeight.bold),
                                             ),
                                             SizedBox(height: 25),
-                                            widget.datathree!=null?
+                                            widget.datathree==null?
                                             Text(
                                               "Number of scales :  ${widget.datathree}",
                                               style: TextStyle(
@@ -312,6 +296,79 @@ class _shop_traderState extends State<shop_trader> {
 
 
               ),
+            ),
+            Stack(
+              children: [
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: 250,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment:
+                                CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    width: 175,
+                                    height: 233,
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                      BorderRadius.circular(15),
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            "images/dog1.jpg"),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                              Text(
+                                  "Name :  ${widget.Pname}",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 25,
+                                ),
+                                Text(
+                                  "price :  ${widget.Pprice}",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+
+                                Text(
+                                  "Number of scales :  ${widget.Pprice}",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             )
           ],
         ),

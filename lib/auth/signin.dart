@@ -1,5 +1,6 @@
 import 'package:fff/pages/home_management.dart';
 import 'package:fff/auth/signup.dart';
+import 'package:fff/trader/home_managementTrader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -116,7 +117,7 @@ class _SigninState extends State<Signin> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => home_management(),
+                                      builder: (context) => home_mangaementTrader(),
                                     ));
                               },
                               child: Text(

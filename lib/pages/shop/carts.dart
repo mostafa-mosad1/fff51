@@ -16,6 +16,7 @@ class _cartState extends State<cart> {
   int y = 1;
   int z = 1;
   bool pay = false;
+  int p =250;
 
   @override
   Widget build(BuildContext context) {
@@ -402,7 +403,7 @@ class _cartState extends State<cart> {
                         Container(
                           width: 150,
                           child: Text(
-                            "cat nnnnnnnnnnnnnnnnnnnnnnnnnn",
+                            "cat nnnnnnn00",
                             style: TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.bold),
                             maxLines: 3,
@@ -412,7 +413,7 @@ class _cartState extends State<cart> {
                         Container(
                           width: 150,
                           child: Text(
-                            "250 EL",
+                            "$p",
                             style: TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.bold),
                             maxLines: 2,
@@ -431,6 +432,7 @@ class _cartState extends State<cart> {
                               onPressed: () {
                                 setState(() {
                                   z = z - 1;
+                                  p=z*p;
                                 });
                               },
                               icon: Icon(
@@ -444,6 +446,7 @@ class _cartState extends State<cart> {
                               onPressed: () {
                                 setState(() {
                                   z = z + 1;
+                                  p=p*z;
                                 });
                               },
                               icon: Icon(

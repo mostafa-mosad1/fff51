@@ -253,7 +253,7 @@ Widget show_price({count, price}) => Padding(
                           "Total",
                           style: TextStyle(
                               fontSize: 30,
-                              color: Colors.red,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold),
                         )
                       ],
@@ -263,7 +263,7 @@ Widget show_price({count, price}) => Padding(
                 Container(
                   height: 55,
                   width: 2,
-                  color: Colors.white,
+                  color: Colors.red,
                 ),
                 Container(
                   width: 200,
@@ -275,7 +275,7 @@ Widget show_price({count, price}) => Padding(
                             "itemCount : ",
                             style: TextStyle(
                                 fontSize: 25,
-                                color: Colors.red,
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
@@ -290,18 +290,18 @@ Widget show_price({count, price}) => Padding(
                             "Price : ",
                             style: TextStyle(
                                 fontSize: 25,
-                                color: Colors.red,
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             "$price",
-                            style: TextStyle(fontSize: 22, color: Colors.red),
+                            style: TextStyle(fontSize: 30, color: Colors.red),
                           ),
                           Text(
                             " LE",
                             style: TextStyle(
                                 fontSize: 25,
-                                color: Colors.red,
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold),
                           )
                         ],
