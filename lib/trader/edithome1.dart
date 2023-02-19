@@ -14,7 +14,8 @@ class Edithome1 extends StatefulWidget {
 }
 
 class _Edithome1State extends State<Edithome1> {
-  var images;
+  var type;
+  var gender;
   var names;
   var prices;
   var sales;
@@ -24,32 +25,95 @@ class _Edithome1State extends State<Edithome1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Form(
+        body: Stack(
+      children: [
+        Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: Colors.grey[400]),
+        Form(
           key: formKey,
           child: SingleChildScrollView(
             child: Column(children: [
-              Stack(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  image==null?
                   Container(
-                    margin: EdgeInsets.only(top: 10),
+                    width: 40,
+                    height: 40,
                     decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage(widget.tradd['image']),fit: BoxFit.cover)
-                    ),
-                    width: 300,
-                    height: 200,
-                  ): Container(
-                    margin: EdgeInsets.only(top: 10),
-                    decoration: BoxDecoration(
-                        image: DecorationImage(image: FileImage(image),fit: BoxFit.cover)
-                    ),
-                    width: 300,
-                    height: 200,
+                        color: Colors.white12,
+                        border: Border.all(width: 1.5),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    margin: EdgeInsets.all(10),
+                    child: IconButton(
+                        padding: EdgeInsets.only(right: 1.5, bottom: 1.5),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: Icon(
+                          Icons.arrow_back,
+                          size: 35,
+                        )),
                   ),
                   Container(
-                    width: 80,
-                    height: 80,
-                    child: Positioned(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        color: Colors.red,
+                        border: Border.all(width: 1.5),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    margin: EdgeInsets.all(10),
+                    child: IconButton(
+                        padding: EdgeInsets.only(right: 1.5, bottom: 1.5),
+                        onPressed: () {},
+                        icon: Center(
+                          child: Icon(
+                            Icons.delete_forever,
+                            color: Colors.white,
+                            size: 35,
+                          ),
+                        )),
+                  ),
+                ],
+              ),
+              Container(
+                margin: EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    border: Border.all(color: Colors.black)),
+                child: Column(children: [
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Stack(
+                    children: [
+                      image == null
+                          ? Container(
+                              margin: EdgeInsets.only(top: 10),
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(5)),
+                                  border: Border.all(),
+                                  image: DecorationImage(
+                                      image: AssetImage(widget.tradd['image']),
+                                      fit: BoxFit.cover)),
+                              width: 192,
+                              height: 228,
+                            )
+                          : Container(
+                              margin: EdgeInsets.only(top: 10),
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(5)),
+                                  border: Border.all(),
+                                  image: DecorationImage(
+                                      image: FileImage(image),
+                                      fit: BoxFit.cover)),
+                              width: 192,
+                              height: 228,
+                            ),
+                      Positioned(
                         child: IconButton(
                             onPressed: () {
                               showModalBottomSheet(
@@ -64,8 +128,7 @@ class _Edithome1State extends State<Edithome1> {
                                               "Choose photo from",
                                               style: TextStyle(
                                                   fontSize: 30,
-                                                  fontWeight:
-                                                  FontWeight.bold),
+                                                  fontWeight: FontWeight.bold),
                                             ),
                                           ),
                                           SizedBox(
@@ -74,15 +137,13 @@ class _Edithome1State extends State<Edithome1> {
                                           MaterialButton(
                                             onPressed: () async {
                                               var pickedImage =
-                                              await ImagePicker()
-                                                  .pickImage(
-                                                  source:
-                                                  ImageSource
-                                                      .camera);
+                                                  await ImagePicker().pickImage(
+                                                      source:
+                                                          ImageSource.camera);
                                               if (pickedImage != null) {
                                                 setState(() {
-                                                  image = File(
-                                                      pickedImage.path);
+                                                  image =
+                                                      File(pickedImage.path);
                                                 });
                                                 Navigator.pop(context);
                                               }
@@ -98,8 +159,7 @@ class _Edithome1State extends State<Edithome1> {
                                                   style: TextStyle(
                                                       fontSize: 25,
                                                       fontWeight:
-                                                      FontWeight
-                                                          .bold),
+                                                          FontWeight.bold),
                                                 ),
                                               ],
                                             ),
@@ -110,14 +170,13 @@ class _Edithome1State extends State<Edithome1> {
                                           MaterialButton(
                                             onPressed: () async {
                                               var pickedImage =
-                                              await ImagePicker()
-                                                  .pickImage(
-                                                  source: ImageSource
-                                                      .gallery);
+                                                  await ImagePicker().pickImage(
+                                                      source:
+                                                          ImageSource.gallery);
                                               if (pickedImage != null) {
                                                 setState(() {
-                                                  image = File(
-                                                      pickedImage.path);
+                                                  image =
+                                                      File(pickedImage.path);
                                                 });
 
                                                 Navigator.pop(context);
@@ -125,8 +184,7 @@ class _Edithome1State extends State<Edithome1> {
                                             },
                                             child: Row(
                                               children: [
-                                                Icon(Icons
-                                                    .photo_outlined),
+                                                Icon(Icons.photo_outlined),
                                                 SizedBox(
                                                   width: 20,
                                                 ),
@@ -135,8 +193,7 @@ class _Edithome1State extends State<Edithome1> {
                                                   style: TextStyle(
                                                       fontSize: 25,
                                                       fontWeight:
-                                                      FontWeight
-                                                          .bold),
+                                                          FontWeight.bold),
                                                 ),
                                               ],
                                             ),
@@ -146,115 +203,233 @@ class _Edithome1State extends State<Edithome1> {
                                     );
                                   });
                             },
-                            icon: Icon(Icons
-                                .camera_alt_outlined,size: 50,color: Colors.black,))),
-                  )
-                ],
-              ),
-              SizedBox(height: 15,),
-              TextFormField(
-                initialValue: widget.tradd['name'],
-                onSaved: (val) {
-                  names = val;
-                },
-                validator: (val) {
-                  if (val!.length > 50) {
-                    return "title should be less than 50 ";
-                  }
-                  if (val.length < 5) {
-                    return "title should be larger than 5 ";
-                  }
-                  return null;
-                },
-
-                maxLength: 30,
-                minLines: 1,
-                decoration: InputDecoration(
-                    labelText: "name", prefixIcon: Icon(Icons.note)),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                initialValue: widget.tradd['price'],
-                onSaved: (val) {
-                  prices = val;
-                },
-                validator: (val) {
-                  if (val!.length > 50) {
-                    return "notes should be less than 50 ";
-                  }
-                  if (val.length < 5) {
-                    return "notes should be larger than 5 ";
-                  }
-                  return null;
-                },
-
-                maxLength: 20,
-                minLines: 1,
-                maxLines: 3,
-                decoration: InputDecoration(
-                    labelText: "price", prefixIcon: Icon(Icons.note)),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                initialValue: widget.tradd['number of scales'],
-                onSaved: (val) {
-                  sales = val;
-                },
-                validator: (val) {
-                  if (val!.length > 50) {
-                    return "notes should be less than 50 ";
-                  }
-                  if (val.length < 5) {
-                    return "notes should be larger than 5 ";
-                  }
-                  return null;
-                },
-
-                maxLength: 10,
-                minLines: 1,
-                maxLines: 3,
-                decoration: InputDecoration(
-                    labelText: "number of sales", prefixIcon: Icon(Icons.note)),
-              ),
-              SizedBox(height: 20,),
-              Container(
-                color: Colors.green,
-                width: 150,
-                height: 60,
-                child: MaterialButton(
-                  onPressed: ()async {
-                    var formdata =await formKey.currentState;
-                    if (formdata!.validate()) {
-                      formdata.save();
-                      print("valid");
-                    } else {
-                      print("not valid");
-                    }
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => shop_trader(
-                                  dataone: names,
-                                  datatwo: prices,
-                                  datathree: sales,
-                                  datafour:images,
-                                )));
-                  },
-                  child: Text(
-                    "Edit",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30,
-                        color: Colors.white),
+                            icon: Icon(
+                              Icons.camera_alt_outlined,
+                              size: 50,
+                              color: Colors.black,
+                            )),
+                      )
+                    ],
                   ),
-                ),
+                  SizedBox(
+                    height: 35,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        color: Colors.white,
+                        width: 181,
+                        height: 40,
+                        child: TextFormField(
+                          initialValue: widget.tradd['name'],
+                          onSaved: (val) {
+                            names = val;
+                          },
+                          validator: (val) {
+                            if (val!.length > 50) {
+                              return "title should be less than 50 ";
+                            }
+
+                            return null;
+                          },
+                          minLines: 1,
+                          decoration: InputDecoration(
+                              border:
+                                  OutlineInputBorder(borderSide: BorderSide()),
+                              labelText: "Name",
+                              labelStyle: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.black)),
+                        ),
+                      ),
+                      Container(
+                        width: 181,
+                        height: 40,
+                        color: Colors.white,
+                        child: TextFormField(
+                          initialValue: widget.tradd['price'],
+                          onSaved: (val) {
+                            prices = val;
+                          },
+                          validator: (val) {
+                            if (val!.length > 50) {
+                              return "notes should be less than 50 ";
+                            }
+
+                            return null;
+                          },
+                          minLines: 1,
+                          decoration: InputDecoration(
+                              border:
+                                  OutlineInputBorder(borderSide: BorderSide()),
+                              labelText: "Price",
+                              labelStyle: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.black)),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white, border: Border.all()),
+                        width: 181,
+                        height: 40,
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton(
+                            iconSize: 30,
+                            hint: Text(
+                              "   Type",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            items: ["Accessories", "Pet", "Food", "Treatment"]
+                                .map((e) => DropdownMenuItem(
+                                      child: Center(
+                                        child: Text(
+                                          "   $e",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 23,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                      value: e,
+                                    ))
+                                .toList(),
+                            onChanged: (val) {
+                              setState(() {
+                                type = val;
+                              });
+                            },
+                            value: type,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white, border: Border.all()),
+                        width: 181,
+                        height: 40,
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton(
+                            iconSize: 30,
+                            hint: Text(
+                              "   Gender",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            items: ["Hamster", "Cat", "Dog", "Bird", "Fish"]
+                                .map((f) => DropdownMenuItem(
+                                      child: Center(
+                                        child: Text(
+                                          "   $f",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 23,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                      value: f,
+                                    ))
+                                .toList(),
+                            onChanged: (value) {
+                              setState(() {
+                                gender = value;
+                              });
+                            },
+                            value: gender,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Container(
+                    width: 181,
+                    height: 40,
+                    color: Colors.white,
+                    child: TextFormField(
+                      initialValue: widget.tradd['number of scales'],
+                      onSaved: (val) {
+                        sales = val;
+                      },
+                      validator: (val) {
+                        if (val!.length > 50) {
+                          return "notes should be less than 50 ";
+                        }
+
+                        return null;
+                      },
+                      minLines: 1,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(borderSide: BorderSide()),
+                          labelText: "No.product",
+                          labelStyle: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.black)),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 22,
+                  ),
+                  Container(
+                    color: Colors.green,
+                    width: 228,
+                    height: 40,
+                    child: MaterialButton(
+                      onPressed: () {
+                        var formdata = formKey.currentState;
+                        if (formdata!.validate()) {
+                          formdata.save();
+                          print("valid");
+                        } else {
+                          print("not valid");
+                        }
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => shop_trader(
+                                      dataone: names,
+                                      datatwo: prices,
+                                      datathree: sales,
+                                      datafour: image,
+                                    )));
+                      },
+                      child: Text(
+                        "Done",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 21,
+                  ),
+                ]),
               )
             ]),
           ),
-        ));
+        ),
+      ],
+    ));
   }
 }

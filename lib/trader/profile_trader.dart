@@ -24,6 +24,7 @@ class _profile_traderState extends State<profile_trader> {
   var na = "Mohamed Ahmed";
   var ph = "012233445556";
   var ad = "30 homs st, mansora";
+  var em="S@example.com";
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
@@ -101,119 +102,106 @@ class _profile_traderState extends State<profile_trader> {
                               fontSize: 15),
                         ),
                       ),
-                      SizedBox(height: 30,),
+                      SizedBox(height: 15,),
                       Center(
                         child: Container(
-                          width: 324,height: 280,decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(6)),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 10,),
-                                Center(child: Text("My information",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),
-                                SizedBox(height: 5,),
-                                Center(child: Container(width: 150,height: 4,color: Colors.green,)),
-                                SizedBox(height: 10,),
-                                Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(),
+                          borderRadius: BorderRadius.all(Radius.circular(5))
+                          ),
+                          width: 320,
+                          height: 310,
+                          child: Column(
+                            children: [
+                              Center(child: Container(
+                                child: Text("My information",style:
+                                  TextStyle(color: Colors.black,
+                                  fontSize: 20,fontWeight: FontWeight.bold),),
+                                padding: EdgeInsets.only(top: 15),
+                              )),
+                              SizedBox(width:80,height: 4,child: Container(
+                                color: Colors.green,
+                              ),),
+                              SizedBox(height: 30,),
+                              Container(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  "   Phone",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold, fontSize: 25),
+                                ),
+                              ),
+                              Container(
                                   alignment: Alignment.topLeft,
-                                  margin: EdgeInsets.only(left: 22),
-                                  child: Text(
-                                    "Phone",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold, fontSize: 25),
-                                  ),
-                                ),
-                                SizedBox(height: 10,),
-                                Container(
-                                    alignment: Alignment.topLeft,
-                                    child: widget.phone != null
-                                        ? Container(
-                                      margin: EdgeInsets.only(left: 43),
-                                          child: Text(
-                                      "${widget.phone}",
-                                      style: TextStyle(
-                                            color: Colors.black45,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 15),
-                                    ),
-                                        )
-                                        : Container(
-                                      margin: EdgeInsets.only(left: 43),
-                                          child: Text(
-                                      "${ph}",
-                                      style: TextStyle(
-                                            color: Colors.black45,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 15),
-                                    ),
-                                        )),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Container(
-                                  alignment: Alignment.topLeft,
-                                  margin: EdgeInsets.only(left: 22),
-                                  child: Text(
-                                    "Address",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold, fontSize: 25),
-                                  ),
-                                ),
-                                SizedBox(height: 10,),
-                                Container(
-                                    alignment: Alignment.topLeft,
-                                    child: widget.address != null
-                                        ? Container(
-                                      margin: EdgeInsets.only(left: 43),
-                                          child: Text(
-                                      "${widget.address}",
-                                      style: TextStyle(
-                                            color: Colors.black45,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 15),
-                                    ),
-                                        )
-                                        : Container(
-                                      margin: EdgeInsets.only(left: 43),
-                                          child: Text(
-                                      "${ad}",
-                                      style: TextStyle(
-                                            color: Colors.black45,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 15),
-                                    ),
-                                        )),
-                                SizedBox(height: 10,),
-                                Container(
-                                  alignment: Alignment.topLeft,
-                                  margin: EdgeInsets.only(left: 22),
-                                  child: Text(
-                                    "Email",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold, fontSize: 25),
-                                  ),
-
-                                ),
-                                SizedBox(height: 10,),
-
-                                Container(
-                                  margin: EdgeInsets.only(left: 43),
-                                  child: Text(
-                                    "N@example.com",
+                                  child: widget.phone != null
+                                      ? Text(
+                                    "       ${widget.phone}",
                                     style: TextStyle(
                                         color: Colors.black45,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15),
-                                  ),
+                                  )
+                                      : Text(
+                                    "       ${ph}",
+                                    style: TextStyle(
+                                        color: Colors.black45,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  )),
+                              SizedBox(
+                                height: 25,
+                              ),
+                              Container(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  "   Address",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold, fontSize: 25),
                                 ),
+                              ),
+                              Container(
+                                  alignment: Alignment.topLeft,
+                                  child: widget.address != null
+                                      ? Text(
+                                    "       ${widget.address}",
+                                    style: TextStyle(
+                                        color: Colors.black45,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  )
+                                      : Text(
+                                    "       ${ad}",
+                                    style: TextStyle(
+                                        color: Colors.black45,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  )),
+                              SizedBox(
+                                height: 25,
+                              ),
+                              Container(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  "   Email",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold, fontSize: 25),
+                                ),
+                              ),
+                              Container(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    "       ${em}",
+                                    style: TextStyle(
+                                        color: Colors.black45,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  )),
 
-                              ],
-                            ),
+                            ],
                           ),
                         ),
                       ),
-                      SizedBox(height: 42,)
                     ],
                   )
                 ],
