@@ -27,11 +27,12 @@ class _doctorsState extends State<doctors> {
               Stack(
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.height * 0.3,
+                    height:230,
+                    // height: MediaQuery.of(context).size.height * 0.3,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(50),
-                            bottomRight: Radius.circular(50)),
+                            bottomLeft: Radius.circular(30),
+                            bottomRight: Radius.circular(30)),
                         image: DecorationImage(
                           image: AssetImage("images/66.jpg"),
                           fit: BoxFit.cover,
@@ -224,12 +225,14 @@ class _doctorsState extends State<doctors> {
                           ],
                         ),
                         SizedBox(
-                          height: 5,
+                          height: 7,
                         ),
-                        Text(
-                          "Dr.vet",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                        Center(
+                          child: Text(
+                            "Dr.vet",
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          ),
                         )
                       ],
                     ),

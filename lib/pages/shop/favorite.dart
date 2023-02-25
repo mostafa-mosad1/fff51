@@ -14,7 +14,7 @@ class _favoriteState extends State<favorite> {
   int x = 1;
   int y =1;
   int z=1;
- bool fav = false;
+  bool fav = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(appBar: AppBar(
@@ -79,15 +79,13 @@ class _favoriteState extends State<favorite> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: 5,
-                ),
                 Column(children: [
                   ClipRRect(
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius:BorderRadius.only(topLeft: Radius.circular(20),
+                          bottomLeft: Radius.circular(20)),
                       child: Image(
                         image: AssetImage("images/cat.jpg"),
-                        width: 115,
+                        width: 140,
                         height: 155,
                         fit: BoxFit.cover,
                       ))

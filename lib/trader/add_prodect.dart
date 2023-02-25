@@ -80,6 +80,7 @@ class _add_prodectState extends State<add_prodect> {
                   height: 30,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
                       width: 181,
@@ -90,9 +91,7 @@ class _add_prodectState extends State<add_prodect> {
                           background: Colors.redAccent,
                           color: Colors.white),
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
+
                     Container(
                       width: 181,
                       height: 50,
@@ -108,12 +107,13 @@ class _add_prodectState extends State<add_prodect> {
                   height: 30,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
                       width: 177,
                       height: 50,
                       color: Colors.white,
-                      margin: EdgeInsets.only(left: 5),
+
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton(
                           iconSize: 30,
@@ -147,14 +147,12 @@ class _add_prodectState extends State<add_prodect> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
+
                     Container(
                       width: 177,
                       height: 50,
                       color: Colors.white,
-                      margin: EdgeInsets.only(right: 5),
+
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton(
                           iconSize: 30,

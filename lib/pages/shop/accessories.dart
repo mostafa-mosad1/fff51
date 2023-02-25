@@ -1,9 +1,12 @@
 import 'package:badges/badges.dart';
 import 'package:fff/cat.dart';
-import 'package:fff/pages/shop/favorite.dart';
+import 'package:fff/components.dart';
+import 'package:fff/pages/shop/pet.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'carts.dart';
+import 'favorite.dart';
 
 class accessories extends StatefulWidget {
   const accessories({Key? key}) : super(key: key);
@@ -15,83 +18,42 @@ class accessories extends StatefulWidget {
 class _accessoriesState extends State<accessories> {
   int cartItem = 0;
   int fav = 0;
-  List data = [
+  List datatwo = [
     {
       "id": true, //icon
-      "image": "images/dog1.jpg",
-      "type": "max",
-      "sub": " عمر 15 يوم",
+      "image": "images/acces.jpg",
+      "type": "dog1",
+      "sub": " writing description of product",
       "price": "249 EL",
       "cart": false,
     },
     {
       "id": true,
-      "image": "images/peo3.jpg",
-      "type": "rex",
-      "sub": "عمر سنتين",
-      "price": "2100 EL",
-      "cart": false,
-    },
-
-    {
-      "id": true,
-      "image": "images/catg.jpg",
-      "type": "cat",
-      "sub": "اخر تطعيم منذ يومين",
-      "price": "250 EL",
+      "image": "images/acces.jpg",
+      "type": "dod2",
+      "sub": " writing description of product",
+      "price": "299 EL",
       "cart": false,
     },
     {
       "id": true,
-      "image": "images/hamaster.jpg",
-      "type": "hamster",
-      "sub": "ابيض و رصاصي",
-      "price": "250 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/fish.jpg",
-      "type": "fish",
-      "sub": "اللون ",
-      "price": "250 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/5.jpg",
-      "type": "bird",
+      "image": "images/acces.jpg",
+      "type": "name",
       "sub": "aaaaaaaaaaaaaaaaa",
       "price": "199 EL",
       "cart": false,
     },
     {
       "id": true,
-      "image": "images/7.png",
-      "type": "hamaster",
-      "sub": "",
+      "image": "images/acces.jpg",
+      "type": "name",
+      "sub": "ccccccccccccaaaaaaaaacccccccccccc",
       "price": "250 EL",
       "cart": false,
     },
     {
       "id": true,
-      "image": "images/9.jpg",
-      "type": "husky",
-      "sub": " عمر سنه ونص",
-      "price": "1200 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/1.jpg",
-      "type": "Buddy",
-      "sub": "عمر 20 يوم",
-      "price": "299 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/57.jpg",
+      "image": "images/acces.jpg",
       "type": "name",
       "sub": " aaaaaaaaa cccccccccccccccccccccccc",
       "price": "199 EL",
@@ -99,7 +61,47 @@ class _accessoriesState extends State<accessories> {
     },
     {
       "id": true,
-      "image": "images/pro4.jpg",
+      "image": "images/acces.jpg",
+      "type": "name",
+      "sub": " 111111111111111mmmmmmmm",
+      "price": "120 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/acces.jpg",
+      "type": "name",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "210 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/acces.jpg",
+      "type": "fish",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/acces.jpg",
+      "type": "cat",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/acces.jpg",
+      "type": "hamster",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/acces.jpg",
       "type": "sea",
       "sub": "cccccccccccccccccccccccc",
       "price": "250 EL",
@@ -130,7 +132,6 @@ class _accessoriesState extends State<accessories> {
       fav--;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -211,7 +212,7 @@ class _accessoriesState extends State<accessories> {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              view(context);
+              viewtwo(context);
             },
             child: Icon(
               Icons.dashboard,
@@ -253,7 +254,7 @@ class _accessoriesState extends State<accessories> {
                                 topRight: Radius.circular(15),
                               ),
                               child: Image.asset(
-                                data[index]['image'],
+                                datatwo[index]['image'],
                                 height: 200,
                                 width: 180,
                                 fit: BoxFit.cover,
@@ -265,13 +266,13 @@ class _accessoriesState extends State<accessories> {
                                 padding: EdgeInsets.zero,
                                 onPressed: () {
                                   setState(() {
-                                    data[index]["id"] = !data[index]["id"];
-                                    data[index]["id"] == false
+                                    datatwo[index]["id"] = !datatwo[index]["id"];
+                                    datatwo[index]["id"] == false
                                         ? favIncreaseCount()
                                         : favDereasCount();
                                   });
                                 },
-                                child: data[index]["id"] == false
+                                child: datatwo[index]["id"] == false
                                     ? Icon(
                                   Icons.favorite,
                                   color: Colors.red,
@@ -289,7 +290,7 @@ class _accessoriesState extends State<accessories> {
                         Column(
                           children: [
                             Center(
-                              child: Text(data[index]['type'].toUpperCase(),
+                              child: Text(datatwo[index]['type'].toUpperCase(),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -297,7 +298,7 @@ class _accessoriesState extends State<accessories> {
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold)),
                             ),
-                            Text(data[index]['sub'],
+                            Text(datatwo[index]['sub'],
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
@@ -311,7 +312,7 @@ class _accessoriesState extends State<accessories> {
                                   width: 122,
                                   child: Column(
                                     children: [
-                                      Text(data[index]["price"],
+                                      Text(datatwo[index]["price"],
                                           style: TextStyle(
                                               fontSize: 20,
                                               color: Colors.black,
@@ -325,14 +326,14 @@ class _accessoriesState extends State<accessories> {
                                       onPressed: () {
 
                                         setState(() {
-                                          data[index]["cart"] =
-                                          !data[index]["cart"];
-                                          data[index]["cart"] == false
+                                          datatwo[index]["cart"] =
+                                          !datatwo[index]["cart"];
+                                          datatwo[index]["cart"] == false
                                               ? cartdereaseCount()
                                               : cartItemCount();
                                         });
                                       },
-                                      icon: data[index]["cart"] == false
+                                      icon: datatwo[index]["cart"] == false
                                           ? Icon(
                                         Icons.shopping_cart_outlined,
                                         size: 35,
@@ -353,21 +354,21 @@ class _accessoriesState extends State<accessories> {
                     ),
                   ),
                 ),
-                itemCount: data.length,
+                itemCount: datatwo.length,
               ),
             ],
           ),
         ));
   }
 
-  view(BuildContext context) {
+  viewtwo(BuildContext context) {
     showModalBottomSheet(
         context: context,
         builder: (context) => Wrap(
           children: [
             InkWell(
               onTap: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (c) => Cat())),
+                  .pushReplacement(MaterialPageRoute(builder: (c) => Cat())),
               child: ListTile(
                 leading: Icon(Icons.pets_outlined),
                 title: Text("Cat"),

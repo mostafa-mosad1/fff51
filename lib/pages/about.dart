@@ -247,7 +247,7 @@ class _serviceState extends State<service> {
                                     "Have a Question?",
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 25,
+                                        fontSize: 24,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Container(
@@ -259,7 +259,7 @@ class _serviceState extends State<service> {
                                     height: 6,
                                   ),
                                   Container(
-                                    width: 199,
+                                    width: 194,
                                     child: ListTile(
                                       leading: Icon(
                                         Icons.place_outlined,
@@ -277,7 +277,7 @@ class _serviceState extends State<service> {
                                     ),
                                   ),
                                   Container(
-                                    width: 199,
+                                    width: 194,
                                     child: ListTile(
                                       leading: Icon(
                                         Icons.phone,
@@ -291,7 +291,7 @@ class _serviceState extends State<service> {
                                     ),
                                   ),
                                   Container(
-                                    width: 199,
+                                    width: 194,
                                     child: ListTile(
                                       leading: Icon(
                                         Icons.telegram,

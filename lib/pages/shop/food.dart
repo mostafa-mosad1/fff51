@@ -1,9 +1,12 @@
 import 'package:badges/badges.dart';
 import 'package:fff/cat.dart';
-import 'package:fff/pages/shop/favorite.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../components.dart';
+import 'accessories.dart';
 import 'carts.dart';
+import 'favorite.dart';
 
 class food extends StatefulWidget {
   const food({Key? key}) : super(key: key);
@@ -15,83 +18,42 @@ class food extends StatefulWidget {
 class _foodState extends State<food> {
   int cartItem = 0;
   int fav = 0;
-  List data = [
+  List datathree = [
     {
       "id": true, //icon
       "image": "images/food.jpg",
-      "type": "dogs",
-      "sub": "طعام جرو عمر 15 يوم",
+      "type": "dog1",
+      "sub": " writing description of product",
       "price": "249 EL",
       "cart": false,
     },
-    // {
-    //   "id": true,
-    //   "image": "images/200.jpg",
-    //   "type": "bed",
-    //   "sub": "Pet Boss King XXL Pet Bed",
-    //   "price": "2100 EL",
-    //   "cart": false,
-    // },
-
     {
       "id": true,
-      "image": "images/8.jpg",
-      "type": "bed",
-      "sub": " Ariika Cave Pet Bed",
-      "price": "250 EL",
+      "image": "images/food.jpg",
+      "type": "dod2",
+      "sub": " writing description of product",
+      "price": "299 EL",
       "cart": false,
     },
     {
       "id": true,
-      "image": "images/5.jpg",
-      "type": "conure",
-      "sub": "These birds also make among the best pet parrots",
-      "price": "250 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/fish.jpg",
-      "type": "fish",
-      "sub": "اللون ",
-      "price": "250 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/5.jpg",
-      "type": "bird",
+      "image": "images/food.jpg",
+      "type": "name",
       "sub": "aaaaaaaaaaaaaaaaa",
       "price": "199 EL",
       "cart": false,
     },
     {
       "id": true,
-      "image": "images/7.png",
-      "type": "hamaster",
-      "sub": "",
+      "image": "images/food.jpg",
+      "type": "name",
+      "sub": "ccccccccccccaaaaaaaaacccccccccccc",
       "price": "250 EL",
       "cart": false,
     },
     {
       "id": true,
-      "image": "images/9.jpg",
-      "type": "husky",
-      "sub": " عمر سنه ونص",
-      "price": "1200 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/1.jpg",
-      "type": "Buddy",
-      "sub": "عمر 20 يوم",
-      "price": "299 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/57.jpg",
+      "image": "images/food.jpg",
       "type": "name",
       "sub": " aaaaaaaaa cccccccccccccccccccccccc",
       "price": "199 EL",
@@ -99,7 +61,47 @@ class _foodState extends State<food> {
     },
     {
       "id": true,
-      "image": "images/pro4.jpg",
+      "image": "images/food.jpg",
+      "type": "name",
+      "sub": " 111111111111111mmmmmmmm",
+      "price": "120 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/food.jpg",
+      "type": "name",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "210 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/food.jpg",
+      "type": "fish",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/food.jpg",
+      "type": "cat",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/food.jpg",
+      "type": "hamster",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/food.jpg",
       "type": "sea",
       "sub": "cccccccccccccccccccccccc",
       "price": "250 EL",
@@ -211,7 +213,7 @@ class _foodState extends State<food> {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              view(context);
+              viewthree(context);
             },
             child: Icon(
               Icons.dashboard,
@@ -253,7 +255,7 @@ class _foodState extends State<food> {
                                 topRight: Radius.circular(15),
                               ),
                               child: Image.asset(
-                                data[index]['image'],
+                                datathree[index]['image'],
                                 height: 200,
                                 width: 180,
                                 fit: BoxFit.cover,
@@ -265,13 +267,13 @@ class _foodState extends State<food> {
                                 padding: EdgeInsets.zero,
                                 onPressed: () {
                                   setState(() {
-                                    data[index]["id"] = !data[index]["id"];
-                                    data[index]["id"] == false
+                                    datathree[index]["id"] = !datathree[index]["id"];
+                                    datathree[index]["id"] == false
                                         ? favIncreaseCount()
                                         : favDereasCount();
                                   });
                                 },
-                                child: data[index]["id"] == false
+                                child: datathree[index]["id"] == false
                                     ? Icon(
                                   Icons.favorite,
                                   color: Colors.red,
@@ -289,7 +291,7 @@ class _foodState extends State<food> {
                         Column(
                           children: [
                             Center(
-                              child: Text(data[index]['type'].toUpperCase(),
+                              child: Text(datathree[index]['type'].toUpperCase(),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -297,7 +299,7 @@ class _foodState extends State<food> {
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold)),
                             ),
-                            Text(data[index]['sub'],
+                            Text(datathree[index]['sub'],
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
@@ -311,7 +313,7 @@ class _foodState extends State<food> {
                                   width: 122,
                                   child: Column(
                                     children: [
-                                      Text(data[index]["price"],
+                                      Text(datathree[index]["price"],
                                           style: TextStyle(
                                               fontSize: 20,
                                               color: Colors.black,
@@ -325,14 +327,14 @@ class _foodState extends State<food> {
                                       onPressed: () {
 
                                         setState(() {
-                                          data[index]["cart"] =
-                                          !data[index]["cart"];
-                                          data[index]["cart"] == false
+                                          datathree[index]["cart"] =
+                                          !datathree[index]["cart"];
+                                          datathree[index]["cart"] == false
                                               ? cartdereaseCount()
                                               : cartItemCount();
                                         });
                                       },
-                                      icon: data[index]["cart"] == false
+                                      icon: datathree[index]["cart"] == false
                                           ? Icon(
                                         Icons.shopping_cart_outlined,
                                         size: 35,
@@ -353,14 +355,15 @@ class _foodState extends State<food> {
                     ),
                   ),
                 ),
-                itemCount: data.length,
+                itemCount: datathree.length,
               ),
             ],
           ),
         ));
   }
 
-  view(BuildContext context) {
+
+  viewthree(BuildContext context) {
     showModalBottomSheet(
         context: context,
         builder: (context) => Wrap(

@@ -108,7 +108,7 @@ class _home_mangaementTraderState extends State<home_mangaementTrader> {
                         height: 50,
                       ),
                       Text(
-                        " Life  ",
+                        " Life",
                         style: TextStyle(
                             fontSize: 35,
                             fontWeight: FontWeight.bold,

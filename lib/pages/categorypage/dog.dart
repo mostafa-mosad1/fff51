@@ -11,9 +11,9 @@ class Dog extends StatefulWidget {
 class _DogState extends State<Dog> {
   List images = [
     {
-      "image": "images/8.jpg",
-      "type": "Golden Retriever",
-      "sub": "The tiny Maltese, 'Ye Ancient Dogge The tiny Maltese, 'Ye Ancient Dogge ",
+      "image": "images/cat.jpg",
+      "type": "name",
+      "sub": "cccc ccccc ccccc ccccc cccccc ccdddd dddddd dddd",
     },
     {
       "image": "images/cat.jpg",
@@ -115,8 +115,8 @@ class _DogState extends State<Dog> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => DogData(
-                                    datadog: images[i],
-                                  )));
+                                datadog: images[i],
+                              )));
                     },
                     child: Stack(
                       children: [
@@ -124,7 +124,7 @@ class _DogState extends State<Dog> {
                           decoration: BoxDecoration(
                               color: Colors.blue,
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(13)),
+                              BorderRadius.all(Radius.circular(13)),
                               image: DecorationImage(
                                   image: AssetImage(images[i]['image']),
                                   fit: BoxFit.fill)),
@@ -132,8 +132,8 @@ class _DogState extends State<Dog> {
                         ),
                         Positioned(
                           bottom: 15,
-                          right: 9,
-                          left: 8,
+                          right: 2,
+                          left: 3,
                           child: Center(
                             child: Container(
                               height: 30,
@@ -146,7 +146,7 @@ class _DogState extends State<Dog> {
                                   borderRadius: BorderRadius.only(
                                       bottomRight: Radius.circular(13),
                                       bottomLeft: Radius.circular(13))),
-                              width: 160,
+                              width: 165,
                               child: Center(
                                 child: Text(
                                   "${images[i]['type']}",

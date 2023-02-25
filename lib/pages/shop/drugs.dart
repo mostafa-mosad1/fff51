@@ -1,9 +1,12 @@
 import 'package:badges/badges.dart';
 import 'package:fff/cat.dart';
-import 'package:fff/pages/shop/favorite.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../components.dart';
+import 'accessories.dart';
 import 'carts.dart';
+import 'favorite.dart';
 
 class drugs extends StatefulWidget {
   const drugs({Key? key}) : super(key: key);
@@ -15,83 +18,42 @@ class drugs extends StatefulWidget {
 class _drugsState extends State<drugs> {
   int cartItem = 0;
   int fav = 0;
-  List data = [
+  List datafour = [
     {
       "id": true, //icon
-      "image": "images/dog1.jpg",
-      "type": "max",
-      "sub": " عمر 15 يوم",
+      "image": "images/drugs.jpg",
+      "type": "dog1",
+      "sub": " writing description of product",
       "price": "249 EL",
       "cart": false,
     },
     {
       "id": true,
-      "image": "images/peo3.jpg",
-      "type": "rex",
-      "sub": "عمر سنتين",
-      "price": "2100 EL",
-      "cart": false,
-    },
-
-    {
-      "id": true,
-      "image": "images/catg.jpg",
-      "type": "cat",
-      "sub": "اخر تطعيم منذ يومين",
-      "price": "250 EL",
+      "image": "images/drugs.jpg",
+      "type": "dod2",
+      "sub": " writing description of product",
+      "price": "299 EL",
       "cart": false,
     },
     {
       "id": true,
-      "image": "images/hamaster.jpg",
-      "type": "hamster",
-      "sub": "ابيض و رصاصي",
-      "price": "250 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/fish.jpg",
-      "type": "fish",
-      "sub": "اللون ",
-      "price": "250 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/5.jpg",
-      "type": "bird",
+      "image": "images/drugs.jpg",
+      "type": "name",
       "sub": "aaaaaaaaaaaaaaaaa",
       "price": "199 EL",
       "cart": false,
     },
     {
       "id": true,
-      "image": "images/7.png",
-      "type": "hamaster",
-      "sub": "",
+      "image": "images/drugs.jpg",
+      "type": "name",
+      "sub": "ccccccccccccaaaaaaaaacccccccccccc",
       "price": "250 EL",
       "cart": false,
     },
     {
       "id": true,
-      "image": "images/9.jpg",
-      "type": "husky",
-      "sub": " عمر سنه ونص",
-      "price": "1200 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/1.jpg",
-      "type": "Buddy",
-      "sub": "عمر 20 يوم",
-      "price": "299 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/57.jpg",
+      "image": "images/drugs.jpg",
       "type": "name",
       "sub": " aaaaaaaaa cccccccccccccccccccccccc",
       "price": "199 EL",
@@ -99,7 +61,47 @@ class _drugsState extends State<drugs> {
     },
     {
       "id": true,
-      "image": "images/pro4.jpg",
+      "image": "images/drugs.jpg",
+      "type": "name",
+      "sub": " 111111111111111mmmmmmmm",
+      "price": "120 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/drugs.jpg",
+      "type": "name",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "210 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/drugs.jpg",
+      "type": "fish",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/drugs.jpg",
+      "type": "cat",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/drugs.jpg",
+      "type": "hamster",
+      "sub": "cccccccccccccccccccccccc",
+      "price": "250 EL",
+      "cart": false,
+    },
+    {
+      "id": true,
+      "image": "images/drugs.jpg",
       "type": "sea",
       "sub": "cccccccccccccccccccccccc",
       "price": "250 EL",
@@ -130,7 +132,6 @@ class _drugsState extends State<drugs> {
       fav--;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -211,7 +212,7 @@ class _drugsState extends State<drugs> {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              view(context);
+              viewfour(context);
             },
             child: Icon(
               Icons.dashboard,
@@ -253,7 +254,7 @@ class _drugsState extends State<drugs> {
                                 topRight: Radius.circular(15),
                               ),
                               child: Image.asset(
-                                data[index]['image'],
+                                datafour[index]['image'],
                                 height: 200,
                                 width: 180,
                                 fit: BoxFit.cover,
@@ -265,13 +266,13 @@ class _drugsState extends State<drugs> {
                                 padding: EdgeInsets.zero,
                                 onPressed: () {
                                   setState(() {
-                                    data[index]["id"] = !data[index]["id"];
-                                    data[index]["id"] == false
+                                    datafour[index]["id"] = !datafour[index]["id"];
+                                    datafour[index]["id"] == false
                                         ? favIncreaseCount()
                                         : favDereasCount();
                                   });
                                 },
-                                child: data[index]["id"] == false
+                                child: datafour[index]["id"] == false
                                     ? Icon(
                                   Icons.favorite,
                                   color: Colors.red,
@@ -289,7 +290,7 @@ class _drugsState extends State<drugs> {
                         Column(
                           children: [
                             Center(
-                              child: Text(data[index]['type'].toUpperCase(),
+                              child: Text(datafour[index]['type'].toUpperCase(),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -297,7 +298,7 @@ class _drugsState extends State<drugs> {
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold)),
                             ),
-                            Text(data[index]['sub'],
+                            Text(datafour[index]['sub'],
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
@@ -311,7 +312,7 @@ class _drugsState extends State<drugs> {
                                   width: 122,
                                   child: Column(
                                     children: [
-                                      Text(data[index]["price"],
+                                      Text(datafour[index]["price"],
                                           style: TextStyle(
                                               fontSize: 20,
                                               color: Colors.black,
@@ -325,14 +326,14 @@ class _drugsState extends State<drugs> {
                                       onPressed: () {
 
                                         setState(() {
-                                          data[index]["cart"] =
-                                          !data[index]["cart"];
-                                          data[index]["cart"] == false
+                                          datafour[index]["cart"] =
+                                          !datafour[index]["cart"];
+                                          datafour[index]["cart"] == false
                                               ? cartdereaseCount()
                                               : cartItemCount();
                                         });
                                       },
-                                      icon: data[index]["cart"] == false
+                                      icon: datafour[index]["cart"] == false
                                           ? Icon(
                                         Icons.shopping_cart_outlined,
                                         size: 35,
@@ -353,21 +354,22 @@ class _drugsState extends State<drugs> {
                     ),
                   ),
                 ),
-                itemCount: data.length,
+                itemCount: datafour.length,
               ),
             ],
           ),
         ));
   }
 
-  view(BuildContext context) {
+
+  viewfour(BuildContext context) {
     showModalBottomSheet(
         context: context,
         builder: (context) => Wrap(
           children: [
             InkWell(
-              onTap: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (c) => Cat())),
+              onTap: () => Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (c) => Cat())),
               child: ListTile(
                 leading: Icon(Icons.pets_outlined),
                 title: Text("Cat"),

@@ -22,63 +22,60 @@ class _shopState extends State<shop> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            body: SingleChildScrollView(
-      child: Container(
-        color: Colors.grey,
-        child: Column(
-          children: [
-            Container(
-              height: 230,
-              width: double.infinity,
-              child: Carousel(
-                images: [
-                  AssetImage("images/7.png"),
-                  AssetImage("images/8.jpg"),
-                  AssetImage("images/fish.jpg"),
-                  AssetImage("images/dog1.jpg"),
-                  AssetImage("images/bird.jpg"),
-                ],
-                dotSize: 4,
-                dotIncreaseSize: 2,
-                dotBgColor: Colors.white12,
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
+          body: Container(
+            color: Colors.grey,
+            child: Column(
+              children: [
+                Container(
+                  height: 270,
+                  width: double.infinity,
+                  child: Carousel(
+                    images: [
+                      AssetImage("images/7.png"),
+                      AssetImage("images/8.jpg"),
+                      AssetImage("images/fish.jpg"),
+                      AssetImage("images/dog1.jpg"),
+                      AssetImage("images/bird.jpg"),
+                    ],
+                    dotSize: 4,
+                    dotIncreaseSize: 2,
+                    dotBgColor: Colors.white12,
+                  ),
+                ),
 
-              child: GridView.count(
-                primary: false,
-                shrinkWrap: true,
-                padding: EdgeInsets.all(10),
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                crossAxisCount: 2,
-                children: [
-                  InkWell(
-                      onTap: () => Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (c) => pet())),
-                      child: temple(name: "pet", image: "images/cat.jpg")),
-                  InkWell(
-                      onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute(builder: (c) => accessories())),
-                      child: temple(
-                          name: "accessories", image: "images/acces.jpg")),
-                  InkWell(
-                      onTap: () => Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (c) => food())),
-                      child: temple(name: "food", image: "images/food.jpg")),
-                  InkWell(
-                      onTap: () => Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (c) => drugs())),
-                      child: temple(name: "drugs", image: "images/drugs.jpg")),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    )));
+                Container(
+
+                  child: GridView.count(
+                    primary: false,
+                    shrinkWrap: true,
+                    padding: EdgeInsets.all(10),
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    crossAxisCount: 2,
+                    children: [
+                      InkWell(
+                          onTap: () => Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (c) => pet())),
+                          child: temple(name: "pet", image: "images/cat.jpg")),
+                      InkWell(
+                          onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute(builder: (c) => accessories())),
+                          child: temple(
+                              name: "accessories", image: "images/acces.jpg")),
+                      InkWell(
+                          onTap: () => Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (c) => food())),
+                          child: temple(name: "food", image: "images/food.jpg")),
+                      InkWell(
+                          onTap: () => Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (c) => drugs())),
+                          child: temple(name: "drugs", image: "images/drugs.jpg")),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ));
   }
 }
