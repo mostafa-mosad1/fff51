@@ -240,7 +240,7 @@ class _profile_editVetState extends State<profile_editVet> {
                               children: [
                                 Container(
                                     alignment: Alignment.topLeft,
-                                    margin: EdgeInsets.only(left: 20),
+                                    margin: EdgeInsets.only(left: 30),
                                     height: 50,
                                     width: 240,
                                     child: defultForm(color: Colors.white,
