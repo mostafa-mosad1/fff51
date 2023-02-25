@@ -37,12 +37,6 @@ class _profile_editVetState extends State<profile_editVet> {
             children: [
               Stack(
                 children: [
-                  Image.asset(
-                    "images/pro4.jpg",
-                    height: 180,
-                    width: double.infinity,
-                    fit: BoxFit.fill,
-                  ),
                   Form(
                     key: formKey,
                     child: Column(
@@ -78,7 +72,8 @@ class _profile_editVetState extends State<profile_editVet> {
                             child: Stack(
                           children: [
                             image == null
-                                ? Container(
+                                ?
+                            Container(
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
                                             image:
@@ -86,10 +81,9 @@ class _profile_editVetState extends State<profile_editVet> {
                                             fit: BoxFit.cover),
                                         border: Border.all(
                                             color: Colors.black, width: 2),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(140))),
-                                    width: 190,
-                                    height: 190)
+                                       ),
+                                    width: double.infinity,
+                                    height: 220)
                                 : CircleAvatar(
                                     radius: 95,
                                     backgroundImage: FileImage(image),
@@ -204,30 +198,29 @@ class _profile_editVetState extends State<profile_editVet> {
                         SizedBox(
                           height: 12,
                         ),
-                        Center(
-                          child: Container(
-                              height: 60,
-                              margin: EdgeInsets.only(
-                                  top: 10, bottom: 10, right: 25, left: 25),
-                              child: defultForm(
-                                  initialvalue: widget.nameed,
-                                  onsaved: (val) {
-                                    nameController = val;
-                                  },
-                                  labelText: "name",
-                                  validator: (value) => value!.isEmpty
-                                      ? "enter a valid Name"
-                                      : null)),
-                        ),
-                        Center(
+                        Container(
+                          alignment: Alignment.topLeft,
                           child: Text(
-                            "@moh_ahmed",
+                            "   Name",
                             style: TextStyle(
-                                color: Colors.black45,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 15),
+                                fontSize: 25),
                           ),
                         ),
+                        SizedBox(height: 10,),
+                        Container(
+                            alignment: Alignment.topLeft,
+                            margin: EdgeInsets.only(left: 25),
+                            height: 60,
+                            child: defultForm(color: Colors.white,
+                                initialvalue: widget.nameed,
+                                onsaved: (val) {
+                                  nameController = val;
+                                },
+                                labelText: "name",
+                                validator: (value) => value!.isEmpty
+                                    ? "enter a valid Name"
+                                    : null)),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10),
                           child: Column(
@@ -245,8 +238,10 @@ class _profile_editVetState extends State<profile_editVet> {
                                 height: 10,
                               ),
                               Container(
+                                  margin: EdgeInsets.only(left: 20),
                                   alignment: Alignment.topLeft,
                                   child: defultForm(
+                                    color: Colors.white,
                                     initialvalue: widget.phoneed,
                                     onsaved: (val) {
                                       phoneController = val;
@@ -273,7 +268,9 @@ class _profile_editVetState extends State<profile_editVet> {
                               ),
                               Container(
                                   alignment: Alignment.topLeft,
+                                  margin: EdgeInsets.only(left: 20),
                                   child: defultForm(
+                                    color: Colors.white,
                                     initialvalue: widget.addressed,
                                     onsaved: (val) {
                                       addressController = val;

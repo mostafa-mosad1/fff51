@@ -11,9 +11,9 @@ class Dog extends StatefulWidget {
 class _DogState extends State<Dog> {
   List images = [
     {
-      "image": "images/cat.jpg",
-      "type": "name",
-      "sub": "cccc ccccc ccccc ccccc cccccc ccdddd dddddd dddd",
+      "image": "images/8.jpg",
+      "type": "Golden Retriever",
+      "sub": "The tiny Maltese, 'Ye Ancient Dogge The tiny Maltese, 'Ye Ancient Dogge ",
     },
     {
       "image": "images/cat.jpg",
