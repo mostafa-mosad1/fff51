@@ -227,8 +227,8 @@ class _Edithome1State extends State<Edithome1> {
                             names = val;
                           },
                           validator: (val) {
-                            if (val!.length > 50) {
-                              return "title should be less than 50 ";
+                            if (val!.length > 10) {
+                              return "title should be less than 10 ";
                             }
 
                             return null;

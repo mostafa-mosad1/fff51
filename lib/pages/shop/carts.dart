@@ -163,7 +163,7 @@ class _cartState extends State<cart> {
                       ClipRRect(
                           borderRadius: BorderRadius.circular(25),
                           child: Image(
-                            image: AssetImage("images/cat.jpg"),
+                            image: AssetImage("images/peo3.jpg"),
                             width: 115,
                             height: 155,
                             fit: BoxFit.cover,
@@ -179,7 +179,7 @@ class _cartState extends State<cart> {
                         Container(
                           width: 150,
                           child: Text(
-                            "cat nnnnnnnnnnnnnnnnnnnnnnnnnn",
+                            "Rex",
                             style: TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.bold),
                             maxLines: 3,
@@ -189,7 +189,7 @@ class _cartState extends State<cart> {
                         Container(
                           width: 150,
                           child: Text(
-                            "250 EL",
+                            "2100 EL",
                             style: TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.bold),
                             maxLines: 2,
@@ -254,6 +254,118 @@ class _cartState extends State<cart> {
           SizedBox(
             height: 10,
           ),
+          // Container(
+          //   decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.circular(20),
+          //       color: Colors.white,
+          //       border: Border.all(color: Colors.black, width: 1)),
+          //   child: Container(
+          //     width: double.infinity,
+          //     height: 155,
+          //     child: SingleChildScrollView(
+          //       scrollDirection: Axis.horizontal,
+          //       child: Row(
+          //         mainAxisAlignment: MainAxisAlignment.start,
+          //         crossAxisAlignment: CrossAxisAlignment.start,
+          //         children: [
+          //           SizedBox(
+          //             width: 5,
+          //           ),
+          //           Column(children: [
+          //             ClipRRect(
+          //                 borderRadius: BorderRadius.circular(25),
+          //                 child: Image(
+          //                   image: AssetImage("images/hamaster.jpg"),
+          //                   width: 115,
+          //                   height: 155,
+          //                   fit: BoxFit.cover,
+          //                 ))
+          //           ]),
+          //           SizedBox(
+          //             width: 6,
+          //           ),
+          //           Column(
+          //             mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //             crossAxisAlignment: CrossAxisAlignment.start,
+          //             children: [
+          //               Container(
+          //                 width: 150,
+          //                 child: Text(
+          //                   "HAMASTER",
+          //                   style: TextStyle(
+          //                       fontSize: 30, fontWeight: FontWeight.bold),
+          //                   maxLines: 3,
+          //                   overflow: TextOverflow.ellipsis,
+          //                 ),
+          //               ),
+          //               Container(
+          //                 width: 150,
+          //                 child: Text(
+          //                   "250 EL",
+          //                   style: TextStyle(
+          //                       fontSize: 30, fontWeight: FontWeight.bold),
+          //                   maxLines: 2,
+          //                   overflow: TextOverflow.ellipsis,
+          //                 ),
+          //               ),
+          //             ],
+          //           ),
+          //           Column(
+          //             mainAxisAlignment: MainAxisAlignment.center,
+          //             crossAxisAlignment: CrossAxisAlignment.start,
+          //             children: [
+          //               Row(
+          //                 children: [
+          //                   IconButton(
+          //                     onPressed: () {
+          //                       setState(() {
+          //                         y = y - 1;
+          //                       });
+          //                     },
+          //                     icon: Icon(
+          //                       Icons.indeterminate_check_box,
+          //                       size: 20,
+          //                     ),
+          //                     color: Colors.orangeAccent,
+          //                   ),
+          //                   Text("$y"),
+          //                   IconButton(
+          //                     onPressed: () {
+          //                       setState(() {
+          //                         y = y + 1;
+          //                       });
+          //                     },
+          //                     icon: Icon(
+          //                       Icons.add_box,
+          //                       size: 20,
+          //                     ),
+          //                     color: Colors.orangeAccent,
+          //                   )
+          //                 ],
+          //               ),
+          //               Container(
+          //                   decoration: BoxDecoration(
+          //                     borderRadius:
+          //                         BorderRadius.all(Radius.circular(30)),
+          //                     color: Colors.white,
+          //                   ),
+          //                   child: MaterialButton(
+          //                       onPressed: () {},
+          //                       child: Text(
+          //                         "remove",
+          //                         style: TextStyle(
+          //                             color: Colors.red, fontSize: 15),
+          //                       )))
+          //             ],
+          //           ),
+          //         ],
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: 10,
+          // ),
           Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -275,7 +387,7 @@ class _cartState extends State<cart> {
                       ClipRRect(
                           borderRadius: BorderRadius.circular(25),
                           child: Image(
-                            image: AssetImage("images/cat.jpg"),
+                            image: AssetImage("images/hamaster.jpg"),
                             width: 115,
                             height: 155,
                             fit: BoxFit.cover,
@@ -291,119 +403,7 @@ class _cartState extends State<cart> {
                         Container(
                           width: 150,
                           child: Text(
-                            "cat nnnnnnnnnnnnnnnnnnnnnnnnnn",
-                            style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold),
-                            maxLines: 3,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        Container(
-                          width: 150,
-                          child: Text(
-                            "250 EL",
-                            style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  y = y - 1;
-                                });
-                              },
-                              icon: Icon(
-                                Icons.indeterminate_check_box,
-                                size: 20,
-                              ),
-                              color: Colors.orangeAccent,
-                            ),
-                            Text("$y"),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  y = y + 1;
-                                });
-                              },
-                              icon: Icon(
-                                Icons.add_box,
-                                size: 20,
-                              ),
-                              color: Colors.orangeAccent,
-                            )
-                          ],
-                        ),
-                        Container(
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(30)),
-                              color: Colors.white,
-                            ),
-                            child: MaterialButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "remove",
-                                  style: TextStyle(
-                                      color: Colors.red, fontSize: 15),
-                                )))
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-                border: Border.all(color: Colors.black, width: 1)),
-            child: Container(
-              width: double.infinity,
-              height: 155,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Column(children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(25),
-                          child: Image(
-                            image: AssetImage("images/cat.jpg"),
-                            width: 115,
-                            height: 155,
-                            fit: BoxFit.cover,
-                          ))
-                    ]),
-                    SizedBox(
-                      width: 6,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: 150,
-                          child: Text(
-                            "cat nnnnnnn00",
+                            " HAMASTER",
                             style: TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.bold),
                             maxLines: 3,
@@ -478,7 +478,7 @@ class _cartState extends State<cart> {
             ),
           ),
 
-          show_price(price: 1000,count: 3)
+          show_price(price: 2350,count: 2)
         ],
       ),
 

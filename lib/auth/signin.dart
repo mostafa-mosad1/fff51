@@ -117,7 +117,7 @@ class _SigninState extends State<Signin> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => home_mangaementTrader(),
+                                      builder: (context) => home_management(),
                                     ));
                               },
                               child: Text(
