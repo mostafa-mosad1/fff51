@@ -69,12 +69,6 @@ class _shop_traderState extends State<shop_trader> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Container(
-            //     margin: EdgeInsets.only(left: 10, top: 8),
-            //     child: Text(
-            //       "Top selling".toUpperCase(),
-            //       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-            //     )),
             SizedBox(
               height: 10,
             ),
@@ -121,9 +115,10 @@ class _shop_traderState extends State<shop_trader> {
                         ),
                         Center(
                             child: SizedBox(
-                          height: 6,
-                          width: 155,
+                          height: 4,
+                          width: 130,
                           child: Container(
+                            margin: EdgeInsets.only(left: 25),
                             color: Colors.green,
                           ),
                         )),
@@ -225,7 +220,8 @@ class _shop_traderState extends State<shop_trader> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           widget.datafour != null
-                                              ? Container(
+                                              ?
+                                          Container(
                                                   width: 175,
                                                   height: 233,
                                                   decoration: BoxDecoration(
@@ -239,7 +235,8 @@ class _shop_traderState extends State<shop_trader> {
                                                     ),
                                                   ),
                                                 )
-                                              : Container(
+                                              :
+                                          Container(
                                                   width: 175,
                                                   height: 233,
                                                   decoration: BoxDecoration(
@@ -284,14 +281,14 @@ class _shop_traderState extends State<shop_trader> {
                                         ),
                                         widget.datatwo != null
                                             ? Text(
-                                                "price :  ${widget.datatwo}",
+                                                "price :  ${widget.datatwo}  LE",
                                                 style: TextStyle(
                                                     fontSize: 20,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               )
                                             : Text(
-                                                "price :  ${trad[index]['price']}",
+                                                "price :  ${trad[index]['price']}  LE",
                                                 style: TextStyle(
                                                     fontSize: 20,
                                                     fontWeight:
@@ -346,7 +343,8 @@ class _shop_traderState extends State<shop_trader> {
             Stack(
               children: [
                 widget.Pimage != null
-                    ? Column(
+                    ?
+                Column(
                         children: [
                           Container(
                             padding: EdgeInsets.all(4.0),
@@ -367,7 +365,8 @@ class _shop_traderState extends State<shop_trader> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         widget.Pimage != null
-                                            ? Container(
+                                            ?
+                                        Container(
                                                 width: 175,
                                                 height: 233,
                                                 decoration: BoxDecoration(
@@ -402,7 +401,7 @@ class _shop_traderState extends State<shop_trader> {
                                       ),
                                       widget.Pprice != null
                                           ? Text(
-                                              "price :  ${widget.Pprice}",
+                                              "price :  ${widget.Pprice}  LE",
                                               style: TextStyle(
                                                   fontSize: 20,
                                                   fontWeight: FontWeight.bold),
