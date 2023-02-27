@@ -6,7 +6,11 @@ import 'package:fff/pages/shop/food.dart';
 import 'package:fff/pages/shop/pet.dart';
 import 'package:fff/pages/shop/shop_management.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../auth/signup.dart';
 
@@ -23,57 +27,62 @@ class _shopState extends State<shop> {
     return SafeArea(
         child: Scaffold(
           body: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
             color: Colors.grey,
-            child: Column(
-              children: [
-                Container(
-                  height: 270,
-                  width: double.infinity,
-                  child: Carousel(
-                    images: [
-                      AssetImage("images/7.png"),
-                      AssetImage("images/8.jpg"),
-                      AssetImage("images/fish.jpg"),
-                      AssetImage("images/dog1.jpg"),
-                      AssetImage("images/bird.jpg"),
-                    ],
-                    dotSize: 4,
-                    dotIncreaseSize: 2,
-                    dotBgColor: Colors.white12,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    //height: 270,
+                    width: double.infinity,
+                    child: Carousel(
+                      images: [
+                        AssetImage("images/7.png"),
+                        AssetImage("images/8.jpg"),
+                        AssetImage("images/fish.jpg"),
+                        AssetImage("images/dog1.jpg"),
+                        AssetImage("images/bird.jpg"),
+                      ],
+                      dotSize: 4,
+                      dotIncreaseSize: 2,
+                      dotBgColor: Colors.white12,
+                    ),
                   ),
-                ),
 
-                Container(
+                  Container(
 
-                  child: GridView.count(
-                    primary: false,
-                    shrinkWrap: true,
-                    padding: EdgeInsets.all(10),
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    crossAxisCount: 2,
-                    children: [
-                      InkWell(
-                          onTap: () => Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (c) => pet())),
-                          child: temple(name: "pet", image: "images/cat.jpg")),
-                      InkWell(
-                          onTap: () => Navigator.of(context).push(
-                              MaterialPageRoute(builder: (c) => accessories())),
-                          child: temple(
-                              name: "accessories", image: "images/acces.jpg")),
-                      InkWell(
-                          onTap: () => Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (c) => food())),
-                          child: temple(name: "food", image: "images/food.jpg")),
-                      InkWell(
-                          onTap: () => Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (c) => drugs())),
-                          child: temple(name: "drugs", image: "images/drugs.jpg")),
-                    ],
-                  ),
-                )
-              ],
+                    child: GridView.count(
+                      primary: false,
+                      shrinkWrap: true,
+                      padding: EdgeInsets.all(10),
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      crossAxisCount: 2,
+                      children: [
+                        InkWell(
+                            onTap: () => Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (c) => pet())),
+                            child: temple(name: "pet", image: "images/cat.jpg",context:context )),
+                        InkWell(
+                            onTap: () => Navigator.of(context).push(
+                                MaterialPageRoute(builder: (c) => accessories())),
+                            child: temple(
+                                name: "accessories", image: "images/acces.jpg",context:context)),
+                        InkWell(
+                            onTap: () => Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (c) => food())),
+                            child: temple(name: "food", image: "images/food.jpg",context:context)),
+                        InkWell(
+                            onTap: () => Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (c) => drugs())),
+                            child: temple(name: "drugs", image: "images/drugs.jpg",context:context)),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ));

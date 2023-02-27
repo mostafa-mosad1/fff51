@@ -2,6 +2,7 @@ import 'package:fff/components.dart';
 import 'package:fff/pages/profile/edit_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:slide_countdown/slide_countdown.dart';
 
 class Profile extends StatefulWidget {
@@ -92,12 +93,12 @@ class _ProfileState extends State<Profile> {
                         ? Text(
                             "${widget.name}",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25),
+                                fontWeight: FontWeight.bold, fontSize: 25.sp),
                           )
                         : Text(
                             "${na}",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25),
+                                fontWeight: FontWeight.bold, fontSize: 25.sp),
                           )),
                 Center(
                   child: Text(
@@ -114,64 +115,74 @@ class _ProfileState extends State<Profile> {
                     children: [
                       Container(
                         alignment: Alignment.topLeft,
+                        margin: EdgeInsets.only(left: 5),
                         child: Text(
                           "Phone",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 25),
+                              fontWeight: FontWeight.bold, fontSize: 25.sp),
                         ),
                       ),
                       Container(
                           alignment: Alignment.topLeft,
+                          margin: EdgeInsets.only(left: 15),
                           child: widget.phone != null
                               ? Text(
                                   "${widget.phone}",
                                   style: TextStyle(
                                       color: Colors.black45,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 15),
+                                      fontSize: 20.spMax),
                                 )
-                              : Text(
-                                    "${ph}",
-                                  style: TextStyle(
-                                      color: Colors.black45,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15),
-                                )),
+                              : Container(
+                            margin: EdgeInsets.only(left: 15),
+                                child: Text(
+                                      "${ph}",
+                                    style: TextStyle(
+                                        color: Colors.black45,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20.spMax),
+                                  ),
+                              )),
                       SizedBox(
                         height: 8,
                       ),
                       Container(
                         alignment: Alignment.topLeft,
+                        margin: EdgeInsets.only(left: 5),
                         child: Text(
                           "Address",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 25),
+                              fontWeight: FontWeight.bold, fontSize: 25.sp),
                         ),
                       ),
                       Container(
                           alignment: Alignment.topLeft,
+                          margin: EdgeInsets.only(left: 15),
                           child: widget.address != null
                               ? Text(
                                   "${widget.address}",
                                   style: TextStyle(
                                       color: Colors.black45,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 15),
+                                      fontSize: 20.sp),
                                 )
-                              : Text(
-                                  "${ad}",
-                                  style: TextStyle(
-                                      color: Colors.black45,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15),
-                                )),
+                              : Container(
+                            margin: EdgeInsets.only(left: 15),
+                                child: Text(
+                                    "${ad}",
+                                    style: TextStyle(
+                                        color: Colors.black45,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20.sp),
+                                  ),
+                              )),
                       SizedBox(
                         height: 12,
                       ),
                       Center(
                           child: Container(
-                        width: 370,
-                        height: 300,
+                        width: 370.w,
+                        height: 300.h,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(width: 2, color: Colors.black),
@@ -179,25 +190,25 @@ class _ProfileState extends State<Profile> {
                         child: Column(
                           children: [
                             SizedBox(
-                              height: 5,
+                              height: 5.h,
                             ),
                             SizedBox(
-                              width: 75,
+                              width: 75.w,
                             ),
                             Center(
                                 child: Text("My animals",
                                     style: TextStyle(
                                         wordSpacing: 2,
                                         decorationThickness: 3,
-                                        fontSize: 25,
+                                        fontSize: 25.sp,
                                         fontWeight: FontWeight.bold))),
                             Container(
-                              width: 70,
-                              height: 5,
+                              width: 70.w,
+                              height: 5.h,
                               color: Colors.green,
                             ),
                             SizedBox(
-                              height: 15,
+                              height: 15.h,
                             ),
                             SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
@@ -209,7 +220,7 @@ class _ProfileState extends State<Profile> {
                                       color: Colors.red,
                                       child: Icon(
                                         Icons.delete,
-                                        size: 60,
+                                        size: 60.h,
                                       ),
                                     ),
                                     direction: DismissDirection.vertical,
