@@ -1,6 +1,7 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class service extends StatefulWidget {
   const service({Key? key}) : super(key: key);
@@ -47,7 +48,7 @@ class _serviceState extends State<service> {
                   margin: EdgeInsets.only(top: 13),
               padding:  EdgeInsets.all(20),
               child: Container(
-                width: 370,
+                width: 370.w,
                 height: double.infinity,
                 color: Colors.white70,
                 margin: EdgeInsets.only(top: 38),
@@ -139,7 +140,7 @@ class _serviceState extends State<service> {
                         color: Colors.green,
                       )),
                       Container(
-                        height: 350,
+                        height: 350.h,
                         width: double.infinity,
                         child: Column(
                           children: [
@@ -179,8 +180,8 @@ class _serviceState extends State<service> {
                           color: Colors.black87,
                           //borderRadius:BorderRadius.only(topLeft:Radius.circular(25),topRight:Radius.circular(25))
                         ),
-                        height: 260,
-                        width: 390,
+                        height: 260.h,
+                        width: 390.w,
                         child: Padding(
                           padding: const EdgeInsets.only(top: 25, left: 13),
                           child: Row(

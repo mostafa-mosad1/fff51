@@ -1,44 +1,80 @@
-import 'package:fff/pages/doctorpage/doctors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Widget temple({image, name}) => Card(
-      color: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      elevation: 7,
-      margin: EdgeInsets.all(10),
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
-                ),
-                child: Image.asset(
-                  "$image",
-                  height: 120,
-                  width: 180,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ],
+// Card(
+// color: Colors.white,
+// shape: RoundedRectangleBorder(
+// borderRadius: BorderRadius.circular(15),
+// ),
+// elevation: 7,
+// margin: EdgeInsets.all(10),
+// child: Column(
+// children: [
+// Stack(
+// children: [
+// ClipRRect(
+// borderRadius: BorderRadius.only(
+// topLeft: Radius.circular(15),
+// topRight: Radius.circular(15),
+// ),
+// child: Image.asset(
+// "$image",
+// height: 125.h,
+// width: 180.w,
+// fit: BoxFit.cover,
+// ),
+// ),
+// ],
+// ),
+// Column(
+// children: [
+// Text("$name",
+// style: TextStyle(
+// fontSize: 27.sp,
+// color: Colors.black,
+// fontWeight: FontWeight.bold
+// )),
+// ],
+// )
+// ],
+// ),
+// ),
+
+Widget temple({image, name, context}) => Container(
+    height: MediaQuery.of(context).size.height * 0.6,
+    decoration: BoxDecoration(
+        color: Colors.white, borderRadius: BorderRadius.circular(25)),
+    child: Column(
+      children: [
+        Expanded(
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(25),
+              topRight: Radius.circular(25),
+            ),
+            child: Image.asset(
+              image,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
           ),
-          Column(
-            children: [
-              Text("$name",
-                  style: TextStyle(
-                    fontSize: 27,
-                    color: Colors.black,
-                  )),
-            ],
-          )
-        ],
-      ),
-    );
+        ),
+        SizedBox(
+          height: 8.h,
+        ),
+        Center(
+          child: Text("$name",
+              style: TextStyle(
+                  fontSize: 27.sp,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold)),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+      ],
+    ));
 
 Widget shop_temple({image, name, price}) => Container(
       width: 200,
@@ -234,8 +270,8 @@ Widget defultForm(
 Widget show_price({count, price}) => Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: 380,
-        height: 100,
+        width: 380.w,
+        height: 100.h,
         decoration: BoxDecoration(
             color: Colors.grey,
             border: Border.all(color: Colors.black, width: 4)),
@@ -346,6 +382,7 @@ Widget recommend() => Container(
         ],
       ),
     );
+
 Widget animal({image, nameAnimal}) => Stack(
       children: [
         Container(

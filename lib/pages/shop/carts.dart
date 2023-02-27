@@ -1,6 +1,7 @@
 import 'package:fff/components.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'favorite.dart';
 
@@ -137,347 +138,130 @@ class _cartState extends State<cart> {
             },
             child: Icon( pay ==false? Icons.landslide_sharp:Icons.done_outline_outlined),
           ),
-          body: ListView(
-            children: [
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 5,right: 5),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black, width: 1)),
-                child: Container(
-                  width: double.infinity,
-                  height: 155,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(children: [
-                          ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                image: AssetImage("images/cat.jpg"),
-                                width: 115,
-                                height: 155,
-                                fit: BoxFit.cover,
-                              ))
-                        ]),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              width: 150,
-                              child: Text(
-                                "cat nnnnnnnnnnnnnnnnnnnnnnnnnn",
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
-                                maxLines: 3,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            Container(
-                              width: 150,
-                              child: Text(
-                                "250 EL",
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
+          body: SingleChildScrollView(
+            child: Container(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  ListView.separated(physics:BouncingScrollPhysics(),shrinkWrap: true,
+                    itemBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(20),border: Border.all(color: Colors.black, width: 1)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
                               children: [
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      x = x - 1;
-                                    });
-                                  },
-                                  icon: Icon(
-                                    Icons.indeterminate_check_box,
-                                    size: 20,
+                                SizedBox(width: 1.w,),
+                                Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: Container( width: 112.w,height: 150.h,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        image: DecorationImage(
+                                          image: AssetImage("images/cat.jpg"),
+                                          fit: BoxFit.cover,
+
+                                        )
+                                    ),
                                   ),
-                                  color: Colors.orangeAccent,
-                                ),
-                                Text("$x"),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      x = x + 1;
-                                    });
-                                  },
-                                  icon: Icon(
-                                    Icons.add_box,
-                                    size: 20,
-                                  ),
-                                  color: Colors.orangeAccent,
                                 )
-                              ],
-                            ),
-                            Container(
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(30)),
-                                  color: Colors.white,
+                              ]),
+                          SizedBox(
+                            width: 3.w,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                width: 110.w,
+                                child: Text(
+                                  "cat nnnnnnnnnnnnnnnnnnnnn",
+                                  style: TextStyle(
+                                      fontSize: 25.sp, fontWeight: FontWeight.bold),
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
-                                child: MaterialButton(
-                                    onPressed: () {},
-                                    child: Text(
-                                      "   remove",
-                                      style: TextStyle(
-                                          color: Colors.red, fontSize: 15),
-                                    )))
-                          ],
-                        ),
-                      ],
+                              ),
+                              Container(
+                                width: 110.w,
+                                child: Text(
+                                  "250 EL",
+                                  style: TextStyle(
+                                      fontSize: 30.sp, fontWeight: FontWeight.bold),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(width: 1.w,),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(height: 30,),
+                              Row(
+                                children: [
+                                  IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        x = x - 1;
+                                      });
+                                    },
+                                    icon: Icon(
+                                      Icons.indeterminate_check_box,
+                                      size: 20.h,
+                                    ),
+                                    color: Colors.orangeAccent,
+                                  ),
+                                  Text("$x"),
+                                  IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        x = x + 1;
+                                      });
+                                    },
+                                    icon: Icon(
+                                      Icons.add_box,
+                                      size: 20.h,
+                                    ),
+                                    color: Colors.orangeAccent,
+                                  )
+                                ],
+                              ),
+                              SizedBox(height: 10,),
+                              Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius:
+                                    BorderRadius.all(Radius.circular(30)),
+                                    color: Colors.red,
+                                  ),
+                                  child: MaterialButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        "Remove",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 15.sp),
+                                      )))
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 5,right: 5),
+                    itemCount: 3,
+                    separatorBuilder: (context, index) =>  SizedBox(height: 5,),),
+                  SizedBox(height: 5,),
 
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black, width: 1)),
-                child: Container(
-                  width: double.infinity,
-                  height: 155,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-
-                        Column(children: [
-                          ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                image: AssetImage("images/cat.jpg"),
-                                width: 115,
-                                height: 155,
-                                fit: BoxFit.cover,
-                              ))
-                        ]),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              width: 150,
-                              child: Text(
-                                "cat nnnnnnnnnnnnnnnnnnnnnnnnnn",
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
-                                maxLines: 3,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            Container(
-                              width: 150,
-                              child: Text(
-                                "250 EL",
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      y = y - 1;
-                                    });
-                                  },
-                                  icon: Icon(
-                                    Icons.indeterminate_check_box,
-                                    size: 20,
-                                  ),
-                                  color: Colors.orangeAccent,
-                                ),
-                                Text("$y"),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      y = y + 1;
-                                    });
-                                  },
-                                  icon: Icon(
-                                    Icons.add_box,
-                                    size: 20,
-                                  ),
-                                  color: Colors.orangeAccent,
-                                )
-                              ],
-                            ),
-                            Container(
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(30)),
-                                  color: Colors.white,
-                                ),
-                                child: MaterialButton(
-                                    onPressed: () {},
-                                    child: Text(
-                                      "   remove",
-                                      style: TextStyle(
-                                          color: Colors.red, fontSize: 15),
-                                    )))
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                  show_price(price: 1000,count: 3)
+                ],
               ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 5,right: 5),
-
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black, width: 1)),
-                child: Container(
-                  width: double.infinity,
-                  height: 155,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-
-                        Column(children: [
-                          ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                image: AssetImage("images/cat.jpg"),
-                                width: 115,
-                                height: 155,
-                                fit: BoxFit.cover,
-                              ))
-                        ]),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              width: 150,
-                              child: Text(
-                                "cat nnnnnnn00",
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
-                                maxLines: 3,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            Container(
-                              width: 150,
-                              child: Text(
-                                "$p",
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      z = z - 1;
-                                      p=z*p;
-                                    });
-                                  },
-                                  icon: Icon(
-                                    Icons.indeterminate_check_box,
-                                    size: 20,
-                                  ),
-                                  color: Colors.orangeAccent,
-                                ),
-                                Text("$z"),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      z = z + 1;
-                                      p=p*z;
-                                    });
-                                  },
-                                  icon: Icon(
-                                    Icons.add_box,
-                                    size: 20,
-                                  ),
-                                  color: Colors.orangeAccent,
-                                )
-                              ],
-                            ),
-                            Container(
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(30)),
-                                  color: Colors.white,
-                                ),
-                                child: MaterialButton(
-                                    onPressed: () {},
-                                    child: Text(
-                                      "   remove",
-                                      style: TextStyle(
-                                          color: Colors.red, fontSize: 15),
-                                    )))
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-
-              show_price(price: 1000,count: 3)
-            ],
+            ),
           ),
 
         ));

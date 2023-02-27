@@ -3,6 +3,7 @@ import 'package:fff/pages/categorypage/category.dart';
 import 'package:fff/pages/shop/pet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'doctorpage/doctors.dart';
 
@@ -29,8 +30,9 @@ class _homeState extends State<home> {
                 child: Text("Hello Dear",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
               ),
                 Text(" Lets shop something!",style: TextStyle(fontSize: 18,color: Colors.white),),
-              Container(
-                height: 230,
+              SizedBox(height: 5,),
+                Container(
+                height: 250,
                 width: double.infinity,
                 child: Carousel(
                   images: [
@@ -389,25 +391,25 @@ class _homeState extends State<home> {
                 decoration: BoxDecoration(color: Colors.black87,
                     //borderRadius:BorderRadius.only(topLeft:Radius.circular(25),topRight:Radius.circular(25))
                    ),
-                height: 260,width: 390,
+                height: 260.h,width: 390.w,
               child: Padding(
                 padding: const EdgeInsets.only(top:25,left: 13),
                 child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                   Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Pet Life",style: TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold),),
-                    Container(color: Colors.green,width: 40,height: 3,),
-                    SizedBox(height: 11,),
-                    Text("A App for people who ",style: TextStyle(color: Colors.white),),
-                    SizedBox(height: 2,),
-                    Text("interested in pets,you ",style: TextStyle(color: Colors.white),),
-                    SizedBox(height: 2,),
-                    Text(" can find all what you ",style: TextStyle(color: Colors.white),),
-                    SizedBox(height: 2,),
-                    Text("need(pets,food,acce..",style: TextStyle(color: Colors.white),),
-                    SizedBox(height: 2,),
-                    Text("ssories,and medicine)",style: TextStyle(color: Colors.white),),
+                    Text("Pet Life",style: TextStyle(color: Colors.white,fontSize: 25.sp,fontWeight: FontWeight.bold),),
+                    Container(color: Colors.green,width: 40,height: 3.h,),
+                    SizedBox(height: 11.h,),
+                    Text("A App for people who ",style: TextStyle(color: Colors.white,fontSize: 13.sp,letterSpacing: 1),),
+                    SizedBox(height: 5.h,),
+                    Text("interested in pets,you ",style: TextStyle(color: Colors.white,fontSize: 13.sp,letterSpacing: 1),),
+                    SizedBox(height: 5.h,),
+                    Text(" can find all what you ",style: TextStyle(color: Colors.white,fontSize: 13.sp,letterSpacing: 1),),
+                    SizedBox(height: 5.h,),
+                    Text("need(pets,food,acce..",style: TextStyle(color: Colors.white,fontSize: 13.sp,letterSpacing: 1),),
+                    SizedBox(height: 5.h,),
+                    Text("ssories,and medicine)",style: TextStyle(color: Colors.white,fontSize: 13.sp,letterSpacing: 1),),
                   ],),
                  Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

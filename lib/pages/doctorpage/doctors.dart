@@ -6,6 +6,7 @@ import 'package:fff/pages/doctorpage/doctortwo.dart';
 import 'package:fff/pages/doctorpage/notification.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class doctors extends StatefulWidget {
   const doctors({Key? key}) : super(key: key);
@@ -27,8 +28,8 @@ class _doctorsState extends State<doctors> {
               Stack(
                 children: [
                   Container(
-                    height:230,
-                    // height: MediaQuery.of(context).size.height * 0.3,
+                    height:230.h,
+                    // height: MediaQuery.of(context).size.height*0.75,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(30),
@@ -164,7 +165,7 @@ class _doctorsState extends State<doctors> {
                 physics: BouncingScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 200,
+                    maxCrossAxisExtent: 215,
                     childAspectRatio:1.5/2,
                     crossAxisSpacing: 5,
                     mainAxisSpacing: 5),
@@ -174,7 +175,7 @@ class _doctorsState extends State<doctors> {
                       border: Border.all(width: 1.8),
                       borderRadius: BorderRadius.all(Radius.circular(25))),
                   margin: EdgeInsets.all(10),
-                  width: 200,
+                  width: 222,
                   child: MaterialButton(
                     padding: EdgeInsets.zero,
                     onPressed: () {
@@ -231,7 +232,7 @@ class _doctorsState extends State<doctors> {
                           child: Text(
                             "Dr.vet",
                             style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold),
+                                fontSize: 25.sp, fontWeight: FontWeight.bold),
                           ),
                         )
                       ],
@@ -239,7 +240,8 @@ class _doctorsState extends State<doctors> {
                   ),
                 ),
                 itemCount: 8,
-              )
+              ),
+              SizedBox(height: 20,)
             ],
           )),
     );

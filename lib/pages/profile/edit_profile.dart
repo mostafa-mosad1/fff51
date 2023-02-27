@@ -5,6 +5,7 @@ import 'package:fff/pages/profile/add_animal.dart';
 import 'package:fff/pages/profile/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 
 class edit_profile extends StatefulWidget {
@@ -238,6 +239,7 @@ class _edit_profileState extends State<edit_profile> {
                       children: [
                         Container(
                           alignment: Alignment.topLeft,
+                          margin: EdgeInsets.only(left: 5),
                           child: Text(
                             " Phone",
                             style: TextStyle(
@@ -249,6 +251,7 @@ class _edit_profileState extends State<edit_profile> {
                         ),
                         Container(
                             alignment: Alignment.topLeft,
+                            margin: EdgeInsets.only(left: 15),
                             child: defultForm(
                               initialvalue: widget.phoneed,
                               onsaved: (val) {
@@ -263,6 +266,7 @@ class _edit_profileState extends State<edit_profile> {
                         ),
                         Container(
                           alignment: Alignment.topLeft,
+                          margin: EdgeInsets.only(left: 5),
                           child: Text(
                             " Address",
                             style: TextStyle(
@@ -274,6 +278,7 @@ class _edit_profileState extends State<edit_profile> {
                         ),
                         Container(
                             alignment: Alignment.topLeft,
+                            margin: EdgeInsets.only(left: 15),
                             child: defultForm(
                               initialvalue: widget.addressed,
                               onsaved: (val) {
@@ -289,8 +294,8 @@ class _edit_profileState extends State<edit_profile> {
                         ),
                         Center(
                             child: Container(
-                          width: 370,
-                          height: 275,
+                          width: 370.w,
+                          height: 275.h,
                           decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(width: 2, color: Colors.black),

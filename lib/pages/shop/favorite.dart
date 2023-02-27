@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'carts.dart';
 
@@ -74,21 +75,25 @@ class _favoriteState extends State<favorite> {
           child:
           Container(
             width: double.infinity,
-            height: 155,
+            height: 178.h,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(children: [
-                  ClipRRect(
-                      borderRadius:BorderRadius.only(topLeft: Radius.circular(20),
-                          bottomLeft: Radius.circular(20)),
-                      child: Image(
-                        image: AssetImage("images/cat.jpg"),
-                        width: 140,
-                        height: 155,
-                        fit: BoxFit.cover,
-                      ))
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Container( width: 125.w,height: 170.h,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                            image: AssetImage("images/cat.jpg"),
+                            fit: BoxFit.cover,
+
+                          )
+                      ),
+                    ),
+                  )
                 ]),
                 SizedBox(
                   width: 6,
@@ -102,7 +107,7 @@ class _favoriteState extends State<favorite> {
                       child: Text(
                         "cat nnnnnnnnnnnnnnnnnnnnnnnnnn",
                         style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
+                            fontSize: 30.sp, fontWeight: FontWeight.bold),
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -112,7 +117,7 @@ class _favoriteState extends State<favorite> {
                       child: Text(
                         "250 EL",
                         style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
+                            fontSize: 30.sp, fontWeight: FontWeight.bold),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -134,8 +139,8 @@ class _favoriteState extends State<favorite> {
                             fav=!fav;
                           });
                         },child:    fav == false ?
-                        Icon(Icons.favorite,color: Colors.red,size: 50,) :
-                        Icon(Icons.favorite_border,color: Colors.red,size: 50,),)
+                        Icon(Icons.favorite,color: Colors.red,size: 50.sp,) :
+                        Icon(Icons.favorite_border,color: Colors.red,size: 50.sp,),)
                       ],
                     ),
                   ],
