@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:fff/trader/shop_trader.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../components.dart';
@@ -25,17 +26,17 @@ class _add_prodectState extends State<add_prodect> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey[400],
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            margin: EdgeInsets.only(top: 12),
-            height: 600,
-            decoration: BoxDecoration(color: Colors.grey[400]),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          margin: EdgeInsets.only(top: 12),
+          height: 600,
+          decoration: BoxDecoration(color: Colors.grey[400]),
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
-                    margin: EdgeInsets.only(right: 320, top: 5),
+                    margin: EdgeInsets.only(right: 320.w, top: 5.h),
                     decoration: BoxDecoration(
                         color: Colors.orangeAccent,
                         borderRadius: BorderRadius.circular(10)),
@@ -49,8 +50,8 @@ class _add_prodectState extends State<add_prodect> {
                         ))),
                 Container(
                   margin: EdgeInsets.only(top: 5),
-                  width: 250,
-                  height: 200,
+                  width: 250.w,
+                  height: 200.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       image: DecorationImage(
@@ -67,9 +68,9 @@ class _add_prodectState extends State<add_prodect> {
                         });
                       }
                     },
-                    child: Container(
-                      width: 340,
-                      height: 200,
+                     child: Container(
+                      width: 340.w,
+                      height: 200.h,
                       decoration: BoxDecoration(
                           color: Colors.white12,
                           borderRadius: BorderRadius.circular(25)),
@@ -83,18 +84,19 @@ class _add_prodectState extends State<add_prodect> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      width: 181,
-                      height: 50,
+                      width: 170.w,
+                      height: 50.h,
                       child: defultForm(
                           Controller: petName1,
                           hintText: "Pet Name",
                           background: Colors.redAccent,
                           color: Colors.white),
                     ),
+                    SizedBox(width: 5,),
 
                     Container(
-                      width: 181,
-                      height: 50,
+                      width: 170.w,
+                      height: 50.h,
                       child: defultForm(
                           Controller: petPrice,
                           hintText: "price",
@@ -104,14 +106,14 @@ class _add_prodectState extends State<add_prodect> {
                   ],
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 30.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      width: 177,
-                      height: 50,
+                      width: 175.w,
+                      height: 50.h,
                       color: Colors.white,
 
                       child: DropdownButtonHideUnderline(
@@ -131,7 +133,7 @@ class _add_prodectState extends State<add_prodect> {
                                         "   $e",
                                         style: TextStyle(
                                             color: Colors.black,
-                                            fontSize: 23,
+                                            fontSize: 23.sp,
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ),
@@ -147,10 +149,11 @@ class _add_prodectState extends State<add_prodect> {
                         ),
                       ),
                     ),
+                    SizedBox(width: 5,),
 
                     Container(
-                      width: 177,
-                      height: 50,
+                      width: 160.w,
+                      height: 50.h,
                       color: Colors.white,
 
                       child: DropdownButtonHideUnderline(
@@ -160,7 +163,7 @@ class _add_prodectState extends State<add_prodect> {
                             "   Gender",
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 23,
+                                fontSize: 23.sp,
                                 fontWeight: FontWeight.bold),
                           ),
                           items: ["Hamster", "Cat", "Dog", "Bird", "Fish"]
@@ -189,12 +192,12 @@ class _add_prodectState extends State<add_prodect> {
                   ],
                 ),
                 SizedBox(
-                  height: 25,
+                  height: 25.h,
                 ),
                 Center(
                   child: Container(
-                    width: 177,
-                    height: 50,
+                    width: 177.w,
+                    height: 50.h,
                     child: defultForm(
                         Controller: petCount,
                         hintText: "No.product",
@@ -206,8 +209,8 @@ class _add_prodectState extends State<add_prodect> {
                   height: 30,
                 ),
                 Container(
-                    width: 228,
-                    height: 50,
+                    width: 228.w,
+                    height: 50.h,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(
                           10,
@@ -232,7 +235,7 @@ class _add_prodectState extends State<add_prodect> {
                           "add product",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 30,
+                              fontSize: 30.sp,
                               color: Colors.white),
                         )))
               ],

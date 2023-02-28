@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:fff/trader/shop_trader.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Edithome1 extends StatefulWidget {
@@ -39,8 +40,8 @@ class _Edithome1State extends State<Edithome1> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: 40,
-                    height: 40,
+                    width: 40.w,
+                    height: 40.h,
                     decoration: BoxDecoration(
                         color: Colors.white12,
                         border: Border.all(width: 1.5),
@@ -57,8 +58,8 @@ class _Edithome1State extends State<Edithome1> {
                         )),
                   ),
                   Container(
-                    width: 40,
-                    height: 40,
+                    width: 40.w,
+                    height: 40.h,
                     decoration: BoxDecoration(
                         color: Colors.red,
                         border: Border.all(width: 1.5),
@@ -84,13 +85,13 @@ class _Edithome1State extends State<Edithome1> {
                     border: Border.all(color: Colors.black)),
                 child: Column(children: [
                   SizedBox(
-                    height: 25,
+                    height: 25.h,
                   ),
                   Stack(
                     children: [
                       image == null
                           ? Container(
-                              margin: EdgeInsets.only(top: 10),
+                              margin: EdgeInsets.only(top: 10.h),
                               decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(5)),
@@ -98,11 +99,11 @@ class _Edithome1State extends State<Edithome1> {
                                   image: DecorationImage(
                                       image: AssetImage(widget.tradd['image']),
                                       fit: BoxFit.cover)),
-                              width: 192,
-                              height: 228,
+                              width: 192.w,
+                              height: 228.h,
                             )
                           : Container(
-                              margin: EdgeInsets.only(top: 10),
+                              margin: EdgeInsets.only(top: 10.h),
                               decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(5)),
@@ -110,8 +111,8 @@ class _Edithome1State extends State<Edithome1> {
                                   image: DecorationImage(
                                       image: FileImage(image),
                                       fit: BoxFit.cover)),
-                              width: 192,
-                              height: 228,
+                              width: 192.w,
+                              height: 228.h,
                             ),
                       Positioned(
                         child: IconButton(
@@ -120,14 +121,14 @@ class _Edithome1State extends State<Edithome1> {
                                   context: context,
                                   builder: (context) {
                                     return Container(
-                                      height: 200,
+                                      height: 200.h,
                                       child: Column(
                                         children: [
                                           Container(
                                             child: Text(
                                               "Choose photo from",
                                               style: TextStyle(
-                                                  fontSize: 30,
+                                                  fontSize: 30.sp,
                                                   fontWeight: FontWeight.bold),
                                             ),
                                           ),
@@ -152,12 +153,12 @@ class _Edithome1State extends State<Edithome1> {
                                               children: [
                                                 Icon(Icons.camera),
                                                 SizedBox(
-                                                  width: 20,
+                                                  width: 20.w,
                                                 ),
                                                 Text(
                                                   " camera",
                                                   style: TextStyle(
-                                                      fontSize: 25,
+                                                      fontSize: 25.sp,
                                                       fontWeight:
                                                           FontWeight.bold),
                                                 ),
@@ -165,7 +166,7 @@ class _Edithome1State extends State<Edithome1> {
                                             ),
                                           ),
                                           SizedBox(
-                                            height: 20,
+                                            height: 20.h,
                                           ),
                                           MaterialButton(
                                             onPressed: () async {
@@ -186,12 +187,12 @@ class _Edithome1State extends State<Edithome1> {
                                               children: [
                                                 Icon(Icons.photo_outlined),
                                                 SizedBox(
-                                                  width: 20,
+                                                  width: 20.w,
                                                 ),
                                                 Text(
                                                   " gallery",
                                                   style: TextStyle(
-                                                      fontSize: 25,
+                                                      fontSize: 25.sp,
                                                       fontWeight:
                                                           FontWeight.bold),
                                                 ),
@@ -205,22 +206,22 @@ class _Edithome1State extends State<Edithome1> {
                             },
                             icon: Icon(
                               Icons.camera_alt_outlined,
-                              size: 50,
+                              size: 50.w,
                               color: Colors.black,
                             )),
                       )
                     ],
                   ),
                   SizedBox(
-                    height: 35,
+                    height: 35.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
                         color: Colors.white,
-                        width: 181,
-                        height: 40,
+                        width: 170.w,
+                        height: 40.h,
                         child: TextFormField(
                           initialValue: widget.tradd['name'],
                           onSaved: (val) {
@@ -240,13 +241,14 @@ class _Edithome1State extends State<Edithome1> {
                               labelText: "Name",
                               labelStyle: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                                  fontSize: 20.sp,
                                   color: Colors.black)),
                         ),
                       ),
+                      SizedBox(width: 5.h,),
                       Container(
-                        width: 181,
-                        height: 40,
+                        width: 170.w,
+                        height: 40.h,
                         color: Colors.white,
                         child: TextFormField(
                           initialValue: widget.tradd['price'],
@@ -267,14 +269,14 @@ class _Edithome1State extends State<Edithome1> {
                               labelText: "Price",
                               labelStyle: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                                  fontSize: 20.sp,
                                   color: Colors.black)),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 40.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -282,8 +284,8 @@ class _Edithome1State extends State<Edithome1> {
                       Container(
                         decoration: BoxDecoration(
                             color: Colors.white, border: Border.all()),
-                        width: 181,
-                        height: 40,
+                        width: 170.w,
+                        height: 40.h,
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton(
                             iconSize: 30,
@@ -291,7 +293,7 @@ class _Edithome1State extends State<Edithome1> {
                               "   Type",
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 23,
+                                  fontSize: 23.sp,
                                   fontWeight: FontWeight.bold),
                             ),
                             items: ["Accessories", "Pet", "Food", "Treatment"]
@@ -301,7 +303,7 @@ class _Edithome1State extends State<Edithome1> {
                                           "   $e",
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 23,
+                                              fontSize: 23.sp,
                                               fontWeight: FontWeight.bold),
                                         ),
                                       ),
@@ -317,11 +319,12 @@ class _Edithome1State extends State<Edithome1> {
                           ),
                         ),
                       ),
+                      SizedBox(width: 5.w,),
                       Container(
                         decoration: BoxDecoration(
                             color: Colors.white, border: Border.all()),
-                        width: 181,
-                        height: 40,
+                        width: 170.w,
+                        height: 40.h,
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton(
                             iconSize: 30,
@@ -358,11 +361,11 @@ class _Edithome1State extends State<Edithome1> {
                     ],
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 40.h,
                   ),
                   Container(
-                    width: 181,
-                    height: 40,
+                    width: 181.w,
+                    height: 40.h,
                     color: Colors.white,
                     child: TextFormField(
                       initialValue: widget.tradd['number of scales'],
@@ -387,12 +390,12 @@ class _Edithome1State extends State<Edithome1> {
                     ),
                   ),
                   SizedBox(
-                    height: 22,
+                    height: 22.h,
                   ),
                   Container(
                     color: Colors.green,
-                    width: 228,
-                    height: 40,
+                    width: 150.w,
+                    height: 40.h,
                     child: MaterialButton(
                       onPressed: () {
                         var formdata = formKey.currentState;
@@ -416,7 +419,7 @@ class _Edithome1State extends State<Edithome1> {
                         "Done",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 25,
+                            fontSize: 25.sp,
                             color: Colors.white),
                       ),
                     ),

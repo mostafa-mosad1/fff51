@@ -2,6 +2,7 @@ import 'package:fff/trader/add_prodect.dart';
 import 'package:fff/trader/edithome1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class shop_trader extends StatefulWidget {
   var Pname;
@@ -180,7 +181,7 @@ class _shop_traderState extends State<shop_trader> {
                     Text(
                       "Add prodect",
                       style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 25.sp, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -205,11 +206,13 @@ class _shop_traderState extends State<shop_trader> {
                               padding: const EdgeInsets.all(4.0),
                               child: Container(
                                 width: double.infinity,
-                                height: 250,
+                                height: 250.h,
                                 decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(20)),
                                 child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
@@ -222,8 +225,8 @@ class _shop_traderState extends State<shop_trader> {
                                           widget.datafour != null
                                               ?
                                           Container(
-                                                  width: 175,
-                                                  height: 233,
+                                                  width: 175.w,
+                                                  height: 233.h,
                                                   decoration: BoxDecoration(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -237,8 +240,8 @@ class _shop_traderState extends State<shop_trader> {
                                                 )
                                               :
                                           Container(
-                                                  width: 175,
-                                                  height: 233,
+                                                  width: 175.w,
+                                                  height: 233.h,
                                                   decoration: BoxDecoration(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -265,48 +268,48 @@ class _shop_traderState extends State<shop_trader> {
                                             ? Text(
                                                 "Name :  ${widget.dataone}",
                                                 style: TextStyle(
-                                                    fontSize: 20,
+                                                    fontSize: 20.sp,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               )
                                             : Text(
                                                 "Name :  ${trad[index]['name']}",
                                                 style: TextStyle(
-                                                    fontSize: 20,
+                                                    fontSize: 20.sp,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
                                         SizedBox(
-                                          height: 25,
+                                          height: 25.h,
                                         ),
                                         widget.datatwo != null
                                             ? Text(
                                                 "price :  ${widget.datatwo}  LE",
                                                 style: TextStyle(
-                                                    fontSize: 20,
+                                                    fontSize: 18.sp,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               )
                                             : Text(
                                                 "price :  ${trad[index]['price']}  LE",
                                                 style: TextStyle(
-                                                    fontSize: 20,
+                                                    fontSize: 18.sp,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
-                                        SizedBox(height: 25),
+                                        SizedBox(height: 25.h),
                                         widget.datathree != null
                                             ? Text(
-                                                "Number of scales :  ${widget.datathree}",
+                                                "No.scales :  ${widget.datathree}",
                                                 style: TextStyle(
-                                                    fontSize: 16,
+                                                    fontSize: 18.sp,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               )
                                             : Text(
-                                                "Number of scales :  ${trad[index]['number of scales']}",
+                                                "No.scales :  ${trad[index]['number of scales']}",
                                                 style: TextStyle(
-                                                    fontSize: 16,
+                                                    fontSize: 18.sp,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -319,7 +322,8 @@ class _shop_traderState extends State<shop_trader> {
                           ],
                         ),
                         Positioned(
-                          left: 325,
+                          right: 10.w,
+                           top: 8.h,
                           child: IconButton(
                               onPressed: () {
                                 Navigator.push(
@@ -331,7 +335,7 @@ class _shop_traderState extends State<shop_trader> {
                               },
                               icon: Icon(
                                 Icons.settings,
-                                size: 35,
+                                size: 25,
                               )),
                         )
                       ],
@@ -350,7 +354,7 @@ class _shop_traderState extends State<shop_trader> {
                             padding: EdgeInsets.all(4.0),
                             child: Container(
                               width: double.infinity,
-                              height: 250,
+                              height: 250.h,
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(20)),
@@ -367,8 +371,8 @@ class _shop_traderState extends State<shop_trader> {
                                         widget.Pimage != null
                                             ?
                                         Container(
-                                                width: 175,
-                                                height: 233,
+                                                width: 175.w,
+                                                height: 233.h,
                                                 decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(15),
@@ -392,29 +396,29 @@ class _shop_traderState extends State<shop_trader> {
                                           ? Text(
                                               "Name :  ${widget.Pname}",
                                               style: TextStyle(
-                                                  fontSize: 20,
+                                                  fontSize: 20.sp,
                                                   fontWeight: FontWeight.bold),
                                             )
                                           : Container(),
                                       SizedBox(
-                                        height: 25,
+                                        height: 25.h,
                                       ),
                                       widget.Pprice != null
                                           ? Text(
                                               "price :  ${widget.Pprice}  LE",
                                               style: TextStyle(
-                                                  fontSize: 20,
+                                                  fontSize: 20.sp,
                                                   fontWeight: FontWeight.bold),
                                             )
                                           : Container(),
                                       SizedBox(
-                                        height: 25,
+                                        height: 25.h,
                                       ),
                                       widget.Pcount != null
                                           ? Text(
                                               "Number of scales :  ${widget.Pcount}",
                                               style: TextStyle(
-                                                  fontSize: 16,
+                                                  fontSize: 9,
                                                   fontWeight: FontWeight.bold),
                                             )
                                           : Container(),

@@ -4,6 +4,7 @@ import 'package:fff/trader/profile_trader.dart';
 import 'package:fff/vet/profile_vet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../components.dart';
@@ -73,7 +74,7 @@ class _profile_editTraderState extends State<profile_editTrader> {
                                       size: 40,
                                     ))),
                             SizedBox(
-                              height: 30,
+                              height: 30.h,
                             ),
                             Center(
                                 child: Stack(
@@ -226,7 +227,7 @@ class _profile_editTraderState extends State<profile_editTrader> {
                                 style: TextStyle(
                                     color: Colors.black45,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 15),
+                                    fontSize: 15.sp),
                               ),
                             ),
                             Padding(
@@ -239,11 +240,11 @@ class _profile_editTraderState extends State<profile_editTrader> {
                                       " Phone",
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 25),
+                                          fontSize: 25.sp),
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 10,
+                                    height: 10.h,
                                   ),
                                   Container(
                                       alignment: Alignment.topLeft,
@@ -258,7 +259,7 @@ class _profile_editTraderState extends State<profile_editTrader> {
                                             : null,
                                       )),
                                   SizedBox(
-                                    height: 8,
+                                    height: 8.h,
                                   ),
                                   Container(
                                     alignment: Alignment.topLeft,
@@ -266,11 +267,11 @@ class _profile_editTraderState extends State<profile_editTrader> {
                                       " Address",
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 25),
+                                          fontSize: 25.sp),
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 12,
+                                    height: 12.h,
                                   ),
                                   Container(
                                       alignment: Alignment.topLeft,
@@ -285,10 +286,10 @@ class _profile_editTraderState extends State<profile_editTrader> {
                                             : null,
                                       )),
                                   SizedBox(
-                                    height: 12,
+                                    height: 12.h,
                                   ),
                                   SizedBox(
-                                    height: 20,
+                                    height: 20.h,
                                   )
                                 ],
                               ),

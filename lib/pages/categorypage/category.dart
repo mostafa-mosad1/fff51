@@ -19,7 +19,7 @@ class _categoryState extends State<category> {
         ListView(children: [
           SizedBox(height: 30,),
            GridView.count(
-             childAspectRatio: 0.7,
+              childAspectRatio: 0.8,
               physics: BouncingScrollPhysics(),
                 shrinkWrap: true,
                 padding: EdgeInsets.all(20.w),

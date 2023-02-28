@@ -229,8 +229,8 @@ class _drugsState extends State<drugs> {
                 clipBehavior: Clip.hardEdge,
                 physics: BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    mainAxisExtent: 360.h,
-                    maxCrossAxisExtent: 300,
+                    mainAxisExtent: 330.h,
+                    maxCrossAxisExtent: 285,
                     childAspectRatio: 2.76 / 5,
                     crossAxisSpacing: 5,
                     mainAxisSpacing: 5),
@@ -255,7 +255,7 @@ class _drugsState extends State<drugs> {
                                   ),
                                   child: Image.asset(
                                     datafour[index]['image'],
-                                    height: 200.h,
+                                    height: 150.h,
                                     width: 180.w,
                                     fit: BoxFit.cover,
                                   ),
@@ -301,7 +301,7 @@ class _drugsState extends State<drugs> {
                               ),
                               SizedBox(height: 5.h,),
                               Text(datafour[index]['sub'],
-                                  maxLines: 2,
+                                  maxLines: 3,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     fontSize: 20.sp,

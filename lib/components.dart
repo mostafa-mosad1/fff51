@@ -42,7 +42,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // ),
 
 Widget temple({image, name, context}) => Container(
-    height: MediaQuery.of(context).size.height * 0.6,
+  height: 5,
     decoration: BoxDecoration(
         color: Colors.white, borderRadius: BorderRadius.circular(25)),
     child: Column(
@@ -468,7 +468,7 @@ Widget animal({image, nameAnimal}) => Stack(
 //     );
 
 Widget categ({image, name, context}) => Container(
-    height: MediaQuery.of(context).size.height * 0.6,
+    height: 200.h,
     decoration: BoxDecoration(
         color: Colors.white, borderRadius: BorderRadius.circular(25)),
     child: Column(

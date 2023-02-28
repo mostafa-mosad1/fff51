@@ -1,6 +1,7 @@
 import 'package:fff/vet/profile_editVet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:slide_countdown/slide_countdown.dart';
 
 import 'edit_profileTrader.dart';
@@ -110,26 +111,26 @@ class _profile_traderState extends State<profile_trader> {
                               border: Border.all(),
                           borderRadius: BorderRadius.all(Radius.circular(5))
                           ),
-                          width: 320,
-                          height: 310,
+                          width: 320.w,
+                          height: 310.h,
                           child: Column(
                             children: [
                               Center(child: Container(
                                 child: Text("My information",style:
                                   TextStyle(color: Colors.black,
-                                  fontSize: 20,fontWeight: FontWeight.bold),),
-                                padding: EdgeInsets.only(top: 15),
+                                  fontSize: 20.sp,fontWeight: FontWeight.bold),),
+                                padding: EdgeInsets.only(top: 15.h),
                               )),
-                              SizedBox(width:80,height: 4,child: Container(
+                              SizedBox(width:80.w,height: 5.h,child: Container(
                                 color: Colors.green,
                               ),),
-                              SizedBox(height: 30,),
+                              SizedBox(height: 30.h,),
                               Container(
                                 alignment: Alignment.topLeft,
                                 child: Text(
                                   "   Phone",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 25),
+                                      fontWeight: FontWeight.bold, fontSize: 25.sp),
                                 ),
                               ),
                               Container(
@@ -140,24 +141,24 @@ class _profile_traderState extends State<profile_trader> {
                                     style: TextStyle(
                                         color: Colors.black45,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 15),
+                                        fontSize: 15.sp),
                                   )
                                       : Text(
                                     "       ${ph}",
                                     style: TextStyle(
                                         color: Colors.black45,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 15),
+                                        fontSize: 15.sp),
                                   )),
                               SizedBox(
-                                height: 25,
+                                height: 25.h,
                               ),
                               Container(
                                 alignment: Alignment.topLeft,
                                 child: Text(
                                   "   Address",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 25),
+                                      fontWeight: FontWeight.bold, fontSize: 25.sp),
                                 ),
                               ),
                               Container(
@@ -168,24 +169,24 @@ class _profile_traderState extends State<profile_trader> {
                                     style: TextStyle(
                                         color: Colors.black45,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 15),
+                                        fontSize: 15.sp),
                                   )
                                       : Text(
                                     "       ${ad}",
                                     style: TextStyle(
                                         color: Colors.black45,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 15),
+                                        fontSize: 15.sp),
                                   )),
                               SizedBox(
-                                height: 25,
+                                height: 25.h,
                               ),
                               Container(
                                 alignment: Alignment.topLeft,
                                 child: Text(
                                   "   Email",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 25),
+                                      fontWeight: FontWeight.bold, fontSize: 25.sp),
                                 ),
                               ),
                               Container(
@@ -195,13 +196,14 @@ class _profile_traderState extends State<profile_trader> {
                                     style: TextStyle(
                                         color: Colors.black45,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 15),
+                                        fontSize: 15.sp),
                                   )),
 
                             ],
                           ),
                         ),
                       ),
+                      SizedBox(height: 15.h,)
                     ],
                   )
                 ],

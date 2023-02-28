@@ -230,8 +230,8 @@ class _accessoriesState extends State<accessories> {
                 clipBehavior: Clip.hardEdge,
                 physics: BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    mainAxisExtent: 360.h,
-                    maxCrossAxisExtent: 300,
+                    mainAxisExtent: 330.h,
+                    maxCrossAxisExtent: 285,
                     childAspectRatio: 2.76 / 5,
                     crossAxisSpacing: 5,
                     mainAxisSpacing: 5),
@@ -256,7 +256,7 @@ class _accessoriesState extends State<accessories> {
                                   ),
                                   child: Image.asset(
                                     datatwo[index]['image'],
-                                    height: 200.h,
+                                    height: 150.h,
                                     width: 180.w,
                                     fit: BoxFit.cover,
                                   ),
@@ -305,7 +305,7 @@ class _accessoriesState extends State<accessories> {
                               SizedBox(height: 5.h),
 
                               Text(datatwo[index]['sub'],
-                                  maxLines: 2,
+                                  maxLines: 3,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     fontSize: 20.sp,

@@ -165,8 +165,8 @@ class _doctorsState extends State<doctors> {
                 physics: BouncingScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  mainAxisExtent: 280,
-                    maxCrossAxisExtent: 215,
+                  mainAxisExtent: 290,
+                    maxCrossAxisExtent: 222,
                     childAspectRatio:1.5/2,
                     crossAxisSpacing: 5,
                     mainAxisSpacing: 5),

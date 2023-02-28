@@ -477,16 +477,16 @@ class _homeState extends State<home> {
               Container(
                 decoration: BoxDecoration(
                   color: Colors.black87,
-                  //borderRadius:BorderRadius.only(topLeft:Radius.circular(25),topRight:Radius.circular(25))
-                ),
+                   ),
                 height: 260.h,
-                width: 390.w,
+                width: double.infinity.w,
                 child: Padding(
                   padding: EdgeInsets.only(top: 25.h, left: 13.w),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -501,7 +501,7 @@ class _homeState extends State<home> {
                             ),
                             Container(
                               color: Colors.green,
-                              width: 40.w,
+                              width: 20.w,
                               height: 3.h,
                             ),
                             SizedBox(
@@ -569,7 +569,7 @@ class _homeState extends State<home> {
                             ),
                             Container(
                               color: Colors.green,
-                              width: 40.w,
+                              width: 20.w,
                               height: 3.h,
                             ),
                             SizedBox(height: 6.h),

@@ -21,7 +21,7 @@ class _petState extends State<pet> {
       "id": true, //icon
       "image": "images/dog1.jpg",
       "type": "dog1",
-      "sub": " writing description of product",
+      "sub": "22222 عمر 15 يوم 333333333 111333333333333311111111",
       "price": "249 EL",
       "cart": false,
     },
@@ -231,14 +231,14 @@ class _petState extends State<pet> {
                 clipBehavior: Clip.hardEdge,
                 physics: BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    mainAxisExtent: 360.h,
-                    maxCrossAxisExtent: 300,
+                    mainAxisExtent: 330.h,
+                    maxCrossAxisExtent: 285,
                     childAspectRatio: 2.76 / 5,
                     crossAxisSpacing: 5,
                     mainAxisSpacing: 5),
                 itemBuilder: (context, index) => Container(
                   width: 200.w,
-                  height: 350.h,
+                  height: 150.h,
                   child: Card(
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
@@ -257,7 +257,7 @@ class _petState extends State<pet> {
                                   ),
                                   child: Image.asset(
                                     data[index]['image'],
-                                    height: 200.h,
+                                    height: 150.h,
                                     width: 180.w,
                                     fit: BoxFit.cover,
                                   ),
@@ -292,6 +292,7 @@ class _petState extends State<pet> {
                           SizedBox(height: 5.h),
 
                            Column(
+                             mainAxisAlignment:MainAxisAlignment.spaceBetween,
                               children: [
                                 Center(
                                   child: Text(data[index]['type'].toUpperCase(),
@@ -305,7 +306,7 @@ class _petState extends State<pet> {
                                 SizedBox(height: 5.h),
 
                                 Text(data[index]['sub'],
-                                    maxLines: 2,
+                                    maxLines: 3,
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       fontSize: 20.sp,

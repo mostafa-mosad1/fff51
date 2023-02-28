@@ -27,15 +27,14 @@ class _shopState extends State<shop> {
     return SafeArea(
         child: Scaffold(
           body: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            width: double.infinity,
+            height: double.infinity,
             color: Colors.grey,
             child: SingleChildScrollView(
               child: Column(
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.height * 0.4,
-                    //height: 270,
+                    height: 270.h,
                     width: double.infinity,
                     child: Carousel(
                       images: [
@@ -54,7 +53,7 @@ class _shopState extends State<shop> {
                   Container(
 
                     child: GridView.count(
-                      childAspectRatio: 0.7,
+                      childAspectRatio: 0.9,
                       physics: BouncingScrollPhysics(),
                       shrinkWrap: true,
                       padding: EdgeInsets.all(10.w),
