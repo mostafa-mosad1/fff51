@@ -40,8 +40,8 @@ class _Edithome1State extends State<Edithome1> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: 40.w,
-                    height: 40.h,
+                    width: 40,
+                    height: 40,
                     decoration: BoxDecoration(
                         color: Colors.white12,
                         border: Border.all(width: 1.5),
@@ -58,8 +58,8 @@ class _Edithome1State extends State<Edithome1> {
                         )),
                   ),
                   Container(
-                    width: 40.w,
-                    height: 40.h,
+                    width: 40,
+                    height: 40,
                     decoration: BoxDecoration(
                         color: Colors.red,
                         border: Border.all(width: 1.5),
