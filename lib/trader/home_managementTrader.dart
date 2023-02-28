@@ -93,29 +93,32 @@ class _home_mangaementTraderState extends State<home_mangaementTrader> {
               appBar: AppBar(
                 backgroundColor: (Colors.orangeAccent),
                 title: Container(
-                  margin: EdgeInsets.only(left: 30),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Pet ",
-                        style: TextStyle(
-                            fontSize: 30.sp,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blueAccent),
-                      ),
-                      SvgPicture.asset(
-                        "images/4.svg",
-                        width: 30.w,
-                        height: 50.h,
-                      ),
-                      Text(
-                        " Life",
-                        style: TextStyle(
-                            fontSize: 30.sp,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green),
-                      ),
-                    ],
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Pet ",
+                          style: TextStyle(
+                              fontSize: 30.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blueAccent),
+                        ),
+                        SvgPicture.asset(
+                          "images/4.svg",
+                          width: 30.w,
+                          height: 50.h,
+                        ),
+                        Text(
+                          " Life",
+                          style: TextStyle(
+                              fontSize: 30.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 // Container(
