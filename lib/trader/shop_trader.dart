@@ -245,7 +245,7 @@ class _shop_traderState extends State<shop_trader> {
                               },
                               icon: Icon(
                                 Icons.settings,
-                                size: 25,
+                                size: 30,
                               )),
                         )
                       ],
