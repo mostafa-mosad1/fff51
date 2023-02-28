@@ -1,6 +1,7 @@
 import 'package:fff/vet/profile_editVet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:slide_countdown/slide_countdown.dart';
 
 class profile_vet extends StatefulWidget {
@@ -39,17 +40,17 @@ class _profile_vetState extends State<profile_vet> {
                       Image.file(
                         widget.images,
                         fit: BoxFit.fill,
-                        height: 400,
+                        height: 330.h,
                         width: double.infinity,
                       ):
                       Image.asset(
                         "images/55.jpg",
                         fit: BoxFit.fill,
-                        height: 400,
+                        height: 330.h,
                         width: double.infinity,
                       ),
                       Container(
-                        margin: EdgeInsetsDirectional.only(top: 350),
+                        margin: EdgeInsetsDirectional.only(top: 282.h),
                         decoration: BoxDecoration(boxShadow: [
                           BoxShadow(
                               color: Colors.blue, blurRadius: 20, spreadRadius: 5)
@@ -63,47 +64,47 @@ class _profile_vetState extends State<profile_vet> {
                                   "Patient",
                                   style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 20,
+                                      fontSize: 20.sp,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text("1K",
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 20,
+                                        fontSize: 20.sp,
                                         fontWeight: FontWeight.bold))
                               ],
                             ),
                             SizedBox(
-                              width: 20,
+                              width: 20.w,
                             ),
                             Column(
                               children: [
                                 Text("Experience",
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 20,
+                                        fontSize: 20.sp,
                                         fontWeight: FontWeight.bold)),
                                 Text("5 Yr",
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 20,
+                                        fontSize: 20.sp,
                                         fontWeight: FontWeight.bold))
                               ],
                             ),
                             SizedBox(
-                              width: 20,
+                              width: 20.w,
                             ),
                             Column(
                               children: [
                                 Text("Rating",
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 20,
+                                        fontSize: 20.sp,
                                         fontWeight: FontWeight.bold)),
                                 Text("4.9",
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 20,
+                                        fontSize: 20.sp,
                                         fontWeight: FontWeight.bold))
                               ],
                             )
@@ -117,6 +118,8 @@ class _profile_vetState extends State<profile_vet> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
+                          margin: EdgeInsets.only(right: 5.w),
+
                           alignment: Alignment.topRight,
                           child: IconButton(
                               onPressed: () {
@@ -132,31 +135,31 @@ class _profile_vetState extends State<profile_vet> {
                                 size: 40,
                               ))),
                       SizedBox(
-                        height: 360,
+                        height: 300.h,
                       ),
                       Center(
                           child: widget.name != null
                               ? Text(
                             "${widget.name}",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25),
+                                fontWeight: FontWeight.bold, fontSize: 25.sp),
                           )
                               : Text(
                             "${na}",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25),
+                                fontWeight: FontWeight.bold, fontSize: 25.sp),
                           )),
-                      SizedBox(height: 6,),
+                      SizedBox(height: 5.h),
                       Center(
                         child: Text(
                           "@moh_ahmed",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: 18),
+                              fontSize: 18.sp),
                         ),
                       ),
-                      SizedBox(height: 8,),
+                      SizedBox(height: 5.h),
                       Padding(
                         padding: const EdgeInsets.only(left: 8),
                         child: Column(
@@ -167,16 +170,16 @@ class _profile_vetState extends State<profile_vet> {
                               child: Text(
                                 "Phone",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 25),
+                                    fontWeight: FontWeight.bold, fontSize: 25.sp),
                               ),
                             ),
-                            SizedBox(height: 8,),
+                            SizedBox(height: 5.h),
                             Row(
                               children: [
                                 Container(
                                   margin: EdgeInsets.only(left: 20),
-                                  width: 240,
-                                  height: 45,
+                                  width: 240.w,
+                                  height: 45.h,
                                   decoration: BoxDecoration(
                                       color: Colors.white38,
                                       border: Border.all()),
@@ -190,7 +193,7 @@ class _profile_vetState extends State<profile_vet> {
                                           style: TextStyle(
                                               color: Colors.black45,
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 23),
+                                              fontSize: 23.sp),
                                       ),
                                     ),
                                         )
@@ -202,14 +205,14 @@ class _profile_vetState extends State<profile_vet> {
                                           style: TextStyle(
                                               color: Colors.black45,
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 23),
+                                              fontSize: 23.sp),
                                       ),
                                     ),
                                         )),
                               ],
                             ),
                             SizedBox(
-                              height: 10,
+                              height: 6.h,
                             ),
                             Container(
                               margin: EdgeInsets.only(left: 15),
@@ -217,16 +220,16 @@ class _profile_vetState extends State<profile_vet> {
                               child: Text(
                                 "Address",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 25),
+                                    fontWeight: FontWeight.bold, fontSize: 25.sp),
                               ),
                             ),
-                            SizedBox(height: 8,),
+                            SizedBox(height: 5.h),
                             Row(
                               children: [
                                 Container(
                                     margin: EdgeInsets.only(left: 20),
-                                    width: 240,
-                                    height: 45,
+                                    width: 240.w,
+                                    height: 45.h,
                                     decoration: BoxDecoration(
                                         color: Colors.white38,
                                         border: Border.all()),
@@ -239,7 +242,7 @@ class _profile_vetState extends State<profile_vet> {
                                           style: TextStyle(
                                               color: Colors.black45,
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 20),
+                                              fontSize: 20.sp),
                                       ),
                                     ),
                                         )
@@ -250,18 +253,16 @@ class _profile_vetState extends State<profile_vet> {
                                           style: TextStyle(
                                               color: Colors.black45,
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 20),
+                                              fontSize: 20.sp),
                                       ),
                                     ),
                                         )),
                               ],
                             ),
                             SizedBox(
-                              height: 10,
+                              height: 10.h,
                             ),
-                            SizedBox(
-                              height: 12,
-                            ),
+
                           ],
                         ),
                       ),

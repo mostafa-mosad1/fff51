@@ -245,8 +245,8 @@ Widget defultForm(
         onsaved,
         keyboard}) =>
     Container(
-      width: 280,
-      height: 50,
+      width: 280.w,
+      height: 50.h,
       child: TextFormField(
         initialValue: initialvalue,
         onSaved: onsaved,

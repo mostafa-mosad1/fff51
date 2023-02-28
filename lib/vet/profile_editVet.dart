@@ -1,8 +1,7 @@
 import 'dart:io';
-
 import 'package:fff/vet/profile_vet.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../components.dart';
@@ -57,7 +56,7 @@ class _profile_editVetState extends State<profile_editVet> {
 
                                         ),
                                         width: double.infinity,
-                                        height: 390)
+                                        height: 325.h)
                                         :Container(
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
@@ -67,10 +66,10 @@ class _profile_editVetState extends State<profile_editVet> {
 
                                         ),
                                         width: double.infinity,
-                                        height: 390),
+                                        height: 325.h),
                                     Positioned(
-                                      right: 3,
-                                        top: 340,
+                                      right: 4.w,
+                                        top: 280.h,
 
                                         child: IconButton(
                                             onPressed: () {
@@ -78,20 +77,20 @@ class _profile_editVetState extends State<profile_editVet> {
                                                   context: context,
                                                   builder: (context) {
                                                     return Container(
-                                                      height: 200,
+                                                      height: 170.h,
                                                       child: Column(
                                                         children: [
                                                           Container(
                                                             child: Text(
                                                               "Choose photo from",
                                                               style: TextStyle(
-                                                                  fontSize: 30,
+                                                                  fontSize: 30.sp,
                                                                   fontWeight:
                                                                   FontWeight.bold),
                                                             ),
                                                           ),
                                                           SizedBox(
-                                                            height: 20,
+                                                            height: 20.h,
                                                           ),
                                                           MaterialButton(
                                                             onPressed: () async {
@@ -113,12 +112,12 @@ class _profile_editVetState extends State<profile_editVet> {
                                                               children: [
                                                                 Icon(Icons.camera),
                                                                 SizedBox(
-                                                                  width: 20,
+                                                                  width: 20.w,
                                                                 ),
                                                                 Text(
                                                                   " camera",
                                                                   style: TextStyle(
-                                                                      fontSize: 25,
+                                                                      fontSize: 25.sp,
                                                                       fontWeight:
                                                                       FontWeight
                                                                           .bold),
@@ -127,7 +126,7 @@ class _profile_editVetState extends State<profile_editVet> {
                                                             ),
                                                           ),
                                                           SizedBox(
-                                                            height: 20,
+                                                            height: 20.h,
                                                           ),
                                                           MaterialButton(
                                                             onPressed: () async {
@@ -150,12 +149,12 @@ class _profile_editVetState extends State<profile_editVet> {
                                                                 Icon(Icons
                                                                     .photo_outlined),
                                                                 SizedBox(
-                                                                  width: 20,
+                                                                  width: 20.w,
                                                                 ),
                                                                 Text(
                                                                   " gallery",
                                                                   style: TextStyle(
-                                                                      fontSize: 25,
+                                                                      fontSize: 25.sp,
                                                                       fontWeight:
                                                                       FontWeight
                                                                           .bold),
@@ -196,6 +195,7 @@ class _profile_editVetState extends State<profile_editVet> {
                                           )),
                                     ),
                                     Container(
+                                      margin: EdgeInsets.only(right: 5.w),
                                         alignment: Alignment.topRight,
                                         child: IconButton(
                                             onPressed: () {
@@ -223,7 +223,7 @@ class _profile_editVetState extends State<profile_editVet> {
                                   ],
                                 )),
                             SizedBox(
-                              height: 5,
+                              height: 5.h,
                             ),
                             Container(
 
@@ -232,17 +232,17 @@ class _profile_editVetState extends State<profile_editVet> {
                                 "   Name",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 25),
+                                    fontSize: 25.sp),
                               ),
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(height: 5.h),
                             Row(
                               children: [
                                 Container(
                                     alignment: Alignment.topLeft,
                                     margin: EdgeInsets.only(left: 30),
-                                    height: 50,
-                                    width: 240,
+                                    height: 50.h,
+                                    width: 240.w,
                                     child: defultForm(color: Colors.white,
                                         initialvalue: widget.nameed,
                                         onsaved: (val) {
@@ -263,17 +263,17 @@ class _profile_editVetState extends State<profile_editVet> {
                                       " Phone",
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 25),
+                                          fontSize: 25.sp),
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 5,
+                                    height: 5.h,
                                   ),
                                   Row(
                                     children: [
                                       Container(
-                                        width: 240,
-                                          height: 50,
+                                        width: 240.w,
+                                          height: 50.h,
                                           margin: EdgeInsets.only(left: 20),
                                           alignment: Alignment.topLeft,
                                           child: defultForm(
@@ -289,7 +289,7 @@ class _profile_editVetState extends State<profile_editVet> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 5,
+                                    height: 5.h,
                                   ),
                                   Container(
                                     alignment: Alignment.topLeft,
@@ -297,17 +297,17 @@ class _profile_editVetState extends State<profile_editVet> {
                                       " Address",
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 25),
+                                          fontSize: 25.sp),
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 5,
+                                    height: 5.h,
                                   ),
                                   Row(
                                     children: [
                                       Container(
-                                        width: 240,
-                                          height: 50,
+                                        width: 240.w,
+                                          height: 50.h,
                                           alignment: Alignment.topLeft,
                                           margin: EdgeInsets.only(left: 20),
                                           child: defultForm(
@@ -324,7 +324,7 @@ class _profile_editVetState extends State<profile_editVet> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 12,
+                                    height: 12.h,
                                   ),
 
                                 ],

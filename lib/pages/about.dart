@@ -29,15 +29,18 @@ class _serviceState extends State<service> {
                   border: Border.all(width: 1),
                 borderRadius: BorderRadius.all(Radius.circular(10))
               ),
-              margin: EdgeInsets.only(left: 10, top: 10),
+              margin: EdgeInsets.only(left: 10.w, top: 10.h),
               child: IconButton(
+                padding: EdgeInsets.zero,
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(
-                    Icons.arrow_back,
-                    size: 30,
-                    color: Colors.white,
+                  icon: Center(
+                    child: Icon(
+                      Icons.arrow_back,
+                      size: 30,
+                      color: Colors.white,
+                    ),
                   )),
             ),
             SizedBox(
