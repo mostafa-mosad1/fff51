@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../components.dart';
 
@@ -62,47 +63,47 @@ class _OneState extends State<One> {
                               "Patient",
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 20,
+                                  fontSize: 20.sp,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text("1K",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 20,
+                                    fontSize: 20.sp,
                                     fontWeight: FontWeight.bold))
                           ],
                         ),
                         SizedBox(
-                          width: 20,
+                          width: 20.w,
                         ),
                         Column(
                           children: [
                             Text("Experience",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 20,
+                                    fontSize: 20.sp,
                                     fontWeight: FontWeight.bold)),
                             Text("5 Yr",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 20,
+                                    fontSize: 20.sp,
                                     fontWeight: FontWeight.bold))
                           ],
                         ),
                         SizedBox(
-                          width: 20,
+                          width: 20.w,
                         ),
                         Column(
                           children: [
                             Text("Rating",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 20,
+                                    fontSize: 20.sp,
                                     fontWeight: FontWeight.bold)),
                             Text("4.9",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 20,
+                                    fontSize: 20.sp,
                                     fontWeight: FontWeight.bold))
                           ],
                         )
@@ -111,24 +112,24 @@ class _OneState extends State<One> {
                   )
                 ],
               ),              SizedBox(
-                height: 10,
+                height: 10.h,
               ),
               Text(
                 " Dr.Vet",
                 style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 30.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.blue),
               ),
               SizedBox(
-                height: 3,
+                height: 3.h,
               ),
               Text(
                 "   address",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
               ),
               SizedBox(
-                height: 10,
+                height: 10.h,
               ),
               Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -141,8 +142,8 @@ class _OneState extends State<One> {
                           decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(width: 1)),
-                          height: 45,
-                          width: 180,
+                          height: 45.h,
+                          width: 170.w,
                           // margin: EdgeInsets.only(
                           //     top: 10, bottom: 10, left: 15),
                           child: Center(
@@ -159,17 +160,18 @@ class _OneState extends State<One> {
                                 fillColor: Colors.white,
                                 hintText: "Name",
                                 hintStyle: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                                    fontSize: 20.sp, fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),
                         ),
+                        SizedBox(width: 5.w,),
                         Container(
                           decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(width: 1)),
-                          height: 45,
-                          width: 180,
+                          height: 45.h,
+                          width: 170.w,
                           // margin: EdgeInsets.only(
                           //     top: 10, bottom: 10,right:5 ),
                           child: Center(
@@ -186,21 +188,21 @@ class _OneState extends State<One> {
                                 fillColor: Colors.white,
                                 hintText: "Pet name",
                                 hintStyle: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                                    fontSize: 20.sp, fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 10.h),
                     Center(
                       child: Container(
                         decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(width: 1)),
-                        height: 45,
-                        width: 280,
+                        height: 45.h,
+                        width: 280.w,
                         // margin: EdgeInsets.only(
                         //     top: 10, bottom: 10, right: 25, left: 15),
                         child: Center(
@@ -218,19 +220,19 @@ class _OneState extends State<One> {
                               fillColor: Colors.white,
                               hintText: "Phone",
                               hintStyle: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                                  fontSize: 20.sp, fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 10.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          height: 45,
-                          width:180,
+                          height: 45.h,
+                          width:170.w,
                           //  margin: EdgeInsets.only(top: 10,bottom: 10,right: 25,left: 15),
                           decoration: BoxDecoration(
                             border: Border.all(width: 1),
@@ -242,7 +244,7 @@ class _OneState extends State<One> {
                               hint: Text(
                                 " select day",
                                 style: TextStyle(
-                                    fontSize: 23, fontWeight: FontWeight.bold),
+                                    fontSize: 23.sp, fontWeight: FontWeight.bold),
                               ),
                               items: ["Sat", "Sun", "Mon","Tue","Wed","Thu"]
                                   .map((e) => DropdownMenuItem(
@@ -250,7 +252,7 @@ class _OneState extends State<One> {
                                   child: Text(
                                     " $e",
                                     style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 20.sp,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -266,9 +268,10 @@ class _OneState extends State<One> {
                             ),
                           ),
                         ),
+                        SizedBox(width: 5.w,),
                         Container(
-                          height: 45,
-                          width:180,
+                          height: 45.h,
+                          width:170.w,
                           //  margin: EdgeInsets.only(top: 10,bottom: 10,left: 15),
                           decoration: BoxDecoration(
                             border: Border.all(width: 1),
@@ -280,7 +283,7 @@ class _OneState extends State<One> {
                               hint: Text(
                                 " select hour",
                                 style: TextStyle(
-                                    fontSize: 23, fontWeight: FontWeight.bold),
+                                    fontSize: 23.sp, fontWeight: FontWeight.bold),
                               ),
                               items: ["5 PM", "6 PM", "7 PM","8 PM","9 PM","10 PM"]
                                   .map((e) => DropdownMenuItem(
@@ -288,7 +291,7 @@ class _OneState extends State<One> {
                                   child: Text(
                                     " $e",
                                     style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 20.sp,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -306,11 +309,11 @@ class _OneState extends State<One> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: 20.h,),
                     Center(
                       child: Container(
-                        width: 275,
-                        height: 50,
+                        width: 275.w,
+                        height: 50.h,
                         child: MaterialButton(
                           color: Colors.green,
                           textColor: Colors.white,
@@ -327,7 +330,7 @@ class _OneState extends State<One> {
                           child: Text(
                             "Book",
                             style: TextStyle(
-                                fontSize: 26, fontWeight: FontWeight.bold),
+                                fontSize: 26.sp, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),

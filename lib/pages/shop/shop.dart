@@ -54,9 +54,10 @@ class _shopState extends State<shop> {
                   Container(
 
                     child: GridView.count(
-                      primary: false,
+                      childAspectRatio: 0.7,
+                      physics: BouncingScrollPhysics(),
                       shrinkWrap: true,
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10.w),
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       crossAxisCount: 2,

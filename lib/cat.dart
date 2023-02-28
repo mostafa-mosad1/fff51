@@ -1,6 +1,7 @@
 import 'package:fff/pages/shop/carts.dart';
 import 'package:fff/pages/shop/favorite.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Cat extends StatefulWidget {
   const Cat({Key? key}) : super(key: key);
@@ -16,7 +17,9 @@ class _CatState extends State<Cat> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leadingWidth: 0,
+        leading: IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, icon:Icon(Icons.arrow_back,color: Colors.black,)),
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -69,13 +72,14 @@ class _CatState extends State<Cat> {
           GridView.builder(
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              mainAxisExtent: 360.h,
                 maxCrossAxisExtent: 300,
                 childAspectRatio: 2.76 / 5,
                 crossAxisSpacing: 5,
                 mainAxisSpacing: 5),
             itemBuilder: (context, index) => Container(
-              width: 200,
-              height: 350,
+              width: 200.w,
+              height: 350.h,
               child: Card(
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -94,14 +98,15 @@ class _CatState extends State<Cat> {
                           ),
                           child: Image.asset(
                             "images/drugs.jpg",
-                            height: 200,
-                            width: 180,
+                            height: 200.h,
+                            width: 180.w,
                             fit: BoxFit.cover,
                           ),
                         ),
                         Container(
-                            alignment: Alignment.topRight,
                             child: MaterialButton(
+                              minWidth: 25,
+                              padding: EdgeInsets.zero,
                               onPressed: () {
                                 setState(() {
                                   icon = !icon;
@@ -121,6 +126,7 @@ class _CatState extends State<Cat> {
                             )),
                       ],
                     ),
+                    SizedBox(height: 5.h,),
                     Column(
                       children: [
                         Center(
@@ -128,27 +134,31 @@ class _CatState extends State<Cat> {
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 25.sp,
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold)),
                         ),
+                        SizedBox(height: 5.h,),
+
                         Text(" writing description of product nnnnnnnnnnn",
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 20.sp,
                               color: Colors.black,
                             )),
+                        SizedBox(height: 5.h,),
+
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Container(
-                              width: 122,
+
                               child: Column(
                                 children: [
                                   Text("250 EL",
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: 20.sp,
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold)),
                                 ],

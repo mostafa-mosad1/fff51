@@ -181,133 +181,143 @@ class _serviceState extends State<service> {
                           //borderRadius:BorderRadius.only(topLeft:Radius.circular(25),topRight:Radius.circular(25))
                         ),
                         height: 260.h,
-                        width: 390.w,
+                        width: double.infinity,
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 25, left: 13),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Pet Life",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Container(
-                                    color: Colors.green,
-                                    width: 40,
-                                    height: 3,
-                                  ),
-                                  SizedBox(
-                                    height: 11,
-                                  ),
-                                  Text(
-                                    "A App for people who ",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  SizedBox(
-                                    height: 2,
-                                  ),
-                                  Text(
-                                    "interested in pets,you ",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  SizedBox(
-                                    height: 2,
-                                  ),
-                                  Text(
-                                    " can find all what you ",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  SizedBox(
-                                    height: 2,
-                                  ),
-                                  Text(
-                                    "need(pets,food,acce..",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  SizedBox(
-                                    height: 2,
-                                  ),
-                                  Text(
-                                    "ssories,and medicine)",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Have a Question?",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Container(
-                                    color: Colors.green,
-                                    width: 40,
-                                    height: 3,
-                                  ),
-                                  SizedBox(
-                                    height: 6,
-                                  ),
-                                  Container(
-                                    width: 194,
-                                    child: ListTile(
-                                      leading: Icon(
-                                        Icons.place_outlined,
-                                        color: Colors.white,
-                                        size: 30,
-                                      ),
-                                      title: Text(
-                                        "203 Fake St.mansouer,",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      subtitle: Text(
-                                        "El-Dakahila,Egypt",
-                                        style: TextStyle(color: Colors.white),
+                          padding: EdgeInsets.only(top: 25.h, left: 13.w),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Pet Life",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 25.sp,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Container(
+                                      color: Colors.green,
+                                      width: 40.w,
+                                      height: 3.h,
+                                    ),
+                                    SizedBox(
+                                      height: 11.h,
+                                    ),
+                                    Text(
+                                      "A App for people who ",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    SizedBox(
+                                      height: 2.h,
+                                    ),
+                                    Text(
+                                      "interested in pets,you ",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    SizedBox(
+                                      height: 2.h,
+                                    ),
+                                    Text(
+                                      " can find all what you ",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    SizedBox(
+                                      height: 2.h,
+                                    ),
+                                    Text(
+                                      "need(pets,food,acce..",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    SizedBox(
+                                      height: 2.h,
+                                    ),
+                                    Text(
+                                      "ssories,and medicine)",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Have a Question?",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 21.7.sp,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Container(
+                                      color: Colors.green,
+                                      width: 40.w,
+                                      height: 3.h,
+                                    ),
+                                    SizedBox(
+                                      height: 6.h,
+                                    ),
+                                    Container(
+                                      width: 194.w,
+                                      child: ListTile(
+                                        leading: Icon(
+                                          Icons.place_outlined,
+                                          color: Colors.white,
+                                          size: 30,
+                                        ),
+                                        title: Text(
+                                          "203 Fake St.mansouer,",
+                                          style: TextStyle(
+                                              fontSize: 13.sp,
+                                              color: Colors.white),
+                                        ),
+                                        subtitle: Text(
+                                          "El-Dakahila,Egypt",
+                                          style: TextStyle(
+                                              fontSize: 13.sp,
+                                              color: Colors.white),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Container(
-                                    width: 194,
-                                    child: ListTile(
-                                      leading: Icon(
-                                        Icons.phone,
-                                        color: Colors.white,
-                                        size: 30,
-                                      ),
-                                      title: Text(
-                                        "+20 1234567890",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 194,
-                                    child: ListTile(
-                                      leading: Icon(
-                                        Icons.telegram,
-                                        color: Colors.white,
-                                        size: 30,
-                                      ),
-                                      title: Text(
-                                        "info@yourdomain.com",
-                                        style: TextStyle(color: Colors.white),
+                                    Container(
+                                      width: 194.w
+                                      ,
+                                      child: ListTile(
+                                        leading: Icon(
+                                          Icons.phone,
+                                          color: Colors.white,
+                                          size: 30,
+                                        ),
+                                        title: Text(
+                                          "+20 1234567890",
+                                          style: TextStyle(
+                                              fontSize: 13.sp,color: Colors.white),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                    Container(
+                                      width: 194.w,
+                                      child: ListTile(
+                                        leading: Icon(
+                                          Icons.telegram,
+                                          color: Colors.white,
+                                          size: 30,
+                                        ),
+                                        title: Text(
+                                          "info@yourdomain.com",
+                                          style: TextStyle(
+                                              fontSize: 13.sp,color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       )

@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:fff/cat.dart';
 import 'package:fff/pages/shop/favorite.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'carts.dart';
 
@@ -36,7 +37,7 @@ class _petState extends State<pet> {
       "id": true,
       "image": "images/55.jpg",
       "type": "name",
-      "sub": "aaaaaaaaaaaaaaaaa",
+      "sub": " writing description of product",
       "price": "199 EL",
       "cart": false,
     },
@@ -227,131 +228,136 @@ class _petState extends State<pet> {
               ),
               GridView.builder(
                 shrinkWrap: true,
+                clipBehavior: Clip.hardEdge,
+                physics: BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    mainAxisExtent: 360.h,
                     maxCrossAxisExtent: 300,
                     childAspectRatio: 2.76 / 5,
                     crossAxisSpacing: 5,
                     mainAxisSpacing: 5),
                 itemBuilder: (context, index) => Container(
-                  width: 200,
-                  height: 350,
+                  width: 200.w,
+                  height: 350.h,
                   child: Card(
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    elevation: 7,
-                    margin: EdgeInsets.all(10),
-                    child: Column(
-                      children: [
-                        Stack(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(15),
-                                topRight: Radius.circular(15),
-                              ),
-                              child: Image.asset(
-                                data[index]['image'],
-                                height: 200,
-                                width: 180,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Container(
-                              child: MaterialButton(
-                                minWidth: 25,
-                                padding: EdgeInsets.zero,
-                                onPressed: () {
-                                  setState(() {
-                                    data[index]["id"] = !data[index]["id"];
-                                    data[index]["id"] == false
-                                        ? favIncreaseCount()
-                                        : favDereasCount();
-                                  });
-                                },
-                                child: data[index]["id"] == false
-                                    ? Icon(
-                                  Icons.favorite,
-                                  color: Colors.red,
-                                  size: 40,
-                                )
-                                    : Icon(
-                                  Icons.favorite_border,
-                                  color: Colors.red,
-                                  size: 40,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Center(
-                              child: Text(data[index]['type'].toUpperCase(),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold)),
-                            ),
-                            Text(data[index]['sub'],
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                )),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      elevation: 7,
+                      margin: EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          Stack(
                               children: [
-                                Container(
-                                  width: 122,
-                                  child: Column(
-                                    children: [
-                                      Text(data[index]["price"],
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold)),
-                                    ],
+                                ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(15),
+                                    topRight: Radius.circular(15),
+                                  ),
+                                  child: Image.asset(
+                                    data[index]['image'],
+                                    height: 200.h,
+                                    width: 180.w,
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
-                                Column(
-                                  children: [
-                                    IconButton(
-                                      onPressed: () {
+                                Container(
+                                  child: MaterialButton(
+                                    minWidth: 25,
+                                    padding: EdgeInsets.zero,
+                                    onPressed: () {
+                                      setState(() {
+                                        data[index]["id"] = !data[index]["id"];
+                                        data[index]["id"] == false
+                                            ? favIncreaseCount()
+                                            : favDereasCount();
+                                      });
+                                    },
+                                    child: data[index]["id"] == false
+                                        ? Icon(
+                                      Icons.favorite,
+                                      color: Colors.red,
+                                      size: 40,
+                                    )
+                                        : Icon(
+                                      Icons.favorite_border,
+                                      color: Colors.red,
+                                      size: 40,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          SizedBox(height: 5.h),
 
-                                        setState(() {
-                                          data[index]["cart"] =
-                                          !data[index]["cart"];
-                                          data[index]["cart"] == false
-                                              ? cartdereaseCount()
-                                              : cartItemCount();
-                                        });
-                                      },
-                                      icon: data[index]["cart"] == false
-                                          ? Icon(
-                                        Icons.shopping_cart_outlined,
-                                        size: 35,
-                                      )
-                                          : Icon(
-                                        Icons.add_shopping_cart_outlined,
-                                        color: Colors.green,
-                                        size: 35,
-                                      ),
+                           Column(
+                              children: [
+                                Center(
+                                  child: Text(data[index]['type'].toUpperCase(),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                          fontSize: 25.sp,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold)),
+                                ),
+                                SizedBox(height: 5.h),
+
+                                Text(data[index]['sub'],
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      fontSize: 20.sp,
+                                      color: Colors.black,
+                                    )),
+                                SizedBox(height: 5.h,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Container(
+                                      child:
+                                          Text(data[index]["price"],
+                                              style: TextStyle(
+                                                  fontSize: 20.sp,
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.bold)),
+
+                                    ),
+
+                                        IconButton(
+                                          onPressed: () {
+
+                                            setState(() {
+                                              data[index]["cart"] =
+                                              !data[index]["cart"];
+                                              data[index]["cart"] == false
+                                                  ? cartdereaseCount()
+                                                  : cartItemCount();
+                                            });
+                                          },
+                                          icon: data[index]["cart"] == false
+                                              ? Icon(
+                                            Icons.shopping_cart_outlined,
+                                            size: 35,
+                                          )
+                                              : Icon(
+                                            Icons.add_shopping_cart_outlined,
+                                            color: Colors.green,
+                                            size: 35,
+                                          ),
+                                        )
+                                      ],
                                     )
                                   ],
                                 )
-                              ],
-                            )
-                          ],
-                        )
-                      ],
+
+
+                        ],
+                      ),
                     ),
                   ),
-                ),
+
                 itemCount: data.length,
               ),
             ],

@@ -165,6 +165,7 @@ class _doctorsState extends State<doctors> {
                 physics: BouncingScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  mainAxisExtent: 280,
                     maxCrossAxisExtent: 215,
                     childAspectRatio:1.5/2,
                     crossAxisSpacing: 5,
@@ -175,7 +176,7 @@ class _doctorsState extends State<doctors> {
                       border: Border.all(width: 1.8),
                       borderRadius: BorderRadius.all(Radius.circular(25))),
                   margin: EdgeInsets.all(10),
-                  width: 222,
+                  width: 222.w,
                   child: MaterialButton(
                     padding: EdgeInsets.zero,
                     onPressed: () {
@@ -187,7 +188,7 @@ class _doctorsState extends State<doctors> {
                         Stack(
                           children: [
                             Container(
-                              height: 190,
+                              height: 190.h,
                               width: double.infinity,
                               decoration: BoxDecoration(
                                   border: Border.all(width: 0.5),
@@ -218,7 +219,7 @@ class _doctorsState extends State<doctors> {
                                 Text(
                                   "2.3",
                                   style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 20.sp,
                                       fontWeight: FontWeight.bold),
                                 )
                               ],
@@ -226,7 +227,7 @@ class _doctorsState extends State<doctors> {
                           ],
                         ),
                         SizedBox(
-                          height: 7,
+                          height: 7.h,
                         ),
                         Center(
                           child: Text(
@@ -241,7 +242,7 @@ class _doctorsState extends State<doctors> {
                 ),
                 itemCount: 8,
               ),
-              SizedBox(height: 20,)
+              SizedBox(height: 20.h,)
             ],
           )),
     );

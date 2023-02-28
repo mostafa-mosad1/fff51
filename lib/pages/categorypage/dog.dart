@@ -1,5 +1,6 @@
 import 'package:fff/pages/categorypage/dogdata.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Dog extends StatefulWidget {
   const Dog({Key? key}) : super(key: key);
@@ -102,11 +103,11 @@ class _DogState extends State<Dog> {
                 shrinkWrap: true,
                 physics: BouncingScrollPhysics(),
                 itemCount: images.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  mainAxisExtent: 230,
+                  maxCrossAxisExtent: 230,
                   crossAxisSpacing: 1,
                   mainAxisSpacing: 1,
-                  childAspectRatio: 1,
                 ),
                 itemBuilder: (context, i) {
                   return InkWell(
@@ -131,22 +132,22 @@ class _DogState extends State<Dog> {
                           margin: EdgeInsets.all(15),
                         ),
                         Positioned(
-                          bottom: 15,
-                          right: 2,
-                          left: 3,
+                          bottom: 13.h,
+                          right: 2.w,
+                          left: 3.w,
                           child: Center(
                             child: Container(
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black26,
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.only(
-                                      bottomRight: Radius.circular(13),
-                                      bottomLeft: Radius.circular(13))),
-                              width: 165,
+                              height: 30.h,
+                             width: 165.w,
+                              // decoration: BoxDecoration(
+                              //     boxShadow: [
+                              //       BoxShadow(
+                              //         color: Colors.black26,
+                              //       )
+                              //     ],
+                              //     borderRadius: BorderRadius.only(
+                              //         bottomRight: Radius.circular(13),
+                              //         bottomLeft: Radius.circular(13))),
                               child: Center(
                                 child: Text(
                                   "${images[i]['type']}",
@@ -155,7 +156,7 @@ class _DogState extends State<Dog> {
                                       decorationColor: Colors.green,
                                       decorationThickness: 2,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                      fontSize: 25.sp),
                                 ),
                               ),
                             ),

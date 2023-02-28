@@ -156,10 +156,9 @@ class _cartState extends State<cart> {
                         children: [
                           Row(
                               children: [
-                                SizedBox(width: 1.w,),
-                                Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: Container( width: 112.w,height: 150.h,
+                                Container(
+                                 // padding:  EdgeInsets.all(4.0),
+                                  child: Container( width: 120.w,height: 150.h,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                         image: DecorationImage(
@@ -171,12 +170,9 @@ class _cartState extends State<cart> {
                                   ),
                                 )
                               ]),
-                          SizedBox(
-                            width: 3.w,
-                          ),
                           Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              SizedBox(height: 10.h,),
                               Container(
                                 width: 110.w,
                                 child: Text(
@@ -187,12 +183,13 @@ class _cartState extends State<cart> {
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
+                              SizedBox(height: 10.h,),
                               Container(
                                 width: 110.w,
                                 child: Text(
                                   "250 EL",
                                   style: TextStyle(
-                                      fontSize: 30.sp, fontWeight: FontWeight.bold),
+                                      fontSize: 25.sp, fontWeight: FontWeight.bold),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -234,11 +231,11 @@ class _cartState extends State<cart> {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 10,),
+                              SizedBox(height: 10.h,),
                               Container(
                                   decoration: BoxDecoration(
                                     borderRadius:
-                                    BorderRadius.all(Radius.circular(30)),
+                                    BorderRadius.all(Radius.circular(25)),
                                     color: Colors.red,
                                   ),
                                   child: MaterialButton(
@@ -255,8 +252,8 @@ class _cartState extends State<cart> {
                     ),
                   ),
                     itemCount: 3,
-                    separatorBuilder: (context, index) =>  SizedBox(height: 5,),),
-                  SizedBox(height: 5,),
+                    separatorBuilder: (context, index) =>  SizedBox(height: 5.h,),),
+                  SizedBox(height: 5.h,),
 
                   show_price(price: 1000,count: 3)
                 ],

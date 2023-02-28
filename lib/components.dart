@@ -61,7 +61,7 @@ Widget temple({image, name, context}) => Container(
           ),
         ),
         SizedBox(
-          height: 8.h,
+          height: 5.h,
         ),
         Center(
           child: Text("$name",
@@ -71,7 +71,7 @@ Widget temple({image, name, context}) => Container(
                   fontWeight: FontWeight.bold)),
         ),
         SizedBox(
-          height: 10.h,
+          height: 5.h,
         ),
       ],
     ));
@@ -429,40 +429,75 @@ Widget animal({image, nameAnimal}) => Stack(
       ],
     );
 
-Widget categ({image, name}) => Card(
-      color: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      elevation: 8,
-      // margin: EdgeInsets.all(10),
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
-                ),
-                child: Image.asset(
-                  "$image",
-                  height: 120,
-                  width: 180,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ],
+// Widget categ({image, name}) => Card(
+//       color: Colors.white,
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(15),
+//       ),
+//       elevation: 8,
+//       // margin: EdgeInsets.all(10),
+//       child: Column(
+//         children: [
+//           Stack(
+//             children: [
+//               ClipRRect(
+//                 borderRadius: BorderRadius.only(
+//                   topLeft: Radius.circular(15),
+//                   topRight: Radius.circular(15),
+//                 ),
+//                 child: Image.asset(
+//                   "$image",
+//                   height: 120.h,
+//                   width: 180.w,
+//                   fit: BoxFit.cover,
+//                 ),
+//               ),
+//             ],
+//           ),
+//           Column(
+//             children: [
+//               Text("$name",
+//                   style: TextStyle(
+//                       fontSize: 27.sp,
+//                       color: Colors.black,
+//                       fontWeight: FontWeight.bold)),
+//             ],
+//           )
+//         ],
+//       ),
+//     );
+
+Widget categ({image, name, context}) => Container(
+    height: MediaQuery.of(context).size.height * 0.6,
+    decoration: BoxDecoration(
+        color: Colors.white, borderRadius: BorderRadius.circular(25)),
+    child: Column(
+      children: [
+        Expanded(
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(25),
+              topRight: Radius.circular(25),
+            ),
+            child: Image.asset(
+              image,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
           ),
-          Column(
-            children: [
-              Text("$name",
-                  style: TextStyle(
-                      fontSize: 27,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold)),
-            ],
-          )
-        ],
-      ),
-    );
+        ),
+        SizedBox(
+          height: 5.h,
+        ),
+        Center(
+          child: Text("$name",
+              style: TextStyle(
+                  fontSize: 27.sp,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold)),
+        ),
+        SizedBox(
+          height: 5.h,
+        ),
+      ],
+    ));

@@ -65,7 +65,7 @@ class _favoriteState extends State<favorite> {
     ),
       body: Column(children: [
         SizedBox(
-          height: 10,
+          height: 10.h,
         ),
         Container(
           decoration: BoxDecoration(
@@ -76,76 +76,70 @@ class _favoriteState extends State<favorite> {
           Container(
             width: double.infinity,
             height: 178.h,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(children: [
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Container( width: 125.w,height: 170.h,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                            image: AssetImage("images/cat.jpg"),
-                            fit: BoxFit.cover,
-
-                          )
-                      ),
-                    ),
-                  )
-                ]),
-                SizedBox(
-                  width: 6,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(children: [
                     Container(
-                      width: 150,
-                      child: Text(
-                        "cat nnnnnnnnnnnnnnnnnnnnnnnnnn",
-                        style: TextStyle(
-                            fontSize: 30.sp, fontWeight: FontWeight.bold),
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    Container(
-                      width: 150,
-                      child: Text(
-                        "250 EL",
-                        style: TextStyle(
-                            fontSize: 30.sp, fontWeight: FontWeight.bold),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                     // padding: EdgeInsets.all(4.w),
+                      child: Container( width: 135.w,height: 178.h,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                              image: AssetImage("images/cat.jpg"),
+                              fit: BoxFit.cover,
 
-                      children: [
-
-                        MaterialButton(onPressed: (){
-                          setState(() {
-                            fav=!fav;
-                          });
-                        },child:    fav == false ?
-                        Icon(Icons.favorite,color: Colors.red,size: 50.sp,) :
-                        Icon(Icons.favorite_border,color: Colors.red,size: 50.sp,),)
-                      ],
-                    ),
-                  ],
-                ),
-              ],
+                            )
+                        ),
+                      ),
+                    )
+                  ]),
+                  SizedBox(
+                    width: 6.w,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 140.w,
+                        child: Text(
+                          "cat nnnnnnnnnnnnnnnnnnnnnnnnnn",
+                          style: TextStyle(
+                              fontSize: 30.sp, fontWeight: FontWeight.bold),
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      Container(
+                        width: 140.w,
+                        child: Text(
+                          "250 EL",
+                          style: TextStyle(
+                              fontSize: 30.sp, fontWeight: FontWeight.bold),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                          MaterialButton(onPressed: (){
+                            setState(() {
+                              fav=!fav;
+                            });
+                          },child:    fav == false ?
+                          Icon(Icons.favorite,color: Colors.red,size: 50,) :
+                          Icon(Icons.favorite_border,color: Colors.red,size: 50),)
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
 

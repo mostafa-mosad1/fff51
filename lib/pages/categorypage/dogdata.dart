@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DogData extends StatefulWidget {
   const DogData({Key? key, this.datadog}) : super(key: key);
@@ -28,7 +29,7 @@ class _DogDataState extends State<DogData> {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 590,
+                    height: 540.h,
                     decoration: BoxDecoration(
                         color: Colors.white70,
                         borderRadius: BorderRadius.only(
@@ -41,13 +42,13 @@ class _DogDataState extends State<DogData> {
                         children: [
                           Container(
                             width: double.infinity,
-                            height: 295,
+                            height: 350.h,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(25),
                                     bottomRight: Radius.circular(25)),
                                 image: DecorationImage(
-                                    image: AssetImage(widget.datadog['image']))),
+                                    image: AssetImage(widget.datadog['image']),fit: BoxFit.fill)),
                           ),
                           Container(
                             width: 35,
@@ -69,24 +70,24 @@ class _DogDataState extends State<DogData> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: 10.h,),
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
                           "  ${widget.datadog['type']}",
                           style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                              fontSize: 30.sp, fontWeight: FontWeight.bold),
                         ),
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 10.h,
                       ),
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
                           "${widget.datadog['sub']}",
                           style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                              fontSize: 30.sp, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
