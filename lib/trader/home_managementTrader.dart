@@ -9,6 +9,7 @@ import 'package:fff/vet/profile_vet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../auth/signin.dart';
 import '../pages/about.dart';
@@ -92,25 +93,25 @@ class _home_mangaementTraderState extends State<home_mangaementTrader> {
               appBar: AppBar(
                 backgroundColor: (Colors.orangeAccent),
                 title: Container(
-                  margin: EdgeInsets.only(left: 35),
+                  margin: EdgeInsets.only(left: 30),
                   child: Row(
                     children: [
                       Text(
-                        "Pet  ",
+                        "Pet ",
                         style: TextStyle(
-                            fontSize: 35,
+                            fontSize: 30.sp,
                             fontWeight: FontWeight.bold,
                             color: Colors.blueAccent),
                       ),
                       SvgPicture.asset(
                         "images/4.svg",
-                        width: 50,
-                        height: 50,
+                        width: 30.w,
+                        height: 50.h,
                       ),
                       Text(
                         " Life",
                         style: TextStyle(
-                            fontSize: 35,
+                            fontSize: 30.sp,
                             fontWeight: FontWeight.bold,
                             color: Colors.green),
                       ),
@@ -135,7 +136,7 @@ class _home_mangaementTraderState extends State<home_mangaementTrader> {
                       },
                       icon: Icon(
                         Icons.notifications,
-                        size: 30,
+                        size: 35,
                       ))
                 ],
               ),

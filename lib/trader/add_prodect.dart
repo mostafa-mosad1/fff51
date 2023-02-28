@@ -36,7 +36,7 @@ class _add_prodectState extends State<add_prodect> {
             child: Column(
               children: [
                 Container(
-                    margin: EdgeInsets.only(right: 320.w, top: 5.h),
+                    margin: EdgeInsets.only(right: 285.w, top: 5.h),
                     decoration: BoxDecoration(
                         color: Colors.orangeAccent,
                         borderRadius: BorderRadius.circular(10)),
@@ -78,7 +78,7 @@ class _add_prodectState extends State<add_prodect> {
                   )),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 30.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -92,7 +92,7 @@ class _add_prodectState extends State<add_prodect> {
                           background: Colors.redAccent,
                           color: Colors.white),
                     ),
-                    SizedBox(width: 5,),
+
 
                     Container(
                       width: 170.w,

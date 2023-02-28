@@ -245,7 +245,7 @@ class _Edithome1State extends State<Edithome1> {
                                   color: Colors.black)),
                         ),
                       ),
-                      SizedBox(width: 5.h,),
+
                       Container(
                         width: 170.w,
                         height: 40.h,
@@ -284,11 +284,11 @@ class _Edithome1State extends State<Edithome1> {
                       Container(
                         decoration: BoxDecoration(
                             color: Colors.white, border: Border.all()),
-                        width: 170.w,
+                        width: 172.w,
                         height: 40.h,
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton(
-                            iconSize: 30,
+                            iconSize: 25,
                             hint: Text(
                               "   Type",
                               style: TextStyle(
@@ -319,7 +319,7 @@ class _Edithome1State extends State<Edithome1> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 5.w,),
+
                       Container(
                         decoration: BoxDecoration(
                             color: Colors.white, border: Border.all()),
@@ -327,12 +327,12 @@ class _Edithome1State extends State<Edithome1> {
                         height: 40.h,
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton(
-                            iconSize: 30,
+                            iconSize: 25,
                             hint: Text(
                               "   Gender",
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 23,
+                                  fontSize: 23.sp,
                                   fontWeight: FontWeight.bold),
                             ),
                             items: ["Hamster", "Cat", "Dog", "Bird", "Fish"]
@@ -342,7 +342,7 @@ class _Edithome1State extends State<Edithome1> {
                                           "   $f",
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 23,
+                                              fontSize: 23.sp,
                                               fontWeight: FontWeight.bold),
                                         ),
                                       ),
