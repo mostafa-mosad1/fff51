@@ -138,7 +138,7 @@ class _DogState extends State<Dog> {
                           child: Center(
                             child: Container(
                               height: 30.h,
-                             width: 165.w,
+                              width: 165.w,
                               // decoration: BoxDecoration(
                               //     boxShadow: [
                               //       BoxShadow(
