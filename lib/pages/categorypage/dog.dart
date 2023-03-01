@@ -13,7 +13,7 @@ class _DogState extends State<Dog> {
   List images = [
     {
       "image": "images/cat.jpg",
-      "type": "name",
+      "type": "Cat",
       "sub": "cccc ccccc ccccc ccccc cccccc ccdddd dddddd dddd",
     },
     {
@@ -106,65 +106,55 @@ class _DogState extends State<Dog> {
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   mainAxisExtent: 230,
                   maxCrossAxisExtent: 230,
-                  crossAxisSpacing: 1,
-                  mainAxisSpacing: 1,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
                 ),
                 itemBuilder: (context, i) {
                   return InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => DogData(
-                                datadog: images[i],
-                              )));
-                    },
-                    child: Stack(
-                      children: [
-                        Container(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DogData(
+                                      datadog: images[i],
+                                    )));
+                      },
+                      child: Container(
+                        margin: EdgeInsets.all(5),
                           decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(13)),
-                              image: DecorationImage(
-                                  image: AssetImage(images[i]['image']),
-                                  fit: BoxFit.fill)),
-                          margin: EdgeInsets.all(15),
-                        ),
-                        Positioned(
-                          bottom: 13.h,
-                          right: 2.w,
-                          left: 3.w,
-                          child: Center(
-                            child: Container(
-                              height: 30.h,
-                              width: 165.w,
-                              // decoration: BoxDecoration(
-                              //     boxShadow: [
-                              //       BoxShadow(
-                              //         color: Colors.black26,
-                              //       )
-                              //     ],
-                              //     borderRadius: BorderRadius.only(
-                              //         bottomRight: Radius.circular(13),
-                              //         bottomLeft: Radius.circular(13))),
-                              child: Center(
-                                child: Text(
-                                  "${images[i]['type']}",
-                                  style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      decorationColor: Colors.green,
-                                      decorationThickness: 2,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 25.sp),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(25)),
+                          child: Column(
+                            children: [
+                              Expanded(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25),
+                                    topRight: Radius.circular(25),
+                                  ),
+                                  child: Image.asset(
+                                    images[i]['image'],
+                                    width: double.infinity,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  );
+                              SizedBox(
+                                height: 5.h,
+                              ),
+                              Center(
+                                child: Text("${images[i]['type']}",
+                                    style: TextStyle(
+                                        fontSize: 27.sp,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold)),
+                              ),
+                              SizedBox(
+                                height: 5.h,
+                              ),
+                            ],
+                          ))
+                      );
                 },
               ),
             ],
