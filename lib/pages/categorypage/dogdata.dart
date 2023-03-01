@@ -29,7 +29,7 @@ class _DogDataState extends State<DogData> {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 540.h,
+                    height: 510.h,
                     decoration: BoxDecoration(
                         color: Colors.white70,
                         borderRadius: BorderRadius.only(
@@ -42,7 +42,7 @@ class _DogDataState extends State<DogData> {
                         children: [
                           Container(
                             width: double.infinity,
-                            height: 320.h,
+                            height: 300.h,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(25),
