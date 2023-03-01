@@ -16,7 +16,6 @@ class _cartState extends State<cart> {
   int x = 1;
   int y = 1;
   int z = 1;
-  bool pay = false;
   int p =250;
 
   @override
@@ -38,7 +37,7 @@ class _cartState extends State<cart> {
             title: Text(
               "pet life",
               style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 27,
                   fontWeight: FontWeight.bold,
                   color: Colors.blueAccent),
             ),
@@ -51,6 +50,7 @@ class _cartState extends State<cart> {
                 icon: Icon(
                   Icons.favorite_border,
                   color: Colors.redAccent,
+                  size: 30,
                 ),
               ),
               SizedBox(
@@ -64,6 +64,7 @@ class _cartState extends State<cart> {
                 icon: Icon(
                   Icons.shopping_bag_outlined,
                   color: Colors.green,
+                  size: 30,
                 ),
               ),
               SizedBox(
@@ -72,10 +73,8 @@ class _cartState extends State<cart> {
             ],
           ),
           floatingActionButton: FloatingActionButton(
+            backgroundColor: Color(0xff269A41),
             onPressed: () {
-              setState(() {
-                pay =!pay;
-              });
               showModalBottomSheet(
                   context: context,
                   builder: (context) {
@@ -124,10 +123,13 @@ class _cartState extends State<cart> {
                             ),
                           ),
                           Container(
-                            width: 200,
-                            color: Colors.green,
+                            height: 40.h,
+                            width: 220,
+                            color:Color(0xff075965),
                             child: MaterialButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
                               child: Center(child: Text("Place Order",style: TextStyle(color:Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)),
                             ),
                           )
@@ -136,7 +138,7 @@ class _cartState extends State<cart> {
                     );
                   });
             },
-            child: Icon( pay ==false? Icons.landslide_sharp:Icons.done_outline_outlined),
+            child: Icon( Icons.landslide_sharp),
           ),
           body: SingleChildScrollView(
             child: Container(
@@ -236,7 +238,7 @@ class _cartState extends State<cart> {
                                   decoration: BoxDecoration(
                                     borderRadius:
                                     BorderRadius.all(Radius.circular(25)),
-                                    color: Colors.red,
+                                      color: Color(0xffA20808)
                                   ),
                                   child: MaterialButton(
                                       onPressed: () {},

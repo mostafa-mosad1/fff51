@@ -29,7 +29,7 @@ class _OneState extends State<One> {
       body: Form(
         key: formstate,
         child: Container(
-            color: Colors.grey[400],
+            color:Color(0xffD4D2D2),
             height: double.infinity,
             child: ListView(shrinkWrap: true, children: [
               Stack(
@@ -315,7 +315,7 @@ class _OneState extends State<One> {
                         width: 275.w,
                         height: 50.h,
                         child: MaterialButton(
-                          color: Colors.green,
+                          color:Color(0xff075965),
                           textColor: Colors.white,
                           onPressed: () {
                             var formdata =formstate.currentState;

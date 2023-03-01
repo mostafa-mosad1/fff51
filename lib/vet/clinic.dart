@@ -55,7 +55,7 @@ class _clinicState extends State<clinic> {
           children: [
             Container(
               height: double.infinity,
-              color: Colors.grey[400],
+              color:Color(0xffD4D2D2),
             ),
             ListView.builder(
                 itemCount: addd.length,
@@ -155,7 +155,7 @@ class _clinicState extends State<clinic> {
                               decoration: BoxDecoration(
                                   borderRadius:
                                   BorderRadius.all(Radius.circular(3)),
-                                  color: Colors.green,
+                                  color: Color(0xff28A745),
                                   border: Border.all()),
                               width: 155.w,
                               height: 43.h,
@@ -177,7 +177,7 @@ class _clinicState extends State<clinic> {
                               decoration: BoxDecoration(
                                 border: Border.all(),
                                 borderRadius: BorderRadius.all(Radius.circular(3)),
-                                color: Colors.red,
+                                color: Color(0xffA20808),
                               ),
                               width: 155.w,
                               height: 43.h,

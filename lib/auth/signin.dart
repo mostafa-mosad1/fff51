@@ -46,7 +46,7 @@ class _SigninState extends State<Signin> {
                   ),
                       Text("PET Life",
                           style: TextStyle(
-                              color: Colors.blue,
+                              color: Color(0xff007BFF),
                               fontWeight: FontWeight.bold,
                               fontSize: 45)),
                   SizedBox(
@@ -97,8 +97,8 @@ class _SigninState extends State<Signin> {
                                       setState(() {});
                                     },
                                     icon: visible == false
-                                        ? Icon(Icons.visibility)
-                                        : Icon(Icons.visibility_off),
+                                        ? Icon(Icons.visibility,color: Colors.black,)
+                                        : Icon(Icons.visibility_off,color: Colors.black,),
                                   ),
                                  ),
                             ),
@@ -154,7 +154,7 @@ class _SigninState extends State<Signin> {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
-                                      color: Colors.orange),
+                                    color: Color(0xffFFBB3B),                                  ),
                                 ),
                               )
                             ],

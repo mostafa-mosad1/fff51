@@ -52,7 +52,7 @@ class _SignupState extends State<Signup> {
                 children: [
                   Text("PET LIFE",
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Color(0xff007BFF),
                           fontWeight: FontWeight.bold,
                           fontSize: 40)),
                 ],
@@ -140,8 +140,8 @@ class _SignupState extends State<Signup> {
                                   setState(() {});
                                 },
                                 icon: visible == false
-                                    ? Icon(Icons.visibility)
-                                    : Icon(Icons.visibility_off),
+                                    ? Icon(Icons.visibility,color: Colors.black,)
+                                    : Icon(Icons.visibility_off,color: Colors.black,),
                               ),
                              ),
                         ),

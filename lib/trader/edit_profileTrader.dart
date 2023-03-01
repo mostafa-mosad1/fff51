@@ -32,7 +32,7 @@ class _profile_editTraderState extends State<profile_editTrader> {
     return SafeArea(
         child: Scaffold(
           body: Container(
-            color: Colors.grey[400],
+            color:Color(0xffD4D2D2),
             height:double.infinity,
             child: SingleChildScrollView(
               child: Column(

@@ -25,7 +25,7 @@ class _add_prodectState extends State<add_prodect> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[400],
+      color:Color(0xffD4D2D2),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(

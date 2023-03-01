@@ -29,12 +29,12 @@ class _shopState extends State<shop> {
           body: Container(
             width: double.infinity,
             height: double.infinity,
-            color: Colors.grey,
+            color:Color(0xffD4D2D2),
             child: SingleChildScrollView(
               child: Column(
                 children: [
                   Container(
-                    height: 270.h,
+                    height: 220.h,
                     width: double.infinity,
                     child: Carousel(
                       images: [
@@ -53,7 +53,7 @@ class _shopState extends State<shop> {
                   Container(
 
                     child: GridView.count(
-                      childAspectRatio: 0.9,
+                      childAspectRatio: 0.93,
                       physics: BouncingScrollPhysics(),
                       shrinkWrap: true,
                       padding: EdgeInsets.all(10.w),

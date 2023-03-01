@@ -15,11 +15,11 @@ class _categoryState extends State<category> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(color: Colors.grey[400]),
+        Container(color:Color(0xffD4D2D2),),
         ListView(children: [
-          SizedBox(height: 30,),
+          SizedBox(height: 25,),
            GridView.count(
-              childAspectRatio: 0.8,
+              childAspectRatio: 0.87,
               physics: BouncingScrollPhysics(),
                 shrinkWrap: true,
                 padding: EdgeInsets.all(20.w),

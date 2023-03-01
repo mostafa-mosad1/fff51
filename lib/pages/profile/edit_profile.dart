@@ -38,7 +38,7 @@ class _edit_profileState extends State<edit_profile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[400],
+      color:Color(0xffD4D2D2),
       width: double.infinity,
       height: double.infinity,
       child: SingleChildScrollView(

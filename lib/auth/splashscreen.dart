@@ -52,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
             Text("PET Life",
                 style: TextStyle(
-                    color: Colors.blue,
+                    color: Color(0xff007BFF),
                     fontWeight: FontWeight.bold,
                     fontSize: 45)),
 

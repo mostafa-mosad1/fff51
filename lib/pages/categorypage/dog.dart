@@ -75,7 +75,7 @@ class _DogState extends State<Dog> {
         Container(
           width: double.infinity,
           height: double.infinity,
-          color: Colors.grey[400],
+            color:Color(0xffD4D2D2),
         ),
         SingleChildScrollView(
           child: Column(
