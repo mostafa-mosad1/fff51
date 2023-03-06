@@ -37,7 +37,7 @@ class _OneState extends State<One> {
                   Image.asset(
                     "images/55.jpg",
                     fit: BoxFit.fill,
-                    height: 400,
+                    height: 330,
                     width: double.infinity,
                   ),
                   IconButton(
@@ -49,7 +49,7 @@ class _OneState extends State<One> {
                         size: 34,
                       )),
                   Container(
-                    margin: EdgeInsetsDirectional.only(top: 350),
+                    margin: EdgeInsetsDirectional.only(top: 277),
                     decoration: BoxDecoration(boxShadow: [
                       BoxShadow(
                           color: Colors.blue, blurRadius: 20, spreadRadius: 5)
