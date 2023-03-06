@@ -35,21 +35,31 @@ class _OneState extends State<One> {
               Stack(
                 children: [
                   Image.asset(
-                    "images/55.jpg",
+                    "images/doc.jpg",
                     fit: BoxFit.fill,
                     height: 330,
                     width: double.infinity,
                   ),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: Icon(
-                        Icons.arrow_back,
-                        size: 34,
-                      )),
                   Container(
-                    margin: EdgeInsetsDirectional.only(top: 277),
+                    width: 35,
+                    height: 35,
+                    decoration: BoxDecoration(
+                        color: Colors.white12,
+                        border: Border.all(width: 1.5),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    margin: EdgeInsets.all(10),
+                    child: IconButton(
+                        padding: EdgeInsets.only(right: 1.5, bottom: 1.5),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: Icon(
+                          Icons.arrow_back,
+                          size: 25,
+                        )),
+                  ),
+                  Container(
+                    margin: EdgeInsetsDirectional.only(top: 280),
                     decoration: BoxDecoration(boxShadow: [
                       BoxShadow(
                           color: Colors.blue, blurRadius: 20, spreadRadius: 5)
