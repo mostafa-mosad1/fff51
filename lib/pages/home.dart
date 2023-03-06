@@ -81,6 +81,7 @@ class _homeState extends State<home> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
+
                     height: 380,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
@@ -99,105 +100,83 @@ class _homeState extends State<home> {
                                 ),
                                 elevation: 7,
                                 margin: EdgeInsets.all(10),
-                                child: Column(
-                                  children: [
-                                    Stack(
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(15),
-                                            topRight: Radius.circular(15),
-                                          ),
-                                          child: Image.asset(
-                                            "images/cat.jpg",
-                                            height: 200,
-                                            width: 180,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Container(
-                                            child: MaterialButton(
-                                              minWidth: 25,
-                                              padding: EdgeInsets.zero,
-                                              onPressed: () {
-                                                setState(() {
-                                                  icon = !icon;
-                                                });
-                                              },
-                                              child: icon == false
-                                                  ? Icon(
-                                                      Icons.favorite,
-                                                      color: Colors.red,
-                                                      size: 40,
-                                                    )
-                                                  : Icon(
-                                                      Icons.favorite_border,
-                                                      color: Colors.red,
-                                                      size: 40,
-                                                    ),
-                                            )),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Column(
-                                      children: [
-                                        Center(
-                                          child: Text("Cat",
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              style: TextStyle(
-                                                  fontSize: 25,
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold)),
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Text(
-                                            " writing description of product nnnnnnnnnnn",
-                                            maxLines: 2,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.black,
-                                            )),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                child: Container(
+                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(color: Colors.black,width: 2)),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+
+                                            border: Border(bottom: BorderSide(color: Colors.black,width: 2))),
+                                        child: Stack(
                                           children: [
-                                            Container(
-                                              width: 122,
-                                              child: Column(
-                                                children: [
-                                                  Text("250 EL",
-                                                      style: TextStyle(
-                                                          fontSize: 20,
-                                                          color: Colors.black,
-                                                          fontWeight:
-                                                              FontWeight.bold)),
-                                                ],
+                                            ClipRRect(
+                                              borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(15),
+                                                topRight: Radius.circular(15),
+                                              ),
+                                              child: Image.asset(
+                                                "images/cat.jpg",
+                                                height: 200,
+                                                width: 180,
+                                                fit: BoxFit.cover,
                                               ),
                                             ),
-                                            Column(
-                                              children: [
-                                                IconButton(
-                                                    onPressed: () {},
-                                                    icon: Icon(
-                                                      Icons.shopping_cart,
-                                                      size: 30,
-                                                    ))
-                                              ],
-                                            )
                                           ],
-                                        )
-                                      ],
-                                    )
-                                  ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Column(
+                                        children: [
+                                          Center(
+                                            child: Text("Cat",
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: TextStyle(
+                                                    fontSize: 25,
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.bold)),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                              " writing description of product nnnnnnnnnnn",
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.black,
+                                              )),
+                                          SizedBox(
+                                            height: 15,
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Container(
+                                                width: 122,
+                                                child: Column(
+                                                  children: [
+                                                    Text("250 EL",
+                                                        style: TextStyle(
+                                                            fontSize: 20,
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight.bold)),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -329,7 +308,7 @@ class _homeState extends State<home> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
-                    height: 380,
+                    height: 280,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
                       color: Colors.white,
@@ -339,113 +318,63 @@ class _homeState extends State<home> {
                         physics: BouncingScrollPhysics(),
                         itemBuilder: (context, index) => Container(
                               width: 200,
-                              height: 350,
+                              height: 270,
                               child: Card(
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15),
+
                                 ),
                                 elevation: 7,
                                 margin: EdgeInsets.all(10),
-                                child: Column(
-                                  children: [
-                                    Stack(
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(15),
-                                            topRight: Radius.circular(15),
-                                          ),
-                                          child: Image.asset(
-                                            "images/cat.jpg",
-                                            height: 200,
-                                            width: 180,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Container(
-                                            child: MaterialButton(
-                                              minWidth: 25,
-                                              padding: EdgeInsets.zero,
-                                              onPressed: () {
-                                                setState(() {
-                                                  icon = !icon;
-                                                });
-                                              },
-                                              child: icon == false
-                                                  ? Icon(
-                                                      Icons.favorite,
-                                                      color: Colors.red,
-                                                      size: 40,
-                                                    )
-                                                  : Icon(
-                                                      Icons.favorite_border,
-                                                      color: Colors.red,
-                                                      size: 40,
-                                                    ),
-                                            )),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Column(
-                                      children: [
-                                        Center(
-                                          child: Text("Cat",
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              style: TextStyle(
-                                                  fontSize: 25,
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold)),
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Text(
-                                            " writing description of product nnnnnnnnnnn",
-                                            maxLines: 2,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.black,
-                                            )),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(color: Colors.black,width: 2)),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            border: Border(bottom:BorderSide(color: Colors.black,width: 2))),
+                                        child: Stack(
                                           children: [
-                                            Container(
-                                              width: 122,
-                                              child: Column(
-                                                children: [
-                                                  Text("250 EL",
-                                                      style: TextStyle(
-                                                          fontSize: 20,
-                                                          color: Colors.black,
-                                                          fontWeight:
-                                                              FontWeight.bold)),
-                                                ],
+                                            ClipRRect(
+                                              borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(15),
+                                                topRight: Radius.circular(15),
+                                              ),
+                                              child: Image.asset(
+                                                "images/cat.jpg",
+                                                height: 200,
+                                                width: 180,
+                                                fit: BoxFit.cover,
                                               ),
                                             ),
-                                            Column(
-                                              children: [
-                                                IconButton(
-                                                    onPressed: () {},
-                                                    icon: Icon(
-                                                      Icons.shopping_cart,
-                                                      size: 30,
-                                                    ))
-                                              ],
-                                            )
                                           ],
-                                        )
-                                      ],
-                                    )
-                                  ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Column(
+                                        children: [
+                                          Center(
+                                            child: Text("Cat",
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: TextStyle(
+                                                    fontSize: 25,
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.bold)),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

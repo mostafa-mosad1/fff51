@@ -17,13 +17,13 @@ class _DogState extends State<Dog> {
       "sub": "cccc ccccc ccccc ccccc cccccc ccdddd dddddd dddd",
     },
     {
-      "image": "images/cat.jpg",
-      "type": "name",
-      "sub": "kolo ya walleed yessss noooo ",
+      "image": "images/dog1.jpg",
+      "type": "dog",
+      "sub": " aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ",
     },
     {
       "image": "images/cat.jpg",
-      "type": "name",
+      "type": "cat",
       "sub": "cccccccccccccccccccccccc",
     },
     {

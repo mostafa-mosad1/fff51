@@ -245,8 +245,8 @@ Widget defultForm(
         onsaved,
         keyboard}) =>
     Container(
-      width: 280.w,
-      height: 50.h,
+      width: 280,
+      height: 50,
       child: TextFormField(
         initialValue: initialvalue,
         onSaved: onsaved,
@@ -468,7 +468,7 @@ Widget animal({image, nameAnimal}) => Stack(
 //     );
 
 Widget categ({image, name, context}) => Container(
-    height: 200.h,
+    height: 3.h,
     decoration: BoxDecoration(
         color: Colors.white, borderRadius: BorderRadius.circular(25)),
     child: Column(
