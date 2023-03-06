@@ -81,7 +81,6 @@ class _homeState extends State<home> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
-
                     height: 380,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
@@ -101,24 +100,28 @@ class _homeState extends State<home> {
                                 elevation: 7,
                                 margin: EdgeInsets.all(10),
                                 child: Container(
-                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
-                                      border: Border.all(color: Colors.black,width: 2)),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(
+                                          color: Colors.black, width: 1.7)),
                                   child: Column(
                                     children: [
                                       Container(
                                         decoration: BoxDecoration(
-
-                                            border: Border(bottom: BorderSide(color: Colors.black,width: 2))),
+                                            border: Border(
+                                                bottom: BorderSide(
+                                                    color: Colors.black,
+                                                    width: 1))),
                                         child: Stack(
                                           children: [
                                             ClipRRect(
                                               borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(15),
-                                                topRight: Radius.circular(15),
+                                                topLeft: Radius.circular(12),
+                                                topRight: Radius.circular(12),
                                               ),
                                               child: Image.asset(
                                                 "images/cat.jpg",
-                                                height: 200,
+                                                height: 210,
                                                 width: 180,
                                                 fit: BoxFit.cover,
                                               ),
@@ -138,7 +141,8 @@ class _homeState extends State<home> {
                                                 style: TextStyle(
                                                     fontSize: 25,
                                                     color: Colors.black,
-                                                    fontWeight: FontWeight.bold)),
+                                                    fontWeight:
+                                                        FontWeight.bold)),
                                           ),
                                           SizedBox(
                                             height: 10,
@@ -167,7 +171,8 @@ class _homeState extends State<home> {
                                                             fontSize: 20,
                                                             color: Colors.black,
                                                             fontWeight:
-                                                                FontWeight.bold)),
+                                                                FontWeight
+                                                                    .bold)),
                                                   ],
                                                 ),
                                               ),
@@ -323,29 +328,32 @@ class _homeState extends State<home> {
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15),
-
                                 ),
                                 elevation: 7,
                                 margin: EdgeInsets.all(10),
                                 child: Container(
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15),
-                                      border: Border.all(color: Colors.black,width: 2)),
+                                      border: Border.all(
+                                          color: Colors.black, width: 1.7)),
                                   child: Column(
                                     children: [
                                       Container(
                                         decoration: BoxDecoration(
-                                            border: Border(bottom:BorderSide(color: Colors.black,width: 2))),
+                                            border: Border(
+                                                bottom: BorderSide(
+                                                    color: Colors.black,
+                                                    width: 1))),
                                         child: Stack(
                                           children: [
                                             ClipRRect(
                                               borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(15),
-                                                topRight: Radius.circular(15),
+                                                topLeft: Radius.circular(12),
+                                                topRight: Radius.circular(12),
                                               ),
                                               child: Image.asset(
                                                 "images/cat.jpg",
-                                                height: 200,
+                                                height: 205,
                                                 width: 180,
                                                 fit: BoxFit.cover,
                                               ),
@@ -365,12 +373,12 @@ class _homeState extends State<home> {
                                                 style: TextStyle(
                                                     fontSize: 25,
                                                     color: Colors.black,
-                                                    fontWeight: FontWeight.bold)),
+                                                    fontWeight:
+                                                        FontWeight.bold)),
                                           ),
                                           SizedBox(
                                             height: 10,
                                           ),
-
                                         ],
                                       )
                                     ],
@@ -406,7 +414,7 @@ class _homeState extends State<home> {
               Container(
                 decoration: BoxDecoration(
                   color: Colors.black87,
-                   ),
+                ),
                 height: 260.h,
                 width: double.infinity.w,
                 child: Padding(
