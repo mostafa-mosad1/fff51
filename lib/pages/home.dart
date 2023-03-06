@@ -15,6 +15,24 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
+  List nn=[
+    {
+    "name":"Cat",
+      "image":"images/cat.jpg"
+  },{
+      "name":"Dog",
+      "image":"images/dog1.jpg"
+    },{
+      "name":"Hamster",
+      "image":"images/hamaster.jpg"
+    },{
+      "name":"Bird",
+      "image":"images/bird.jpg"
+    },{
+      "name":"Fish",
+      "image":"images/fish.jpg"
+    },
+  ];
   bool icon = true;
   @override
   Widget build(BuildContext context) {
@@ -102,17 +120,10 @@ class _homeState extends State<home> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15),
-                                      border: Border.all(
-                                          color: Colors.black, width: 1.7)),
+                                     ),
                                   child: Column(
                                     children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                            border: Border(
-                                                bottom: BorderSide(
-                                                    color: Colors.black,
-                                                    width: 1))),
-                                        child: Stack(
+                                      Stack(
                                           children: [
                                             ClipRRect(
                                               borderRadius: BorderRadius.only(
@@ -121,14 +132,14 @@ class _homeState extends State<home> {
                                               ),
                                               child: Image.asset(
                                                 "images/cat.jpg",
-                                                height: 210,
+                                                height: 215,
                                                 width: 180,
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
                                           ],
                                         ),
-                                      ),
+
                                       SizedBox(
                                         height: 10,
                                       ),
@@ -222,38 +233,39 @@ class _homeState extends State<home> {
                         scrollDirection: Axis.horizontal,
                         physics: BouncingScrollPhysics(),
                         itemBuilder: (context, index) => Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(width: 1.8),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(25))),
-                              margin: EdgeInsets.all(10),
-                              width: 200,
-                              child: Column(
+                          width: 200,
+                          height: 270,
+                           child: Card(
+                             color: Colors.white,
+                             shape: RoundedRectangleBorder(
+                               borderRadius: BorderRadius.circular(24),
+                             ),
+                             elevation: 7,
+                             margin: EdgeInsets.all(10),
+                             child: Column(
                                 children: [
                                   Stack(
                                     children: [
-                                      Container(
-                                        height: 190,
-                                        width: double.infinity,
-                                        decoration: BoxDecoration(
-                                            border: Border.all(width: 0.5),
-                                            borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(24),
-                                                topRight: Radius.circular(24)),
-                                            image: DecorationImage(
-                                                image:
-                                                    AssetImage("images/56.jpg"),
-                                                fit: BoxFit.fill)),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(23),
+                                          topRight: Radius.circular(18),
+                                        ),
+                                        child: Image.asset(
+                                          "images/doc1.jpg",
+                                          height: 200,
+                                          width: 180,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                       Container(
-                                        padding: EdgeInsets.only(top: 7),
+                                        padding: EdgeInsets.only(top: 9),
                                         decoration: BoxDecoration(
                                             color: Colors.white,
                                             borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(24),
+                                                topLeft: Radius.circular(22),
                                                 bottomRight:
-                                                    Radius.circular(20))),
+                                                Radius.circular(20))),
                                         height: 35,
                                         width: 65,
                                       ),
@@ -277,14 +289,18 @@ class _homeState extends State<home> {
                                   SizedBox(
                                     height: 5,
                                   ),
-                                  Text(
-                                    "Dr.vet",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
+                                  Center(
+                                    child: Text(
+                                      "Dr.vet",
+                                      style: TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   )
                                 ],
-                              ),
+                            ),
+                             ),
+
                             ),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 1,
@@ -334,17 +350,10 @@ class _homeState extends State<home> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15),
-                                      border: Border.all(
-                                          color: Colors.black, width: 1.7)),
+                                     ),
                                   child: Column(
                                     children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                            border: Border(
-                                                bottom: BorderSide(
-                                                    color: Colors.black,
-                                                    width: 1))),
-                                        child: Stack(
+                                       Stack(
                                           children: [
                                             ClipRRect(
                                               borderRadius: BorderRadius.only(
@@ -352,22 +361,22 @@ class _homeState extends State<home> {
                                                 topRight: Radius.circular(12),
                                               ),
                                               child: Image.asset(
-                                                "images/cat.jpg",
-                                                height: 205,
+                                                nn[index]['image'],
+                                                height: 210,
                                                 width: 180,
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
                                           ],
                                         ),
-                                      ),
+
                                       SizedBox(
                                         height: 10,
                                       ),
                                       Column(
                                         children: [
                                           Center(
-                                            child: Text("Cat",
+                                            child: Text("${nn[index]['name']}",
                                                 maxLines: 1,
                                                 overflow: TextOverflow.ellipsis,
                                                 style: TextStyle(
@@ -389,7 +398,7 @@ class _homeState extends State<home> {
                         separatorBuilder: (context, index) => SizedBox(
                               width: 1,
                             ),
-                        itemCount: 7)),
+                        itemCount: nn.length)),
               ),
               InkWell(
                 child: ListTile(

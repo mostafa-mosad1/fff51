@@ -103,8 +103,8 @@ class _doctorsState extends State<doctors> {
                                         topLeft: Radius.circular(24),
                                         topRight: Radius.circular(24)),
                                     image: DecorationImage(
-                                        image: AssetImage("images/56.jpg"),
-                                        fit: BoxFit.fill)),
+                                        image: AssetImage("images/doc1.jpg"),
+                                        fit: BoxFit.cover)),
                               ),
                               Container(
                                 padding: EdgeInsets.only(top: 7),
@@ -196,8 +196,8 @@ class _doctorsState extends State<doctors> {
                                       topLeft: Radius.circular(24),
                                       topRight: Radius.circular(24)),
                                   image: DecorationImage(
-                                      image: AssetImage("images/56.jpg"),
-                                      fit: BoxFit.fill)),
+                                      image: AssetImage("images/doc1.jpg"),
+                                      fit: BoxFit.cover)),
                             ),
                             Container(
                               padding: EdgeInsets.only(top: 7),
