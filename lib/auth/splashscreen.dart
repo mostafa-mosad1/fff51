@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(
-        Duration(seconds: 1),
+        Duration(seconds: 3),
             () => Navigator.push(
             context, MaterialPageRoute(builder: (context) => Signin())));
   }
@@ -30,12 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
            children: [
              Container(
         height: double.infinity,
-                child: Image.asset(
-                  "images/background1.jpeg",
-                  fit: BoxFit.fill,
-                  height: double.infinity,
-                  width: double.infinity,
-                )),
+               color: Color(0xff182747),),
       Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -52,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
             Text("PET Life",
                 style: TextStyle(
-                    color: Color(0xff007BFF),
+                    color: Color(0xff269A41),
                     fontWeight: FontWeight.bold,
                     fontSize: 45)),
 

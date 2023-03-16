@@ -104,7 +104,8 @@ class _ProfileState extends State<Profile> {
                   child: Text(
                     "@moh_ahmed",
                     style: TextStyle(
-                        color: Colors.black45,
+                        color
+                            : Colors.black45,
                         fontWeight: FontWeight.bold,
                         fontSize: 15),
                   ),
@@ -221,6 +222,7 @@ class _ProfileState extends State<Profile> {
                                       child: Icon(
                                         Icons.delete,
                                         size: 60.h,
+                                        color: Colors.white,
                                       ),
                                     ),
                                     direction: DismissDirection.vertical,
@@ -293,6 +295,7 @@ class _ProfileState extends State<Profile> {
                                       child: Icon(
                                         Icons.delete,
                                         size: 60,
+                                        color: Colors.white,
                                       ),
                                     ),
                                     direction: DismissDirection.vertical,
@@ -365,6 +368,7 @@ class _ProfileState extends State<Profile> {
                                       child: Icon(
                                         Icons.delete,
                                         size: 60,
+                                        color: Colors.white,
                                       ),
                                     ),
                                     direction: DismissDirection.vertical,
@@ -438,6 +442,7 @@ class _ProfileState extends State<Profile> {
                                       child: Icon(
                                         Icons.delete,
                                         size: 60,
+                                        color: Colors.white,
                                       ),
                                     ),
                                     child: Stack(

@@ -25,12 +25,9 @@ class _SigninState extends State<Signin> {
         children: [
           Container(
               height: double.infinity,
-              child: Image.asset(
-                "images/background1.jpeg",
-                fit: BoxFit.fill,
-                height: double.infinity,
-                width: double.infinity,
-              )),
+            color: Color(0xff182747),
+
+          ),
           Container(
             alignment: Alignment.center,
             child: SingleChildScrollView(
@@ -46,7 +43,8 @@ class _SigninState extends State<Signin> {
                   ),
                       Text("PET Life",
                           style: TextStyle(
-                              color: Color(0xff007BFF),
+                            //color: Colors.green,
+                              color: Color(0xff269A41),
                               fontWeight: FontWeight.bold,
                               fontSize: 45)),
                   SizedBox(
@@ -109,7 +107,7 @@ class _SigninState extends State<Signin> {
                           Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(30)),
-                              color: Colors.orange,
+                              color: Color(0xff269A41),
                             ),
                             width: 200,
                             child: MaterialButton(
@@ -140,7 +138,9 @@ class _SigninState extends State<Signin> {
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
-                                    color: Colors.black87),
+                                    // color: Colors.black87
+                                    color: Colors.white
+                                ),
                               ),
                              
                               MaterialButton(
@@ -154,7 +154,7 @@ class _SigninState extends State<Signin> {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
-                                    color: Color(0xffFFBB3B),                                  ),
+                                    color: Color(0xff269A41)),
                                 ),
                               )
                             ],

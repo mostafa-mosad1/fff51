@@ -216,7 +216,7 @@ class _cartState extends State<cart> {
                                       Icons.indeterminate_check_box,
                                       size: 20.h,
                                     ),
-                                    color: Colors.orangeAccent,
+                                    color: Color(0xff269A41),
                                   ),
                                   Text("$x"),
                                   IconButton(
@@ -229,7 +229,7 @@ class _cartState extends State<cart> {
                                       Icons.add_box,
                                       size: 20.h,
                                     ),
-                                    color: Colors.orangeAccent,
+                                    color: Color(0xff269A41),
                                   )
                                 ],
                               ),

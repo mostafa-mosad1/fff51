@@ -1,21 +1,13 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fff/auth/signin.dart';
-import 'package:fff/error.dart';
 import 'package:fff/pages/doctorpage/doctors.dart';
 import 'package:fff/pages/profile/profile.dart';
 import 'package:fff/pages/search.dart';
 import 'package:fff/pages/about.dart';
 import 'package:fff/pages/shop/favorite.dart';
-import 'package:fff/pages/shop/pet.dart';
 import 'package:fff/pages/shop/shop.dart';
-import 'package:fff/trader/profile_trader.dart';
-import 'package:fff/trader/shop_trader.dart';
-import 'package:fff/vet/clinic.dart';
-import 'package:fff/vet/profile_vet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../dog.dart';
 import 'categorypage/category.dart';
 import 'home.dart';
 
@@ -98,7 +90,7 @@ class _home_managementState extends State<home_management> {
       child: SafeArea(
           child: Scaffold(
               appBar: AppBar(
-                  backgroundColor: (Colors.orangeAccent),
+                  backgroundColor: (Color(0xff182747)),
                   title: Container(
                     child: Center(
                       child: SvgPicture.asset(
@@ -115,67 +107,58 @@ class _home_managementState extends State<home_management> {
                         },
                         icon: Icon(
                           Icons.search,
-                          size: 35,
+                          size: 35,color:Colors.white,
                         )),
                   ]),
               drawer: Container(
-                child: Drawer(
+                child: Drawer(backgroundColor:Colors.grey[400],width: 230,
                     child: Column(
                   children: [
-                    Container(
-                      color: Colors.orangeAccent,
-                      height: 80,
-                      child: Center(
-                        child: SvgPicture.asset(
-                          "images/4.svg",
-                          width: 95,
-                          height: 95,
-                        ),
-                      ),
-                    ),
-                    ListTile(
-                      leading: Icon(
-                        Icons.miscellaneous_services,
-                        color: Colors.black,
-                      ),
-                      title: Text(
-                        "Services",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      onTap: () {},
-                    ),
-                    Container(
-                      height: 1.5,
-                      width: 200,
-                      color: Colors.cyan,
-                    ),
-                    ListTile(
-                      leading:
-                          Icon(Icons.add_box_outlined, color: Colors.black),
-                      title: Text(
-                        "About",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      onTap: () {
-                        Navigator.of(context).push(PageRouteBuilder(pageBuilder:(context, animation, secondaryAnimation) => service(), ));
 
-                      },
-                    ),
-                    Container(
-                      height: 1.5,
-                      width: 200,
-                      color: Colors.cyan,
-                    ),
-                    ListTile(
-                      leading: Icon(Icons.exit_to_app, color: Colors.black),
-                      title: Text(
-                        "Log Out",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                    SizedBox(height: 55,),
+                    Container(color: Color(0xff182747),
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.miscellaneous_services,
+                          color: Colors.white,
+                        ),
+                        title: Text(
+                          "Services",
+                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
+                        ),
+                        onTap: () {},
                       ),
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Signin()));
-                      },
+                    ),
+                    SizedBox(height: 10,),
+                    Container(
+                      color: Color(0xff182747),
+                      child: ListTile(
+                        leading:
+                            Icon(Icons.add_box_outlined, color: Colors.white,),
+                        title: Text(
+                          "About",
+                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,),
+                        ),
+                        onTap: () {
+                          Navigator.of(context).push(PageRouteBuilder(pageBuilder:(context, animation, secondaryAnimation) => service(), ));
+
+                        },
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                    Container(
+                      color: Color(0xff182747),
+                      child: ListTile(
+                        leading: Icon(Icons.exit_to_app, color: Colors.white,),
+                        title: Text(
+                          "Log Out",
+                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,),
+                        ),
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Signin()));
+                        },
+                      ),
                     ),
                   ],
                 )),
@@ -185,7 +168,7 @@ class _home_managementState extends State<home_management> {
                   height: 60,
                   backgroundColor: Colors.black,
                   inactiveColor: Colors.white,
-                  activeColor: Colors.orangeAccent,
+                  activeColor: Color(0xff269A41),
                   items: [
                     BottomNavigationBarItem(
                       icon: Icon(

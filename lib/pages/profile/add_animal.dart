@@ -115,7 +115,7 @@ class _add_animalState extends State<add_animal> {
               //     }),SizedBox(height: 70,),
               Container(
                 width: 170,
-                decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius
+                decoration: BoxDecoration(color: Color(0xff269A41),borderRadius: BorderRadius
                 .all(Radius.circular(30))),
                 child: MaterialButton(onPressed: (){
                   print(date1.text);

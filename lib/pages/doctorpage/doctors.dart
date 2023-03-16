@@ -47,7 +47,7 @@ class _doctorsState extends State<doctors> {
                       icon: Icon(
                         Icons.notifications,
                         size: 55,
-                        color: Colors.blue,
+                        color: Color(0xff269A41),
                       ))
                 ],
               ),

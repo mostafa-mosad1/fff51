@@ -82,7 +82,7 @@ class _home_mangaementVetState extends State<home_mangaementVet> {
         child: SafeArea(
             child: Scaffold(
                 appBar: AppBar(
-                  backgroundColor: (Colors.orangeAccent),
+                  backgroundColor: (Color(0xff182747)),
                   title: Container(
                     child: Center(
                       child: Row(
@@ -106,7 +106,7 @@ class _home_mangaementVetState extends State<home_mangaementVet> {
                             style: TextStyle(
                                 fontSize: 35,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.green),
+                                color: Colors.blueAccent),
                           ),
                         ],
                       ),
@@ -125,62 +125,51 @@ class _home_mangaementVetState extends State<home_mangaementVet> {
                   // ],
                 ),
                 drawer: Container(
-                  child: Drawer(
+                  child: Drawer(backgroundColor:Colors.grey[400],width: 230,
                       child: Column(
-                    children: [
-                      Container(
-                        color: Colors.orangeAccent,
-                        height: 80,
-                        child: Center(
-                          child: SvgPicture.asset(
-                            "images/4.svg",
-                            width: 95,
-                            height: 95,
+                        children: [
+
+                          SizedBox(height: 55,),
+
+                          Container(
+                            color: Color(0xff182747),
+                            child: ListTile(
+                              leading:
+                              Icon(Icons.add_box_outlined, color: Colors.white,),
+                              title: Text(
+                                "About",
+                                style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,),
+                              ),
+                              onTap: () {
+                                Navigator.of(context).push(PageRouteBuilder(pageBuilder:(context, animation, secondaryAnimation) => service(), ));
+
+                              },
+                            ),
                           ),
-                        ),
-                      ),
-                      ListTile(
-                        leading:
-                            Icon(Icons.add_box_outlined, color: Colors.black),
-                        title: Text(
-                          "About",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        onTap: () {
-                          Navigator.of(context).push(PageRouteBuilder(
-                            pageBuilder:
-                                (context, animation, secondaryAnimation) =>
-                                    service(),
-                          ));
-                        },
-                      ),
-                      Container(
-                        height: 1.5,
-                        width: 200,
-                        color: Colors.cyan,
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.exit_to_app, color: Colors.black),
-                        title: Text(
-                          "Log Out",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Signin()));
-                        },
-                      ),
-                    ],
-                  )),
+                          SizedBox(height: 10,),
+                          Container(
+                            color: Color(0xff182747),
+                            child: ListTile(
+                              leading: Icon(Icons.exit_to_app, color: Colors.white,),
+                              title: Text(
+                                "Log Out",
+                                style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,),
+                              ),
+                              onTap: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => Signin()));
+                              },
+                            ),
+                          ),
+                        ],
+                      )),
                 ),
                 body: CupertinoTabScaffold(
                   tabBar: CupertinoTabBar(
                     height: 60,
                     backgroundColor: Colors.black,
                     inactiveColor: Colors.white,
-                    activeColor: Colors.orangeAccent,
+                    activeColor: Color(0xff269A41),
                     items: [
                       BottomNavigationBarItem(
                           icon: Icon(Icons.medical_information),

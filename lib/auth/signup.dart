@@ -30,12 +30,8 @@ class _SignupState extends State<Signup> {
       body: Stack(children: [
         Container(
             height: double.infinity,
-            child: Image.asset(
-              "images/background1.jpeg",
-              fit: BoxFit.fill,
-              height: double.infinity,
-              width: double.infinity,
-            )),
+          color: Color(0xff182747),
+        ),
         Container(
           padding: EdgeInsets.only(top: 30),
           child: ListView(
@@ -52,7 +48,7 @@ class _SignupState extends State<Signup> {
                 children: [
                   Text("PET LIFE",
                       style: TextStyle(
-                          color: Color(0xff007BFF),
+                          color: Color(0xff269A41),
                           fontWeight: FontWeight.bold,
                           fontSize: 40)),
                 ],
@@ -185,7 +181,7 @@ class _SignupState extends State<Signup> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(30)),
-                          color: Colors.orange,
+                          color: Color(0xff269A41),
                         ),
                         width: 200,
                         child: MaterialButton(

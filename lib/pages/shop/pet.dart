@@ -14,6 +14,45 @@ class pet extends StatefulWidget {
 }
 
 class _petState extends State<pet> {
+  // Define a variable to store the recommended user
+  String? recommendedUser;
+
+// Define a variable to store the message visibility
+  bool showMessage = false;
+
+// Define a method to get the recommended user from an API or database
+  Future<String> getRecommendedUser() async {
+// Replace this with your own logic to get the recommended user
+    return "Alice";
+  }
+
+// Define a method to show a message with the recommended user
+  void showMessageWithUser(String user) {
+    setState(() {
+// Set the message visibility to true
+      showMessage = true;
+// Set the recommended user to the state variable
+      recommendedUser = user;
+    });
+// Hide the message after 5 seconds using another setState call
+    Future.delayed(const Duration(seconds: 15), () {
+      setState(() {
+        showMessage = false;
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+// Call the getRecommendedUser method after 10 seconds of entering the page
+    Future.delayed(const Duration(seconds: 1), () async {
+// Get the recommended user and store it in a local variable
+      String user = await getRecommendedUser();
+// Show a message with the recommended user using another method
+      showMessageWithUser(user);
+    });
+  }
   int cartItem = 0;
   int fav = 0;
   List data = [
@@ -133,6 +172,7 @@ class _petState extends State<pet> {
 
   @override
   Widget build(BuildContext context) {
+    var index=1;
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(
@@ -226,105 +266,111 @@ class _petState extends State<pet> {
                 width: double.infinity,
                 height: double.infinity,
               ),
-              GridView.builder(
-                shrinkWrap: true,
-                clipBehavior: Clip.hardEdge,
-                physics: BouncingScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    mainAxisExtent: 330.h,
-                    maxCrossAxisExtent: 285,
-                    childAspectRatio: 2.76 / 5,
-                    crossAxisSpacing: 5,
-                    mainAxisSpacing: 5),
-                itemBuilder: (context, index) => Container(
-                  width: 200.w,
-                  height: 150.h,
-                  child: Card(
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      elevation: 7,
-                      margin: EdgeInsets.all(10),
-                      child: Column(
-                        children: [
-                          Stack(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(15),
-                                    topRight: Radius.circular(15),
-                                  ),
-                                  child: Image.asset(
-                                    data[index]['image'],
-                                    height: 150.h,
-                                    width: 180.w,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                Container(
-                                  child: MaterialButton(
-                                    minWidth: 25,
-                                    padding: EdgeInsets.zero,
-                                    onPressed: () {
-                                      setState(() {
-                                        data[index]["id"] = !data[index]["id"];
-                                        data[index]["id"] == false
-                                            ? favIncreaseCount()
-                                            : favDereasCount();
-                                      });
-                                    },
-                                    child: data[index]["id"] == false
-                                        ? Icon(
-                                      Icons.favorite,
-                                      color: Colors.red,
-                                      size: 40,
-                                    )
-                                        : Icon(
-                                      Icons.favorite_border,
-                                      color: Colors.red,
-                                      size: 40,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          SizedBox(height: 5.h),
 
-                           Column(
-                             mainAxisAlignment:MainAxisAlignment.spaceBetween,
+              Center(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GridView.builder(
+                        shrinkWrap: true,
+                        clipBehavior: Clip.hardEdge,
+                        physics: BouncingScrollPhysics(),
+                        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                            mainAxisExtent: 330.h,
+                            maxCrossAxisExtent: 285,
+                            childAspectRatio: 2.76 / 5,
+                            crossAxisSpacing: 5,
+                            mainAxisSpacing: 5),
+                        itemBuilder: (context, index) => Container(
+                          width: 200.w,
+                          height: 150.h,
+                          child: Card(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            elevation: 7,
+                            margin: EdgeInsets.all(10),
+                            child: Column(
                               children: [
-                                Center(
-                                  child: Text(data[index]['type'].toUpperCase(),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                          fontSize: 25.sp,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold)),
+                                Stack(
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(15),
+                                        topRight: Radius.circular(15),
+                                      ),
+                                      child: Image.asset(
+                                        data[index]['image'],
+                                        height: 150.h,
+                                        width: 180.w,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    Container(
+                                      child: MaterialButton(
+                                        minWidth: 25,
+                                        padding: EdgeInsets.zero,
+                                        onPressed: () {
+                                          setState(() {
+                                            data[index]["id"] = !data[index]["id"];
+                                            data[index]["id"] == false
+                                                ? favIncreaseCount()
+                                                : favDereasCount();
+                                          });
+                                        },
+                                        child: data[index]["id"] == false
+                                            ? Icon(
+                                          Icons.favorite,
+                                          color: Colors.red,
+                                          size: 40,
+                                        )
+                                            : Icon(
+                                          Icons.favorite_border,
+                                          color: Colors.red,
+                                          size: 40,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 SizedBox(height: 5.h),
 
-                                Text(data[index]['sub'],
-                                    maxLines: 3,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      fontSize: 20.sp,
-                                      color: Colors.black,
-                                    )),
-                                SizedBox(height: 5.h,),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                Column(
+                                  mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Container(
-                                      child:
+                                    Center(
+                                      child: Text(data[index]['type'].toUpperCase(),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                              fontSize: 25.sp,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold)),
+                                    ),
+                                    SizedBox(height: 5.h),
+
+                                    Text(data[index]['sub'],
+                                        maxLines: 3,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          fontSize: 20.sp,
+                                          color: Colors.black,
+                                        )),
+                                    SizedBox(height: 5.h,),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Container(
+                                          child:
                                           Text(data[index]["price"],
                                               style: TextStyle(
                                                   fontSize: 20.sp,
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.bold)),
 
-                                    ),
+                                        ),
 
                                         IconButton(
                                           onPressed: () {
@@ -354,13 +400,88 @@ class _petState extends State<pet> {
                                 )
 
 
-                        ],
-                      ),
-                    ),
-                  ),
+                              ],
+                            ),
+                          ),
+                        ),
 
-                itemCount: data.length,
+                        itemCount: data.length,
+                      ),
+
+                      // Use an if statement to conditionally render the message widget based on its visibility status. You can also use other widgets like Snackbar or AlertDialog instead of Text for showing messages.
+                    ],
+                  ),
+                ),
               ),
+              if (showMessage) Center(
+                child: Container(width: 250,height: 220,
+                  decoration: BoxDecoration( color: Colors.grey[400],borderRadius: BorderRadius.circular(20)),
+
+                  child: Column(
+                    children: [
+                      Stack(children: [
+                        ClipRRect(borderRadius: BorderRadius.only(topLeft:Radius.circular(20),topRight: Radius.circular(20)),
+                          child: Image(image: AssetImage("images/1.jpg"),
+                            fit: BoxFit.cover,
+                            width: double.infinity,height: 140,),
+                        ),
+                        Positioned( right: 10,top: 5,
+                          child: IconButton(color: Colors.red,
+                              onPressed: () {
+                                setState(() {
+                                  showMessage = false;
+                                });
+                              },
+                              icon: Icon(
+                                Icons.close,
+                                size: 50,
+                              )),
+                        ),
+                      ],),
+                      Center(child: Text("Dog",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),)),
+                      SizedBox(height: 2,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            child:
+                            Text("2500",
+                                style: TextStyle(
+                                    fontSize: 20.sp,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold)),
+
+                          ),
+
+                          IconButton(
+                            onPressed: () {
+
+                              setState(() {
+                                data[index]["cart"] =
+                                !data[index]["cart"];
+                                data[index]["cart"] == false
+                                    ? cartdereaseCount()
+                                    : cartItemCount();
+                              });
+                            },
+                            icon:
+                            data[index]["cart"] == false
+                                ? Icon(
+                              Icons.shopping_cart_outlined,
+                              size: 35,
+                            )
+                                :
+                            Icon(
+                              Icons.add_shopping_cart_outlined,
+                              color: Colors.green,
+                              size: 35,
+                            ),
+                          )
+                        ],
+                      )
+
+                    ],),),
+              )
             ],
           ),
         ));

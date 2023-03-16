@@ -2,45 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// Card(
-// color: Colors.white,
-// shape: RoundedRectangleBorder(
-// borderRadius: BorderRadius.circular(15),
-// ),
-// elevation: 7,
-// margin: EdgeInsets.all(10),
-// child: Column(
-// children: [
-// Stack(
-// children: [
-// ClipRRect(
-// borderRadius: BorderRadius.only(
-// topLeft: Radius.circular(15),
-// topRight: Radius.circular(15),
-// ),
-// child: Image.asset(
-// "$image",
-// height: 125.h,
-// width: 180.w,
-// fit: BoxFit.cover,
-// ),
-// ),
-// ],
-// ),
-// Column(
-// children: [
-// Text("$name",
-// style: TextStyle(
-// fontSize: 27.sp,
-// color: Colors.black,
-// fontWeight: FontWeight.bold
-// )),
-// ],
-// )
-// ],
-// ),
-// ),
-
 Widget temple({image, name, context}) => Container(
   height: 5,
     decoration: BoxDecoration(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../components.dart';
@@ -16,6 +17,9 @@ class _OneState extends State<One> {
   TextEditingController phone = TextEditingController();
   var day;
   var hour;
+  double _rating = 2;
+  double _oldRating = 4;
+  double _totalRatings = 1.5;
 
   GlobalKey<FormState>formstate=new GlobalKey<FormState>();
 
@@ -29,7 +33,7 @@ class _OneState extends State<One> {
       body: Form(
         key: formstate,
         child: Container(
-            color:Color(0xffD4D2D2),
+            color:Colors.grey[400],
             height: double.infinity,
             child: ListView(shrinkWrap: true, children: [
               Stack(
@@ -110,7 +114,7 @@ class _OneState extends State<One> {
                                     color: Colors.white,
                                     fontSize: 20.sp,
                                     fontWeight: FontWeight.bold)),
-                            Text("4.9",
+                            Text("${_totalRatings + _rating/5}",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20.sp,
@@ -139,7 +143,27 @@ class _OneState extends State<One> {
                 style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
               ),
               SizedBox(
-                height: 10.h,
+                height: 12.h,
+              ),
+              RatingBar.builder(
+                initialRating: _rating,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                itemBuilder: (context, _) => Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
+                onRatingUpdate: (rating) {
+                  setState(() {
+                    _rating = rating;
+                  });
+                },
+              ),
+              SizedBox(
+                height: 12.h,
               ),
               Column(
                   mainAxisAlignment: MainAxisAlignment.start,

@@ -25,7 +25,7 @@ class _serviceState extends State<service> {
             ),
             Container(
               decoration: BoxDecoration(
-                  color: Colors.deepOrange,
+                  color: Color(0xff269A41),
                   border: Border.all(width: 1),
                 borderRadius: BorderRadius.all(Radius.circular(10))
               ),
@@ -190,7 +190,8 @@ class _serviceState extends State<service> {
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
