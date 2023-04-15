@@ -3,14 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class service extends StatefulWidget {
-  const service({Key? key}) : super(key: key);
+class About extends StatefulWidget {
+  const About({Key? key}) : super(key: key);
 
   @override
-  State<service> createState() => _serviceState();
+  State<About> createState() => _AboutState();
 }
 
-class _serviceState extends State<service> {
+class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

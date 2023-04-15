@@ -3,6 +3,7 @@ import 'package:fff/pages/doctorpage/doctors.dart';
 import 'package:fff/pages/profile/profile.dart';
 import 'package:fff/pages/search.dart';
 import 'package:fff/pages/about.dart';
+import 'package:fff/pages/services.dart';
 import 'package:fff/pages/shop/favorite.dart';
 import 'package:fff/pages/shop/shop.dart';
 import 'package:flutter/cupertino.dart';
@@ -126,7 +127,9 @@ class _home_managementState extends State<home_management> {
                           "Services",
                           style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(PageRouteBuilder(pageBuilder:(context, animation, secondaryAnimation) => Services(), ));
+                        },
                       ),
                     ),
                     SizedBox(height: 10,),
@@ -140,7 +143,7 @@ class _home_managementState extends State<home_management> {
                           style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,),
                         ),
                         onTap: () {
-                          Navigator.of(context).push(PageRouteBuilder(pageBuilder:(context, animation, secondaryAnimation) => service(), ));
+                          Navigator.of(context).push(PageRouteBuilder(pageBuilder:(context, animation, secondaryAnimation) => About(), ));
 
                         },
                       ),

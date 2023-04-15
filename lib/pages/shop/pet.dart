@@ -191,7 +191,7 @@ class _petState extends State<pet> {
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30))),
             title: Text(
-              "pet life",
+              "pet care",
               style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,

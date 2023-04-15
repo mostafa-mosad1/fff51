@@ -141,7 +141,7 @@ class _home_mangaementVetState extends State<home_mangaementVet> {
                                 style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,),
                               ),
                               onTap: () {
-                                Navigator.of(context).push(PageRouteBuilder(pageBuilder:(context, animation, secondaryAnimation) => service(), ));
+                                Navigator.of(context).push(PageRouteBuilder(pageBuilder:(context, animation, secondaryAnimation) => About(), ));
 
                               },
                             ),
