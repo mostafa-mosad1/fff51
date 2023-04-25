@@ -1,19 +1,20 @@
 import 'package:fff/pages/categorypage/dogdata.dart';
+import 'package:fff/pages/categorypage/hamsterdata.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Dog extends StatefulWidget {
-  const Dog({Key? key}) : super(key: key);
+class Hamster extends StatefulWidget {
+  const Hamster({Key? key}) : super(key: key);
 
   @override
-  State<Dog> createState() => _DogState();
+  State<Hamster> createState() => _HamsterState();
 }
 
-class _DogState extends State<Dog> {
+class _HamsterState extends State<Hamster> {
   List images = [
     {
-      "image": "images/dog1.jpg",
-      "type": "Dog",
+      "image": "images/hamaster.jpg",
+      "type": "Hamster",
       "sub": "cccc ccccc ccccc ccccc cccccc ccdddd dddddd dddd",
     },
     {
@@ -75,7 +76,7 @@ class _DogState extends State<Dog> {
         Container(
           width: double.infinity,
           height: double.infinity,
-            color:Color(0xffD4D2D2),
+          color:Color(0xffD4D2D2),
         ),
         SingleChildScrollView(
           child: Column(
@@ -115,12 +116,12 @@ class _DogState extends State<Dog> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DogData(
-                                      datadog: images[i],
-                                    )));
+                                builder: (context) => HamsterData(
+                                  datahamster: images[i],
+                                )));
                       },
                       child: Container(
-                        margin: EdgeInsets.all(5),
+                          margin: EdgeInsets.all(5),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(25)),
@@ -154,7 +155,7 @@ class _DogState extends State<Dog> {
                               ),
                             ],
                           ))
-                      );
+                  );
                 },
               ),
             ],

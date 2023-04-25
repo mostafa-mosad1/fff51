@@ -1,5 +1,9 @@
 import 'package:fff/components.dart';
+import 'package:fff/pages/categorypage/bird.dart';
+import 'package:fff/pages/categorypage/cat.dart';
 import 'package:fff/pages/categorypage/dog.dart';
+import 'package:fff/pages/categorypage/fish.dart';
+import 'package:fff/pages/categorypage/hamster.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,11 +34,11 @@ class _categoryState extends State<category> {
                 children: [
                   InkWell(
                       onTap: () => Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (c) => Dog())),
+                          .push(MaterialPageRoute(builder: (c) => Cat1())),
                       child: categ(name: "Cat", image: "images/cat.jpg",context: context)),
                   InkWell(
                       onTap: () => Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (c) => Dog())),
+                          .push(MaterialPageRoute(builder: (c) => Hamster())),
                       child: categ(name: "Hamster", image: "images/hamaster.jpg",context: context)),
                   InkWell(
                       onTap: () => Navigator.of(context)
@@ -42,11 +46,11 @@ class _categoryState extends State<category> {
                       child: categ(name: "Dog", image: "images/dog1.jpg",context: context)),
                   InkWell(
                       onTap: () => Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (c) => Dog())),
+                          .push(MaterialPageRoute(builder: (c) => Bird())),
                       child: categ(name: "Bird", image: "images/bird.jpg",context: context)),
                   InkWell(
                       onTap: () => Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (c) => Dog())),
+                          .push(MaterialPageRoute(builder: (c) => Fish())),
                       child: categ(name: "Fish", image: "images/fish.jpg",context: context)),
                 ]),
 
