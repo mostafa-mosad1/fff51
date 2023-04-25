@@ -1,16 +1,16 @@
-import 'package:fff/trader/add_prodect.dart';
+import 'package:fff/trader/AddProdect.dart';
 import 'package:fff/trader/edithome1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class shop_trader extends StatefulWidget {
+class MyProdect extends StatefulWidget {
   var Pname;
   var Pprice;
   var Pcount;
   var Pimage;
 
-  shop_trader(
+  MyProdect(
       {Key? key,
       this.dataone,
       this.datatwo,
@@ -28,10 +28,10 @@ class shop_trader extends StatefulWidget {
   var datafour;
 
   @override
-  State<shop_trader> createState() => _shop_traderState();
+  State<MyProdect> createState() => _MyProdectState();
 }
 
-class _shop_traderState extends State<shop_trader> {
+class _MyProdectState extends State<MyProdect> {
   List trad = [
     {
       "image": "images/cat.jpg",
@@ -63,6 +63,12 @@ class _shop_traderState extends State<shop_trader> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            appBar: AppBar(
+              title:   Text(
+                "My_Prodect",
+                style:
+                TextStyle(fontSize: 25.sp, fontWeight: FontWeight.bold),
+              ),),
             body: Container(
               color:Color(0xffD4D2D2),
       child: SingleChildScrollView(
@@ -74,29 +80,29 @@ class _shop_traderState extends State<shop_trader> {
               height: 10,
             ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (c) => add_prodect()));
-                        },
-                        icon: Icon(
-                          Icons.add_circle_outline,
-                          size: 30,
-                        )),
-                    Text(
-                      "Add prodect",
-                      style:
-                          TextStyle(fontSize: 25.sp, fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     Row(
+            //       children: [
+            //         IconButton(
+            //             onPressed: () {
+            //               Navigator.of(context).push(
+            //                   MaterialPageRoute(builder: (c) => AddProdect()));
+            //             },
+            //             icon: Icon(
+            //               Icons.add_circle_outline,
+            //               size: 30,
+            //             )),
+            //         Text(
+            //           "Add prodect",
+            //           style:
+            //               TextStyle(fontSize: 25.sp, fontWeight: FontWeight.bold),
+            //         )
+            //       ],
+            //     ),
+            //   ],
+            // ),
             Container(
               padding: EdgeInsets.all(8.0),
               child: Container(

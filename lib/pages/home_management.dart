@@ -6,16 +6,21 @@ import 'package:fff/pages/about.dart';
 import 'package:fff/pages/services.dart';
 import 'package:fff/pages/shop/favorite.dart';
 import 'package:fff/pages/shop/shop.dart';
+import 'package:fff/vet/clinic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../trader/AddProdect.dart';
+import '../trader/MyProdect.dart';
 import 'categorypage/category.dart';
+import 'doctorpage/my_booking.dart';
+import 'doctorpage/notification.dart';
 import 'home.dart';
 
 class home_management extends StatefulWidget {
 
-  home_management({Key? key,this.type}) : super(key: key);
-  var type;
+  home_management({Key? key,this.type,this.index}) : super(key: key);
+  var type;var index;
 
   @override
   State<home_management> createState() => _home_managementState();
@@ -38,6 +43,7 @@ class _home_managementState extends State<home_management> {
 
   int index = 0;
   List<Widget> pages = [shop(), category(), home(), doctors(), Profile()];
+  var name =["My Booking","Vet Booking","My Booking"];
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -104,6 +110,14 @@ class _home_managementState extends State<home_management> {
                   actions: [
                     IconButton(
                         onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Notifi(),));
+                        },
+                        icon: Icon(
+                          Icons.notifications,
+                          size: 35,color:Colors.white,
+                        )),
+                    IconButton(
+                        onPressed: () {
                           showSearch(context: context, delegate: DataSearch());
                         },
                         icon: Icon(
@@ -111,12 +125,59 @@ class _home_managementState extends State<home_management> {
                           size: 35,color:Colors.white,
                         )),
                   ]),
+
               drawer: Container(
                 child: Drawer(backgroundColor:Colors.grey[400],width: 230,
                     child: Column(
                   children: [
-
                     SizedBox(height: 55,),
+                    Container(
+                      width: double.infinity,
+                      color: Color(0xff182747),
+                      child: ListTile(
+                        title: MaterialButton(onPressed: (){
+                          if( widget.type =="Customer"){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => MyBooking(),));
+
+                          }if(widget.type=="Trader") {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => MyBooking(),));
+                          }if(widget.type=="Vet"){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => clinic(),));
+                          }
+                        },child:Text(name[widget.index],style: TextStyle(color: Colors.white),)),
+                        leading: Icon(Icons.bookmark_added,color: Colors.white,),
+
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                    if(widget.type =="Customer"|| widget.type=="Vet") Container() else Container(
+                      width: double.infinity,
+                      color: Color(0xff182747),
+                      child: ListTile(
+                        title: MaterialButton(onPressed: (){
+                          if(widget.type=="Trader") {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => AddProdect(),));
+                          }
+                        },child:Text("Add_prodects",style: TextStyle(color: Colors.white),)),
+                        leading: Icon(Icons.add_circle,color: Colors.white,),
+
+                      ),
+                    ),
+                    if(widget.type =="Customer"|| widget.type=="Vet") SizedBox() else SizedBox(height: 10,),
+                    if(widget.type =="Customer"|| widget.type=="Vet") Container() else Container(
+                        width: double.infinity,
+                        color: Color(0xff182747),
+                        child: ListTile(
+                          title: MaterialButton(onPressed: (){
+                           if(widget.type=="Trader") {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => MyProdect(),));
+                            }
+                          },child:Text("My_Prodect",style: TextStyle(color: Colors.white),)),
+                          leading: Icon(Icons.add_business_rounded,color: Colors.white,),
+
+                   ),
+                      ),
+                    if(widget.type =="Customer"|| widget.type=="Vet") SizedBox() else SizedBox(height: 10,),
                     Container(color: Color(0xff182747),
                       child: ListTile(
                         leading: Icon(
@@ -163,6 +224,7 @@ class _home_managementState extends State<home_management> {
                         },
                       ),
                     ),
+                    SizedBox(height: 10,),
                   ],
                 )),
               ),

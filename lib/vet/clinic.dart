@@ -15,36 +15,36 @@ class _clinicState extends State<clinic> {
       "nam": "Mohamed ali",
       "dog": "Mavi",
       "num": "0123456789",
-      "day": "Mon",
-      "hour": "8 PM"
+      "day": "22/4/2023",
+      "hour": "8:30 PM"
     },
     {
       "nam": "Ahmed ali",
       "dog": "Rex",
       "num": "0123456789",
-      "day": "yes",
-      "hour": "7.5 PM"
+      "day": "22/4/2023",
+      "hour": "8:30 PM"
     },
     {
       "nam": "Mohamed ali",
       "dog": "Mavi",
       "num": "0123456789",
-      "day": "Mon",
-      "hour": "8 PM"
+      "day": "22/4/2023",
+      "hour": "8:30 PM"
     },
     {
       "nam": "hossam ali",
       "dog": "Rex",
       "num": "0123456789",
-      "day": "tus",
-      "hour": "6.5 PM"
+      "day": "22/4/2023",
+      "hour": "8:30 PM"
     },
     {
       "nam": "Mohamed Ahmed",
       "dog": "Mavi",
       "num": "0123456789",
-      "day": "Mon",
-      "hour": "8 PM"
+      "day": "22/4/2023",
+      "hour": "8:30 PM"
     },
   ];
 

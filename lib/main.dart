@@ -5,7 +5,6 @@ import 'package:fff/pages/profile/profile.dart';
 import 'package:fff/pages/shop/carts.dart';
 import 'package:fff/pages/shop/pet.dart';
 import 'package:fff/tast.dart';
-import 'package:fff/vet/home_managementVet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timer_builder/timer_builder.dart';
@@ -29,6 +28,9 @@ class MyApp extends StatelessWidget {
           home:
             //cart()
           SplashScreen(),
+
+
+
         //tast()
         );
       },

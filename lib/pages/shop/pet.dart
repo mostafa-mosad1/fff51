@@ -413,6 +413,8 @@ class _petState extends State<pet> {
                   ),
                 ),
               ),
+
+              // recommed ...........
               if (showMessage) Center(
                 child: Container(width: 250,height: 220,
                   decoration: BoxDecoration( color: Colors.grey[400],borderRadius: BorderRadius.circular(20)),
@@ -421,7 +423,7 @@ class _petState extends State<pet> {
                     children: [
                       Stack(children: [
                         ClipRRect(borderRadius: BorderRadius.only(topLeft:Radius.circular(20),topRight: Radius.circular(20)),
-                          child: Image(image: AssetImage("images/1.jpg"),
+                          child: Image(image: AssetImage("images/5.jpg"),
                             fit: BoxFit.cover,
                             width: double.infinity,height: 140,),
                         ),

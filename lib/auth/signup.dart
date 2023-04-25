@@ -19,7 +19,7 @@ class _SignupState extends State<Signup> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  var name;
+  var kind;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,11 +169,11 @@ class _SignupState extends State<Signup> {
                                 .toList(),
                             onChanged: (val) {
                               setState(() {
-                                name = val;
-                                print(name);
+                                kind = val;
+                                print(kind);
                               });
                             },
-                            value: name,
+                            value: kind,
                           ),
                         ),
                       ),
@@ -186,14 +186,24 @@ class _SignupState extends State<Signup> {
                         width: 200,
                         child: MaterialButton(
                           onPressed: () {
-
-                             if( name =="Customer"){
-                               Navigator.push(context, MaterialPageRoute(builder: (context) => home_management(type: name),));
-                            }if(name=="Trader") {
-                               Navigator.push(context, MaterialPageRoute(builder: (context) => home_mangaementTrader(),));
-                             }if(name=="Vet"){
-                               Navigator.push(context, MaterialPageRoute(builder: (context) => home_mangaementVet(),));
+                            if( kind =="Customer"){
+                             int indexKind =0;
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => home_management(type: kind,index: indexKind,),));
+                            }if(kind=="Vet"){
+                              int indexKind =1;
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => home_management(type: kind,index: indexKind),));
+                            }if(kind=="Trader") {
+                              int indexKind =2;
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => home_management(type: kind,index: indexKind),));
                             }
+
+                            //  if( name =="Customer"){
+                            //    Navigator.push(context, MaterialPageRoute(builder: (context) => home_management(type: name),));
+                            // }if(name=="Trader") {
+                            //    Navigator.push(context, MaterialPageRoute(builder: (context) => home_mangaementTrader(),));
+                            //  }if(name=="Vet"){
+                            //    Navigator.push(context, MaterialPageRoute(builder: (context) => home_mangaementVet(),));
+                            // }
                           },
                           child: Text(
                             "Sign up",
