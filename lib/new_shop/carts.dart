@@ -152,11 +152,15 @@ class _cartState extends State<cart> {
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(20),border: Border.all(color: Colors.black, width: 1)),
-                      child: Row(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text("instoka: 10"),
+                          Text("name: 12"),
+                          SizedBox(height: 5,),
+                          Text("price: 250"),
+                          SizedBox(height: 5,),
+                          Text("instock: 5"),
 
                           // Column(
                           //   children: [
@@ -189,8 +193,10 @@ class _cartState extends State<cart> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              SizedBox(height: 30,),
+                              //SizedBox(height: 30,),
                               Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   IconButton(
                                     onPressed: () {
@@ -239,11 +245,11 @@ class _cartState extends State<cart> {
                       ),
                     ),
                   ),
-                    itemCount: 3,
+                    itemCount: 2,
                     separatorBuilder: (context, index) =>  SizedBox(height: 5.h,),),
                   SizedBox(height: 5.h,),
 
-                  show_price(price: 1000,count: 3)
+                  show_price(price: 1000,taxes: 120)
                 ],
               ),
             ),

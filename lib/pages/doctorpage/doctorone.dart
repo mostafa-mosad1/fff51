@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 import '../../components.dart';
 
@@ -15,6 +16,8 @@ class _OneState extends State<One> {
   TextEditingController name = TextEditingController();
   TextEditingController petname = TextEditingController();
   TextEditingController phone = TextEditingController();
+  TextEditingController dateController= TextEditingController();
+  var timeController = TextEditingController();
   var day;
   var hour;
   double _rating = 2;
@@ -62,68 +65,7 @@ class _OneState extends State<One> {
                           size: 25,
                         )),
                   ),
-                  Container(
-                    margin: EdgeInsetsDirectional.only(top: 280),
-                    decoration: BoxDecoration(boxShadow: [
-                      BoxShadow(
-                          color: Colors.blue, blurRadius: 20, spreadRadius: 5)
-                    ]),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              "Patient",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.sp,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Text("1K",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.bold))
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20.w,
-                        ),
-                        Column(
-                          children: [
-                            Text("Experience",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.bold)),
-                            Text("5 Yr",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.bold))
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20.w,
-                        ),
-                        Column(
-                          children: [
-                            Text("Rating",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.bold)),
-                            Text("${_totalRatings + _rating/5}",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.bold))
-                          ],
-                        )
-                      ],
-                    ),
-                  )
+
                 ],
               ),              SizedBox(
                 height: 10.h,
@@ -145,22 +87,9 @@ class _OneState extends State<One> {
               SizedBox(
                 height: 12.h,
               ),
-              RatingBar.builder(
-                initialRating: _rating,
-                minRating: 1,
-                direction: Axis.horizontal,
-                allowHalfRating: true,
-                itemCount: 5,
-                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                itemBuilder: (context, _) => Icon(
-                  Icons.star,
-                  color: Colors.amber,
-                ),
-                onRatingUpdate: (rating) {
-                  setState(() {
-                    _rating = rating;
-                  });
-                },
+              Text(
+                "   phone:123456789",
+                style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 12.h,
@@ -265,41 +194,16 @@ class _OneState extends State<One> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          height: 45.h,
-                          width:170.w,
-                          //  margin: EdgeInsets.only(top: 10,bottom: 10,right: 25,left: 15),
                           decoration: BoxDecoration(
-                            border: Border.all(width: 1),
-                            color: Colors.white,
-                          ),
-                          child: DropdownButtonHideUnderline(
-                            child: DropdownButton(
-                              iconSize: 30,
-                              hint: Text(
-                                " select day",
-                                style: TextStyle(
-                                    fontSize: 23.sp, fontWeight: FontWeight.bold),
-                              ),
-                              items: ["Sat", "Sun", "Mon","Tue","Wed","Thu"]
-                                  .map((e) => DropdownMenuItem(
-                                child: Center(
-                                  child: Text(
-                                    " $e",
-                                    style: TextStyle(
-                                        fontSize: 20.sp,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                value: e,
-                              ))
-                                  .toList(),
-                              onChanged: (val) {
-                                setState(() {
-                                  day = val;
-                                });
-                              },
-                              value: day,
-                            ),
+                              color: Colors.white,
+                              border: Border.all(width: 1)),
+                          height: 45.h,
+                          width: 170.w,
+                          // margin: EdgeInsets.only(
+                          //     top: 10, bottom: 10, left: 15),
+                          child: Center(
+                              child: defultForm(Controller:dateController,labelText: "Date TASKS",prefixIcon: Icons.date_range_outlined,ontap: (){showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime.now(), lastDate:DateTime(2023) ).then((value) {dateController.text = DateFormat().add_yMMM().format(value!);});})
+
                           ),
                         ),
                         SizedBox(width: 5.w,),
@@ -311,35 +215,8 @@ class _OneState extends State<One> {
                             border: Border.all(width: 1),
                             color: Colors.white,
                           ),
-                          child: DropdownButtonHideUnderline(
-                            child: DropdownButton(
-                              iconSize: 30,
-                              hint: Text(
-                                " select hour",
-                                style: TextStyle(
-                                    fontSize: 23.sp, fontWeight: FontWeight.bold),
-                              ),
-                              items: ["5 PM", "6 PM", "7 PM","8 PM","9 PM","10 PM"]
-                                  .map((e) => DropdownMenuItem(
-                                child: Center(
-                                  child: Text(
-                                    " $e",
-                                    style: TextStyle(
-                                        fontSize: 20.sp,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                value: e,
-                              ))
-                                  .toList(),
-                              onChanged: (val) {
-                                setState(() {
-                                  hour = val;
-                                });
-                              },
-                              value: hour,
-                            ),
-                          ),
+                          child: defultForm(Controller:timeController,validator:( value)=>value.isEmpty?"please enter time":null,labelText: "Time",prefixIcon: Icons.watch_later_outlined,ontap: (){showTimePicker(context: context, initialTime: TimeOfDay.now()).then((value) { timeController.text = value!.format(context);});}),
+
                         ),
                       ],
                     ),

@@ -65,92 +65,7 @@ class _doctorsState extends State<doctors> {
               SizedBox(
                 height: 25,
               ),
-              Text(
-                " Top Rating of doctors",
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.redAccent),
-              ),
-              Container(
-                height: 250,
-                child: ListView.builder(
-                  itemBuilder: (context, index) => Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(width: 1.8),
-                        borderRadius: BorderRadius.all(Radius.circular(25))),
-                    margin: EdgeInsets.all(10),
-                    width: 200,
-                    child: MaterialButton(
-                      padding: EdgeInsets.zero,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => One()));
-                      },
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: [
-                              Container(
-                                height: 190,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                    border: Border.all(width: 0.5),
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(24),
-                                        topRight: Radius.circular(24)),
-                                    image: DecorationImage(
-                                        image: AssetImage("images/doc1.jpg"),
-                                        fit: BoxFit.cover)),
-                              ),
-                              Container(
-                                padding: EdgeInsets.only(top: 7),
-                                decoration: BoxDecoration(
-                                    color: Colors.redAccent,
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(24),
-                                        bottomRight: Radius.circular(20))),
-                                height: 35,
-                                width: 65,
-                              ),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 29,
-                                  ),
-                                  Text(
-                                    "4.9",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            "Dr.vet",
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  itemCount: 6,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                ),
-              ),
-              SizedBox(
-                height: 11,
-              ),
+
               Text(
                 " Choose the doctor ",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -197,31 +112,8 @@ class _doctorsState extends State<doctors> {
                                       image: AssetImage("images/doc1.jpg"),
                                       fit: BoxFit.cover)),
                             ),
-                            Container(
-                              padding: EdgeInsets.only(top: 7),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(24),
-                                      bottomRight: Radius.circular(20))),
-                              height: 35,
-                              width: 65,
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.yellow,
-                                  size: 29,
-                                ),
-                                Text(
-                                  "2.3",
-                                  style: TextStyle(
-                                      fontSize: 20.sp,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            )
+
+
                           ],
                         ),
                         SizedBox(

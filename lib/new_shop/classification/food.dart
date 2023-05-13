@@ -62,7 +62,7 @@ class _FoodState extends State<Food> {
       "id": true, //icon
       "image": "images/dog1.jpg",
       "type": "dog1",
-      "sub": "22222 عمر 15 يوم 333333333 111333333333333311111111",
+      "instoka": "10",
       "price": "249 EL",
       "cart": false,
     },
@@ -70,7 +70,7 @@ class _FoodState extends State<Food> {
       "id": true,
       "image": "images/dog1.jpg",
       "type": "dod2",
-      "sub": " writing description of product",
+      "instoka": "10",
       "price": "299 EL",
       "cart": false,
     },
@@ -78,7 +78,7 @@ class _FoodState extends State<Food> {
       "id": true,
       "image": "images/55.jpg",
       "type": "name",
-      "sub": " writing description of product",
+      "instoka": "10",
       "price": "199 EL",
       "cart": false,
     },
@@ -86,7 +86,7 @@ class _FoodState extends State<Food> {
       "id": true,
       "image": "images/56.jpg",
       "type": "name",
-      "sub": "ccccccccccccaaaaaaaaacccccccccccc",
+      "instoka": "10",
       "price": "250 EL",
       "cart": false,
     },
@@ -94,7 +94,7 @@ class _FoodState extends State<Food> {
       "id": true,
       "image": "images/57.jpg",
       "type": "name",
-      "sub": " aaaaaaaaa cccccccccccccccccccccccc",
+      "instoka": "10",
       "price": "199 EL",
       "cart": false,
     },
@@ -102,7 +102,7 @@ class _FoodState extends State<Food> {
       "id": true,
       "image": "images/9.jpg",
       "type": "name",
-      "sub": " 111111111111111mmmmmmmm",
+      "instoka": "10",
       "price": "120 EL",
       "cart": false,
     },
@@ -110,40 +110,8 @@ class _FoodState extends State<Food> {
       "id": true,
       "image": "images/peo3.jpg",
       "type": "name",
-      "sub": "cccccccccccccccccccccccc",
+      "instoka": "10",
       "price": "210 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/fish.jpg",
-      "type": "fish",
-      "sub": "cccccccccccccccccccccccc",
-      "price": "250 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/catg.jpg",
-      "type": "cat",
-      "sub": "cccccccccccccccccccccccc",
-      "price": "250 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/catg.jpg",
-      "type": "hamster",
-      "sub": "cccccccccccccccccccccccc",
-      "price": "250 EL",
-      "cart": false,
-    },
-    {
-      "id": true,
-      "image": "images/pro4.jpg",
-      "type": "sea",
-      "sub": "cccccccccccccccccccccccc",
-      "price": "250 EL",
       "cart": false,
     },
   ];
@@ -200,32 +168,7 @@ class _FoodState extends State<Food> {
                   color: Colors.blueAccent),
             ),
             actions: [
-              Badge(
-                position: BadgePosition.topEnd(top: 0, end: 1),
-                badgeAnimation: BadgeAnimation.scale(
-                    animationDuration: Duration(milliseconds: 300)),
-                badgeContent: Text("$fav"),
-                badgeStyle: BadgeStyle(
-                    badgeColor: Colors.white,
-                    borderSide: BorderSide(color: Colors.orangeAccent, width: 2)),
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => favorite()));
-                    setState(() {
-                      fav;
-                    });
-                  },
-                  icon: Icon(
-                    Icons.favorite,
-                    color: Colors.redAccent,
-                    size: 30,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 4,
-              ),
+
               Badge(
                 position: BadgePosition.topEnd(top: 0, end: 1),
                 badgeAnimation: BadgeAnimation.scale(
@@ -321,7 +264,7 @@ class _FoodState extends State<Food> {
                                     ),
                                     SizedBox(height: 5.h),
 
-                                    Text(data[index]['sub'],
+                                    Text("Instock: ${data[index]['instoka']}",
                                         maxLines: 3,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(

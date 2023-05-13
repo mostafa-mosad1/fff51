@@ -228,7 +228,7 @@ Widget defultForm(
       ),
     );
 
-Widget show_price({count, price}) => Padding(
+Widget show_price({taxes, price}) => Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
         width: 380.w,
@@ -269,14 +269,14 @@ Widget show_price({count, price}) => Padding(
                       Row(
                         children: [
                           Text(
-                            "itemCount : ",
+                            "Taxes : ",
                             style: TextStyle(
                                 fontSize: 25,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            "$count",
+                            "$taxes",
                             style: TextStyle(fontSize: 22, color: Colors.red),
                           ),
                         ],

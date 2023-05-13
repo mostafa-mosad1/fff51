@@ -10,30 +10,28 @@ class Notifi extends StatefulWidget {
 class _NotifiState extends State<Notifi> {
   List not = [
     {
-      "image": "images/55.jpg",
-      "description": "Your appointment with doctor is today at 9 Am",
-      "time": "18m ago"
+      "type": "my-booking",
+      "notification" : "kkk booking is approved",
+      "time": "2023-05-13T10:58:58"
     },
     {
-      "image": "images/55.jpg",
-      "description": "Your appointment with doctor is tomorrow at 11 Am",
-      "time": "18m ago"
+      "type": "home",
+      "notification": "NM vaccined in -19 days",
+      "time": "2023-05-13T10:58:58"
+
     },
     {
-      "image": "images/55.jpg",
-      "description": "Your appointment with doctor is today at 9 Am",
-      "time": "18m ago"
+      "type": "my-booking",
+      "notification": "kkk booking is approved",
+      "time": "2023-05-13T10:58:58"
     },
     {
-      "image": "images/55.jpg",
-      "description": "Your appointment with doctor is today at 9 Am",
-      "time": "18m ago"
+      "type": "home",
+      "notification": "NM vaccined in -19 days",
+      "time": "2023-05-13T10:58:58"
+
     },
-    {
-      "image": "images/55.jpg",
-      "description": "Your appointment with doctor is today at 9 Am",
-      "time": "18m ago"
-    }
+
   ];
 
   @override
@@ -63,10 +61,10 @@ class _NotifiState extends State<Notifi> {
               leading: Container(
                 width: 80,
                 height: 80,
-                child: Image.asset("${not[i]['image']}",),
+                child:Text("${not[i]['type']}"),
               ),
               title: Text(
-                "${not[i]['description']}",
+                "${not[i]["notification"]}",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               subtitle: Text("${not[i]['time']}"),

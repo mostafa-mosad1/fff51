@@ -216,7 +216,7 @@ class _MyProdectState extends State<MyProdect> {
                                         SizedBox(height: 25.h),
                                         widget.datathree != null
                                             ? Text(
-                                                "No.scales :  ${widget.datathree}",
+                                                "instock:  ${widget.datathree}",
                                                 style: TextStyle(
                                                     fontSize: 18.sp,
                                                     fontWeight:
@@ -229,6 +229,19 @@ class _MyProdectState extends State<MyProdect> {
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
+                                        Container(
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                BorderRadius.all(Radius.circular(25)),
+                                                color: Color(0xffA20808)
+                                            ),
+                                            child: MaterialButton(
+                                                onPressed: () {},
+                                                child: Text(
+                                                  "Remove",
+                                                  style: TextStyle(
+                                                      color: Colors.white, fontSize: 15.sp),
+                                                )))
                                       ],
                                     )
                                   ],
@@ -237,23 +250,23 @@ class _MyProdectState extends State<MyProdect> {
                             ),
                           ],
                         ),
-                        Positioned(
-                          right: 10.w,
-                           top: 8.h,
-                          child: IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Edithome1(
-                                              tradd: trad[index],
-                                            )));
-                              },
-                              icon: Icon(
-                                Icons.settings,
-                                size: 30,
-                              )),
-                        )
+                        // Positioned(
+                        //   right: 10.w,
+                        //    top: 8.h,
+                        //   child: IconButton(
+                        //       onPressed: () {
+                        //         Navigator.push(
+                        //             context,
+                        //             MaterialPageRoute(
+                        //                 builder: (context) => Edithome1(
+                        //                       tradd: trad[index],
+                        //                     )));
+                        //       },
+                        //       icon: Icon(
+                        //         Icons.settings,
+                        //         size: 30,
+                        //       )),
+                        // )
                       ],
                     );
                   },
