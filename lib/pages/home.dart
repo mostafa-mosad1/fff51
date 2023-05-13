@@ -1,4 +1,5 @@
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:fff/new_shop/rondom_shop.dart';
 import 'package:fff/pages/categorypage/category.dart';
 import 'package:fff/pages/shop/pet.dart';
 import 'package:flutter/cupertino.dart';
@@ -79,7 +80,7 @@ class _homeState extends State<home> {
               ),
               InkWell(
                 onTap: () => Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (c) => pet())),
+                    .push(MaterialPageRoute(builder: (c) => Rondom_shop())),
                 child: ListTile(
                   title: Text(
                     "SHOP",

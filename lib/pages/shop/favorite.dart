@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'carts.dart';
+import '../../new_shop/carts.dart';
 
 class favorite extends StatefulWidget {
   const favorite({Key? key}) : super(key: key);

@@ -5,11 +5,13 @@ import 'package:fff/pages/search.dart';
 import 'package:fff/pages/about.dart';
 import 'package:fff/pages/services.dart';
 import 'package:fff/pages/shop/favorite.dart';
+import 'package:fff/pages/shop/pet.dart';
 import 'package:fff/pages/shop/shop.dart';
 import 'package:fff/vet/clinic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../new_shop/rondom_shop.dart';
 import '../trader/AddProdect.dart';
 import '../trader/MyProdect.dart';
 import 'categorypage/category.dart';
@@ -42,7 +44,7 @@ class _home_managementState extends State<home_management> {
   ];
 
   int index = 0;
-  List<Widget> pages = [shop(), category(), home(), doctors(), Profile()];
+  List<Widget> pages = [Rondom_shop(), category(), home(), doctors(), Profile()];
   var name =["My Booking","Vet Booking","My Booking"];
   @override
   Widget build(BuildContext context) {
@@ -260,7 +262,7 @@ class _home_managementState extends State<home_management> {
                       return CupertinoTabView(
                         builder: (context) {
                           // if(widget.type=="Customer"){
-                             return  CupertinoPageScaffold(child: shop());
+                             return  CupertinoPageScaffold(child: Rondom_shop());
                           // }if(widget.type=="Trader")
                           // { return  CupertinoPageScaffold(child: shop_trader());}
                           // if(widget.type=="Vet"){

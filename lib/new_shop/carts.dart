@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'favorite.dart';
+import '../pages/shop/favorite.dart';
 
 class cart extends StatefulWidget {
   const cart({Key? key}) : super(key: key);
@@ -153,51 +153,37 @@ class _cartState extends State<cart> {
                     child: Container(
                       decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(20),border: Border.all(color: Colors.black, width: 1)),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                              children: [
-                                Container(
-                                 // padding:  EdgeInsets.all(4.0),
-                                  child: Container( width: 120.w,height: 150.h,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        image: DecorationImage(
-                                          image: AssetImage("images/cat.jpg"),
-                                          fit: BoxFit.cover,
+                          Text("instoka: 10"),
 
-                                        )
-                                    ),
-                                  ),
-                                )
-                              ]),
-                          Column(
-                            children: [
-                              SizedBox(height: 10.h,),
-                              Container(
-                                width: 110.w,
-                                child: Text(
-                                  "cat nnnnnnnnnnnnnnnnnnnnn",
-                                  style: TextStyle(
-                                      fontSize: 25.sp, fontWeight: FontWeight.bold),
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              SizedBox(height: 10.h,),
-                              Container(
-                                width: 110.w,
-                                child: Text(
-                                  "250 EL",
-                                  style: TextStyle(
-                                      fontSize: 25.sp, fontWeight: FontWeight.bold),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ],
-                          ),
+                          // Column(
+                          //   children: [
+                          //     SizedBox(height: 10.h,),
+                          //     Container(
+                          //       width: 110.w,
+                          //       child: Text(
+                          //         "cat ",
+                          //         style: TextStyle(
+                          //             fontSize: 25.sp, fontWeight: FontWeight.bold),
+                          //         maxLines: 3,
+                          //         overflow: TextOverflow.ellipsis,
+                          //       ),
+                          //     ),
+                          //     SizedBox(height: 10.h,),
+                          //     Container(
+                          //       width: 110.w,
+                          //       child: Text(
+                          //         "250 EL",
+                          //         style: TextStyle(
+                          //             fontSize: 25.sp, fontWeight: FontWeight.bold),
+                          //         maxLines: 2,
+                          //         overflow: TextOverflow.ellipsis,
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
                           SizedBox(width: 1.w,),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
